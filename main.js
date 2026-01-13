@@ -323,3 +323,30 @@ if (modalForm) {
         }, 1500);
     });
 }
+// === LAZY LOAD IFRAMES & SCRIPTS (Advanced PageSpeed) ===
+function initLazyLoading() {
+    const lazyIframes = document.querySelectorAll('iframe[data-src]');
+
+    if ('IntersectionObserver' in window) {
+        const iframeObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const iframe = entry.target;
+                    iframe.src = iframe.getAttribute('data-src');
+                    iframe.removeAttribute('data-src');
+                    observer.unobserve(iframe);
+                }
+            });
+        }, { rootMargin: '200px' }); // Load early before user reaches it
+
+        lazyIframes.forEach(iframe => iframeObserver.observe(iframe));
+    } else {
+        // Fallback for older browsers
+        lazyIframes.forEach(iframe => {
+            iframe.src = iframe.getAttribute('data-src');
+        });
+    }
+}
+
+// Run lazy loading init
+document.addEventListener('DOMContentLoaded', initLazyLoading);
