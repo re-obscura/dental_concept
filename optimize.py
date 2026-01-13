@@ -8,13 +8,14 @@ import subprocess
 import stat
 
 # --- НАСТРОЙКИ ---
+INLINE_CSS = True  # True = Встроить CSS в HTML (Быстрее загрузка, выше рейтинг). False = Внешний файл (Лучше кеширование).
 CSS_OUTPUT_DIR = "assets/css"
 CSS_OUTPUT_FILE = "styles.css"
 INPUT_CSS_FILE = "input.css"
 CONFIG_FILE = "tailwind.config.js"
-TAILWIND_VERSION = "v3.4.1" # Стабильная версия
+TAILWIND_VERSION = "v3.4.1"
 
-# Конфигурация Tailwind, извлеченная из вашего HTML
+# --- КОНТЕНТ ФАЙЛОВ ---
 TAILWIND_CONFIG_CONTENT = """
 module.exports = {
   content: ["./**/*.{html,js}"],
@@ -71,33 +72,21 @@ INPUT_CSS_CONTENT = """
 def get_system_info():
     system = platform.system().lower()
     machine = platform.machine().lower()
-
-    if system == 'windows':
-        target = 'windows-x64.exe'
-    elif system == 'darwin':
-        target = 'macos-arm64' if 'arm' in machine else 'macos-x64'
-    elif system == 'linux':
-        target = 'linux-arm64' if 'aarch64' in machine else 'linux-x64'
-    else:
-        raise Exception(f"Неподдерживаемая ОС: {system}")
-
-    return target
+    if system == 'windows': return 'windows-x64.exe'
+    elif system == 'darwin': return 'macos-arm64' if 'arm' in machine else 'macos-x64'
+    elif system == 'linux': return 'linux-arm64' if 'aarch64' in machine else 'linux-x64'
+    else: raise Exception(f"Неподдерживаемая ОС: {system}")
 
 def download_compiler(target):
     filename = 'tailwindcss.exe' if 'windows' in target else 'tailwindcss'
-    if os.path.exists(filename):
-        return filename
-
+    if os.path.exists(filename): return filename
     url = f"https://github.com/tailwindlabs/tailwindcss/releases/download/{TAILWIND_VERSION}/tailwindcss-{target}"
-    print(f"📥 Скачиваем компилятор Tailwind ({url})...")
-
+    print(f"📥 Скачиваем компилятор...")
     try:
         urllib.request.urlretrieve(url, filename)
-        # Делаем исполняемым на Linux/Mac
         if 'windows' not in target:
             st = os.stat(filename)
             os.chmod(filename, st.st_mode | stat.S_IEXEC)
-        print("✅ Компилятор скачан.")
         return filename
     except Exception as e:
         print(f"❌ Ошибка скачивания: {e}")
@@ -105,53 +94,65 @@ def download_compiler(target):
 
 def create_config_files():
     if not os.path.exists(CONFIG_FILE):
-        with open(CONFIG_FILE, "w", encoding="utf-8") as f:
-            f.write(TAILWIND_CONFIG_CONTENT)
-        print(f"📄 Создан {CONFIG_FILE}")
-
+        with open(CONFIG_FILE, "w", encoding="utf-8") as f: f.write(TAILWIND_CONFIG_CONTENT)
     if not os.path.exists(INPUT_CSS_FILE):
-        with open(INPUT_CSS_FILE, "w", encoding="utf-8") as f:
-            f.write(INPUT_CSS_CONTENT)
-        print(f"📄 Создан {INPUT_CSS_FILE}")
+        with open(INPUT_CSS_FILE, "w", encoding="utf-8") as f: f.write(INPUT_CSS_CONTENT)
 
 def compile_css(compiler_exe):
-    if not os.path.exists(CSS_OUTPUT_DIR):
-        os.makedirs(CSS_OUTPUT_DIR)
-
+    if not os.path.exists(CSS_OUTPUT_DIR): os.makedirs(CSS_OUTPUT_DIR)
     output_path = os.path.join(CSS_OUTPUT_DIR, CSS_OUTPUT_FILE)
-    print("🔨 Компиляция CSS (это может занять несколько секунд)...")
-
-    cmd = [
-        f"./{compiler_exe}" if platform.system() != 'Windows' else compiler_exe,
-        "-i", INPUT_CSS_FILE,
-        "-o", output_path,
-        "--minify"
-    ]
-
+    print("🔨 Компиляция CSS...")
+    cmd = [f"./{compiler_exe}" if platform.system() != 'Windows' else compiler_exe, "-i", INPUT_CSS_FILE, "-o", output_path, "--minify"]
     try:
         subprocess.run(cmd, check=True)
-        print(f"✅ CSS успешно скомпилирован в {output_path}")
         return output_path
     except subprocess.CalledProcessError as e:
-        print(f"❌ Ошибка компиляции CSS: {e}")
+        print(f"❌ Ошибка компиляции: {e}")
         return None
 
-def optimize_html_files(directory=".", css_path="assets/css/styles.css"):
+def make_link_async(match):
+    """Превращает обычный <link> в асинхронный (media hack)"""
+    full_tag = match.group(0)
+    if 'media="print"' in full_tag: return full_tag
+    new_tag = full_tag.replace('rel="stylesheet"', 'rel="stylesheet" media="print" onload="this.media=\'all\'"')
+    noscript = f'<noscript>{full_tag}</noscript>'
+    return f"{new_tag}\n    {noscript}"
+
+def optimize_html_files(directory=".", css_file_path=""):
     html_files = glob.glob(os.path.join(directory, "**/*.html"), recursive=True)
+    if not html_files: return
 
-    if not html_files:
-        print("HTML файлы не найдены.")
-        return
+    # Подготовка контента CSS
+    css_content = ""
+    if INLINE_CSS:
+        try:
+            with open(css_file_path, 'r', encoding='utf-8') as f:
+                css_content = f.read()
+        except Exception as e:
+            print(f"❌ Не удалось прочитать CSS файл: {e}")
+            return
 
-    print(f"🔍 Найдено {len(html_files)} HTML файлов. Обновляем ссылки...")
+    # Формируем тег для вставки
+    if INLINE_CSS:
+        # Вариант 1: Инлайн (Быстро для PageSpeed)
+        insertion_tag = f'<style id="critical-tailwind">\n{css_content}\n</style>'
+    else:
+        # Вариант 2: Внешний файл (Классика)
+        # Используем путь относительно HTML файла. Для простоты считаем, что все HTML в корне, а CSS в assets/css
+        web_path = css_file_path.replace("\\", "/")
+        if web_path.startswith("./"): web_path = web_path[2:]
+        insertion_tag = f'<link href="{web_path}" rel="stylesheet">'
 
-    # Регулярки для удаления старого JS
+    print(f"🔍 Оптимизация {len(html_files)} HTML файлов (Режим: {'INLINE' if INLINE_CSS else 'EXTERNAL'})...")
+
+    # Регулярки
     cdn_regex = re.compile(r'\s*<script src="[^"]*tailwindcss\.js"[^>]*></script>', re.IGNORECASE)
     config_regex = re.compile(r'\s*<script>\s*tailwind\.config\s*=\s*\{.*?\};?\s*</script>', re.DOTALL | re.IGNORECASE)
+    fonts_regex = re.compile(r'<link[^>]+href="[^"]*(fonts\.googleapis\.com|fontawesome)[^"]*"[^>]*>', re.IGNORECASE)
 
-    # Ссылка на новый CSS
-    # Используем относительный путь или абсолютный, здесь для простоты фиксированный
-    new_css_link = f'<link href="{css_path}" rel="stylesheet">'
+    # Регулярки для очистки предыдущих версий скрипта
+    old_inline_css = re.compile(r'<style id="critical-tailwind">.*?</style>', re.DOTALL)
+    old_external_css = re.compile(r'\s*<link href="[^"]*assets/css/styles.css"[^>]*>', re.IGNORECASE)
 
     for file_path in html_files:
         try:
@@ -160,57 +161,48 @@ def optimize_html_files(directory=".", css_path="assets/css/styles.css"):
 
             original_content = content
 
-            # Удаляем тяжелый JS
+            # 1. Удаляем тяжелые JS скрипты
             content = cdn_regex.sub('', content)
             content = config_regex.sub('', content)
 
-            # Добавляем CSS если его нет
-            # Нормализуем путь для Windows слешей, если надо, но в HTML лучше прямые слеши
-            web_css_path = css_path.replace("\\", "/")
+            # 2. Асинхронные шрифты
+            content = fonts_regex.sub(make_link_async, content)
 
-            if web_css_path not in content:
-                if '</head>' in content:
-                    content = content.replace('</head>', f'    <link href="{web_css_path}" rel="stylesheet">\n</head>')
-                else:
-                    print(f"⚠️ В файле {file_path} нет тега </head>")
+            # 3. Управление CSS (Сначала чистим старое)
+            content = old_inline_css.sub('', content)
+            content = old_external_css.sub('', content)
+
+            # Вставляем новый
+            if '</head>' in content:
+                content = content.replace('</head>', f'{insertion_tag}\n</head>')
+            else:
+                print(f"⚠️ {file_path}: Нет тега </head>")
 
             if content != original_content:
                 with open(file_path, 'w', encoding='utf-8') as f:
                     f.write(content)
-                print(f"✅ Обновлен: {file_path}")
+                print(f"✅ {file_path}: Обновлен.")
             else:
-                print(f"➖ Не требует изменений: {file_path}")
+                print(f"➖ {file_path}: Изменений нет.")
 
         except Exception as e:
-            print(f"❌ Ошибка файла {file_path}: {e}")
+            print(f"❌ Ошибка {file_path}: {e}")
 
 def main():
-    print("🚀 Запуск оптимизатора (версия No-Node.js)...")
-
-    # 1. Определяем систему и скачиваем компилятор
+    print(f"🚀 Старт оптимизации (Режим INLINE_CSS = {INLINE_CSS})...")
     try:
         target = get_system_info()
-    except Exception as e:
-        print(e)
-        return
+    except: return
 
     compiler = download_compiler(target)
-    if not compiler:
-        return
+    if not compiler: return
 
-    # 2. Создаем конфиги
     create_config_files()
+    output_css_path = compile_css(compiler)
 
-    # 3. Компилируем CSS
-    output_css = compile_css(compiler)
-
-    # 4. Обновляем HTML, если CSS создан успешно
-    if output_css:
-        optimize_html_files(css_path=f"{CSS_OUTPUT_DIR}/{CSS_OUTPUT_FILE}")
-
-        # Очистка (опционально - удалить компилятор после работы, если нужно)
-        # os.remove(compiler)
-        print("\n🎉 Готово! Ваш сайт оптимизирован.")
+    if output_css_path:
+        optimize_html_files(directory=".", css_file_path=output_css_path)
+        print("\n🎉 Готово!")
 
 if __name__ == "__main__":
     main()
