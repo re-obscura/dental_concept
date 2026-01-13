@@ -6,9 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Best Family Dentist in Lorton Virginia | Lorton Dentist</title>
 
+    <!-- Performance Optimization: Preconnect to CDNs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://unpkg.com">
+
     <!-- Preload Hero Resources -->
     <link rel="preload" as="image"
-        href="https://videocdn.cdnpk.net/videos/855708a0-a777-43b4-a19f-f77792476d72/horizontal/thumbnails/large.jpg?ga=GA1.1.200189668.1768237498&item_id=2818631&w=740&q=80">
+        href="https://videocdn.cdnpk.net/videos/855708a0-a777-43b4-a19f-f77792476d72/horizontal/thumbnails/large.jpg?ga=GA1.1.200189668.1768237498&item_id=2818631&w=740&q=80&fm=webp">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -24,8 +31,51 @@
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <!-- Config -->
-    <script src="tailwind.js"></script>
+    <!-- Config (Inlined for Performance) -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Oswald', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            light: '#FDFBF7', beige: '#F2E8DA', gold: '#C5A986', goldDark: '#A68968',
+                            text: '#374151', primary: '#5D8AA8', primaryDark: '#3A6380', accent: '#81C7D4'
+                        },
+                        dark: {
+                            bg: '#121212', surface: '#1E1E1E', border: '#2A2A2A', text: '#E0E0E0', accent: '#C5A986'
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 20px 40px -15px rgba(0,0,0,0.05)',
+                        'glow': '0 0 20px rgba(197, 169, 134, 0.3)',
+                        'ios': '0 8px 30px rgba(0,0,0,0.04)',
+                        'premium': '0 10px 30px -10px rgba(0,0,0,0.2)',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'blob': 'blob 7s infinite',
+                        'scroll': 'scroll 40s linear infinite',
+                    },
+                    keyframes: {
+                        float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } },
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        scroll: { '0%': { transform: 'translateX(0)' }, '100%': { transform: 'translateX(-50%)' } }
+                    }
+                }
+            }
+        }
+    </script>
 
     <link rel="stylesheet" href="style.css">
 
@@ -642,8 +692,9 @@
                                 class="journey-card p-8 rounded-[2.5rem] border border-stone-100 dark:border-stone-800 shadow-xl group overflow-hidden">
                                 <!-- Image Block for SEO -->
                                 <div class="relative h-48 mb-6 rounded-2xl overflow-hidden">
-                                    <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                                        alt="Book dental appointment online in Lorton VA" width="800" height="400"
+                                    <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80&fm=webp"
+                                        alt="Book dental appointment online in Lorton VA" width="600" height="400"
+                                        loading="lazy"
                                         class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
                                     <div
                                         class="absolute top-4 left-4 bg-white/90 dark:bg-dark-surface/90 backdrop-blur-sm px-3 py-1 rounded-lg shadow-sm border border-stone-102 dark:border-stone-800">
@@ -677,9 +728,9 @@
                                 class="journey-card p-8 rounded-[2.5rem] border border-stone-100 dark:border-stone-800 shadow-xl group bg-white dark:bg-dark-surface overflow-hidden">
                                 <!-- Image Block for SEO -->
                                 <div class="relative h-48 mb-6 rounded-2xl overflow-hidden">
-                                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                                        alt="Comfortable dental exam and 3D imaging in Lorton Virginia" width="800"
-                                        height="400"
+                                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80&fm=webp"
+                                        alt="Comfortable dental exam and 3D imaging in Lorton Virginia" width="600"
+                                        height="400" loading="lazy"
                                         class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
                                     <div
                                         class="absolute top-4 left-4 bg-white/90 dark:bg-dark-surface/90 backdrop-blur-sm px-3 py-1 rounded-lg shadow-sm border border-stone-102 dark:border-stone-800">
@@ -711,8 +762,9 @@
                                 class="journey-card p-8 rounded-[2.5rem] border border-stone-100 dark:border-stone-800 shadow-xl group overflow-hidden">
                                 <!-- Image Block for SEO -->
                                 <div class="relative h-48 mb-6 rounded-2xl overflow-hidden">
-                                    <img src="https://images.unsplash.com/photo-1522850403397-b0c8f2f75d51?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                                        alt="Radiant smile makeover results in Lorton VA" width="800" height="400"
+                                    <img src="https://images.unsplash.com/photo-1522850403397-b0c8f2f75d51?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80&fm=webp"
+                                        alt="Radiant smile makeover results in Lorton VA" width="600" height="400"
+                                        loading="lazy"
                                         class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
                                     <div
                                         class="absolute top-4 left-4 bg-white/90 dark:bg-dark-surface/90 backdrop-blur-sm px-3 py-1 rounded-lg shadow-sm border border-stone-102 dark:border-stone-800">
@@ -896,8 +948,8 @@
 
                 <div class="flex flex-col md:flex-row gap-12 items-center">
                     <div class="w-full md:w-1/2" data-aos="fade-right">
-                        <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                            alt="Modern dental office in Lorton VA" width="800" height="600"
+                        <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80&fm=webp"
+                            alt="Modern dental office in Lorton VA" width="1000" height="600" loading="lazy"
                             class="rounded-2xl shadow-2xl border-4 border-white dark:border-stone-700 transform rotate-2 hover:rotate-0 transition-all duration-500">
                     </div>
                     <div class="w-full md:w-1/2 space-y-6" data-aos="fade-left">
@@ -1516,8 +1568,8 @@
     </main>
 
     <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="main.js" defer></script>
 
     <!-- === FIXED MOBILE ACTION BAR === -->
     <div
