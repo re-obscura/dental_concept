@@ -10,6 +10,7 @@ import stat
 # --- НАСТРОЙКИ ---
 INLINE_CSS = True  # True = Встроить CSS в HTML (Быстрее загрузка).
 MINIFY_HTML = True # True = Удалить комментарии и лишние пробелы из HTML (Ускоряет FCP).
+DEFER_JS = True    # True = Добавить defer ко всем скриптам (Снижает блокировку рендеринга).
 CSS_OUTPUT_DIR = "assets/css"
 CSS_OUTPUT_FILE = "styles.css"
 INPUT_CSS_FILE = "input.css"
@@ -114,10 +115,27 @@ def compile_css(compiler_exe):
 def make_link_async(match):
     """Превращает обычный <link> в асинхронный (media hack)"""
     full_tag = match.group(0)
+
+    # Force display=swap for Google Fonts
+    if 'fonts.googleapis.com' in full_tag and 'display=swap' not in full_tag:
+        full_tag = full_tag.replace('stylesheet', 'stylesheet&display=swap')
+
     if 'media="print"' in full_tag: return full_tag
     new_tag = full_tag.replace('rel="stylesheet"', 'rel="stylesheet" media="print" onload="this.media=\'all\'"')
     noscript = f'<noscript>{full_tag}</noscript>'
     return f"{new_tag}\n    {noscript}"
+
+def defer_js_scripts(html_content):
+    """Добавляет defer ко всем внешним скриптам для разблокировки рендеринга"""
+    def replacer(match):
+        tag = match.group(0)
+        # Если уже есть defer, async или это JSON-LD/Module, не трогаем
+        if 'defer' in tag or 'async' in tag or 'type="application/ld+json"' in tag or 'type="module"' in tag:
+            return tag
+        return tag.replace('<script', '<script defer')
+
+    # Ищем скрипты с src
+    return re.sub(r'<script[^>]+src=["\'][^"\']+["\'][^>]*>', replacer, html_content, flags=re.IGNORECASE)
 
 def minify_html_content(html_content):
     """Удаляет комментарии и пустые строки"""
@@ -125,18 +143,15 @@ def minify_html_content(html_content):
     html_content = re.sub(r'<!--(?!\[if).*?-->', '', html_content, flags=re.DOTALL)
 
     # 2. Удаляем пустые строки и пробелы по краям строк
-    # Внимание: не объединяем всё в одну строку, чтобы не сломать JS, где нет ; в конце строк
     lines = [line.strip() for line in html_content.splitlines()]
-    # Оставляем только непустые строки
     lines = [line for line in lines if line]
 
     return "\n".join(lines)
 
 def inject_auto_preconnect(html_content):
     """Ищет домены картинок/видео в начале файла и добавляет preconnect"""
-    # Ищем постеры видео или картинки
     domains = set()
-    matches = re.findall(r'(?:poster|src)="https://([^/"]+)/', html_content[:5000]) # Смотрим первые 5000 символов
+    matches = re.findall(r'(?:poster|src)="https://([^/"]+)/', html_content[:5000])
 
     for domain in matches:
         if 'googleapis' not in domain and 'gstatic' not in domain and 'w3.org' not in domain:
@@ -147,7 +162,7 @@ def inject_auto_preconnect(html_content):
 
     links = ""
     for domain in domains:
-        if domain not in html_content[:head_end_idx]: # Если еще нет preconnect к этому домену
+        if domain not in html_content[:head_end_idx]:
             links += f'<link rel="preconnect" href="https://{domain}">\n'
 
     if links:
@@ -178,7 +193,7 @@ def optimize_html_files(directory=".", css_file_path=""):
         if web_path.startswith("./"): web_path = web_path[2:]
         insertion_tag = f'<link href="{web_path}" rel="stylesheet">'
 
-    print(f"🔍 Оптимизация {len(html_files)} HTML файлов (Inline: {INLINE_CSS}, Minify: {MINIFY_HTML})...")
+    print(f"🔍 Оптимизация {len(html_files)} HTML файлов (Inline: {INLINE_CSS}, Minify: {MINIFY_HTML}, DeferJS: {DEFER_JS})...")
 
     # Регулярки
     cdn_regex = re.compile(r'\s*<script src="[^"]*tailwindcss\.js"[^>]*></script>', re.IGNORECASE)
@@ -202,7 +217,11 @@ def optimize_html_files(directory=".", css_file_path=""):
             # 2. Асинхронные шрифты
             content = fonts_regex.sub(make_link_async, content)
 
-            # 3. Управление CSS (Сначала чистим старое)
+            # 3. Defer JS (Новая фича)
+            if DEFER_JS:
+                content = defer_js_scripts(content)
+
+            # 4. Управление CSS (Сначала чистим старое)
             content = old_inline_css.sub('', content)
             content = old_external_css.sub('', content)
 
@@ -212,17 +231,17 @@ def optimize_html_files(directory=".", css_file_path=""):
             else:
                 print(f"⚠️ {file_path}: Нет тега </head>")
 
-            # 4. Авто-Preconnect (для ускорения LCP)
+            # 5. Авто-Preconnect
             content = inject_auto_preconnect(content)
 
-            # 5. Минификация HTML
+            # 6. Минификация HTML
             if MINIFY_HTML:
                 content = minify_html_content(content)
 
             if content != original_content:
                 with open(file_path, 'w', encoding='utf-8') as f:
                     f.write(content)
-                print(f"✅ {file_path}: Обновлен и минифицирован.")
+                print(f"✅ {file_path}: Обновлен, defer применен.")
             else:
                 print(f"➖ {file_path}: Изменений нет.")
 
