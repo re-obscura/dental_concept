@@ -8,7 +8,8 @@ import subprocess
 import stat
 
 # --- НАСТРОЙКИ ---
-INLINE_CSS = True  # True = Встроить CSS в HTML (Быстрее загрузка, выше рейтинг). False = Внешний файл (Лучше кеширование).
+INLINE_CSS = True  # True = Встроить CSS в HTML (Быстрее загрузка).
+MINIFY_HTML = True # True = Удалить комментарии и лишние пробелы из HTML (Ускоряет FCP).
 CSS_OUTPUT_DIR = "assets/css"
 CSS_OUTPUT_FILE = "styles.css"
 INPUT_CSS_FILE = "input.css"
@@ -118,6 +119,43 @@ def make_link_async(match):
     noscript = f'<noscript>{full_tag}</noscript>'
     return f"{new_tag}\n    {noscript}"
 
+def minify_html_content(html_content):
+    """Удаляет комментарии и пустые строки"""
+    # 1. Удаляем HTML комментарии <!-- ... --> (кроме IE conditional comments, если они есть)
+    html_content = re.sub(r'<!--(?!\[if).*?-->', '', html_content, flags=re.DOTALL)
+
+    # 2. Удаляем пустые строки и пробелы по краям строк
+    # Внимание: не объединяем всё в одну строку, чтобы не сломать JS, где нет ; в конце строк
+    lines = [line.strip() for line in html_content.splitlines()]
+    # Оставляем только непустые строки
+    lines = [line for line in lines if line]
+
+    return "\n".join(lines)
+
+def inject_auto_preconnect(html_content):
+    """Ищет домены картинок/видео в начале файла и добавляет preconnect"""
+    # Ищем постеры видео или картинки
+    domains = set()
+    matches = re.findall(r'(?:poster|src)="https://([^/"]+)/', html_content[:5000]) # Смотрим первые 5000 символов
+
+    for domain in matches:
+        if 'googleapis' not in domain and 'gstatic' not in domain and 'w3.org' not in domain:
+            domains.add(domain)
+
+    head_end_idx = html_content.find('</head>')
+    if head_end_idx == -1: return html_content
+
+    links = ""
+    for domain in domains:
+        if domain not in html_content[:head_end_idx]: # Если еще нет preconnect к этому домену
+            links += f'<link rel="preconnect" href="https://{domain}">\n'
+
+    if links:
+        print(f"⚡ Добавлен preconnect для: {', '.join(domains)}")
+        html_content = html_content[:head_end_idx] + links + html_content[head_end_idx:]
+
+    return html_content
+
 def optimize_html_files(directory=".", css_file_path=""):
     html_files = glob.glob(os.path.join(directory, "**/*.html"), recursive=True)
     if not html_files: return
@@ -134,23 +172,19 @@ def optimize_html_files(directory=".", css_file_path=""):
 
     # Формируем тег для вставки
     if INLINE_CSS:
-        # Вариант 1: Инлайн (Быстро для PageSpeed)
         insertion_tag = f'<style id="critical-tailwind">\n{css_content}\n</style>'
     else:
-        # Вариант 2: Внешний файл (Классика)
-        # Используем путь относительно HTML файла. Для простоты считаем, что все HTML в корне, а CSS в assets/css
         web_path = css_file_path.replace("\\", "/")
         if web_path.startswith("./"): web_path = web_path[2:]
         insertion_tag = f'<link href="{web_path}" rel="stylesheet">'
 
-    print(f"🔍 Оптимизация {len(html_files)} HTML файлов (Режим: {'INLINE' if INLINE_CSS else 'EXTERNAL'})...")
+    print(f"🔍 Оптимизация {len(html_files)} HTML файлов (Inline: {INLINE_CSS}, Minify: {MINIFY_HTML})...")
 
     # Регулярки
     cdn_regex = re.compile(r'\s*<script src="[^"]*tailwindcss\.js"[^>]*></script>', re.IGNORECASE)
     config_regex = re.compile(r'\s*<script>\s*tailwind\.config\s*=\s*\{.*?\};?\s*</script>', re.DOTALL | re.IGNORECASE)
     fonts_regex = re.compile(r'<link[^>]+href="[^"]*(fonts\.googleapis\.com|fontawesome)[^"]*"[^>]*>', re.IGNORECASE)
 
-    # Регулярки для очистки предыдущих версий скрипта
     old_inline_css = re.compile(r'<style id="critical-tailwind">.*?</style>', re.DOTALL)
     old_external_css = re.compile(r'\s*<link href="[^"]*assets/css/styles.css"[^>]*>', re.IGNORECASE)
 
@@ -172,16 +206,23 @@ def optimize_html_files(directory=".", css_file_path=""):
             content = old_inline_css.sub('', content)
             content = old_external_css.sub('', content)
 
-            # Вставляем новый
+            # Вставляем новый CSS
             if '</head>' in content:
                 content = content.replace('</head>', f'{insertion_tag}\n</head>')
             else:
                 print(f"⚠️ {file_path}: Нет тега </head>")
 
+            # 4. Авто-Preconnect (для ускорения LCP)
+            content = inject_auto_preconnect(content)
+
+            # 5. Минификация HTML
+            if MINIFY_HTML:
+                content = minify_html_content(content)
+
             if content != original_content:
                 with open(file_path, 'w', encoding='utf-8') as f:
                     f.write(content)
-                print(f"✅ {file_path}: Обновлен.")
+                print(f"✅ {file_path}: Обновлен и минифицирован.")
             else:
                 print(f"➖ {file_path}: Изменений нет.")
 
