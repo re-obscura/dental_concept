@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
+    <style>html { visibility: hidden; opacity: 0; }</style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Performance Optimization: Preconnect to CDNs -->
@@ -19,7 +20,7 @@
     <link href="assets/css/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
     <!-- Config (Inlined for Performance) -->
     
-    <link rel="stylesheet" href="style.css">
+    
     <!-- SEO Meta Tags -->
     <meta name="description"
         content="Restore your gum health with professional gum grafting in Lorton, VA. Dr. Vladimir Soyfer offers advanced periodontal care for receding gums. Schedule today!">
@@ -78,6 +79,435 @@
   ]
 }
     </script>
+    <script src="assets/js/tailwindcss.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'], heading: ['Oswald', 'sans-serif'] },
+                    colors: {
+                        brand: {
+                            light: '#FDFBF7', beige: '#F2E8DA', gold: '#C5A986', goldDark: '#A68968',
+                            text: '#374151', primary: '#5D8AA8', primaryDark: '#3A6380', accent: '#81C7D4'
+                        },
+                        dark: { bg: '#121212', surface: '#1E1E1E', border: '#2A2A2A', text: '#E0E0E0', accent: '#C5A986' }
+                    },
+                    boxShadow: {
+                        'soft': '0 20px 40px -15px rgba(0,0,0,0.05)',
+                        'glow': '0 0 20px rgba(197, 169, 134, 0.3)',
+                        'ios': '0 8px 30px rgba(0,0,0,0.04)',
+                        'premium': '0 10px 30px -10px rgba(0,0,0,0.2)',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'blob': 'blob 7s infinite',
+                        'scroll': 'scroll 40s linear infinite',
+                    },
+                    keyframes: {
+                        float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } },
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        scroll: { '0%': { transform: 'translateX(0)' }, '100%': { transform: 'translateX(-50%)' } }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+/* Base Smoothness */
+html {
+    overflow-x: hidden;
+    scroll-padding-top: 100px;
+}
+
+/* Glassmorphism Classes */
+.glass-nav {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark .glass-nav {
+    background: rgba(18, 18, 18, 0.85);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-nav.scrolled {
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.dark .glass-nav.scrolled {
+    background: rgba(30, 30, 30, 0.98);
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Hero Background with Parallax Hook */
+.hero-bg-image {
+    background-image: url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80&fm=webp');
+    background-size: cover;
+    background-position: center;
+}
+
+.z-1 {
+    z-index: 1;
+}
+
+.z-10 {
+    z-index: 10;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #C5A986;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #A88B68;
+}
+
+/* Mega Menu */
+.group:hover .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) translateX(-50%);
+}
+
+/* Interactive Card Hover */
+.hover-card-zoom {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-card-zoom:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.1);
+    border-color: #C5A986;
+}
+
+/* Blob Backgrounds */
+.blob-bg {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(70px);
+    opacity: 0.4;
+    z-index: 0;
+}
+
+/* Comparison Slider Styles */
+.img-comp-container {
+    position: relative;
+    height: 300px;
+    /* Adjust height as needed */
+    overflow: hidden;
+    border-radius: 1rem;
+    cursor: col-resize;
+    /* Indicates hover interaction */
+}
+
+.img-comp-img {
+    position: absolute;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+}
+
+.img-comp-img img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    /* Width is handled by JS for the overlay to prevent squishing */
+}
+
+/* Ensure the background image (not overlay) fills the container */
+.img-comp-container>.img-comp-img:not(.img-comp-overlay) {
+    width: 100%;
+    height: 100%;
+}
+
+.img-comp-container>.img-comp-img:not(.img-comp-overlay) img {
+    width: 100%;
+}
+
+.img-comp-slider {
+    position: absolute;
+    z-index: 9;
+    cursor: col-resize;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    top: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    /* Let clicks pass through to container for smoother hover */
+}
+
+/* Hide default summary marker */
+details>summary {
+    list-style: none;
+}
+
+details>summary::-webkit-details-marker {
+    display: none;
+}
+
+.dark .journey-card {
+    background: #1e1e1e;
+    border-color: #2a2a2a;
+}
+
+.dark .journey-card:hover {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border-color: #C5A986;
+}
+
+.dark #booking-modal #modal-content {
+    background: #1e1e1e;
+    color: #e0e0e0;
+}
+
+.dark input,
+.dark textarea,
+.dark select {
+    background: #2a2a2a;
+    border-color: #3a3a3a;
+    color: white;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+    color: #888;
+}
+
+/* === Journey Section Styles === */
+.journey-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.journey-path-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.journey-path-line {
+    fill: none;
+    stroke: #C5A986;
+    stroke-width: 2;
+    stroke-dasharray: 12, 12;
+    opacity: 0.4;
+    filter: drop-shadow(0 0 2px rgba(197, 169, 134, 0.5));
+}
+
+.journey-card {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 10;
+    position: relative;
+    background: white;
+}
+
+.journey-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 25px 50px -12px rgba(197, 169, 134, 0.25);
+    border-color: #C5A986;
+}
+
+.journey-number {
+    font-family: 'Oswald', sans-serif;
+    -webkit-text-stroke: 2px rgba(197, 169, 134, 0.2);
+    color: transparent;
+    transition: all 0.5s ease;
+    line-height: 1;
+}
+
+.journey-card:hover .journey-number {
+    color: rgba(197, 169, 134, 0.1);
+    -webkit-text-stroke: 0px transparent;
+    transform: scale(1.1) rotate(-8deg) translateX(10px);
+}
+
+.step-icon-box {
+    transition: all 0.5s ease;
+}
+
+.journey-card:hover .step-icon-box {
+    transform: rotateY(180deg) scale(1.1);
+    background-color: #C5A986;
+    color: white;
+    border-color: #C5A986;
+    box-shadow: 0 10px 20px rgba(197, 169, 134, 0.4);
+}
+
+.journey-card:hover .step-icon-box i {
+    transform: rotateY(-180deg);
+}
+
+@media (max-width: 768px) {
+    .journey-timeline-line {
+        position: absolute;
+        left: 2rem;
+        top: 2rem;
+        bottom: 2rem;
+        width: 2px;
+        background: linear-gradient(to bottom, transparent, #C5A986, transparent);
+        z-index: 0;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.animate-fade-in {
+    animation: fade-in 0.5s ease-out forwards;
+}
+
+/* Modal Active State Classes */
+#booking-modal.modal-open #modal-backdrop {
+    opacity: 1;
+}
+
+#booking-modal.modal-open #modal-content {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Modal Body Lock */
+body.modal-open {
+    overflow: hidden;
+}
+
+/* Perspective Utility for Dr. Bio Cards (used in index.html but not defined) */
+.perspective-1000 {
+    perspective: 1000px;
+}
+
+/* === Gradient Animation === */
+.animate-gradient {
+    background-size: 400% 400%;
+    animation: gradient-xy 8s ease infinite;
+}
+
+@keyframes gradient-xy {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Gradient Presets for Service Cards */
+/* Option 1: Deep Ocean to Purple */
+.bg-gradient-1 {
+    background-image: linear-gradient(-45deg, #020024, #090979, #00d4ff);
+}
+
+/* Option 2: Vibrant Blue-Teal */
+.bg-gradient-2 {
+    background-image: linear-gradient(-45deg, #134e5e, #71b280);
+}
+
+/* Option 3: Modern Purple-Pink */
+.bg-gradient-3 {
+    background-image: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+}
+
+/* Option 4: Gold-Dark */
+.bg-gradient-4 {
+    background-image: linear-gradient(-45deg, #C5A986, #5B4832, #1a1a1a);
+}
+
+/* === Multi-level Dropdown Styles === */
+.dropdown-menu {
+    border-radius: 12px;
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.15);
+    transform-origin: top;
+    animation: dropdown-fade 0.2s ease-out;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dark .dropdown-menu {
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: #1e1e1e;
+    /* Dark theme bg */
+}
+
+@keyframes dropdown-fade {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ensure nested menus appear correctly */
+.group\/sub:hover .dropdown-menu-right {
+    display: block;
+    animation: slide-right 0.2s ease-out;
+}
+
+@keyframes slide-right {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Scrollbar for long menus */
+.dropdown-scroll {
+    max-height: 80vh;
+    overflow-y: auto;
+}
+</style>
 </head>
 <body
     class="bg-brand-light dark:bg-dark-bg text-brand-text dark:text-dark-text font-sans antialiased overflow-x-hidden selection:bg-brand-gold selection:text-white relative transition-colors duration-500">
@@ -753,46 +1183,18 @@
             padding-bottom: env(safe-area-inset-bottom, 20px);
         }
     </style>
-
-    <script src="assets/js/tailwindcss.js"></script>
+    
     <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'], heading: ['Oswald', 'sans-serif'] },
-                    colors: {
-                        brand: {
-                            light: '#FDFBF7', beige: '#F2E8DA', gold: '#C5A986', goldDark: '#A68968',
-                            text: '#374151', primary: '#5D8AA8', primaryDark: '#3A6380', accent: '#81C7D4'
-                        },
-                        dark: { bg: '#121212', surface: '#1E1E1E', border: '#2A2A2A', text: '#E0E0E0', accent: '#C5A986' }
-                    },
-                    boxShadow: {
-                        'soft': '0 20px 40px -15px rgba(0,0,0,0.05)',
-                        'glow': '0 0 20px rgba(197, 169, 134, 0.3)',
-                        'ios': '0 8px 30px rgba(0,0,0,0.04)',
-                        'premium': '0 10px 30px -10px rgba(0,0,0,0.2)',
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'blob': 'blob 7s infinite',
-                        'scroll': 'scroll 40s linear infinite',
-                    },
-                    keyframes: {
-                        float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } },
-                        blob: {
-                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
-                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
-                        },
-                        scroll: { '0%': { transform: 'translateX(0)' }, '100%': { transform: 'translateX(-50%)' } }
-                    }
-                }
-            }
-        }
+        document.addEventListener("DOMContentLoaded", function() {
+            document.documentElement.style.visibility = 'visible';
+            document.documentElement.style.opacity = '1';
+        });
+        // Backup reveal in case DOMContentLoaded is too slow
+        setTimeout(function() {
+            document.documentElement.style.visibility = 'visible';
+            document.documentElement.style.opacity = '1';
+        }, 800);
     </script>
+
 </body>
 </html>
