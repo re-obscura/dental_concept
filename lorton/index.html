@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO Optimization -->
+    <title>Lorton Dentist VA: Your Best Family Dentist in Lorton Virginia</title>
+    <meta name="description" content="Lorton Dentist provides all dental care – dental implants, fillings, crowns, Invisalign, emergency dentistry, dental hygiene in Lorton VA. Call 571-541-7977.">
+    <meta name="keywords" content="Lorton Dentist, Dentist Lorton VA, Dental Implants, Invisalign, Dr. Vladimir Soyfer, Emergency Dentist Lorton">
+    <meta name="author" content="Lorton Dentist">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Inter & Oswald -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Oswald:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Config -->
+    <script src="tailwind.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body
+    class="bg-brand-light dark:bg-dark-bg text-brand-text dark:text-dark-text font-sans antialiased overflow-x-hidden selection:bg-brand-gold selection:text-white relative transition-colors duration-500">
+
+    <!-- Decorative Background Blobs -->
+    <div class="blob-bg w-96 h-96 bg-brand-beige dark:bg-brand-gold/10 top-0 left-0 animate-blob"></div>
+    <div
+        class="blob-bg w-96 h-96 bg-blue-100 dark:bg-brand-primary/10 top-[20%] right-0 animate-blob animation-delay-2000">
+    </div>
+
+    <!-- === 0. FLOATING ACTION BUTTON (Desktop & Mobile) === -->
+    <a href="javascript:void(0)" onclick="openBookingModal()"
+        class="hidden md:flex fixed bottom-10 right-10 z-50 bg-brand-gold hover:bg-brand-goldDark text-white w-16 h-16 rounded-full shadow-2xl items-center justify-center transition-all hover:scale-110 hover:rotate-12 animate-float group border-4 border-white">
+        <i class="fas fa-calendar-check text-2xl group-hover:animate-pulse"></i>
+        <span
+            class="absolute right-full mr-4 bg-stone-800 text-white text-xs font-bold px-3 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+            Book Appointment
+        </span>
+    </a>
+
+    <!-- === 1. TOP BAR (Address & Contacts) === -->
+    <div
+        class="bg-brand-beige dark:bg-dark-surface text-xs py-2 hidden md:block border-b border-brand-gold/20 relative z-40 transition-colors">
+        <div
+            class="max-w-7xl mx-auto px-4 flex justify-between items-center text-stone-700 dark:text-stone-300 font-medium">
+            <div class="flex space-x-6">
+                <span class="flex items-center hover:text-brand-primary cursor-pointer transition"><i
+                        class="fas fa-map-marker-alt text-brand-gold mr-2"></i>Lorton, VA 22079</span>
+                <span class="flex items-center"><i class="fas fa-clock text-brand-gold mr-2"></i>Mon-Fri 8:00am - 5:00pm</span>
+            </div>
+            <div class="flex space-x-6 items-center">
+                <a href="tel:5715417977"
+                    class="flex items-center font-bold hover:text-brand-primary transition text-stone-800 dark:text-white"><i
+                        class="fas fa-phone-alt mr-2"></i>571-541-7977</a>
+                <a href="#"
+                    class="flex items-center bg-white dark:bg-brand-gold/10 px-3 py-1 rounded-full shadow-sm hover:shadow-md transition text-brand-primaryDark dark:text-brand-gold font-medium hover:scale-105 transform"><i
+                        class="fas fa-credit-card mr-2"></i>Pay Online</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- === 2. NAVIGATION (Sticky Header) === -->
+    <header class="fixed top-0 w-full z-50 glass-nav transition-all duration-300 h-24 flex items-center" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="flex justify-between items-center w-full">
+
+                <!-- Logo Area -->
+                <div class="flex items-center flex-shrink-0 group cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <div id="logo-icon"
+                        class="w-12 h-12 bg-gradient-to-br from-brand-primary to-brand-accent rounded-2xl flex items-center justify-center text-white mr-3 shadow-lg group-hover:rotate-12 transition-all duration-500">
+                        <i class="fas fa-tooth fa-lg"></i>
+                    </div>
+                    <div class="flex flex-col transition-all duration-300 origin-left" id="logo-text">
+                        <span
+                            class="font-heading text-xl md:text-2xl font-bold tracking-wide uppercase text-stone-800 dark:text-white leading-none">Lorton Dentist</span>
+                        <span
+                            class="text-[10px] md:text-xs tracking-[0.2em] text-stone-500 dark:text-stone-400 uppercase mt-1">Virginia</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden lg:flex space-x-1 items-center font-heading text-sm uppercase tracking-wide">
+                    <!-- Theme Toggle -->
+                    <button onclick="toggleTheme()"
+                        class="p-2 mr-4 text-stone-600 dark:text-stone-300 hover:text-brand-gold transition-colors focus:outline-none"
+                        aria-label="Toggle Theme">
+                        <i class="fas fa-moon theme-icon text-lg"></i>
+                    </button>
+
+                    <a href="#home"
+                        class="px-4 py-2 text-stone-700 dark:text-stone-300 hover:text-brand-primary transition-colors font-medium relative group/link">
+                        Home
+                        <span
+                            class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-brand-gold transition-all duration-300 group-hover/link:w-1/2 group-hover/link:left-1/4"></span>
+                    </a>
+                    <a href="#about"
+                        class="px-4 py-2 text-stone-700 dark:text-stone-300 hover:text-brand-primary transition-colors font-medium relative group/link">
+                        About Us
+                        <span
+                            class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-brand-gold transition-all duration-300 group-hover/link:w-1/2 group-hover/link:left-1/4"></span>
+                    </a>
+                    <a href="#services"
+                        class="px-4 py-2 text-stone-700 dark:text-stone-300 hover:text-brand-primary transition-colors font-medium relative group/link">
+                        Services
+                        <span
+                            class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-brand-gold transition-all duration-300 group-hover/link:w-1/2 group-hover/link:left-1/4"></span>
+                    </a>
+                    <a href="#reviews"
+                        class="px-4 py-2 hover:text-brand-primary transition-colors font-medium relative group/link">
+                        Reviews
+                        <span
+                            class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-brand-gold transition-all duration-300 group-hover/link:w-1/2 group-hover/link:left-1/4"></span>
+                    </a>
+
+                    <a href="javascript:void(0)" onclick="openBookingModal()"
+                        class="ml-6 px-6 py-2.5 bg-stone-900 text-white rounded-full shadow-lg hover:bg-brand-primary hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 flex items-center text-xs font-bold tracking-widest overflow-hidden relative group">
+                        <span
+                            class="absolute w-0 h-full bg-white/20 left-0 top-0 transition-all duration-300 group-hover:w-full"></span>
+                        <span class="relative z-10">Call Us Today</span>
+                    </a>
+                </nav>
+
+                <!-- Mobile Button -->
+                <div class="lg:hidden flex items-center gap-4">
+                    <button onclick="toggleTheme()"
+                        class="p-2 text-stone-600 dark:text-stone-300 hover:text-brand-gold transition-colors focus:outline-none"
+                        aria-label="Toggle Theme">
+                        <i class="fas fa-moon theme-icon text-lg"></i>
+                    </button>
+                    <button id="mobile-btn"
+                        class="text-stone-700 dark:text-stone-300 hover:text-brand-primary p-2 focus:outline-none transition-transform active:scale-95">
+                        <i class="fas fa-bars fa-2x"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu"
+            class="hidden absolute top-full left-0 w-full bg-white dark:bg-dark-surface backdrop-blur-xl border-t border-gray-100 dark:border-stone-800 shadow-xl py-6 flex-col items-center space-y-6 lg:hidden h-screen transition-all z-40">
+            <a href="#home"
+                class="text-xl font-heading uppercase text-stone-700 dark:text-stone-300 hover:text-brand-primary"
+                onclick="closeMenu()">Home</a>
+            <a href="#about"
+                class="text-xl font-heading uppercase text-stone-700 dark:text-stone-300 hover:text-brand-primary"
+                onclick="closeMenu()">About Us</a>
+            <a href="#services"
+                class="text-xl font-heading uppercase text-stone-700 dark:text-stone-300 hover:text-brand-primary"
+                onclick="closeMenu()">Services</a>
+            <a href="#reviews"
+                class="text-xl font-heading uppercase text-stone-700 dark:text-stone-300 hover:text-brand-primary"
+                onclick="closeMenu()">Reviews</a>
+            <a href="javascript:void(0)"
+                class="w-3/4 text-center px-8 py-4 bg-brand-primary text-white rounded-xl font-bold shadow-md"
+                onclick="closeMenu(); openBookingModal();">Make an Appointment</a>
+        </div>
+    </header>
+
+    <!-- === 3. HERO SECTION === -->
+    <section id="home" class="relative min-h-[85vh] flex items-center justify-center pt-24 pb-16 overflow-hidden">
+        <!-- Video Background -->
+        <video autoplay muted loop playsinline
+            aria-label="Dental clinic atmosphere"
+            poster="https://videocdn.cdnpk.net/videos/855708a0-a777-43b4-a19f-f77792476d72/horizontal/thumbnails/large.jpg?ga=GA1.1.200189668.1768237498&item_id=2818631&w=740&q=80"
+            class="absolute inset-0 w-full h-full object-cover z-0">
+            <source
+                src="https://videocdn.cdnpk.net/videos/855708a0-a777-43b4-a19f-f77792476d72/horizontal/previews/clear/large.mp4?token=exp=1768239435~hmac=6be107b2e6f665b0e1187ead63f21cce462aa32ecb710a9f75bb7dde982a4d2d"
+                type="video/mp4">
+        </video>
+        <!-- Overlay -->
+        <div
+            class="absolute inset-0 bg-gradient-to-r from-brand-light/95 via-brand-light/80 to-brand-primary/10 dark:from-dark-bg/95 dark:via-dark-bg/80 dark:to-brand-primary/20 z-1">
+        </div>
+
+        <div class="relative z-10 text-center px-4 max-w-5xl">
+            <div data-aos="fade-down" data-aos-duration="1000"
+                class="flex flex-col md:flex-row items-center justify-center gap-3 mb-6">
+                <div
+                    class="inline-block px-6 py-2 rounded-full border border-stone-500/30 bg-white/60 dark:bg-dark-surface/60 backdrop-blur-sm text-stone-800 dark:text-stone-200 text-xs font-bold uppercase tracking-widest shadow-sm hover:bg-white dark:hover:bg-dark-surface transition cursor-default">
+                    <i class="fas fa-heart text-red-500 mr-1 animate-pulse"></i> Your Best Family Dentist
+                </div>
+                <div
+                    class="inline-block px-6 py-2 rounded-full bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 border border-green-200 dark:border-green-800 text-xs font-bold uppercase tracking-widest shadow-sm animate-pulse-slow">
+                    <i class="fas fa-check-circle mr-1"></i> Accepting New Patients
+                </div>
+            </div>
+
+            <h1 class="font-heading text-4xl md:text-6xl lg:text-7xl font-light text-stone-900 dark:text-white uppercase leading-tight mb-6 drop-shadow-sm"
+                data-aos="fade-up" data-aos-delay="200">
+                Lorton Dentist VA <br>
+                <span
+                    class="font-bold text-transparent bg-clip-text bg-gradient-to-r from-stone-800 to-brand-primaryDark dark:from-white dark:to-brand-gold relative inline-block">
+                    Whole Family Care
+                    <svg class="absolute w-full h-3 -bottom-1 left-0 text-brand-gold opacity-60" viewBox="0 0 200 9"
+                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.00025 6.99997C25.7501 9.76164 59.6588 2.37834 197.979 2.00007" stroke="currentColor"
+                            stroke-width="3" />
+                    </svg>
+                </span>
+            </h1>
+
+            <p class="text-lg md:text-xl text-stone-800 dark:text-stone-300 mb-10 max-w-3xl mx-auto font-light leading-relaxed"
+                data-aos="fade-up" data-aos-delay="400">
+                Lorton Dentist provides all dental care – dental implants, fillings, crowns, Invisalign, emergency dentistry, dental hygiene in Lorton VA. We offer our patients modern solutions in the field of dental implants and cosmetic dentistry.
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="600">
+                <a href="javascript:void(0)" onclick="openBookingModal()"
+                    class="group relative px-8 py-4 bg-stone-900 text-white font-heading uppercase tracking-wider rounded-full overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all">
+                    <span
+                        class="relative z-10 group-hover:text-brand-gold transition-colors flex items-center font-bold"><i
+                            class="fas fa-calendar-check mr-2"></i> Make an Appointment</span>
+                    <div
+                        class="absolute inset-0 h-full w-full bg-stone-700 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300">
+                    </div>
+                </a>
+                <button
+                    class="px-8 py-4 bg-white/80 dark:bg-dark-surface/80 backdrop-blur-md text-stone-900 dark:text-white font-heading uppercase tracking-wider rounded-full border border-stone-200 dark:border-stone-800 hover:bg-white dark:hover:bg-dark-surface transition-all shadow-lg hover:scale-105 flex items-center justify-center group hover:border-brand-gold"
+                    onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})">
+                    <i
+                        class="fas fa-arrow-down text-brand-primary mr-2 text-xl group-hover:translate-y-1 transition-transform"></i>
+                    Our Services
+                </button>
+            </div>
+        </div>
+
+        <div
+            class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:block text-stone-400 z-10">
+            <i class="fas fa-chevron-down text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- === INSURANCE TICKER === -->
+    <section
+        class="bg-stone-900 dark:bg-black py-3 overflow-hidden relative z-20 border-b-4 border-brand-gold transition-colors">
+        <div class="flex whitespace-nowrap animate-scroll">
+            <div
+                class="flex space-x-12 mx-6 text-stone-400 font-heading text-sm uppercase tracking-widest items-center">
+                <span><i class="fas fa-check-circle text-brand-gold mr-2"></i>Favorable Tariff Plans</span>
+                <span><i class="fas fa-check-circle text-brand-gold mr-2"></i>Dental Insurance Accepted</span>
+                <span><i class="fas fa-check-circle text-brand-gold mr-2"></i>Consult the Experts</span>
+                <span><i class="fas fa-check-circle text-brand-gold mr-2"></i>Modern Solutions</span>
+                <span><i class="fas fa-check-circle text-brand-gold mr-2"></i>Financial Capabilities</span>
+                <span><i class="fas fa-check-circle text-brand-gold mr-2"></i>Whole Family Health</span>
+            </div>
+            <div
+                class="flex space-x-12 mx-6 text-stone-400 font-heading text-sm uppercase tracking-widest items-center">
+                <span><i class="fas fa-check-circle text-brand-gold mr-2"></i>Favorable Tariff Plans</span>
+                <span><i class="fas fa-check-circle text-brand-gold mr-2"></i>Dental Insurance Accepted</span>
+                <span><i class="fas fa-check-circle text-brand-gold mr-2"></i>Consult the Experts</span>
+                <span><i class="fas fa-check-circle text-brand-gold mr-2"></i>Modern Solutions</span>
+                <span><i class="fas fa-check-circle text-brand-gold mr-2"></i>Financial Capabilities</span>
+                <span><i class="fas fa-check-circle text-brand-gold mr-2"></i>Whole Family Health</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- === 4. CALLOUT STRIP (Why Choose Us) === -->
+    <section class="relative z-20 px-4 mb-20 mt-10">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <!-- Card 1: Our Team -->
+            <div class="bg-white dark:bg-dark-surface rounded-2xl shadow-xl hover-card-zoom border border-stone-100 dark:border-stone-800 group cursor-pointer flex flex-col items-center relative overflow-hidden transition-all"
+                data-aos="fade-up" data-aos-delay="100">
+                <div class="h-40 w-full relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Lorton Dentist Team"
+                        class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-brand-gold/10"></div>
+                </div>
+                <div class="p-6 text-center w-full flex flex-col flex-grow">
+                    <div
+                        class="w-12 h-12 bg-white text-brand-gold rounded-full flex items-center justify-center text-xl -mt-12 mb-3 relative z-10 shadow-lg mx-auto border-2 border-stone-50">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="font-heading text-lg uppercase font-bold text-stone-800 dark:text-white mb-2">Our Team</h3>
+                    <p class="text-sm text-stone-600 dark:text-stone-400 leading-relaxed mb-4 flex-grow">
+                        Lorton Dentist brings together the expertise of exceptional dentists. We offer a full range of dental services including general, cosmetic, and restorative.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 2: Maximum Comfort -->
+            <div class="bg-white dark:bg-dark-surface rounded-2xl shadow-xl hover-card-zoom border border-stone-100 dark:border-stone-800 group cursor-pointer flex flex-col items-center relative overflow-hidden transition-all"
+                data-aos="fade-up" data-aos-delay="200">
+                <div class="h-40 w-full relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Comfortable dental office"
+                        class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-brand-primary/10"></div>
+                </div>
+                <div class="p-6 text-center w-full flex flex-col flex-grow">
+                    <div
+                        class="w-12 h-12 bg-white text-brand-primary rounded-full flex items-center justify-center text-xl -mt-12 mb-3 relative z-10 shadow-lg mx-auto border-2 border-stone-50">
+                        <i class="far fa-smile"></i>
+                    </div>
+                    <h3 class="font-heading text-lg uppercase font-bold text-stone-800 dark:text-white mb-2">Comfort First
+                    </h3>
+                    <p class="text-sm text-stone-600 dark:text-stone-400 leading-relaxed mb-4 flex-grow">
+                        Our main goal is to provide maximum comfort. We value your time, so we have no queues and we always see patients on time.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 3: New Patients -->
+            <div class="bg-white dark:bg-dark-surface rounded-2xl shadow-xl hover-card-zoom border border-stone-100 dark:border-stone-800 group cursor-pointer flex flex-col items-center relative overflow-hidden transition-all"
+                data-aos="fade-up" data-aos-delay="300">
+                <div class="h-40 w-full relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="New Patient Consultation"
+                        class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-green-500/10"></div>
+                </div>
+                <div class="p-6 text-center w-full flex flex-col flex-grow">
+                    <div
+                        class="w-12 h-12 bg-white text-green-600 rounded-full flex items-center justify-center text-xl -mt-12 mb-3 relative z-10 shadow-lg mx-auto border-2 border-stone-50">
+                        <i class="far fa-clipboard"></i>
+                    </div>
+                    <h3 class="font-heading text-lg uppercase font-bold text-stone-800 dark:text-white mb-2">Free Consultation</h3>
+                    <p class="text-sm text-stone-600 dark:text-stone-400 leading-relaxed mb-4 flex-grow">
+                        The initial consultation is free for new patients. It is an opportunity to get to know the practice and discuss your dental needs.
+                    </p>
+                    <a href="#contact"
+                        class="inline-block bg-green-600 text-white text-xs px-4 py-2 rounded-full font-bold uppercase hover:bg-green-700 transition shadow-sm hover:shadow-md">Book Now</a>
+                </div>
+            </div>
+
+            <!-- Card 4: Advanced Equipment -->
+            <div class="bg-white dark:bg-dark-surface rounded-2xl shadow-xl hover-card-zoom border border-stone-100 dark:border-stone-800 group cursor-pointer flex flex-col items-center relative overflow-hidden transition-all"
+                data-aos="fade-up" data-aos-delay="400">
+                <div class="h-40 w-full relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Advanced dental equipment"
+                        class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-orange-400/10"></div>
+                </div>
+                <div class="p-6 text-center w-full flex flex-col flex-grow">
+                    <div
+                        class="w-12 h-12 bg-white text-orange-400 rounded-full flex items-center justify-center text-xl -mt-12 mb-3 relative z-10 shadow-lg mx-auto border-2 border-stone-50">
+                        <i class="fas fa-x-ray"></i>
+                    </div>
+                    <h3 class="font-heading text-lg uppercase font-bold text-stone-800 dark:text-white mb-2">Advanced Tech</h3>
+                    <p class="text-sm text-stone-600 dark:text-stone-400 leading-relaxed mb-4 flex-grow">
+                        We use digital X-ray equipment, intraoral cameras, and laser systems. We constantly improve our skills to stay up to date.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- === NEW: PROCESS SECTION (Appointment) === -->
+    <section class="py-24 bg-white dark:bg-dark-bg relative journey-section overflow-hidden transition-colors">
+        <div
+            class="absolute top-0 right-0 w-1/2 h-full bg-brand-light/20 dark:bg-brand-gold/5 -skew-x-12 transform origin-top-right z-0">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <span
+                    class="text-brand-primary dark:text-brand-accent text-sm font-bold uppercase tracking-[0.2em] mb-3 block">Make an appointment with a doctor</span>
+                <h2 class="font-heading text-4xl md:text-5xl text-stone-900 dark:text-white uppercase leading-tight">
+                    Start Your <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold to-brand-goldDark italic">Journey</span>
+                </h2>
+            </div>
+
+            <div class="relative">
+                <svg class="journey-path-svg hidden lg:block" viewBox="0 0 1200 800" preserveAspectRatio="none">
+                    <path class="journey-path-line" d="M200,100 C400,100 800,200 900,350 C1000,500 600,600 300,700" />
+                </svg>
+                <div class="journey-timeline-line lg:hidden"></div>
+
+                <!-- Step 1 -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-0 items-center mb-20 lg:mb-0 relative">
+                    <div class="lg:pr-24" data-aos="fade-right">
+                        <div
+                            class="journey-card p-8 rounded-[2.5rem] border border-stone-100 dark:border-stone-800 shadow-xl group overflow-hidden">
+                            <div class="relative h-48 mb-6 rounded-2xl overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                    alt="Call Lorton Dentist"
+                                    class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                                <div
+                                    class="absolute top-4 left-4 bg-white/90 dark:bg-dark-surface/90 backdrop-blur-sm px-3 py-1 rounded-lg shadow-sm border border-stone-102 dark:border-stone-800">
+                                    <span class="text-brand-gold font-bold font-heading">01</span>
+                                </div>
+                            </div>
+                            <h4 class="font-heading text-2xl uppercase font-bold text-stone-800 dark:text-white mb-4">Contact Us</h4>
+                            <p class="text-stone-500 dark:text-stone-400 leading-relaxed mb-6">
+                                You can contact the practice online or call 571-541-7977 to schedule an appointment.
+                            </p>
+                            <a href="tel:5715417977" class="text-brand-gold font-bold uppercase text-xs">Call Now &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="hidden lg:block"></div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-0 items-center mb-20 lg:mb-0 relative">
+                    <div class="hidden lg:block"></div>
+                    <div class="lg:pl-24" data-aos="fade-left">
+                        <div
+                            class="journey-card p-8 rounded-[2.5rem] border border-stone-100 dark:border-stone-800 shadow-xl group bg-white dark:bg-dark-surface overflow-hidden">
+                            <div class="relative h-48 mb-6 rounded-2xl overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                    alt="Consultation"
+                                    class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                                <div
+                                    class="absolute top-4 left-4 bg-white/90 dark:bg-dark-surface/90 backdrop-blur-sm px-3 py-1 rounded-lg shadow-sm border border-stone-102 dark:border-stone-800">
+                                    <span class="text-brand-primary font-bold font-heading">02</span>
+                                </div>
+                            </div>
+                            <h4 class="font-heading text-2xl uppercase font-bold text-stone-800 dark:text-white mb-4">Free Consultation</h4>
+                            <p class="text-stone-500 dark:text-stone-400 leading-relaxed mb-6">
+                                During the consultation, the doctors will examine your smile and listen to your concerns. Treatment options can be suggested to you if needed.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-0 items-center relative">
+                    <div class="lg:pr-24" data-aos="fade-right">
+                        <div
+                            class="journey-card p-8 rounded-[2.5rem] border border-stone-100 dark:border-stone-800 shadow-xl group overflow-hidden">
+                            <div class="relative h-48 mb-6 rounded-2xl overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1522850403397-b0c8f2f75d51?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                    alt="Healthy Smile"
+                                    class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                                <div
+                                    class="absolute top-4 left-4 bg-white/90 dark:bg-dark-surface/90 backdrop-blur-sm px-3 py-1 rounded-lg shadow-sm border border-stone-102 dark:border-stone-800">
+                                    <span class="text-green-600 font-bold font-heading">03</span>
+                                </div>
+                            </div>
+                            <h4 class="font-heading text-2xl uppercase font-bold text-stone-800 dark:text-white mb-4">Healthy Smile</h4>
+                            <p class="text-stone-500 dark:text-stone-400 leading-relaxed mb-6">
+                                Don’t put off taking care of your smile! We offer favorable tariff and dental insurance plans calculated for your financial capabilities.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="hidden lg:block relative flex justify-center items-center">
+                        <a href="#contact"
+                            class="group relative w-48 h-48 flex items-center justify-center bg-stone-900 rounded-full cursor-pointer hover:scale-110 transition-transform duration-500 shadow-2xl">
+                            <div
+                                class="absolute inset-0 border-2 border-brand-gold rounded-full animate-ping opacity-20">
+                            </div>
+                            <div class="text-center text-white z-10 p-4">
+                                <div class="text-xs uppercase tracking-widest mb-1 text-brand-gold">Ready?</div>
+                                <div class="font-heading text-2xl font-bold leading-none">Book<br>Now</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- === 5. DOCTORS SECTION === -->
+    <section id="about" class="py-24 bg-white dark:bg-dark-bg relative transition-colors">
+        <div class="blob-bg w-[500px] h-[500px] bg-brand-light dark:bg-dark-surface/30 bottom-0 right-0 animate-blob">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <span class="text-brand-primary dark:text-brand-accent text-sm font-bold uppercase tracking-widest">Meet the Doctor</span>
+                <h2 class="font-heading text-4xl text-stone-800 dark:text-white uppercase mt-2">Dr. Vladimir Soyfer DMD</h2>
+                <div class="w-24 h-1 bg-brand-gold mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="flex flex-col lg:flex-row items-center gap-12 mb-24">
+                <div class="w-full lg:w-1/3 relative group perspective-1000" data-aos="fade-right">
+                    <div
+                        class="absolute inset-0 bg-brand-gold/20 rounded-[2rem] transform translate-x-3 translate-y-3 transition-transform group-hover:translate-x-4 group-hover:translate-y-4">
+                    </div>
+                    <!-- Generic Doctor Image since none provided, using a placeholder for Dr. Soyfer -->
+                    <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&fm=webp"
+                        loading="lazy" alt="Dr. Vladimir Soyfer DMD"
+                        class="relative rounded-[2rem] shadow-2xl w-full object-cover h-[450px] z-10 grayscale-[10%] group-hover:grayscale-0 transition-all duration-500 hover:rotate-1">
+                </div>
+                <div class="w-full lg:w-2/3" data-aos="fade-left">
+                    <h3 class="font-heading text-3xl text-stone-900 dark:text-white uppercase mb-4 flex items-center">
+                        Your Best Dentist in Lorton <i class="fas fa-certificate text-brand-gold ml-3 text-xl" title="Certified"></i></h3>
+                    <div class="h-1 w-20 bg-brand-gold mb-6"></div>
+                    <p class="text-lg text-stone-700 dark:text-stone-300 leading-relaxed mb-6 font-light">
+                        Dr. Vladimir Soyfer places the patient at the heart of every decision, ensuring personalized treatment plans that prioritize comfort, functionality and aesthetics. His goal is not just to treat dental problems, but to improve the overall quality of life for his patients.
+                    </p>
+                    <p class="text-stone-600 dark:text-stone-400 leading-relaxed mb-6">
+                        Vladimir Soyfer has transformed the way common and complex dental issues are addressed by embracing the latest advances in dental technology. His practice reflects a commitment to innovation from digital imaging and 3D printing to state-of-the-art implant systems. Dr. Soyfer believes that oral health is integral to general health.
+                    </p>
+                    <p class="text-stone-600 dark:text-stone-400 leading-relaxed mb-8">
+                        Vladimir Soyfer specializes in complex restorations, esthetics, and dental implants. Dr. Vladimir Soyfer holds a Bachelor of Science degree from Ohio University and a Dentistry degree from the University of Pennsylvania. His clinical career began at the Georgetown University Department of Oral Surgery, which provided a solid foundation for his professional growth and experience. Vladimir Soyfer has published over 50 scientific papers on various aspects of oral surgery.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="javascript:void(0)" onclick="openBookingModal()"
+                            class="bg-brand-primary text-white px-6 py-3 rounded-full font-bold uppercase text-sm shadow-lg hover:bg-brand-primaryDark transition hover:-translate-y-1 hover:shadow-blue-200">
+                            Book with Dr. Soyfer
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- === 7. SERVICES GRID === -->
+    <section class="py-20 bg-brand-light dark:bg-dark-surface transition-colors" id="services">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-heading text-3xl md:text-4xl text-stone-800 dark:text-white uppercase">Lorton Dental Services</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Dental Implants -->
+                <div class="group relative h-72 rounded-3xl overflow-hidden cursor-pointer shadow-lg transform transition-all hover:-translate-y-2" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Dental Implants" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 group-hover:blur-[2px]">
+                    <div class="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/40 to-transparent opacity-80 group-hover:opacity-90 transition duration-300"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-8 flex flex-col items-start">
+                        <h3 class="font-heading text-white text-2xl uppercase tracking-wide">Dental Implants</h3>
+                        <p class="text-stone-300 text-sm mt-2">More about dental implants</p>
+                    </div>
+                </div>
+
+                <!-- Invisalign -->
+                <div class="group relative h-72 rounded-3xl overflow-hidden cursor-pointer shadow-lg transform transition-all hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Invisalign" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 group-hover:blur-[2px]">
+                    <div class="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/40 to-transparent opacity-80 group-hover:opacity-90 transition duration-300"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-8 flex flex-col items-start">
+                        <h3 class="font-heading text-white text-2xl uppercase tracking-wide">Invisalign</h3>
+                        <p class="text-stone-300 text-sm mt-2">More about invisalign</p>
+                    </div>
+                </div>
+
+                <!-- All-on-4 -->
+                <div class="group relative h-72 rounded-3xl overflow-hidden cursor-pointer shadow-lg transform transition-all hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="All-on-4" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 group-hover:blur-[2px]">
+                    <div class="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/40 to-transparent opacity-80 group-hover:opacity-90 transition duration-300"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-8 flex flex-col items-start">
+                        <h3 class="font-heading text-white text-2xl uppercase tracking-wide">All-on-4</h3>
+                        <p class="text-stone-300 text-sm mt-2">More about All-on-4</p>
+                    </div>
+                </div>
+
+                <!-- Dental Crowns -->
+                <div class="group relative h-72 rounded-3xl overflow-hidden cursor-pointer shadow-lg transform transition-all hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Dental Crowns" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 group-hover:blur-[2px]">
+                    <div class="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/40 to-transparent opacity-80 group-hover:opacity-90 transition duration-300"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-8 flex flex-col items-start">
+                        <h3 class="font-heading text-white text-2xl uppercase tracking-wide">Dental Crowns</h3>
+                        <p class="text-stone-300 text-sm mt-2">More about Dental Crowns</p>
+                    </div>
+                </div>
+
+                 <!-- Teeth Whitening -->
+                 <div class="group relative h-72 rounded-3xl overflow-hidden cursor-pointer shadow-lg transform transition-all hover:-translate-y-2" data-aos="fade-up" data-aos-delay="400">
+                    <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f72?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Teeth Whitening" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 group-hover:blur-[2px]">
+                    <div class="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/40 to-transparent opacity-80 group-hover:opacity-90 transition duration-300"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-8 flex flex-col items-start">
+                        <h3 class="font-heading text-white text-2xl uppercase tracking-wide">Teeth Whitening</h3>
+                        <p class="text-stone-300 text-sm mt-2">More about teeth whitening</p>
+                    </div>
+                </div>
+
+                <!-- Root Canal -->
+                <div class="group relative h-72 rounded-3xl overflow-hidden cursor-pointer shadow-lg transform transition-all hover:-translate-y-2" data-aos="fade-up" data-aos-delay="500">
+                    <img src="https://images.unsplash.com/photo-1571772996211-2f02c9727629?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Root Canal" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 group-hover:blur-[2px]">
+                    <div class="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/40 to-transparent opacity-80 group-hover:opacity-90 transition duration-300"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-8 flex flex-col items-start">
+                        <h3 class="font-heading text-white text-2xl uppercase tracking-wide">Root Canal</h3>
+                        <p class="text-stone-300 text-sm mt-2">More about root canal</p>
+                    </div>
+                </div>
+
+                <!-- Pediatric Dentistry -->
+                <div class="group relative h-72 rounded-3xl overflow-hidden cursor-pointer shadow-lg transform transition-all hover:-translate-y-2" data-aos="fade-up" data-aos-delay="600">
+                    <img src="https://images.unsplash.com/photo-1522075469751-3a3694c2dd81?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Pediatric Dentistry" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 group-hover:blur-[2px]">
+                    <div class="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/40 to-transparent opacity-80 group-hover:opacity-90 transition duration-300"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-8 flex flex-col items-start">
+                        <h3 class="font-heading text-white text-2xl uppercase tracking-wide">Pediatric Dentistry</h3>
+                        <p class="text-stone-300 text-sm mt-2">More about Pediatric Dentistry</p>
+                    </div>
+                </div>
+
+                <!-- Emergency Dentist -->
+                <div class="group relative h-72 rounded-3xl overflow-hidden cursor-pointer shadow-lg transform transition-all hover:-translate-y-2" data-aos="fade-up" data-aos-delay="700">
+                    <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Emergency Dentist" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 group-hover:blur-[2px]">
+                    <div class="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/40 to-transparent opacity-80 group-hover:opacity-90 transition duration-300"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-8 flex flex-col items-start">
+                        <h3 class="font-heading text-white text-2xl uppercase tracking-wide">Emergency Dentist</h3>
+                        <p class="text-stone-300 text-sm mt-2">More about emergency dentist</p>
+                    </div>
+                </div>
+
+                 <!-- Dental Fillings & Sealants (Combined for Grid) -->
+                 <div class="group relative h-72 rounded-3xl overflow-hidden cursor-pointer shadow-lg transform transition-all hover:-translate-y-2" data-aos="fade-up" data-aos-delay="800">
+                    <img src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Dental Fillings" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 group-hover:blur-[2px]">
+                    <div class="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/40 to-transparent opacity-80 group-hover:opacity-90 transition duration-300"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-8 flex flex-col items-start">
+                        <h3 class="font-heading text-white text-2xl uppercase tracking-wide">Fillings & Sealants</h3>
+                        <p class="text-stone-300 text-sm mt-2">More about dental fillings and sealants</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- === 8. REVIEWS === -->
+    <section id="reviews" class="py-24 bg-stone-50 dark:bg-dark-bg transition-colors relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12" data-aos="fade-down">
+                <h2 class="font-heading text-3xl md:text-4xl text-stone-800 dark:text-white uppercase">Our Patients Say</h2>
+                <div class="flex justify-center items-center mt-2 text-yellow-400 text-lg">
+                    <i class="fas fa-star animate-pulse"></i><i class="fas fa-star animate-pulse"
+                        style="animation-delay: 100ms"></i><i class="fas fa-star animate-pulse"
+                        style="animation-delay: 200ms"></i><i class="fas fa-star animate-pulse"
+                        style="animation-delay: 300ms"></i><i class="fas fa-star animate-pulse"
+                        style="animation-delay: 400ms"></i>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 max-w-5xl mx-auto">
+                <!-- Review 1 -->
+                <div class="bg-white dark:bg-dark-surface p-8 rounded-xl shadow-ios border border-stone-100 dark:border-stone-800"
+                    data-aos="fade-up">
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="w-12 h-12 bg-stone-200 rounded-full flex items-center justify-center text-stone-600 font-bold mr-3">
+                            R</div>
+                        <div>
+                            <h5 class="font-bold text-stone-800 dark:text-white text-lg">Roy C.</h5>
+                            <div class="text-yellow-400 text-xs"><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i></div>
+                        </div>
+                    </div>
+                    <p class="text-stone-600 dark:text-stone-300 italic leading-relaxed">
+                        "I cannot help but express my gratitude to Dr. Soyfer for his professionalism and sensitive attitude towards patients in the field of anesthesiology. During a complex dental treatment, I had to make a number of important decisions regarding pain relief. The doctor explained all possible options in detail and patiently and helped me choose the best one in my case. Thanks to him, the treatment was as comfortable and painless as possible, and the recommendations for recovery were very useful. He is an experienced doctor to whom you can safely trust your health. I recommend!"
+                    </p>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-white dark:bg-dark-surface p-8 rounded-xl shadow-ios border border-stone-100 dark:border-stone-800"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="w-12 h-12 bg-stone-200 rounded-full flex items-center justify-center text-stone-600 font-bold mr-3">
+                            L</div>
+                        <div>
+                            <h5 class="font-bold text-stone-800 dark:text-white text-lg">Lynda M.</h5>
+                            <div class="text-yellow-400 text-xs"><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i></div>
+                        </div>
+                    </div>
+                    <p class="text-stone-600 dark:text-stone-300 italic leading-relaxed">
+                        "I would also like to share a positive experience of visiting Dr. Soyfer with my son. My child had an acute toothache due to caries, and I was worried about how he would cope with the treatment. Dr. Soyfer showed amazing kindness and understanding towards my son. He explained all the stages of the procedure in an accessible way and tried to make it as painless as possible. My son was delighted with the toys in the clinic and with the doctor’s approach. The treatment was successful, and now the child is not afraid of dentists. Thank you for your wonderful attitude!"
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- === 9. QUICK CONTACT FORM === -->
+    <section class="py-16 bg-brand-primary relative overflow-hidden text-white" id="contact">
+        <div class="absolute inset-0 bg-gradient-to-r from-brand-primaryDark to-brand-primary"></div>
+        <div class="max-w-4xl mx-auto px-4 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+            <div class="md:w-1/2">
+                <h3 class="font-heading text-3xl uppercase font-bold mb-2">Want to schedule an appointment?</h3>
+                <p class="text-brand-light/90">7772 Grandwind Dr Lorton, VA 22079<br>571-541-7977</p>
+            </div>
+            <form id="quick-contact-form" class="md:w-1/2 w-full flex flex-col gap-2"
+                onsubmit="handleQuickContact(event)">
+                <div class="flex flex-col sm:flex-row gap-2">
+                    <input type="text" placeholder="Name *" class="flex-1 px-4 py-3 rounded-lg text-stone-800 focus:outline-none" required>
+                    <input type="tel" id="contact-phone" placeholder="Phone *"
+                        class="flex-1 px-4 py-3 rounded-lg text-stone-800 focus:outline-none focus:ring-4 focus:ring-brand-gold/50 shadow-lg transition-all"
+                        required>
+                </div>
+                 <!-- CAPTCHA Placeholder -->
+                 <div class="bg-white/20 p-2 rounded text-xs text-center cursor-pointer hover:bg-white/30 transition">
+                    Please prove you are human by selecting the flag <i class="far fa-flag ml-1"></i>
+                </div>
+                <button type="submit"
+                    class="bg-brand-gold hover:bg-yellow-600 text-white font-heading uppercase tracking-widest font-bold py-3 px-6 rounded-lg shadow-lg transition-colors whitespace-nowrap active:scale-95">
+                    Submit
+                </button>
+                <div id="form-success-msg"
+                    class="hidden bg-green-500/20 border border-green-400 text-green-100 px-4 py-2 rounded-lg text-sm font-bold text-center mt-2 flex items-center justify-center">
+                    <i class="fas fa-check-circle mr-2"></i> Request sent! We'll call you shortly.
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- === 11. MAP SECTION === -->
+    <section
+        class="w-full h-96 relative z-10 bg-stone-100 dark:bg-dark-surface border-t border-b border-stone-200 dark:border-stone-800 transition-colors">
+        <iframe
+            src="https://maps.google.com/maps?q=7772%20Grandwind%20Dr%20Lorton%2C%20VA%2022079&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            width="100%" height="100%"
+            style="border:0; filter: grayscale(20%) contrast(1.2) invert(var(--tw-dark-mode-invert, 0));"
+            allowfullscreen="" loading="lazy" title="Lorton Dentist Location"
+            class="dark:opacity-80">
+        </iframe>
+    </section>
+
+    <!-- === 12. FOOTER === -->
+    <footer
+        class="bg-stone-900 dark:bg-black text-white pt-20 pb-10 border-t-4 border-brand-gold relative overflow-hidden transition-colors">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 pt-4 text-center md:text-left">
+                <div>
+                    <div class="flex items-center justify-center md:justify-start mb-6">
+                        <div
+                            class="w-10 h-10 bg-brand-gold rounded-xl flex items-center justify-center text-white mr-3 shadow-[0_0_15px_rgba(197,169,134,0.5)]">
+                            <i class="fas fa-tooth"></i>
+                        </div>
+                        <span class="font-heading text-xl uppercase tracking-wider">Lorton Dentist</span>
+                    </div>
+                    <p class="text-stone-400 dark:text-stone-500 mb-4">Affordable Dental Care for the whole family.</p>
+                    <div class="text-stone-400 text-sm">
+                        <p class="mb-1">Dr. Vladimir Soyfer DMD</p>
+                        <p>svvdmd@gmail.com</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-heading text-lg uppercase text-brand-gold mb-6">Contacts</h4>
+                    <p class="text-stone-400 dark:text-stone-500 mb-2 hover:text-white transition cursor-pointer"><i
+                            class="fas fa-map-pin mr-2 text-stone-600"></i> 7772 Grandwind Dr Lorton, VA 22079</p>
+                    <a href="tel:5715417977"
+                        class="text-xl font-bold text-white hover:text-brand-primary transition block mb-6"><i
+                            class="fas fa-phone mr-2 text-brand-primary"></i> 571-541-7977</a>
+                    <h4 class="font-heading text-sm uppercase text-brand-gold mb-3 mt-4">Opening Hours</h4>
+                    <p class="text-stone-400 text-sm">Mo-Fr 8:00 am - 5:00 pm</p>
+                    <p class="text-stone-400 text-sm">Sa 9:30 am - 3:00 pm</p>
+                </div>
+
+                <div class="md:text-right">
+                    <h4 class="font-heading text-lg uppercase text-brand-gold mb-6">Services</h4>
+                    <ul class="text-stone-400 text-sm space-y-2">
+                        <li>Emergency Dentist</li>
+                        <li>Pediatric Dentistry</li>
+                        <li>Root Canal</li>
+                        <li>Teeth Whitening</li>
+                        <li>Dental Implants</li>
+                        <li>Invisalign</li>
+                    </ul>
+                    <a href="#"
+                        class="inline-block p-4 border border-stone-700 rounded-full hover:bg-brand-gold hover:border-brand-gold hover:text-white transition-all group mt-8"
+                        onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                        <i class="fas fa-arrow-up group-hover:-translate-y-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="text-center text-stone-600 text-sm mt-12 border-t border-stone-800 pt-8">
+                &copy; 2025 Dentist Lorton VA.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="main.js"></script>
+    <!-- === BOOKING MODAL === -->
+    <div id="booking-modal" class="fixed inset-0 z-[100] hidden overflow-y-auto" aria-labelledby="modal-title"
+        role="dialog" aria-modal="true">
+        <!-- Backdrop -->
+        <div class="fixed inset-0 bg-stone-900/60 backdrop-blur-md transition-opacity" id="modal-backdrop"></div>
+
+        <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
+            <div class="relative transform overflow-hidden rounded-[2.5rem] bg-white dark:bg-dark-surface text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-xl scale-95 opacity-0 duration-300"
+                id="modal-content">
+                <!-- Close Button -->
+                <button type="button"
+                    class="absolute right-6 top-6 text-stone-400 hover:text-stone-900 dark:hover:text-white transition-colors z-10"
+                    id="close-modal">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+
+                <div class="px-8 pt-10 pb-12">
+                    <div class="text-center mb-8">
+                        <div
+                            class="w-16 h-16 bg-brand-gold/10 rounded-2xl flex items-center justify-center text-brand-gold mx-auto mb-4">
+                            <i class="fas fa-calendar-alt text-2xl"></i>
+                        </div>
+                        <h2 class="font-heading text-3xl uppercase font-bold text-stone-800 dark:text-white"
+                            id="modal-title">Book an Appointment</h2>
+                        <p class="text-stone-500 dark:text-stone-400 mt-2">Lorton Dentist VA - Dr. Vladimir Soyfer</p>
+                    </div>
+
+                    <form id="modal-booking-form" class="space-y-5">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label for="modal-name"
+                                    class="block text-xs font-bold uppercase tracking-widest text-stone-500 dark:text-stone-400 mb-2">Name</label>
+                                <input type="text" id="modal-name" required
+                                    class="w-full px-4 py-3 rounded-xl border border-stone-200 dark:border-stone-800 dark:bg-dark-bg dark:text-white focus:ring-2 focus:ring-brand-gold focus:border-transparent transition-all outline-none"
+                                    placeholder="Your Name">
+                            </div>
+                            <div>
+                                <label for="modal-phone"
+                                    class="block text-xs font-bold uppercase tracking-widest text-stone-500 dark:text-stone-400 mb-2">Phone</label>
+                                <input type="tel" id="modal-phone" required
+                                    class="w-full px-4 py-3 rounded-xl border border-stone-200 dark:border-stone-800 dark:bg-dark-bg dark:text-white focus:ring-2 focus:ring-brand-gold focus:border-transparent transition-all outline-none"
+                                    placeholder="571-541-7977">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="modal-service"
+                                class="block text-xs font-bold uppercase tracking-widest text-stone-500 dark:text-stone-400 mb-2">Service</label>
+                            <select id="modal-service"
+                                class="w-full px-4 py-3 rounded-xl border border-stone-200 dark:border-stone-800 dark:bg-dark-bg dark:text-white focus:ring-2 focus:ring-brand-gold focus:border-transparent transition-all outline-none appearance-none">
+                                <option value="general">General Dentistry</option>
+                                <option value="implants">Dental Implants</option>
+                                <option value="invisalign">Invisalign</option>
+                                <option value="emergency">Emergency Dentist</option>
+                                <option value="cosmetic">Cosmetic / Whitening</option>
+                                <option value="pediatric">Pediatric Dentistry</option>
+                            </select>
+                        </div>
+                        <button type="submit"
+                            class="w-full py-4 bg-stone-900 text-white rounded-xl font-bold uppercase tracking-widest hover:bg-brand-primary transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                            Submit Request
+                        </button>
+                    </form>
+
+                    <!-- Success Message (Hidden) -->
+                    <div id="modal-success" class="hidden text-center py-10 animate-fade-in">
+                        <div
+                            class="w-20 h-20 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-full flex items-center justify-center text-4xl mx-auto mb-6">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <h3 class="font-heading text-2xl uppercase font-bold text-stone-800 dark:text-white mb-2">
+                            Request Received!</h3>
+                        <p class="text-stone-500 dark:text-stone-400">We'll call you shortly to confirm.</p>
+                        <button type="button"
+                            class="mt-8 text-brand-gold font-bold uppercase tracking-widest hover:text-brand-primary transition-colors"
+                            onclick="closeBookingModal()">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- === FIXED MOBILE ACTION BAR === -->
+    <div
+        class="md:hidden fixed bottom-0 left-0 w-full bg-white/95 dark:bg-dark-surface/95 backdrop-blur-xl border-t border-gray-200 dark:border-stone-800 z-50 px-4 py-3 shadow-[0_-5px_20px_rgba(0,0,0,0.1)] flex justify-between items-center pb-safe transition-colors">
+        <a href="tel:5715417977"
+            class="flex flex-col items-center text-stone-600 dark:text-stone-300 hover:text-brand-primary active:scale-95 transition">
+            <div
+                class="w-10 h-10 rounded-full bg-stone-100 dark:bg-dark-bg flex items-center justify-center mb-1 text-lg">
+                <i class="fas fa-phone-alt"></i>
+            </div>
+            <span class="text-[10px] uppercase font-bold tracking-wider">Call</span>
+        </a>
+
+        <a href="javascript:void(0)" onclick="openBookingModal()"
+            class="flex-1 mx-4 bg-brand-gold text-white rounded-full h-12 flex items-center justify-center font-bold uppercase text-xs tracking-widest shadow-lg active:scale-95 transition-transform">
+            Book Now
+        </a>
+
+        <a href="https://maps.google.com/maps?q=7772%20Grandwind%20Dr%20Lorton%2C%20VA%2022079" target="_blank"
+            class="flex flex-col items-center text-stone-600 dark:text-stone-300 hover:text-brand-primary active:scale-95 transition">
+            <div
+                class="w-10 h-10 rounded-full bg-stone-100 dark:bg-dark-bg flex items-center justify-center mb-1 text-lg">
+                <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <span class="text-[10px] uppercase font-bold tracking-wider">Map</span>
+        </a>
+    </div>
+
+    <style>
+        @media (max-width: 768px) {
+            body {
+                padding-bottom: 80px;
+            }
+        }
+        .pb-safe {
+            padding-bottom: env(safe-area-inset-bottom, 20px);
+        }
+    </style>
+</body>
+
+</html>

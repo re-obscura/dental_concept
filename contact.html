@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Lorton Dentist VA</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Inter & Oswald -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Oswald:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Config -->
+    <script src="tailwind.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body
+    class="bg-brand-light dark:bg-dark-bg text-brand-text dark:text-dark-text font-sans antialiased overflow-x-hidden selection:bg-brand-gold selection:text-white relative transition-colors duration-500">
+
+    <!-- Decorative Background Blobs -->
+    <div class="blob-bg w-96 h-96 bg-brand-beige dark:bg-brand-gold/10 top-0 left-0 animate-blob"></div>
+    <div
+        class="blob-bg w-96 h-96 bg-blue-100 dark:bg-brand-primary/10 top-[20%] right-0 animate-blob animation-delay-2000">
+    </div>
+
+    <!-- === 0. FLOATING ACTION BUTTON (Desktop & Mobile) === -->
+    <a href="javascript:void(0)" onclick="openBookingModal()"
+        class="hidden md:flex fixed bottom-10 right-10 z-50 bg-brand-gold hover:bg-brand-goldDark text-white w-16 h-16 rounded-full shadow-2xl items-center justify-center transition-all hover:scale-110 hover:rotate-12 animate-float group border-4 border-white">
+        <i class="fas fa-calendar-check text-2xl group-hover:animate-pulse"></i>
+        <span
+            class="absolute right-full mr-4 bg-stone-800 text-white text-xs font-bold px-3 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+            Book Now
+        </span>
+    </a>
+
+    <!-- === 1. TOP BAR (Address & Contacts) === -->
+    <div
+        class="bg-brand-beige dark:bg-dark-surface text-xs py-2 hidden md:block border-b border-brand-gold/20 relative z-40 transition-colors">
+        <div
+            class="max-w-7xl mx-auto px-4 flex justify-between items-center text-stone-700 dark:text-stone-300 font-medium">
+            <div class="flex space-x-6">
+                <span class="flex items-center hover:text-brand-primary cursor-pointer transition"><i
+                        class="fas fa-map-marker-alt text-brand-gold mr-2"></i>7772 Grandwind Dr Lorton, VA 22079</span>
+            </div>
+            <div class="flex space-x-6 items-center">
+                <a href="tel:5715417977"
+                    class="flex items-center font-bold hover:text-brand-primary transition text-stone-800 dark:text-white"><i
+                        class="fas fa-phone-alt mr-2"></i>571-541-7977</a>
+                <a href="tel:5715417977"
+                    class="flex items-center bg-white dark:bg-brand-gold/10 px-3 py-1 rounded-full shadow-sm hover:shadow-md transition text-brand-primaryDark dark:text-brand-gold font-medium hover:scale-105 transform"><i
+                        class="fas fa-phone mr-2"></i>Call us today!</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- === 2. NAVIGATION (Sticky Header) === -->
+    <header class="fixed top-0 w-full z-50 glass-nav transition-all duration-300 h-24 flex items-center" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="flex justify-between items-center w-full">
+
+                <!-- Logo Area -->
+                <a href="index.html" class="flex items-center flex-shrink-0 group cursor-pointer">
+                    <div id="logo-icon"
+                        class="w-12 h-12 bg-gradient-to-br from-brand-primary to-brand-accent rounded-2xl flex items-center justify-center text-white mr-3 shadow-lg group-hover:rotate-12 transition-all duration-500">
+                        <i class="fas fa-tooth fa-lg"></i>
+                    </div>
+                    <div class="flex flex-col transition-all duration-300 origin-left" id="logo-text">
+                        <span
+                            class="font-heading text-xl md:text-2xl font-bold tracking-wide uppercase text-stone-800 dark:text-white leading-none">Dentist</span>
+                        <span
+                            class="text-[10px] md:text-xs tracking-[0.2em] text-stone-500 dark:text-stone-400 uppercase mt-1">in
+                            Lorton VA</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden lg:flex space-x-1 items-center font-heading text-sm uppercase tracking-wide">
+                    <!-- Theme Toggle -->
+                    <button onclick="toggleTheme()"
+                        class="p-2 mr-4 text-stone-600 dark:text-stone-300 hover:text-brand-gold transition-colors focus:outline-none"
+                        aria-label="Toggle Theme">
+                        <i class="fas fa-moon theme-icon text-lg"></i>
+                    </button>
+
+                    <a href="index.html"
+                        class="px-4 py-2 text-stone-700 dark:text-stone-300 hover:text-brand-primary transition-colors font-medium relative group/link">
+                        Home
+                        <span
+                            class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-brand-gold transition-all duration-300 group-hover/link:w-1/2 group-hover/link:left-1/4"></span>
+                    </a>
+                    <div class="relative group h-full flex items-center">
+                        <a href="index.html#services"
+                            class="px-4 py-2 text-stone-700 dark:text-stone-300 hover:text-brand-primary transition-colors font-medium flex items-center h-full">
+                            Services <i
+                                class="fas fa-chevron-down ml-1 text-[10px] opacity-50 group-hover:rotate-180 transition-transform"></i>
+                            <span
+                                class="absolute bottom-6 left-1/2 w-0 h-0.5 bg-brand-gold transition-all duration-300 group-hover:w-1/2 group-hover:left-1/4"></span>
+                        </a>
+
+                        <!-- Main Dropdown (Mega Menu) -->
+                        <div
+                            class="absolute left-1/2 -translate-x-1/2 top-full pt-4 w-[800px] hidden group-hover:block px-4">
+                            <div
+                                class="dropdown-menu bg-white dark:bg-stone-900 rounded-xl p-6 shadow-2xl grid grid-cols-3 gap-8">
+
+                                <!-- Column 1: Restorative -->
+                                <div>
+                                    <h4
+                                        class="font-heading text-lg text-brand-gold uppercase mb-4 border-b border-stone-100 dark:border-stone-800 pb-2">
+                                        Restorative</h4>
+                                    <div class="flex flex-col space-y-2">
+                                        <a href="dental-implants.html"
+                                            class="text-sm text-stone-600 dark:text-stone-300 hover:text-brand-primary dark:hover:text-white transition-colors">Dental
+                                            Implants</a>
+                                        <a href="all-on-4-implants.html"
+                                            class="text-sm text-stone-600 dark:text-stone-300 hover:text-brand-primary dark:hover:text-white transition-colors">All-on-4
+                                            Implants</a>
+                                        <a href="dental-crowns.html"
+                                            class="text-sm text-stone-600 dark:text-stone-300 hover:text-brand-primary dark:hover:text-white transition-colors">Dental
+                                            Crowns</a>
+                                        <a href="dental-bridges.html"
+                                            class="text-sm text-stone-600 dark:text-stone-300 hover:text-brand-primary dark:hover:text-white transition-colors">Dental
+                                            Bridges</a>
+                                        <a href="dentures.html"
+                                            class="text-sm text-stone-600 dark:text-stone-300 hover:text-brand-primary dark:hover:text-white transition-colors">Dentures</a>
+                                        <a href="root-canal.html"
+                                            class="text-sm text-stone-600 dark:text-stone-300 hover:text-brand-primary dark:hover:text-white transition-colors">Root
+                                            Canal</a>
+                                        <a href="dental-fillings.html"
+                                            class="text-sm text-stone-600 dark:text-stone-300 hover:text-brand-primary dark:hover:text-white transition-colors">Dental
+                                            Fillings</a>
+                                    </div>
+                                </div>
+
+                                <!-- Column 2: Cosmetic -->
+                                <div>
+                                    <h4
+                                        class="font-heading text-lg text-brand-gold uppercase mb-4 border-b border-stone-100 dark:border-stone-800 pb-2">
+                                        Cosmetic</h4>
+                                    <div class="flex flex-col space-y-2">
+                                        <a href="invisalign.html"
+                                            class="text-sm text-stone-600 dark:text-stone-300 hover:text-brand-primary dark:hover:text-white transition-colors">Invisalign</a>
+                                        <a href="teeth-whitening.html"
+                                            class="text-sm text-stone-600 dark:text-stone-300 hover:text-brand-primary dark:hover:text-white transition-colors">Teeth
+                                            Whitening</a>
+                                        <a href="dental-sealants.html"
+                                            class="text-sm text-stone-600 dark:text-stone-300 hover:text-brand-primary dark:hover:text-white transition-colors">Dental
+                                            Sealants</a>
+                                        <a href="dental-bonding.html"
+                                            class="text-sm text-stone-600 dark:text-stone-300 hover:text-brand-primary dark:hover:text-white transition-colors">Dental
+                                            Bonding</a>
+                                        <a href="porcelain-veneers.html"
+                                            class="text-sm text-stone-600 dark:text-stone-300 hover:text-brand-primary dark:hover:text-white transition-colors">Porcelain
+                                            Veneers</a>
+                                        <a href="braces.html"
+                                            class="text-sm text-stone-600 dark:text-stone-300 hover:text-brand-primary dark:hover:text-white transition-colors">Braces</a>
+                                        <a href="gum-graft.html"
+                                            class="text-sm text-stone-600 dark:text-stone-300 hover:text-brand-primary dark:hover:text-white transition-colors">Gum
+                                            Graft</a>
+                                    </div>
+                                </div>
+
+                                <!-- Column 3: General & Other -->
+                                <div>
+                                    <h4
+                                        class="font-heading text-lg text-brand-gold uppercase mb-4 border-b border-stone-100 dark:border-stone-800 pb-2">
+                                        General Care</h4>
+                                    <div class="flex flex-col space-y-2">
+                                        <a href="pediatric-dentistry.html"
+                                            class="text-sm text-stone-600 dark:text-stone-300 hover:text-brand-primary dark:hover:text-white transition-colors">Pediatric
+                                            Dentistry</a>
+                                        <a href="emergency-dentist.html"
+                                            class="text-sm text-stone-600 dark:text-stone-300 hover:text-brand-primary dark:hover:text-white transition-colors">Emergency
+                                            Dentist</a>
+                                        <a href="dental-x-rays.html"
+                                            class="text-sm text-stone-600 dark:text-stone-300 hover:text-brand-primary dark:hover:text-white transition-colors">Dental
+                                            X-Rays</a>
+                                        <a href="tooth-extraction.html"
+                                            class="text-sm text-stone-600 dark:text-stone-300 hover:text-brand-primary dark:hover:text-white transition-colors">Tooth
+                                            Extraction</a>
+                                        <a href="sedation-dentistry.html"
+                                            class="text-sm text-stone-600 dark:text-stone-300 hover:text-brand-primary dark:hover:text-white transition-colors">Sedation
+                                            Dentistry</a>
+                                        <a href="tmj-therapy.html"
+                                            class="text-sm text-stone-600 dark:text-stone-300 hover:text-brand-primary dark:hover:text-white transition-colors">TMJ
+                                            Therapy</a>
+                                        <a href="treatment-for-bruxism.html"
+                                            class="text-sm text-stone-600 dark:text-stone-300 hover:text-brand-primary dark:hover:text-white transition-colors">Treatment
+                                            for Bruxism</a>
+                                        <a href="sleep-apnea-treatment.html"
+                                            class="text-sm text-stone-600 dark:text-stone-300 hover:text-brand-primary dark:hover:text-white transition-colors">Sleep
+                                            Apnea Treatment</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="index.html#blog"
+                        class="px-4 py-2 text-stone-700 dark:text-stone-300 hover:text-brand-primary transition-colors font-medium relative group/link">
+                        Blog
+                        <span
+                            class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-brand-gold transition-all duration-300 group-hover/link:w-1/2 group-hover/link:left-1/4"></span>
+                    </a>
+
+                    <a href="#"
+                        class="px-4 py-2 text-brand-primary dark:text-white font-bold transition-colors relative group/link">
+                        Contacts
+                        <span class="absolute bottom-0 left-1/4 w-1/2 h-0.5 bg-brand-gold"></span>
+                    </a>
+
+                    <a href="javascript:void(0)" onclick="openBookingModal()"
+                        class="ml-6 px-6 py-2.5 bg-stone-900 text-white rounded-full shadow-lg hover:bg-brand-primary hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 flex items-center text-xs font-bold tracking-widest overflow-hidden relative group">
+                        <span
+                            class="absolute w-0 h-full bg-white/20 left-0 top-0 transition-all duration-300 group-hover:w-full"></span>
+                        <span class="relative z-10">Make Appointment</span>
+                    </a>
+                </nav>
+
+                <!-- Mobile Button -->
+                <div class="lg:hidden flex items-center gap-4">
+                    <button onclick="toggleTheme()"
+                        class="p-2 text-stone-600 dark:text-stone-300 hover:text-brand-gold transition-colors focus:outline-none"
+                        aria-label="Toggle Theme">
+                        <i class="fas fa-moon theme-icon text-lg"></i>
+                    </button>
+                    <button id="mobile-btn"
+                        class="text-stone-700 dark:text-stone-300 hover:text-brand-primary p-2 focus:outline-none transition-transform active:scale-95">
+                        <i class="fas fa-bars fa-2x"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu"
+            class="hidden absolute top-full left-0 w-full bg-white dark:bg-dark-surface backdrop-blur-xl border-t border-gray-100 dark:border-stone-800 shadow-xl py-6 flex-col items-center space-y-6 lg:hidden h-screen transition-all z-40">
+            <a href="index.html"
+                class="text-xl font-heading uppercase text-stone-700 dark:text-stone-300 hover:text-brand-primary"
+                onclick="closeMenu()">Home</a>
+            <!-- Mobile Accordion for Services -->
+            <details class="w-full max-w-xs text-center group">
+                <summary
+                    class="text-xl font-heading uppercase text-stone-700 dark:text-stone-300 hover:text-brand-primary list-none cursor-pointer select-none">
+                    Services <i
+                        class="fas fa-chevron-down ml-2 text-sm opacity-50 transition-transform group-open:rotate-180"></i>
+                </summary>
+
+                <div class="flex flex-col space-y-3 mt-4 text-base overflow-y-auto max-h-[50vh] px-4">
+
+                    <!-- Restorative Submenu -->
+                    <details class="w-full group/sub">
+                        <summary class="font-bold text-stone-600 dark:text-stone-400 cursor-pointer list-none py-1">
+                            Restorative <i
+                                class="fas fa-chevron-down ml-1 text-xs opacity-50 group-open/sub:rotate-180"></i>
+                        </summary>
+                        <div
+                            class="flex flex-col space-y-2 mt-2 mb-4 pl-4 border-l border-stone-200 dark:border-stone-700">
+                            <a href="dental-implants.html" onclick="closeMenu()"
+                                class="text-stone-500 hover:text-brand-primary">Dental
+                                Implants</a>
+                            <a href="all-on-4-implants.html" onclick="closeMenu()"
+                                class="text-stone-500 hover:text-brand-primary">All-on-4</a>
+                            <a href="dental-crowns.html" onclick="closeMenu()"
+                                class="text-stone-500 hover:text-brand-primary">Dental
+                                Crowns</a>
+                            <a href="dental-bridges.html" onclick="closeMenu()"
+                                class="text-stone-500 hover:text-brand-primary">Dental
+                                Bridges</a>
+                            <a href="dentures.html" onclick="closeMenu()"
+                                class="text-stone-500 hover:text-brand-primary">Dentures</a>
+                        </div>
+                    </details>
+
+                    <!-- Cosmetic Submenu -->
+                    <details class="w-full group/sub">
+                        <summary class="font-bold text-stone-600 dark:text-stone-400 cursor-pointer list-none py-1">
+                            Cosmetic <i
+                                class="fas fa-chevron-down ml-1 text-xs opacity-50 group-open/sub:rotate-180"></i>
+                        </summary>
+                        <div
+                            class="flex flex-col space-y-2 mt-2 mb-4 pl-4 border-l border-stone-200 dark:border-stone-700">
+                            <a href="invisalign.html" onclick="closeMenu()"
+                                class="text-stone-500 hover:text-brand-primary">Invisalign</a>
+                            <a href="teeth-whitening.html" onclick="closeMenu()"
+                                class="text-stone-500 hover:text-brand-primary">Teeth
+                                Whitening</a>
+                            <a href="dental-sealants.html" onclick="closeMenu()"
+                                class="text-stone-500 hover:text-brand-primary">Dental
+                                Sealants</a>
+                            <a href="dental-bonding.html" onclick="closeMenu()"
+                                class="text-stone-500 hover:text-brand-primary">Dental
+                                Bonding</a>
+                            <a href="porcelain-veneers.html" onclick="closeMenu()"
+                                class="text-stone-500 hover:text-brand-primary">Veneers</a>
+                            <a href="braces.html" onclick="closeMenu()"
+                                class="text-stone-500 hover:text-brand-primary">Braces</a>
+                            <a href="gum-graft.html" onclick="closeMenu()"
+                                class="text-stone-500 hover:text-brand-primary">Gum
+                                Graft</a>
+                        </div>
+                    </details>
+
+                    <!-- Other Links -->
+                    <a href="root-canal.html" onclick="closeMenu()" class="text-stone-600 hover:text-brand-primary">Root
+                        Canal</a>
+                    <a href="pediatric-dentistry.html" onclick="closeMenu()"
+                        class="text-stone-600 hover:text-brand-primary">Pediatric
+                        Dentistry</a>
+                    <a href="emergency-dentist.html" onclick="closeMenu()"
+                        class="text-stone-600 hover:text-brand-primary">Emergency
+                        Dentist</a>
+                    <a href="dental-fillings.html" onclick="closeMenu()"
+                        class="text-stone-600 hover:text-brand-primary">Dental
+                        Fillings</a>
+                    <a href="dental-x-rays.html" onclick="closeMenu()"
+                        class="text-stone-600 hover:text-brand-primary">Dental X-Rays</a>
+                    <a href="tooth-extraction.html" onclick="closeMenu()"
+                        class="text-stone-600 hover:text-brand-primary">Tooth
+                        Extraction</a>
+                    <a href="sedation-dentistry.html" onclick="closeMenu()"
+                        class="text-stone-600 hover:text-brand-primary">Sedation
+                        Dentistry</a>
+                    <a href="tmj-therapy.html" onclick="closeMenu()" class="text-stone-600 hover:text-brand-primary">TMJ
+                        Therapy</a>
+                    <a href="treatment-for-bruxism.html" onclick="closeMenu()"
+                        class="text-stone-600 hover:text-brand-primary">Treatment for
+                        Bruxism</a>
+                    <a href="sleep-apnea-treatment.html" onclick="closeMenu()"
+                        class="text-stone-600 hover:text-brand-primary">Sleep Apnea
+                        Treatment</a>
+                </div>
+            </details>
+            <a href="index.html#blog"
+                class="text-xl font-heading uppercase text-stone-700 dark:text-stone-300 hover:text-brand-primary"
+                onclick="closeMenu()">Blog</a>
+            <a href="#" class="text-xl font-heading uppercase text-brand-primary dark:text-white font-bold"
+                onclick="closeMenu()">Contacts</a>
+            <a href="javascript:void(0)"
+                class="w-3/4 text-center px-8 py-4 bg-brand-primary text-white rounded-xl font-bold shadow-md"
+                onclick="closeMenu(); openBookingModal();">Make Appointment</a>
+        </div>
+    </header>
+
+    <!-- === MAIN CONTENT === -->
+    <main class="pt-32 pb-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="font-heading text-4xl md:text-5xl text-stone-900 dark:text-white mb-10 text-center uppercase"
+                data-aos="fade-down">
+                Contact Information
+            </h1>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Left Column: Info -->
+                <div class="space-y-8 text-stone-700 dark:text-stone-300" data-aos="fade-right">
+                    <p class="text-lg leading-relaxed">
+                        Do you have any questions about our services? Use the feedback form to send us an email. We will
+                        do
+                        our best to respond as quickly as possible.
+                    </p>
+
+                    <div class="bg-red-50 dark:bg-red-900/10 border-l-4 border-red-500 p-4">
+                        <p class="font-bold text-red-600 dark:text-red-400">
+                            In case of emergency dental care, please contact us by phone immediately. We always strive
+                            to
+                            provide the opportunity to see you on the day of your request.
+                        </p>
+                    </div>
+
+                    <h2 class="font-heading text-2xl text-brand-primary dark:text-brand-gold uppercase">Consult the
+                        experts</h2>
+
+                    <div>
+                        <h3 class="font-bold text-xl mb-2 text-stone-900 dark:text-white">Lorton Dentist Contact
+                            Information</h3>
+                        <p class="leading-relaxed">The Lorton Dentist dental clinic offers a full range of services to
+                            improve the health and
+                            aesthetics of your smile.</p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-lg mb-3 text-stone-900 dark:text-white">To make an appointment:</h4>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Call the phone number listed.</li>
+                            <li>Leave your contact information and you will be called back to agree on the details of
+                                the
+                                visit and confirm it.</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-lg mb-2 text-stone-900 dark:text-white">For business proposals and
+                            financial questions:</h4>
+                        <p>Contact the Lorton Dentist clinic at <a href="tel:5715417977"
+                                class="text-brand-primary font-bold hover:underline">571-541-7977</a>.</p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-lg mb-3 text-stone-900 dark:text-white">Opening Hours:</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-center"><span
+                                    class="font-bold w-20 inline-block text-brand-gold">Mo-Fr</span> 8:00 am – 5:00 pm
+                            </li>
+                            <li class="flex items-center"><span
+                                    class="font-bold w-20 inline-block text-brand-gold">Sa</span> 9:30 am – 3:00 pm</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-stone-100 dark:bg-stone-800 p-8 rounded-2xl shadow-inner mt-8">
+                        <h4 class="font-bold text-lg mb-4 text-stone-900 dark:text-white">Want to schedule an
+                            appointment?</h4>
+                        <p class="mb-1"><i class="fas fa-map-marker-alt text-brand-primary mr-2"></i> 7772 Grandwind Dr
+                            Lorton, VA 22079</p>
+                        <p class="text-2xl font-bold text-brand-primary dark:text-brand-gold mt-2 mb-6"><i
+                                class="fas fa-phone-alt mr-2"></i> 571-541-7977</p>
+                        <a href="tel:5715417977"
+                            class="px-8 py-3 bg-brand-gold text-white rounded-full inline-block font-bold uppercase text-sm shadow-md hover:bg-brand-goldDark transition hover:-translate-y-1">
+                            Contact Us Today!
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column: Form -->
+                <div class="bg-white dark:bg-dark-surface p-8 md:p-10 rounded-[2rem] shadow-2xl border border-stone-100 dark:border-stone-800 relative overflow-hidden"
+                    data-aos="fade-left">
+                    <!-- Decorative circle -->
+                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-brand-gold/10 rounded-full blur-2xl"></div>
+
+                    <h3
+                        class="font-heading text-2xl mb-8 uppercase font-bold text-stone-800 dark:text-white relative z-10">
+                        Send us a message</h3>
+                    <form class="space-y-6 relative z-10">
+                        <div>
+                            <label
+                                class="block text-xs font-bold uppercase tracking-widest mb-2 text-stone-500 dark:text-stone-400">Name
+                                *</label>
+                            <input type="text"
+                                class="w-full px-4 py-3 rounded-xl border border-stone-200 dark:border-stone-700 bg-stone-50 dark:bg-dark-bg text-stone-800 dark:text-white focus:ring-2 focus:ring-brand-gold outline-none transition-all focus:bg-white dark:focus:bg-dark-surface"
+                                placeholder="Your Name" required>
+                        </div>
+                        <div>
+                            <label
+                                class="block text-xs font-bold uppercase tracking-widest mb-2 text-stone-500 dark:text-stone-400">Phone
+                                *</label>
+                            <input type="tel"
+                                class="w-full px-4 py-3 rounded-xl border border-stone-200 dark:border-stone-700 bg-stone-50 dark:bg-dark-bg text-stone-800 dark:text-white focus:ring-2 focus:ring-brand-gold outline-none transition-all focus:bg-white dark:focus:bg-dark-surface"
+                                placeholder="Your Phone" required>
+                        </div>
+                        <div>
+                            <label
+                                class="block text-xs font-bold uppercase tracking-widest mb-2 text-stone-500 dark:text-stone-400">Please
+                                prove you are
+                                human by selecting the flag:</label>
+                            <div class="flex gap-6 mt-3">
+                                <label class="cursor-pointer group">
+                                    <input type="radio" name="captcha" value="flag" class="peer sr-only">
+                                    <div
+                                        class="w-12 h-12 flex items-center justify-center bg-stone-100 dark:bg-dark-bg rounded-lg peer-checked:bg-brand-primary peer-checked:text-white text-stone-400 text-xl transition-all group-hover:scale-110">
+                                        <i class="fas fa-flag"></i>
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer group">
+                                    <input type="radio" name="captcha" value="car" class="peer sr-only">
+                                    <div
+                                        class="w-12 h-12 flex items-center justify-center bg-stone-100 dark:bg-dark-bg rounded-lg peer-checked:bg-brand-primary peer-checked:text-white text-stone-400 text-xl transition-all group-hover:scale-110">
+                                        <i class="fas fa-car"></i>
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer group">
+                                    <input type="radio" name="captcha" value="tree" class="peer sr-only">
+                                    <div
+                                        class="w-12 h-12 flex items-center justify-center bg-stone-100 dark:bg-dark-bg rounded-lg peer-checked:bg-brand-primary peer-checked:text-white text-stone-400 text-xl transition-all group-hover:scale-110">
+                                        <i class="fas fa-tree"></i>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <button
+                            class="w-full py-4 bg-stone-900 text-white font-bold uppercase tracking-widest rounded-xl hover:bg-brand-primary transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 mt-6">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- === MAP SECTION === -->
+    <section
+        class="w-full h-96 relative z-10 bg-stone-100 dark:bg-dark-surface border-t border-b border-stone-200 dark:border-stone-800 transition-colors"
+        id="contact-map">
+        <iframe
+            src="https://maps.google.com/maps?q=7772+Grandwind+Dr,+Lorton,+VA+22079&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            width="100%" height="100%"
+            style="border:0; filter: grayscale(20%) contrast(1.2) invert(var(--tw-dark-mode-invert, 0));"
+            allowfullscreen="" loading="lazy" title="Lorton Dentist Location" class="dark:opacity-80">
+        </iframe>
+    </section>
+
+    <!-- === FOOTER === -->
+    <footer
+        class="bg-stone-900 dark:bg-black text-white pt-20 pb-10 border-t-4 border-brand-gold relative overflow-hidden transition-colors">
+        <!-- Footer pattern -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+
+            <!-- Enhanced Trust Badges -->
+            <div class="flex flex-wrap justify-center gap-12 mb-16 border-b border-white/10 pb-10">
+                <div
+                    class="flex flex-col items-center opacity-60 hover:opacity-100 transition-opacity duration-300 transform hover:scale-110">
+                    <i class="fab fa-accessible-icon text-5xl mb-2 text-brand-gold"></i>
+                    <span class="text-xs tracking-widest uppercase text-stone-300 dark:text-stone-500">ADA Member</span>
+                </div>
+                <div
+                    class="flex flex-col items-center opacity-60 hover:opacity-100 transition-opacity duration-300 transform hover:scale-110">
+                    <i class="fas fa-tooth text-5xl mb-2 text-brand-gold"></i>
+                    <span class="text-xs tracking-widest uppercase text-stone-300">NVDS</span>
+                </div>
+                <div
+                    class="flex flex-col items-center opacity-60 hover:opacity-100 transition-opacity duration-300 transform hover:scale-110">
+                    <i class="fas fa-heartbeat text-5xl mb-2 text-brand-gold"></i>
+                    <span class="text-xs tracking-widest uppercase text-stone-300">AAOSH</span>
+                </div>
+                <div
+                    class="flex flex-col items-center opacity-60 hover:opacity-100 transition-opacity duration-300 transform hover:scale-110">
+                    <i class="fas fa-notes-medical text-5xl mb-2 text-brand-gold"></i>
+                    <span class="text-xs tracking-widest uppercase text-stone-300">Care Credit</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 pt-4 text-center md:text-left">
+                <div>
+                    <div class="flex items-center justify-center md:justify-start mb-6">
+                        <div
+                            class="w-10 h-10 bg-brand-gold rounded-xl flex items-center justify-center text-white mr-3 shadow-[0_0_15px_rgba(197,169,134,0.5)]">
+                            <i class="fas fa-tooth"></i>
+                        </div>
+                        <span class="font-heading text-xl uppercase tracking-wider">Lorton Dentist</span>
+                    </div>
+                    <div class="flex justify-center md:justify-start space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-stone-800 flex items-center justify-center text-stone-400 hover:bg-[#1877F2] hover:text-white transition-all hover:-translate-y-1"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-stone-800 flex items-center justify-center text-stone-400 hover:bg-[#DB4437] hover:text-white transition-all hover:-translate-y-1"><i
+                                class="fab fa-google"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-stone-800 flex items-center justify-center text-stone-400 hover:bg-[#00B246] hover:text-white transition-all hover:-translate-y-1"><i
+                                class="fas fa-home"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-heading text-lg uppercase text-brand-gold mb-6">Contact Us</h4>
+                    <p class="text-stone-400 dark:text-stone-500 mb-2 hover:text-white transition cursor-pointer"><i
+                            class="fas fa-map-pin mr-2 text-stone-600"></i> 7772 Grandwind Dr Lorton, VA 22079</p>
+                    <a href="tel:5715417977"
+                        class="text-xl font-bold text-white hover:text-brand-primary transition block mb-6"><i
+                            class="fas fa-phone mr-2 text-brand-primary"></i> 571-541-7977</a>
+                    <a href="mailto:Soyferv@yahoo.com" target="_blank"
+                        class="text-brand-accent hover:text-white transition border-b border-brand-accent hover:border-white pb-1">Email
+                        Us</a>
+                </div>
+
+                <div class="md:text-right">
+                    <a href="#"
+                        class="inline-block p-4 border border-stone-700 rounded-full hover:bg-brand-gold hover:border-brand-gold hover:text-white transition-all group"
+                        onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                        <i class="fas fa-arrow-up group-hover:-translate-y-1 transition-transform"></i>
+                    </a>
+                    <p class="text-stone-500 text-sm mt-4">Back to Top</p>
+                </div>
+            </div>
+
+            <div class="text-center text-stone-600 text-sm mt-12 border-t border-stone-800 pt-8">
+                &copy; 2024 Lorton Dentist. All rights reserved. <br class="md:hidden">
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="main.js"></script>
+    <!-- === BOOKING MODAL === -->
+    <div id="booking-modal" class="fixed inset-0 z-[100] hidden overflow-y-auto" aria-labelledby="modal-title"
+        role="dialog" aria-modal="true">
+        <!-- Backdrop -->
+        <div class="fixed inset-0 bg-stone-900/60 backdrop-blur-md transition-opacity" id="modal-backdrop"></div>
+
+        <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
+            <div class="relative transform overflow-hidden rounded-[2.5rem] bg-white dark:bg-dark-surface text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-xl scale-95 opacity-0 duration-300"
+                id="modal-content">
+                <!-- Close Button -->
+                <button type="button"
+                    class="absolute right-6 top-6 text-stone-400 hover:text-stone-900 dark:hover:text-white transition-colors z-10"
+                    id="close-modal">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+
+                <div class="px-8 pt-10 pb-12">
+                    <div class="text-center mb-8">
+                        <div
+                            class="w-16 h-16 bg-brand-gold/10 rounded-2xl flex items-center justify-center text-brand-gold mx-auto mb-4">
+                            <i class="fas fa-calendar-alt text-2xl"></i>
+                        </div>
+                        <h2 class="font-heading text-3xl uppercase font-bold text-stone-800 dark:text-white"
+                            id="modal-title">Request
+                            Appointment</h2>
+                        <p class="text-stone-500 dark:text-stone-400 mt-2">Fill out the form below and we'll contact you
+                            shortly.</p>
+                    </div>
+
+                    <form id="modal-booking-form" class="space-y-5">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label for="modal-name"
+                                    class="block text-xs font-bold uppercase tracking-widest text-stone-500 dark:text-stone-400 mb-2">Your
+                                    Name</label>
+                                <input type="text" id="modal-name" required
+                                    class="w-full px-4 py-3 rounded-xl border border-stone-200 dark:border-stone-800 dark:bg-dark-bg dark:text-white focus:ring-2 focus:ring-brand-gold focus:border-transparent transition-all outline-none"
+                                    placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label for="modal-phone"
+                                    class="block text-xs font-bold uppercase tracking-widest text-stone-500 dark:text-stone-400 mb-2">Phone
+                                    Number</label>
+                                <input type="tel" id="modal-phone" required
+                                    class="w-full px-4 py-3 rounded-xl border border-stone-200 dark:border-stone-800 dark:bg-dark-bg dark:text-white focus:ring-2 focus:ring-brand-gold focus:border-transparent transition-all outline-none"
+                                    placeholder="(xxx) xxx-xxxx">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="modal-service"
+                                class="block text-xs font-bold uppercase tracking-widest text-stone-500 dark:text-stone-400 mb-2">Service
+                                Needed</label>
+                            <select id="modal-service"
+                                class="w-full px-4 py-3 rounded-xl border border-stone-200 dark:border-stone-800 dark:bg-dark-bg dark:text-white focus:ring-2 focus:ring-brand-gold focus:border-transparent transition-all outline-none appearance-none">
+                                <option value="general">General Dentistry</option>
+                                <option value="cosmetic">Cosmetic Dentistry</option>
+                                <option value="invisalign">Invisalign®</option>
+                                <option value="implants">Implants</option>
+                                <option value="emergency">Emergency Care</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="modal-message"
+                                class="block text-xs font-bold uppercase tracking-widest text-stone-500 dark:text-stone-400 mb-2">Preferred
+                                Date/Time or Message</label>
+                            <textarea id="modal-message" rows="3"
+                                class="w-full px-4 py-3 rounded-xl border border-stone-200 dark:border-stone-800 dark:bg-dark-bg dark:text-white focus:ring-2 focus:ring-brand-gold focus:border-transparent transition-all outline-none resize-none"
+                                placeholder="When would you like to visit?"></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full py-4 bg-stone-900 text-white rounded-xl font-bold uppercase tracking-widest hover:bg-brand-primary transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                            Secure My Spot
+                        </button>
+                    </form>
+
+                    <!-- Success Message (Hidden) -->
+                    <div id="modal-success" class="hidden text-center py-10 animate-fade-in">
+                        <div
+                            class="w-20 h-20 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-full flex items-center justify-center text-4xl mx-auto mb-6">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <h3 class="font-heading text-2xl uppercase font-bold text-stone-800 dark:text-white mb-2">
+                            Request Received!</h3>
+                        <p class="text-stone-500 dark:text-stone-400">We'll call you within 24 hours to confirm your
+                            appointment.</p>
+                        <button type="button"
+                            class="mt-8 text-brand-gold font-bold uppercase tracking-widest hover:text-brand-primary transition-colors"
+                            onclick="closeBookingModal()">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- === FIXED MOBILE ACTION BAR === -->
+    <div
+        class="md:hidden fixed bottom-0 left-0 w-full bg-white/95 dark:bg-dark-surface/95 backdrop-blur-xl border-t border-gray-200 dark:border-stone-800 z-50 px-4 py-3 shadow-[0_-5px_20px_rgba(0,0,0,0.1)] flex justify-between items-center pb-safe transition-colors">
+        <a href="tel:5715417977"
+            class="flex flex-col items-center text-stone-600 dark:text-stone-300 hover:text-brand-primary active:scale-95 transition">
+            <div
+                class="w-10 h-10 rounded-full bg-stone-100 dark:bg-dark-bg flex items-center justify-center mb-1 text-lg">
+                <i class="fas fa-phone-alt"></i>
+            </div>
+            <span class="text-[10px] uppercase font-bold tracking-wider">Call</span>
+        </a>
+
+        <a href="javascript:void(0)" onclick="openBookingModal()"
+            class="flex-1 mx-4 bg-brand-gold text-white rounded-full h-12 flex items-center justify-center font-bold uppercase text-xs tracking-widest shadow-lg active:scale-95 transition-transform">
+            Book Online
+        </a>
+
+        <a href="https://www.google.com/maps/search/?api=1&query=7772+Grandwind+Dr+Lorton+VA+22079" target="_blank"
+            class="flex flex-col items-center text-stone-600 dark:text-stone-300 hover:text-brand-primary active:scale-95 transition">
+            <div
+                class="w-10 h-10 rounded-full bg-stone-100 dark:bg-dark-bg flex items-center justify-center mb-1 text-lg">
+                <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <span class="text-[10px] uppercase font-bold tracking-wider">Map</span>
+        </a>
+    </div>
+
+    <!-- Add padding to bottom of body so footer doesn't get covered by bar on mobile -->
+    <style>
+        @media (max-width: 768px) {
+            body {
+                padding-bottom: 80px;
+            }
+        }
+
+        /* Safe area handling for iPhone Home Indicator */
+        .pb-safe {
+            padding-bottom: env(safe-area-inset-bottom, 20px);
+        }
+    </style>
+</body>
+
+</html>
