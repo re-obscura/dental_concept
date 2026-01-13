@@ -1,32 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <!-- Performance Optimization: Preconnect to CDNs -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.tailwindcss.com">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://unpkg.com">
     <title>Invisalign in Lorton, VA | Clear Aligners | Lorton Dentist</title>
-
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
+    <script src="assets/js/tailwindcss.js"></script>
     <!-- Google Fonts: Inter & Oswald -->
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Oswald:wght@300;400;500;700&display=swap"
         rel="stylesheet">
-
     <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
     <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
+    <link href="assets/css/aos.css" rel="stylesheet">
     <!-- Config (Inlined for Performance) -->
     <script>
         tailwind.config = {
@@ -67,68 +57,73 @@
             }
         }
     </script>
-
     <link rel="stylesheet" href="style.css">
     <!-- SEO Meta Tags -->
     <meta name="description"
         content="Looking for Invisalign in Lorton, VA? Dr. Vladimir Soyfer offers clear aligner treatment to straighten your teeth comfortably. Book your consultation today!">
-
     <!-- Geo-tags -->
     <meta name="geo.region" content="US-VA" />
     <meta name="geo.placename" content="Lorton" />
     <meta name="geo.position" content="38.7118;-77.2117" />
     <meta name="ICBM" content="38.7118, -77.2117" />
-
     <!-- JSON-LD Schema -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "Dentist",
-      "name": "Lorton Dentist",
-      "description": "Expert Invisalign in Lorton, VA.",
-      "url": "https://lortondentist.com/invisalign.html",
-      "telephone": "+1-571-541-7977",
-      "image": "https://lortondentist.com/logo.png",
-      "priceRange": "$$",
-      "sameAs": [
-        "https://www.facebook.com/lortondentist",
-        "https://www.instagram.com/lortondentist"
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "7772 Grandwind Dr",
-        "addressLocality": "Lorton",
-        "addressRegion": "VA",
-        "postalCode": "22079",
-        "addressCountry": "US"
-      },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "08:00",
-          "closes": "17:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Saturday",
-          "opens": "09:30",
-          "closes": "15:00"
-        }
-      ]
+  "@context": "https://schema.org",
+  "@type": "Dentist",
+  "name": "Lorton Dentist",
+  "description": "Comprehensive dental care in Lorton, VA tailored to your needs.",
+  "slogan": "Your Best Family Dentist in Lorton Virginia",
+  "openingHours": "Mo,Tu,We,Th,Fr 08:00-17:00, Sa 09:30-15:00",
+  "telephone": "+15715417977",
+  "email": "Soyferv@yahoo.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Lorton",
+    "addressRegion": "VA",
+    "postalCode": "22079",
+    "streetAddress": "7772 Grandwind Dr"
+  },
+  "paymentAccepted": "Cash, Credit Card, Insurance, CareCredit",
+  "priceRange": "$",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": 4.9,
+    "reviewCount": 150
+  },
+  "image": "https://lortondentist.com/logo.png",
+  "review": [
+    {
+      "@type": "Review",
+      "author": "Roy C.",
+      "description": "I cannot help but express my gratitude to Dr. Soyfer for his professionalism and sensitive attitude towards patients in the field of anesthesiology. During a complex dental treatment, I had to make a number of important decisions regarding pain relief. The doctor explained all possible options in detail and patiently and helped me choose the best one in my case. Thanks to him, the treatment was as comfortable and painless as possible, and the recommendations for recovery were very useful. He is an experienced doctor to whom you can safely trust your health. I recommend!",
+      "name": "Professional and sensitive attitude",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": 5
+      }
+    },
+    {
+      "@type": "Review",
+      "author": "Lynda M.",
+      "description": "I would also like to share a positive experience of visiting Dr. Soyfer with my son. My child had an acute toothache due to caries, and I was worried about how he would cope with the treatment. Dr. Soyfer showed amazing kindness and understanding towards my son. He explained all the stages of the procedure in an accessible way and tried to make it as painless as possible. My son was delighted with the toys in the clinic and with the doctor’s approach. The treatment was successful, and now the child is not afraid of dentists. Thank you for your wonderful attitude!",
+      "name": "Amazing kindness and understanding",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": 5
+      }
     }
+  ]
+}
     </script>
 </head>
-
 <body
     class="bg-brand-light dark:bg-dark-bg text-brand-text dark:text-dark-text font-sans antialiased overflow-x-hidden selection:bg-brand-gold selection:text-white relative transition-colors duration-500">
-
     <!-- Decorative Background Blobs -->
     <div class="blob-bg w-96 h-96 bg-brand-beige dark:bg-brand-gold/10 top-0 left-0 animate-blob"></div>
     <div
         class="blob-bg w-96 h-96 bg-blue-100 dark:bg-brand-primary/10 top-[20%] right-0 animate-blob animation-delay-2000">
     </div>
-
     <!-- === 0. FLOATING ACTION BUTTON (Desktop & Mobile) === -->
     <a href="javascript:void(0)" onclick="openBookingModal()"
         class="hidden md:flex fixed bottom-10 right-10 z-50 bg-brand-gold hover:bg-brand-goldDark text-white w-16 h-16 rounded-full shadow-2xl items-center justify-center transition-all hover:scale-110 hover:rotate-12 animate-float group border-4 border-white">
@@ -138,7 +133,6 @@
             Book Now
         </span>
     </a>
-
     <!-- === 1. TOP BAR (Address & Contacts) === -->
     <div
         class="bg-brand-beige dark:bg-dark-surface text-xs py-2 hidden md:block border-b border-brand-gold/20 relative z-40 transition-colors">
@@ -158,12 +152,10 @@
             </div>
         </div>
     </div>
-
     <!-- === 2. NAVIGATION (Sticky Header) === -->
     <header class="fixed top-0 w-full z-50 glass-nav transition-all duration-300 h-24 flex items-center" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div class="flex justify-between items-center w-full">
-
                 <!-- Logo Area -->
                 <a href="index.html" class="flex items-center flex-shrink-0 group cursor-pointer">
                     <div id="logo-icon"
@@ -178,7 +170,6 @@
                             Lorton VA</span>
                     </div>
                 </a>
-
                 <!-- Desktop Menu -->
                 <nav class="hidden lg:flex space-x-1 items-center font-heading text-sm uppercase tracking-wide">
                     <!-- Theme Toggle -->
@@ -187,7 +178,6 @@
                         aria-label="Toggle Theme">
                         <i class="fas fa-moon theme-icon text-lg"></i>
                     </button>
-
                     <a href="index.html"
                         class="px-4 py-2 text-stone-700 dark:text-stone-300 hover:text-brand-primary transition-colors font-medium relative group/link">
                         Home
@@ -202,13 +192,11 @@
                             <span
                                 class="absolute bottom-6 left-1/2 w-0 h-0.5 bg-brand-gold transition-all duration-300 group-hover:w-1/2 group-hover:left-1/4"></span>
                         </a>
-
                         <!-- Main Dropdown (Mega Menu) -->
                         <div
                             class="absolute left-1/2 -translate-x-1/2 top-full pt-4 w-[800px] hidden group-hover:block px-4">
                             <div
                                 class="dropdown-menu bg-white dark:bg-stone-900 rounded-xl p-6 shadow-2xl grid grid-cols-3 gap-8">
-
                                 <!-- Column 1: Restorative -->
                                 <div>
                                     <h4
@@ -237,7 +225,6 @@
                                             Fillings</a>
                                     </div>
                                 </div>
-
                                 <!-- Column 2: Cosmetic -->
                                 <div>
                                     <h4
@@ -265,7 +252,6 @@
                                             Graft</a>
                                     </div>
                                 </div>
-
                                 <!-- Column 3: General & Other -->
                                 <div>
                                     <h4
@@ -298,25 +284,21 @@
                                             Apnea Treatment</a>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
-
-                    <a href="index.html#blog"
+                    <a href="blog.html"
                         class="px-4 py-2 text-stone-700 dark:text-stone-300 hover:text-brand-primary transition-colors font-medium relative group/link">
                         Blog
                         <span
                             class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-brand-gold transition-all duration-300 group-hover/link:w-1/2 group-hover/link:left-1/4"></span>
                     </a>
-
                     <a href="contact.html"
                         class="px-4 py-2 text-stone-700 dark:text-stone-300 hover:text-brand-primary transition-colors font-medium relative group/link">
                         Contacts
                         <span
                             class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-brand-gold transition-all duration-300 group-hover/link:w-1/2 group-hover/link:left-1/4"></span>
                     </a>
-
                     <a href="javascript:void(0)" onclick="openBookingModal()"
                         class="ml-6 px-6 py-2.5 bg-stone-900 text-white rounded-full shadow-lg hover:bg-brand-primary hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 flex items-center text-xs font-bold tracking-widest overflow-hidden relative group">
                         <span
@@ -324,7 +306,6 @@
                         <span class="relative z-10">Make Appointment</span>
                     </a>
                 </nav>
-
                 <!-- Mobile Button -->
                 <div class="lg:hidden flex items-center gap-4">
                     <button onclick="toggleTheme()"
@@ -340,7 +321,6 @@
                 </div>
             </div>
         </div>
-
         <!-- Mobile Menu Overlay -->
         <div id="mobile-menu"
             class="hidden absolute top-full left-0 w-full bg-white dark:bg-dark-surface backdrop-blur-xl border-t border-gray-100 dark:border-stone-800 shadow-xl py-6 flex-col items-center space-y-6 lg:hidden h-screen transition-all z-40">
@@ -354,9 +334,7 @@
                     Services <i
                         class="fas fa-chevron-down ml-2 text-sm opacity-50 transition-transform group-open:rotate-180"></i>
                 </summary>
-
                 <div class="flex flex-col space-y-3 mt-4 text-base overflow-y-auto max-h-[50vh] px-4">
-
                     <!-- Restorative Submenu -->
                     <details class="w-full group/sub">
                         <summary class="font-bold text-stone-600 dark:text-stone-400 cursor-pointer list-none py-1">
@@ -380,7 +358,6 @@
                                 class="text-stone-500 hover:text-brand-primary">Dentures</a>
                         </div>
                     </details>
-
                     <!-- Cosmetic Submenu -->
                     <details class="w-full group/sub">
                         <summary class="font-bold text-stone-600 dark:text-stone-400 cursor-pointer list-none py-1">
@@ -409,7 +386,6 @@
                                 Graft</a>
                         </div>
                     </details>
-
                     <!-- Other Links -->
                     <a href="root-canal.html" onclick="closeMenu()" class="text-stone-600 hover:text-brand-primary">Root
                         Canal</a>
@@ -441,7 +417,7 @@
                         Treatment</a>
                 </div>
             </details>
-            <a href="index.html#blog"
+            <a href="blog.html"
                 class="text-xl font-heading uppercase text-stone-700 dark:text-stone-300 hover:text-brand-primary"
                 onclick="closeMenu()">Blog</a>
             <a href="contact.html"
@@ -452,7 +428,6 @@
                 onclick="closeMenu(); openBookingModal();">Make Appointment</a>
         </div>
     </header>
-
     <!-- === MAIN CONTENT === -->
     <main class="pt-32 pb-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -472,7 +447,6 @@
                     </li>
                 </ol>
             </nav>
-
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
                 <!-- Main Content -->
                 <div class="lg:col-span-2 space-y-8 text-stone-700 dark:text-stone-300">
@@ -480,7 +454,6 @@
                         data-aos="fade-right">
                         Invisalign
                     </h1>
-
                     <div class="prose dark:prose-invert max-w-none">
                         <p class="text-lg leading-relaxed">
                             At Lorton Dentist, we specialize in <strong>Invisalign</strong> providing top-tier
@@ -502,7 +475,6 @@
                             Contact us today to schedule a consultation.
                         </p>
                     </div>
-
                     <!-- CTA Box -->
                     <div
                         class="bg-brand-beige/30 dark:bg-stone-800/50 p-8 rounded-2xl border border-brand-gold/20 mt-8">
@@ -515,7 +487,6 @@
                         </a>
                     </div>
                 </div>
-
                 <!-- Sidebar -->
                 <div class="lg:col-span-1 space-y-8">
                     <!-- Quick Contact -->
@@ -545,7 +516,6 @@
                             </a>
                         </div>
                     </div>
-
                     <!-- Quick Links -->
                     <div
                         class="bg-white dark:bg-dark-surface p-8 rounded-2xl shadow-xl border border-stone-100 dark:border-stone-800 mb-8">
@@ -595,7 +565,6 @@
             </div>
         </div>
     </main>
-
     <!-- === MAP SECTION === -->
     <section
         class="w-full h-96 relative z-10 bg-stone-100 dark:bg-dark-surface border-t border-b border-stone-200 dark:border-stone-800 transition-colors"
@@ -607,15 +576,12 @@
             allowfullscreen="" loading="lazy" title="Lorton Dentist Location" class="dark:opacity-80">
         </iframe>
     </section>
-
     <!-- === FOOTER === -->
     <footer
         class="bg-stone-900 dark:bg-black text-white pt-20 pb-10 border-t-4 border-brand-gold relative overflow-hidden transition-colors">
         <!-- Footer pattern -->
         <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
-
         <div class="max-w-7xl mx-auto px-6 relative z-10">
-
             <!-- Enhanced Trust Badges -->
             <div class="flex flex-wrap justify-center gap-12 mb-16 border-b border-white/10 pb-10">
                 <div
@@ -639,7 +605,6 @@
                     <span class="text-xs tracking-widest uppercase text-stone-300">Care Credit</span>
                 </div>
             </div>
-
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 pt-4 text-center md:text-left">
                 <div>
                     <div class="flex items-center justify-center md:justify-start mb-6">
@@ -663,7 +628,6 @@
                             title="Home"><i class="fas fa-home"></i></a>
                     </div>
                 </div>
-
                 <div>
                     <h3 class="font-heading text-lg uppercase text-brand-gold mb-6">Contact Us</h3>
                     <p class="text-stone-400 dark:text-stone-500 mb-2 hover:text-white transition cursor-pointer"><i
@@ -675,7 +639,6 @@
                         class="text-brand-accent hover:text-white transition border-b border-brand-accent hover:border-white pb-1">Email
                         Us</a>
                 </div>
-
                 <div class="md:text-right">
                     <a href="#"
                         class="inline-block p-4 border border-stone-700 rounded-full hover:bg-brand-gold hover:border-brand-gold hover:text-white transition-all group"
@@ -685,22 +648,19 @@
                     <p class="text-stone-500 text-sm mt-4">Back to Top</p>
                 </div>
             </div>
-
             <div class="text-center text-stone-600 text-sm mt-12 border-t border-stone-800 pt-8">
                 &copy; 2024 Lorton Dentist. All rights reserved. <br class="md:hidden">
             </div>
         </div>
     </footer>
-
     <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="assets/js/aos.js" defer></script>
     <script src="main.js" defer></script>
     <!-- === BOOKING MODAL === -->
     <div id="booking-modal" class="fixed inset-0 z-[100] hidden overflow-y-auto" aria-labelledby="modal-title"
         role="dialog" aria-modal="true">
         <!-- Backdrop -->
         <div class="fixed inset-0 bg-stone-900/60 backdrop-blur-md transition-opacity" id="modal-backdrop"></div>
-
         <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
             <div class="relative transform overflow-hidden rounded-[2.5rem] bg-white dark:bg-dark-surface text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-xl scale-95 opacity-0 duration-300"
                 id="modal-content">
@@ -710,7 +670,6 @@
                     id="close-modal">
                     <i class="fas fa-times text-2xl"></i>
                 </button>
-
                 <div class="px-8 pt-10 pb-12">
                     <div class="text-center mb-8">
                         <div
@@ -723,7 +682,6 @@
                         <p class="text-stone-500 dark:text-stone-400 mt-2">Fill out the form below and we'll contact you
                             shortly.</p>
                     </div>
-
                     <form id="modal-booking-form" class="space-y-5">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                             <div>
@@ -769,7 +727,6 @@
                             Secure My Spot
                         </button>
                     </form>
-
                     <!-- Success Message (Hidden) -->
                     <div id="modal-success" class="hidden text-center py-10 animate-fade-in">
                         <div
@@ -790,7 +747,6 @@
             </div>
         </div>
     </div>
-
     <!-- === FIXED MOBILE ACTION BAR === -->
     <div
         class="md:hidden fixed bottom-0 left-0 w-full bg-white/95 dark:bg-dark-surface/95 backdrop-blur-xl border-t border-gray-200 dark:border-stone-800 z-50 px-4 py-3 shadow-[0_-5px_20px_rgba(0,0,0,0.1)] flex justify-between items-center pb-safe transition-colors">
@@ -802,13 +758,11 @@
             </div>
             <span class="text-[10px] uppercase font-bold tracking-wider">Call</span>
         </a>
-
         <a href="javascript:void(0)" onclick="openBookingModal()"
             class="flex-1 mx-4 bg-brand-gold text-white rounded-full h-12 flex items-center justify-center font-bold uppercase text-xs tracking-widest shadow-lg active:scale-95 transition-transform"
             aria-label="Book appointment online">
             Book Online
         </a>
-
         <a href="https://www.google.com/maps/search/?api=1&query=7772+Grandwind+Dr+Lorton+VA+22079" target="_blank"
             class="flex flex-col items-center text-stone-600 dark:text-stone-300 hover:text-brand-primary active:scale-95 transition">
             <div
@@ -818,7 +772,6 @@
             <span class="text-[10px] uppercase font-bold tracking-wider">Map</span>
         </a>
     </div>
-
     <!-- Add padding to bottom of body so footer doesn't get covered by bar on mobile -->
     <style>
         @media (max-width: 768px) {
@@ -826,12 +779,10 @@
                 padding-bottom: 80px;
             }
         }
-
         /* Safe area handling for iPhone Home Indicator */
         .pb-safe {
             padding-bottom: env(safe-area-inset-bottom, 20px);
         }
     </style>
 </body>
-
 </html>
