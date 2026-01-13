@@ -10,12 +10,12 @@ tailwind.config = {
                 brand: {
                     light: '#FDFBF7',  // Milky background
                     beige: '#F2E8DA',  // Warm beige
-                    gold: '#C5A986',   // Gold accent
-                    goldDark: '#A68968', // Darker Gold for hover
+                    gold: '#9A7B4F',   // High-contrast Gold (WCAG AA)
+                    goldDark: '#7D6440', // Darker Gold for hover
                     text: '#374151',   // Darker text for WCAG (gray-700)
-                    primary: '#5D8AA8', // Air Force Blue
-                    primaryDark: '#3A6380',
-                    accent: '#81C7D4'   // Pastel blue
+                    primary: '#3D6E8B', // High-contrast Blue
+                    primaryDark: '#2C5168',
+                    accent: '#2C8C99'   // High-contrast Teal/Blue
                 },
                 dark: {
                     bg: '#121212',

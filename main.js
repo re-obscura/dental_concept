@@ -47,8 +47,12 @@ const mobileMenu = document.getElementById('mobile-menu');
 function toggleMenu() {
     mobileMenu.classList.toggle('hidden');
     mobileMenu.classList.toggle('flex');
+    const isExpanded = mobileMenu.classList.contains('flex');
+    mobileBtn.setAttribute('aria-expanded', isExpanded);
+    mobileMenu.setAttribute('aria-hidden', !isExpanded);
+
     const icon = mobileBtn.querySelector('i');
-    if (mobileMenu.classList.contains('flex')) {
+    if (isExpanded) {
         icon.classList.remove('fa-bars');
         icon.classList.add('fa-times');
     } else {
@@ -60,6 +64,8 @@ function toggleMenu() {
 function closeMenu() {
     mobileMenu.classList.add('hidden');
     mobileMenu.classList.remove('flex');
+    mobileBtn.setAttribute('aria-expanded', 'false');
+    mobileMenu.setAttribute('aria-hidden', 'true');
     mobileBtn.querySelector('i').classList.add('fa-bars');
     mobileBtn.querySelector('i').classList.remove('fa-times');
 }
@@ -248,14 +254,19 @@ const modalBackdrop = document.getElementById('modal-backdrop');
 
 function openBookingModal() {
     bookingModal.classList.remove('hidden');
+    bookingModal.setAttribute('aria-hidden', 'false');
     document.body.classList.add('modal-open');
     setTimeout(() => {
         bookingModal.classList.add('modal-open');
     }, 10);
+    // Focus first input or close button for accessibility
+    const firstInput = modalForm ? modalForm.querySelector('input') : null;
+    if (firstInput) firstInput.focus();
 }
 
 function closeBookingModal() {
     bookingModal.classList.remove('modal-open');
+    bookingModal.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('modal-open');
     setTimeout(() => {
         bookingModal.classList.add('hidden');

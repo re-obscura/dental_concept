@@ -328,12 +328,14 @@
                 <!-- Mobile Button -->
                 <div class="lg:hidden flex items-center gap-4">
                     <button onclick="toggleTheme()"
-                        class="p-2 text-stone-600 dark:text-stone-300 hover:text-brand-gold transition-colors focus:outline-none"
-                        aria-label="Toggle Theme">
+                        class="p-2 rounded-full hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors focus:outline-none"
+                        aria-label="Toggle dark/light mode">
                         <i class="fas fa-moon theme-icon text-lg"></i>
+                        <span class="sr-only">Toggle dark and light mode theme</span>
                     </button>
                     <button id="mobile-btn"
-                        class="text-stone-700 dark:text-stone-300 hover:text-brand-primary p-2 focus:outline-none transition-transform active:scale-95">
+                        class="text-stone-700 dark:text-stone-300 hover:text-brand-primary p-2 focus:outline-none transition-transform active:scale-95"
+                        aria-label="Toggle navigation menu" aria-expanded="false">
                         <i class="fas fa-bars fa-2x"></i>
                     </button>
                 </div>
@@ -651,19 +653,27 @@
                     <div class="flex justify-center md:justify-start space-x-4">
                         <a href="https://www.facebook.com/lortondentist" target="_blank"
                             class="w-10 h-10 rounded-full bg-stone-800 flex items-center justify-center text-stone-400 hover:bg-[#1877F2] hover:text-white transition-all hover:-translate-y-1"
-                            title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            title="Facebook" aria-label="Follow us on Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                            <span class="sr-only">Facebook</span>
+                        </a>
                         <a href="https://www.google.com/search?q=Dental+Health+Center+of+Northern+Virginia+reviews"
                             target="_blank"
                             class="w-10 h-10 rounded-full bg-stone-800 flex items-center justify-center text-stone-400 hover:bg-[#DB4437] hover:text-white transition-all hover:-translate-y-1"
-                            title="Google Reviews"><i class="fab fa-google"></i></a>
+                            title="Google Reviews" aria-label="Read our Google Reviews">
+                            <i class="fab fa-google"></i>
+                            <span class="sr-only">Google Reviews</span>
+                        </a>
                         <a href="index.html"
                             class="w-10 h-10 rounded-full bg-stone-800 flex items-center justify-center text-stone-400 hover:bg-[#00B246] hover:text-white transition-all hover:-translate-y-1"
-                            title="Home"><i class="fas fa-home"></i></a>
+                            title="Home"><i class="fas fa-home"></i>
+                            <span class="sr-only">Home</span>
+                        </a>
                     </div>
                 </div>
 
                 <div>
-                    <h4 class="font-heading text-lg uppercase text-brand-gold mb-6">Contact Us</h4>
+                    <h3 class="font-heading text-lg uppercase text-brand-gold mb-6">Contact Us</h3>
                     <p class="text-stone-400 dark:text-stone-500 mb-2 hover:text-white transition cursor-pointer"><i
                             class="fas fa-map-pin mr-2 text-stone-600"></i> 7772 Grandwind Dr Lorton, VA 22079</p>
                     <a href="tel:5715417977"
@@ -677,8 +687,9 @@
                 <div class="md:text-right">
                     <a href="#"
                         class="inline-block p-4 border border-stone-700 rounded-full hover:bg-brand-gold hover:border-brand-gold hover:text-white transition-all group"
-                        onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                        onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Scroll back to top">
                         <i class="fas fa-arrow-up group-hover:-translate-y-1 transition-transform"></i>
+                        <span class="sr-only">Back to Top</span>
                     </a>
                     <p class="text-stone-500 text-sm mt-4">Back to Top</p>
                 </div>
@@ -802,7 +813,8 @@
         </a>
 
         <a href="javascript:void(0)" onclick="openBookingModal()"
-            class="flex-1 mx-4 bg-brand-gold text-white rounded-full h-12 flex items-center justify-center font-bold uppercase text-xs tracking-widest shadow-lg active:scale-95 transition-transform">
+            class="flex-1 mx-4 bg-brand-gold text-white rounded-full h-12 flex items-center justify-center font-bold uppercase text-xs tracking-widest shadow-lg active:scale-95 transition-transform"
+            aria-label="Book appointment online">
             Book Online
         </a>
 
