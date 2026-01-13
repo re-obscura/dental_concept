@@ -12,60 +12,17 @@
     <link rel="preload" as="image"
         href="https://videocdn.cdnpk.net/videos/855708a0-a777-43b4-a19f-f77792476d72/horizontal/thumbnails/large.jpg?ga=GA1.1.200189668.1768237498&item_id=2818631&w=740&q=80&fm=webp">
     <!-- Tailwind CSS -->
-    <script src="assets/js/tailwindcss.js"></script>
+    
     <!-- Google Fonts: Inter & Oswald -->
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Oswald:wght@300;400;500;700&display=swap"
         rel="stylesheet">
     <!-- FontAwesome -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.css" media="print" onload="this.media='all'">
     <!-- AOS Animation Library -->
-    <link href="assets/css/aos.css" rel="stylesheet">
+    <link href="assets/css/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
     <!-- Config (Inlined for Performance) -->
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        heading: ['Oswald', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            light: '#FDFBF7', beige: '#F2E8DA', gold: '#C5A986', goldDark: '#A68968',
-                            text: '#374151', primary: '#5D8AA8', primaryDark: '#3A6380', accent: '#81C7D4'
-                        },
-                        dark: {
-                            bg: '#121212', surface: '#1E1E1E', border: '#2A2A2A', text: '#E0E0E0', accent: '#C5A986'
-                        }
-                    },
-                    boxShadow: {
-                        'soft': '0 20px 40px -15px rgba(0,0,0,0.05)',
-                        'glow': '0 0 20px rgba(197, 169, 134, 0.3)',
-                        'ios': '0 8px 30px rgba(0,0,0,0.04)',
-                        'premium': '0 10px 30px -10px rgba(0,0,0,0.2)',
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'blob': 'blob 7s infinite',
-                        'scroll': 'scroll 40s linear infinite',
-                    },
-                    keyframes: {
-                        float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } },
-                        blob: {
-                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
-                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
-                        },
-                        scroll: { '0%': { transform: 'translateX(0)' }, '100%': { transform: 'translateX(-50%)' } }
-                    }
-                }
-            }
-        }
-    </script>
+    
     <link rel="stylesheet" href="style.css">
     <!-- SEO Meta Tags -->
     <meta name="description"
@@ -1118,7 +1075,7 @@
         <section id="reviews" class="py-24 bg-stone-50 dark:bg-dark-surface transition-colors relative">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="text-center mb-12" data-aos="fade-down">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google"
+                    <img src="assets/images/google_logo.svg" alt="Google"
                         width="92" height="32"
                         class="h-8 mx-auto mb-2 opacity-70 grayscale hover:grayscale-0 transition dark:invert">
                     <h2 class="font-heading text-3xl md:text-4xl text-stone-800 dark:text-white uppercase">Our patients
@@ -1398,7 +1355,7 @@
             </div>
         </footer>
         <!-- Scripts -->
-        <script src="assets/js/aos.js"></script>
+        <script src="assets/js/aos.js" defer></script>
 
         <!-- === BOOKING MODAL === -->
         <div id="booking-modal" class="fixed inset-0 z-[100] hidden overflow-y-auto" aria-labelledby="modal-title"
@@ -1533,6 +1490,52 @@
             padding-bottom: env(safe-area-inset-bottom, 20px);
         }
     </style>
+
+    <script src="assets/js/tailwindcss.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Oswald', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            light: '#FDFBF7', beige: '#F2E8DA', gold: '#C5A986', goldDark: '#A68968',
+                            text: '#374151', primary: '#5D8AA8', primaryDark: '#3A6380', accent: '#81C7D4'
+                        },
+                        dark: {
+                            bg: '#121212', surface: '#1E1E1E', border: '#2A2A2A', text: '#E0E0E0', accent: '#C5A986'
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 20px 40px -15px rgba(0,0,0,0.05)',
+                        'glow': '0 0 20px rgba(197, 169, 134, 0.3)',
+                        'ios': '0 8px 30px rgba(0,0,0,0.04)',
+                        'premium': '0 10px 30px -10px rgba(0,0,0,0.2)',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'blob': 'blob 7s infinite',
+                        'scroll': 'scroll 40s linear infinite',
+                    },
+                    keyframes: {
+                        float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } },
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        scroll: { '0%': { transform: 'translateX(0)' }, '100%': { transform: 'translateX(-50%)' } }
+                    }
+                }
+            }
+        }
+    </script>
 </body>
 
 </html>
