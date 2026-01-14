@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Стоматология - Концепт "Glass Interface"</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Базовые стили для слайдов */
+        .bg-slide {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out, transform 6s ease-in-out;
+            z-index: 0;
+            transform: scale(1);
+        }
+
+        /* Класс активного слайда */
+        .bg-slide.active {
+            opacity: 1;
+            z-index: 1;
+            transform: scale(1.05); /* Легкий эффект наезда камеры (Ken Burns effect) */
+        }
+
+        /* Пульсация для кнопки */
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); }
+            50% { box-shadow: 0 0 0 15px rgba(59, 130, 246, 0); }
+        }
+        .animate-pulse-glow {
+            animation: pulse-glow 2s infinite;
+        }
+
+        /* Стеклянный эффект */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white font-sans antialiased overflow-x-hidden">
+
+    <div id="hero-slider" class="fixed inset-0 z-0">
+        <div class="bg-slide active" style="background-image: url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=1920')"></div>
+        <div class="bg-slide" style="background-image: url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80&w=1920')"></div>
+        <div class="bg-slide" style="background-image: url('https://images.unsplash.com/photo-1588776814546-1b9785c7d47e?auto=format&fit=crop&q=80&w=1920')"></div>
+        <div class="bg-slide" style="background-image: url('https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&q=80&w=1920')"></div>
+        <div class="bg-slide" style="background-image: url('https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&q=80&w=1920')"></div>
+        <div class="bg-slide" style="background-image: url('https://images.unsplash.com/photo-1600170311833-c2cf5280ce49?auto=format&fit=crop&q=80&w=1920')"></div>
+        <div class="bg-slide" style="background-image: url('https://images.unsplash.com/photo-1579684385180-1ea55f9f8c48?auto=format&fit=crop&q=80&w=1920')"></div>
+        <div class="bg-slide" style="background-image: url('https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&q=80&w=1920')"></div>
+    </div>
+
+    <div class="fixed inset-0 z-0 bg-black/60 pointer-events-none"></div>
+
+    <header class="fixed top-0 w-full z-50 glass-panel border-b-0 border-white/10 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center cursor-pointer">
+                    <i class="fa-solid fa-tooth text-3xl text-blue-400 mr-2"></i>
+                    <span class="font-bold text-xl tracking-wider">DENT-ART</span>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#" class="text-gray-300 hover:text-white transition">Услуги</a>
+                    <a href="#" class="text-gray-300 hover:text-white transition">Врачи</a>
+                    <a href="#" class="text-gray-300 hover:text-white transition">Цены</a>
+                </nav>
+                <div class="hidden md:block">
+                    <span class="text-white font-bold block text-right hover:text-blue-300 transition cursor-pointer">+7 (999) 000-00-00</span>
+                    <span class="text-xs text-green-400 block text-right flex items-center justify-end gap-1">
+                        <span class="relative flex h-2 w-2">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                        </span>
+                        Сейчас работаем
+                    </span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative z-10 flex items-center justify-center min-h-screen px-4 pt-20">
+        <div class="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+            <div class="lg:col-span-7 text-center lg:text-left">
+                <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-600/20 border border-blue-400/30 text-blue-300 text-sm mb-6 backdrop-blur-sm">
+                    <i class="fa-solid fa-star text-yellow-400 mr-2 text-xs"></i> Лучшая клиника года по версии Google
+                </div>
+                <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6 tracking-tight">
+                    Улыбка, которую <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">невозможно скрыть</span>
+                </h1>
+                <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                    Без боли, без страха, с гарантией 10 лет.
+                    Используем микроскопы <span class="text-white font-semibold">Leica</span> и протоколы лечения США.
+                </p>
+
+                <div class="flex items-center justify-center lg:justify-start space-x-4 opacity-90">
+                    <div class="flex -space-x-4">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-12 h-12 rounded-full border-2 border-gray-900" alt="">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-12 h-12 rounded-full border-2 border-gray-900" alt="">
+                        <img src="https://randomuser.me/api/portraits/men/85.jpg" class="w-12 h-12 rounded-full border-2 border-gray-900" alt="">
+                    </div>
+                    <div class="text-left">
+                        <span class="block text-xl font-bold text-white">500+</span>
+                        <span class="text-xs text-gray-400 uppercase tracking-wide">Счастливых улыбок</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5">
+                <div class="glass-panel rounded-2xl p-6 md:p-8 shadow-2xl transform transition hover:scale-[1.01] hover:shadow-blue-900/20">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-white mb-1">Что вас беспокоит?</h3>
+                        <p class="text-sm text-gray-400">Выберите пункт для расчета стоимости</p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3 mb-6">
+                        <label class="cursor-pointer group">
+                            <input type="radio" name="service" class="peer sr-only" checked>
+                            <div class="p-4 rounded-xl bg-white/5 border border-white/10 peer-checked:bg-blue-600 peer-checked:border-blue-500 hover:bg-white/10 transition text-center h-full flex flex-col justify-center items-center">
+                                <i class="fa-solid fa-tooth text-2xl mb-2 text-gray-400 group-hover:text-white peer-checked:text-white transition-colors"></i>
+                                <div class="text-sm font-medium">Болит зуб</div>
+                            </div>
+                        </label>
+                        <label class="cursor-pointer group">
+                            <input type="radio" name="service" class="peer sr-only">
+                            <div class="p-4 rounded-xl bg-white/5 border border-white/10 peer-checked:bg-blue-600 peer-checked:border-blue-500 hover:bg-white/10 transition text-center h-full flex flex-col justify-center items-center">
+                                <i class="fa-solid fa-wand-magic-sparkles text-2xl mb-2 text-gray-400 group-hover:text-white peer-checked:text-white transition-colors"></i>
+                                <div class="text-sm font-medium">Эстетика</div>
+                            </div>
+                        </label>
+                        <label class="cursor-pointer group">
+                            <input type="radio" name="service" class="peer sr-only">
+                            <div class="p-4 rounded-xl bg-white/5 border border-white/10 peer-checked:bg-blue-600 peer-checked:border-blue-500 hover:bg-white/10 transition text-center h-full flex flex-col justify-center items-center">
+                                <i class="fa-solid fa-screwdriver-wrench text-2xl mb-2 text-gray-400 group-hover:text-white peer-checked:text-white transition-colors"></i>
+                                <div class="text-sm font-medium">Имплантация</div>
+                            </div>
+                        </label>
+                        <label class="cursor-pointer group">
+                            <input type="radio" name="service" class="peer sr-only">
+                            <div class="p-4 rounded-xl bg-white/5 border border-white/10 peer-checked:bg-blue-600 peer-checked:border-blue-500 hover:bg-white/10 transition text-center h-full flex flex-col justify-center items-center">
+                                <i class="fa-solid fa-child text-2xl mb-2 text-gray-400 group-hover:text-white peer-checked:text-white transition-colors"></i>
+                                <div class="text-sm font-medium">Детям</div>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="relative mb-4 group">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i class="fa-solid fa-phone text-gray-400 group-focus-within:text-blue-400 transition"></i>
+                        </div>
+                        <input type="tel" class="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-10 pr-4 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white/10 transition" placeholder="+7 (___) ___-__-__">
+                    </div>
+
+                    <button class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold py-4 rounded-xl shadow-lg shadow-blue-900/50 transform transition active:scale-[0.98] animate-pulse-glow flex items-center justify-center group">
+                        <span>Рассчитать стоимость</span>
+                        <i class="fa-solid fa-arrow-right ml-2 transform group-hover:translate-x-1 transition"></i>
+                    </button>
+
+                    <p class="text-center text-xs text-gray-500 mt-4 flex justify-center items-center">
+                        <i class="fa-solid fa-lock mr-1.5"></i> Ваши данные надежно защищены
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="relative z-10 bg-white text-gray-900 py-20 rounded-t-[3rem] -mt-10">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Почему выбирают нас?</h2>
+                <div class="w-24 h-1.5 bg-blue-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-3xl shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 text-center group">
+                    <div class="w-20 h-20 bg-blue-100 text-blue-600 rounded-2xl rotate-3 group-hover:rotate-6 transition duration-300 flex items-center justify-center mx-auto mb-6 text-3xl shadow-inner">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Прием в день обращения</h3>
+                    <p class="text-gray-500 leading-relaxed">Острая боль? Примем без очереди через 30 минут после звонка. Мы ценим ваше время.</p>
+                </div>
+                 <div class="bg-gray-50 p-8 rounded-3xl shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 text-center group">
+                    <div class="w-20 h-20 bg-purple-100 text-purple-600 rounded-2xl -rotate-3 group-hover:-rotate-6 transition duration-300 flex items-center justify-center mx-auto mb-6 text-3xl shadow-inner">
+                        <i class="fa-solid fa-video"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Видео-диагностика</h3>
+                    <p class="text-gray-500 leading-relaxed">Показываем весь процесс на экране. Вы видите то же, что и врач, и понимаете план лечения.</p>
+                </div>
+                 <div class="bg-gray-50 p-8 rounded-3xl shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 text-center group">
+                    <div class="w-20 h-20 bg-green-100 text-green-600 rounded-2xl rotate-3 group-hover:rotate-6 transition duration-300 flex items-center justify-center mx-auto mb-6 text-3xl shadow-inner">
+                        <i class="fa-solid fa-shield-heart"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Гарантия результата</h3>
+                    <p class="text-gray-500 leading-relaxed">Юридически закрепленная гарантия на все виды работ до 10 лет. Мы уверены в качестве.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="fixed bottom-8 right-8 z-50 flex flex-col items-end space-y-4 pointer-events-none">
+        <div class="pointer-events-auto bg-white/90 backdrop-blur text-gray-800 p-4 rounded-2xl rounded-tr-none shadow-2xl max-w-xs transform transition hover:-translate-y-1 duration-300 border border-gray-200 relative animate-[bounce_4s_infinite]">
+            <button onclick="this.parentElement.style.display='none'" class="absolute top-2 right-2 text-gray-400 hover:text-gray-600">
+                <i class="fa-solid fa-times text-xs"></i>
+            </button>
+            <div class="flex items-center space-x-3 mb-2">
+                <div class="relative">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" class="w-10 h-10 rounded-full object-cover ring-2 ring-white shadow">
+                    <div class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white rounded-full"></div>
+                </div>
+                <div>
+                    <div class="font-bold text-sm">Анна</div>
+                    <div class="text-xs text-gray-500 font-medium">Администратор</div>
+                </div>
+            </div>
+            <p class="text-sm leading-relaxed text-gray-600">Здравствуйте! 👋 <br>Есть свободное время на сегодня со скидкой 15%. Записать вас?</p>
+        </div>
+
+        <button class="pointer-events-auto w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full shadow-lg shadow-green-500/40 flex items-center justify-center text-white text-2xl transform transition hover:scale-110 active:scale-95 group relative overflow-hidden">
+            <div class="absolute inset-0 bg-white/20 rounded-full animate-ping opacity-20"></div>
+            <i class="fa-brands fa-whatsapp text-3xl group-hover:hidden relative z-10"></i>
+            <i class="fa-solid fa-phone text-2xl hidden group-hover:block relative z-10"></i>
+        </button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.bg-slide');
+            let currentSlide = 0;
+            const slideInterval = 5000; // 5 секунд на слайд
+
+            function nextSlide() {
+                // Убираем активность с текущего
+                slides[currentSlide].classList.remove('active');
+
+                // Вычисляем следующий индекс (зацикливаем)
+                currentSlide = (currentSlide + 1) % slides.length;
+
+                // Добавляем активность следующему
+                slides[currentSlide].classList.add('active');
+            }
+
+            // Запускаем интервал
+            setInterval(nextSlide, slideInterval);
+        });
+    </script>
+</body>
+</html>
