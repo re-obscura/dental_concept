@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
         body { font-family: 'Open Sans', sans-serif; }
         h1, h2, h3, h4, .font-serif { font-family: 'Merriweather', serif; }
 
-        /* Цвета бренда (Синий / Золотой) */
+        /* Цвета бренда */
         .bg-brand-blue { background-color: #1e293b; }
         .text-brand-blue { color: #1e293b; }
         .bg-brand-gold { background-color: #c0a062; }
@@ -32,7 +32,6 @@
             background-size: cover; background-position: center;
             opacity: 0; animation: fadeSlider 24s infinite;
         }
-        /* Используем фото, похожие на оригинал (семья, улыбки) */
         .slide-1 { animation-delay: 0s; background-image: url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80&w=2000'); }
         .slide-2 { animation-delay: 6s; background-image: url('https://images.unsplash.com/photo-1571772996211-2f02c9727629?auto=format&fit=crop&q=80&w=2000'); }
         .slide-3 { animation-delay: 12s; background-image: url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=2000'); }
@@ -46,9 +45,42 @@
         @keyframes popIn { 0% { opacity: 0; transform: translateY(10px); } 100% { opacity: 1; transform: translateY(0); } }
         .msg-animate { animation: popIn 0.4s ease forwards; }
         .chat-bg-pattern { background-color: #f0f2f5; background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 20px 20px; }
+
+        /* Scroll Reveal Animations */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
     </style>
 </head>
-<body class="bg-white text-gray-800 antialiased flex flex-col min-h-screen">
+<body class="bg-white text-gray-800 antialiased flex flex-col min-h-screen relative">
+
+    <!-- MOBILE MENU OVERLAY (Hidden by default) -->
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-white transform translate-x-full transition-transform duration-300 lg:hidden flex flex-col">
+        <div class="flex justify-between items-center p-6 border-b border-gray-100">
+            <div class="flex items-center gap-3">
+                <i class="fa-solid fa-tooth text-3xl text-brand-blue"></i>
+                <div class="flex flex-col">
+                    <span class="text-xl font-serif font-bold text-brand-blue leading-none">Healthy<span class="text-brand-gold">Smiles</span></span>
+                </div>
+            </div>
+            <button onclick="toggleMobileMenu()" class="text-2xl text-gray-500 hover:text-brand-blue"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <nav class="flex flex-col p-6 space-y-6 text-lg font-bold text-brand-blue">
+            <a href="#" class="hover:text-brand-gold transition" onclick="toggleMobileMenu()">Home</a>
+            <a href="#" class="hover:text-brand-gold transition" onclick="toggleMobileMenu()">About</a>
+            <a href="#" class="hover:text-brand-gold transition" onclick="toggleMobileMenu()">Services</a>
+            <a href="#" class="hover:text-brand-gold transition" onclick="toggleMobileMenu()">Special Offers</a>
+            <a href="#" class="hover:text-brand-gold transition" onclick="toggleMobileMenu()">Contact</a>
+        </nav>
+        <div class="mt-auto p-6 bg-gray-50">
+            <button onclick="openChat(); toggleMobileMenu()" class="w-full bg-brand-gold text-white font-bold py-4 rounded shadow-md uppercase tracking-wider mb-4">
+                Book Appointment
+            </button>
+            <div class="flex justify-center space-x-6 text-2xl text-brand-blue">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
 
     <!-- TOP BAR -->
     <div class="bg-brand-blue text-white text-xs md:text-sm py-3 border-b border-gray-700">
@@ -101,10 +133,10 @@
 
             <!-- CTA -->
             <div class="flex items-center gap-4">
-                <button onclick="openChat()" class="hidden md:flex bg-brand-gold hover:bg-yellow-600 text-white font-bold py-3 px-6 rounded-sm shadow-md transition uppercase text-xs tracking-widest items-center gap-2">
+                <button onclick="openChat()" class="hidden md:flex bg-brand-gold hover:bg-yellow-600 text-white font-bold py-3 px-6 rounded-sm shadow-md transition uppercase text-xs tracking-widest items-center gap-2 transform hover:-translate-y-0.5">
                     <i class="fa-solid fa-calendar-check"></i> Book Appointment
                 </button>
-                <button class="lg:hidden text-2xl text-brand-blue"><i class="fa-solid fa-bars"></i></button>
+                <button onclick="toggleMobileMenu()" class="lg:hidden text-2xl text-brand-blue p-2"><i class="fa-solid fa-bars"></i></button>
             </div>
         </div>
     </header>
@@ -165,7 +197,7 @@
     </section>
 
     <!-- SPECIAL OFFERS (Карточки) -->
-    <section class="relative z-20 -mt-16 max-w-7xl mx-auto px-6">
+    <section class="relative z-20 -mt-16 max-w-7xl mx-auto px-6 reveal">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <!-- Offer 1 -->
             <div class="bg-brand-blue text-white p-8 rounded-sm shadow-xl transform hover:-translate-y-2 transition duration-300">
@@ -201,7 +233,7 @@
     </section>
 
     <!-- MEET THE DOCTOR -->
-    <section class="py-24 bg-white">
+    <section class="py-24 bg-white reveal">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div class="relative pl-6 pb-6">
                 <div class="absolute top-0 left-0 w-full h-full border-4 border-brand-gold transform -translate-x-4 -translate-y-4 z-0 rounded-sm opacity-20"></div>
@@ -225,7 +257,7 @@
     </section>
 
     <!-- SERVICES -->
-    <section class="py-24 bg-gray-50">
+    <section class="py-24 bg-gray-50 reveal">
         <div class="max-w-7xl mx-auto px-6 text-center mb-16">
             <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-blue mb-4">Heal Your Smile</h2>
             <p class="text-gray-500 max-w-2xl mx-auto">We deliver an all-encompassing suite of dental care made for you and the people you love.</p>
@@ -260,7 +292,7 @@
     </section>
 
     <!-- TESTIMONIALS -->
-    <section class="py-24 bg-brand-blue text-white relative overflow-hidden">
+    <section class="py-24 bg-brand-blue text-white relative overflow-hidden reveal">
         <div class="absolute top-0 left-0 w-64 h-64 bg-white opacity-5 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
         <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
             <h2 class="text-3xl font-serif font-bold mb-12">See What Our Patients Have to Say</h2>
@@ -283,7 +315,7 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-gray-900 text-gray-400 pt-16 pb-8 border-t border-gray-800">
+    <footer class="bg-gray-900 text-gray-400 pt-16 pb-8 border-t border-gray-800 reveal">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
             <!-- Brand -->
             <div>
@@ -320,11 +352,9 @@
                 </ul>
             </div>
 
-             <!-- Map Placeholder -->
-             <div>
-                <div class="w-full h-40 bg-gray-800 rounded flex items-center justify-center text-xs uppercase tracking-widest">
-                    <i class="fa-solid fa-map mr-2"></i> Map Area
-                </div>
+             <!-- Map Real -->
+             <div class="rounded overflow-hidden shadow-lg border border-gray-800">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3106.634563851532!2d-77.35824582348505!3d38.86367374868953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b64dc878572115%3A0xc4864c205776d635!2sFairfax%2C%20VA%2022030!5e0!3m2!1sen!2sus!4v1705256220101!5m2!1sen!2sus" width="100%" height="160" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
              </div>
         </div>
 
@@ -393,6 +423,29 @@
         function openChat() { chatModal.classList.add('active'); if (!hasStarted) { startChatFlow(); hasStarted = true; } }
         function closeChat() { chatModal.classList.remove('active'); }
         function scrollToBottom() { chatBody.scrollTo({ top: chatBody.scrollHeight, behavior: 'smooth' }); }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('translate-x-full')) {
+                menu.classList.remove('translate-x-full');
+            } else {
+                menu.classList.add('translate-x-full');
+            }
+        }
+
+        // Scroll Animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = { threshold: 0.1 };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        });
 
         function addBotMsg(text, delay = 500) {
             const typingId = 'typing-' + Date.now();
