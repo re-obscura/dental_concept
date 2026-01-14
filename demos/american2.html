@@ -54,9 +54,23 @@
         .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
         .faq-item.active .faq-content { max-height: 200px; }
         .faq-item.active .faq-icon { transform: rotate(180deg); }
+
+        /* Back to Top */
+        .back-to-top { opacity: 0; visibility: hidden; transition: all 0.3s; }
+        .back-to-top.show { opacity: 1; visibility: visible; }
     </style>
 </head>
-<body class="bg-white text-gray-800 antialiased flex flex-col min-h-screen relative">
+<body class="bg-white text-gray-800 antialiased flex flex-col min-h-screen relative pb-16 lg:pb-0">
+
+    <!-- MOBILE STICKY BOTTOM BAR (Critical for conversion) -->
+    <div class="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 z-[55] lg:hidden flex shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
+        <a href="tel:7039157330" class="flex-1 bg-white text-brand-blue font-bold py-4 text-center flex items-center justify-center gap-2 border-r border-gray-100">
+            <i class="fa-solid fa-phone"></i> Call Now
+        </a>
+        <button onclick="openChat()" class="flex-1 bg-brand-gold text-white font-bold py-4 text-center flex items-center justify-center gap-2">
+            <i class="fa-solid fa-calendar-check"></i> Book Online
+        </button>
+    </div>
 
     <!-- MOBILE MENU -->
     <div id="mobile-menu" class="fixed inset-0 z-[60] bg-white transform translate-x-full transition-transform duration-300 lg:hidden flex flex-col">
@@ -110,17 +124,17 @@
         </div>
     </div>
 
-    <!-- HEADER -->
-    <header class="bg-white shadow-lg relative z-50 sticky top-0 transition-all duration-300" id="main-header">
-        <div class="max-w-7xl mx-auto px-6 h-24 flex justify-between items-center">
+    <!-- HEADER (Sticky & Shrinkable) -->
+    <header class="bg-white/95 backdrop-blur-md shadow-lg relative z-50 sticky top-0 transition-all duration-300" id="main-header">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex justify-between items-center transition-all duration-300" id="header-container">
             <!-- Logo -->
             <div class="flex items-center gap-3 cursor-pointer group">
-                <div class="w-12 h-12 bg-brand-blue rounded-full flex items-center justify-center text-white text-2xl group-hover:bg-brand-gold transition">
+                <div class="w-12 h-12 bg-brand-blue rounded-full flex items-center justify-center text-white text-2xl group-hover:bg-brand-gold transition" id="logo-icon">
                     <i class="fa-solid fa-tooth"></i>
                 </div>
                 <div class="flex flex-col">
                     <span class="text-2xl font-serif font-bold text-brand-blue leading-none tracking-tight">Healthy<span class="text-brand-gold">Smiles</span></span>
-                    <span class="text-[10px] uppercase tracking-[0.2em] text-gray-500 font-semibold">Fairfax Dentistry</span>
+                    <span class="text-[10px] uppercase tracking-[0.2em] text-gray-500 font-semibold transition-opacity duration-300" id="logo-subtitle">Fairfax Dentistry</span>
                 </div>
             </div>
 
@@ -179,8 +193,8 @@
             </div>
         </div>
 
-        <!-- Chat Widget -->
-        <div class="absolute bottom-8 right-6 z-20 md:right-12 md:bottom-12 cursor-pointer group" onclick="openChat()">
+        <!-- Chat Widget (Hidden on mobile to avoid clutter with bottom bar) -->
+        <div class="hidden lg:block absolute bottom-8 right-6 z-20 md:right-12 md:bottom-12 cursor-pointer group" onclick="openChat()">
             <div class="absolute -inset-2 bg-white/20 rounded-full animate-ping group-hover:animation-none"></div>
             <div class="bg-white p-4 rounded-lg shadow-2xl border-l-4 border-brand-gold flex items-center gap-4 max-w-xs transform transition group-hover:translate-y-[-5px]">
                 <div class="relative">
@@ -266,9 +280,14 @@
                         </div>
                     </div>
                 </div>
-                <button class="border-2 border-brand-blue text-brand-blue font-bold py-3 px-8 rounded-sm text-xs uppercase tracking-widest hover:bg-brand-blue hover:text-white transition">
-                    Read Her Full Story
-                </button>
+                <div class="flex gap-4">
+                    <button class="border-2 border-brand-blue text-brand-blue font-bold py-3 px-8 rounded-sm text-xs uppercase tracking-widest hover:bg-brand-blue hover:text-white transition">
+                        Read Her Full Story
+                    </button>
+                    <button onclick="openChat()" class="bg-brand-blue text-white font-bold py-3 px-8 rounded-sm text-xs uppercase tracking-widest hover:bg-brand-gold transition">
+                        Schedule with Dr. Doshi
+                    </button>
+                </div>
             </div>
         </div>
     </section>
@@ -300,6 +319,11 @@
                 <h3 class="font-bold text-lg mb-2">5-Star Rated</h3>
                 <p class="text-sm text-blue-200">Over 290+ happy reviews from your Fairfax neighbors.</p>
             </div>
+        </div>
+        <div class="text-center mt-12">
+            <button onclick="openChat()" class="bg-white text-brand-blue font-bold py-3 px-8 rounded-sm shadow-md transition hover:bg-brand-gold hover:text-white uppercase text-xs tracking-widest">
+                Join Our Dental Family
+            </button>
         </div>
     </section>
 
@@ -366,6 +390,11 @@
                 <p class="text-sm text-gray-500">Broken tooth? Severe pain? We offer same-day appointments.</p>
             </div>
         </div>
+        <div class="text-center mt-12">
+            <button onclick="openChat()" class="bg-brand-blue text-white font-bold py-3 px-8 rounded-sm shadow-md transition hover:bg-brand-gold uppercase text-xs tracking-widest">
+                Schedule Your Visit
+            </button>
+        </div>
     </section>
 
     <!-- REAL RESULTS (Before/After) -->
@@ -382,8 +411,9 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Case 1 -->
                 <div class="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer">
-                    <div class="aspect-w-16 aspect-h-9 bg-gray-200">
+                    <div class="aspect-w-16 aspect-h-9 bg-gray-200 relative">
                         <img src="https://images.unsplash.com/photo-1571772996211-2f02c9727629?auto=format&fit=crop&q=80&w=800" class="object-cover w-full h-full transform group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-4 left-4 bg-black/60 text-white text-xs font-bold px-2 py-1 rounded">AFTER</span>
                     </div>
                     <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-6 pt-20">
                         <h3 class="text-white font-bold text-lg">Porcelain Veneers</h3>
@@ -392,14 +422,20 @@
                 </div>
                 <!-- Case 2 -->
                 <div class="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer">
-                    <div class="aspect-w-16 aspect-h-9 bg-gray-200">
+                    <div class="aspect-w-16 aspect-h-9 bg-gray-200 relative">
                         <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&q=80&w=800" class="object-cover w-full h-full transform group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-4 left-4 bg-black/60 text-white text-xs font-bold px-2 py-1 rounded">AFTER</span>
                     </div>
                     <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-6 pt-20">
                         <h3 class="text-white font-bold text-lg">Invisalign® Correction</h3>
                         <p class="text-gray-300 text-xs">12 months treatment</p>
                     </div>
                 </div>
+            </div>
+            <div class="text-center mt-12">
+                <button onclick="openChat()" class="bg-brand-gold text-white font-bold py-3 px-8 rounded-sm shadow-md transition hover:bg-brand-blue uppercase text-xs tracking-widest">
+                    Start Your Transformation
+                </button>
             </div>
         </div>
     </section>
@@ -434,6 +470,9 @@
                         <span class="font-bold text-sm">Massage Chairs</span>
                     </div>
                 </div>
+                <button onclick="openChat()" class="mt-8 border-2 border-brand-gold text-brand-gold font-bold py-3 px-8 rounded-sm text-xs uppercase tracking-widest hover:bg-brand-gold hover:text-white transition">
+                    Book a Tour
+                </button>
             </div>
         </div>
     </section>
@@ -477,6 +516,13 @@
                     </div>
                 </div>
             </div>
+
+            <div class="text-center mt-10">
+                <p class="text-gray-500 mb-4">Still have questions?</p>
+                <button onclick="openChat()" class="bg-brand-blue text-white font-bold py-3 px-8 rounded-sm shadow-md transition hover:bg-brand-gold uppercase text-xs tracking-widest">
+                    Chat With Us
+                </button>
+            </div>
         </div>
     </section>
 
@@ -500,6 +546,11 @@
             </div>
 
             <a href="#" class="inline-block mt-10 text-brand-gold font-bold text-xs uppercase tracking-widest border-b border-brand-gold pb-1 hover:text-white hover:border-white transition">Read all 290+ reviews on Google</a>
+            <div class="text-center mt-8">
+                <button onclick="openChat()" class="bg-white text-brand-blue font-bold py-3 px-8 rounded-sm shadow-md transition hover:bg-brand-gold hover:text-white uppercase text-xs tracking-widest">
+                    Become a Patient
+                </button>
+            </div>
         </div>
     </section>
 
@@ -560,6 +611,11 @@
             </div>
         </div>
     </footer>
+
+    <!-- BACK TO TOP BUTTON -->
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" id="backToTop" class="back-to-top fixed bottom-24 right-6 bg-brand-blue text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center hover:bg-brand-gold transition z-40 hidden lg:flex">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
 
     <!-- CHAT MODAL -->
     <div id="chat-modal" class="fixed inset-0 z-[100] flex items-center justify-center chat-modal-overlay">
@@ -627,7 +683,36 @@
             }
         }
 
-        // Scroll Animations
+        // Scroll Animations & Header Shrink & Back to Top
+        const header = document.getElementById('main-header');
+        const headerContainer = document.getElementById('header-container');
+        const logoIcon = document.getElementById('logo-icon');
+        const logoSubtitle = document.getElementById('logo-subtitle');
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            // Header Shrink
+            if (window.scrollY > 50) {
+                header.classList.remove('h-24'); header.classList.add('h-20');
+                headerContainer.classList.remove('h-24'); headerContainer.classList.add('h-20');
+                logoIcon.classList.remove('w-12', 'h-12', 'text-2xl'); logoIcon.classList.add('w-10', 'h-10', 'text-xl');
+                logoSubtitle.classList.add('opacity-0');
+            } else {
+                header.classList.add('h-24'); header.classList.remove('h-20');
+                headerContainer.classList.add('h-24'); headerContainer.classList.remove('h-20');
+                logoIcon.classList.add('w-12', 'h-12', 'text-2xl'); logoIcon.classList.remove('w-10', 'h-10', 'text-xl');
+                logoSubtitle.classList.remove('opacity-0');
+            }
+
+            // Back to Top
+            if (window.scrollY > 500) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        // Reveal Animation
         document.addEventListener('DOMContentLoaded', () => {
             const observerOptions = { threshold: 0.1 };
             const observer = new IntersectionObserver((entries) => {
@@ -637,22 +722,7 @@
                     }
                 });
             }, observerOptions);
-
             document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-        });
-
-        // Header Shrink on Scroll
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('main-header');
-            if (window.scrollY > 50) {
-                header.classList.add('py-0');
-                header.classList.remove('h-24');
-                header.classList.add('h-20');
-            } else {
-                header.classList.remove('py-0');
-                header.classList.remove('h-20');
-                header.classList.add('h-24');
-            }
         });
 
         function addBotMsg(text, delay = 500) {
