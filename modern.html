@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <style>html { visibility: hidden; opacity: 0; }</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Best Family Dentist in Lorton Virginia | Lorton Dentist</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Icons & Libs -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- SEO Meta (Preserved) -->
+    <meta name="description" content="Trusted family dentist in Lorton, VA. Dr. Vladimir Soyfer offers dental implants, Invisalign, and emergency care. Book your free consultation in Lorton today!">
+    <meta name="geo.region" content="US-VA" />
+    <meta name="geo.placename" content="Lorton" />
+    <meta name="geo.position" content="38.7118;-77.2117" />
+    <meta name="ICBM" content="38.7118, -77.2117" />
+
+    <!-- Schema (Preserved) -->
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Dentist",
+    "name": "Lorton Dentist",
+    "description": "Comprehensive dental care in Lorton, VA tailored to your needs.",
+    "slogan": "Your Best Family Dentist in Lorton Virginia",
+    "openingHours": "Mo,Tu,We,Th,Fr 08:00-17:00, Sa 09:30-15:00",
+    "telephone": "+15715417977",
+    "email": "Soyferv@yahoo.com",
+    "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Lorton",
+    "addressRegion": "VA",
+    "postalCode": "22079",
+    "streetAddress": "7772 Grandwind Dr"
+    },
+    "paymentAccepted": "Cash, Credit Card, Insurance, CareCredit",
+    "priceRange": "$",
+    "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": 4.9,
+    "reviewCount": 150
+    },
+    "image": "https://lortondentist.com/logo.png",
+    "review": [
+    {
+    "@type": "Review",
+    "author": "Roy C.",
+    "description": "I cannot help but express my gratitude to Dr. Soyfer for his professionalism and sensitive attitude...",
+    "reviewRating": { "@type": "Rating", "ratingValue": 5 }
+    },
+    {
+    "@type": "Review",
+    "author": "Lynda M.",
+    "description": "I would also like to share a positive experience of visiting Dr. Soyfer with my son...",
+    "reviewRating": { "@type": "Rating", "ratingValue": 5 }
+    }
+    ]
+    }
+    </script>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            gold: '#C5A986',
+                            goldDark: '#A68A68',
+                            black: '#121212',
+                            gray: '#F5F5F7',
+                            surface: '#FFFFFF',
+                            accent: '#2C3E50'
+                        }
+                    },
+                    borderRadius: {
+                        '4xl': '2.5rem',
+                        '5xl': '3rem',
+                    },
+                    boxShadow: {
+                        'bento': '0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02)',
+                        'bento-hover': '0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.01)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Base Reset & Smoothness */
+        body {
+            background-color: #F2F2F4; /* Light gray background for blocks to pop */
+            color: #1a1a1a;
+            overflow-x: hidden;
+        }
+
+        /* Bento Grid Utility Classes */
+        .bento-card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            border: 1px solid rgba(0,0,0,0.03);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bento-card:hover {
+            transform: translateY(-4px) scale(1.005);
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.08);
+            z-index: 10;
+        }
+
+        .dark .bento-card {
+            background: #1e1e1e;
+            border-color: rgba(255,255,255,0.05);
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #d4d4d4; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #C5A986; }
+
+        /* Typography Enhancements */
+        .text-balance { text-wrap: balance; }
+
+        /* Navigation Pill */
+        .nav-pill {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0,0,0,0.05);
+            border-radius: 100px;
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
+        }
+
+        /* Video Masking for Bento */
+        .video-mask {
+            border-radius: 1.5rem;
+            mask-image: -webkit-radial-gradient(white, black);
+            -webkit-mask-image: -webkit-radial-gradient(white, black);
+        }
+
+        /* Marquee Animation */
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            animation: marquee 30s linear infinite;
+        }
+
+        /* Modal Transitions */
+        .modal-enter { opacity: 0; transform: scale(0.95); }
+        .modal-enter-active { opacity: 1; transform: scale(1); transition: all 0.3s ease-out; }
+        .modal-exit { opacity: 1; transform: scale(1); }
+        .modal-exit-active { opacity: 0; transform: scale(0.95); transition: all 0.2s ease-in; }
+
+        /* Custom Selection */
+        ::selection {
+            background-color: #C5A986;
+            color: white;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-gold selection:text-white pb-20 md:pb-0">
+
+    <!-- Floating Navigation -->
+    <nav class="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl z-50 nav-pill px-6 py-4 flex justify-between items-center transition-all duration-300" id="navbar">
+        <a href="#" class="flex items-center gap-3 group" onclick="window.scrollTo(0,0)">
+            <div class="w-10 h-10 bg-brand-black text-brand-gold rounded-full flex items-center justify-center transition-transform group-hover:rotate-12">
+                <i class="fas fa-tooth"></i>
+            </div>
+            <div class="flex flex-col leading-none">
+                <span class="font-bold text-sm tracking-wide uppercase text-gray-900">Lorton Dentist</span>
+                <span class="text-[10px] text-gray-500 uppercase tracking-widest">Virginia</span>
+            </div>
+        </a>
+
+        <div class="hidden md:flex items-center space-x-8 text-sm font-medium uppercase tracking-wider text-gray-600">
+            <a href="#services" class="hover:text-brand-black transition-colors">Services</a>
+            <a href="#about" class="hover:text-brand-black transition-colors">Doctor</a>
+            <a href="#reviews" class="hover:text-brand-black transition-colors">Reviews</a>
+            <a href="#contact" class="hover:text-brand-black transition-colors">Contact</a>
+        </div>
+
+        <div class="flex items-center gap-3">
+            <a href="tel:5715417977" class="hidden md:flex items-center justify-center w-10 h-10 rounded-full border border-gray-200 hover:border-brand-gold hover:text-brand-gold transition-colors text-gray-400">
+                <i class="fas fa-phone"></i>
+            </a>
+            <button onclick="openBookingModal()" class="bg-brand-black text-white px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-brand-gold transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                Book Now
+            </button>
+            <button class="md:hidden text-2xl text-gray-800 ml-2" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-white z-[45] pt-32 px-6 flex flex-col space-y-6 text-center">
+        <a href="#services" class="text-2xl font-serif text-gray-800" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Services</a>
+        <a href="#about" class="text-2xl font-serif text-gray-800" onclick="document.getElementById('mobile-menu').classList.add('hidden')">About</a>
+        <a href="#reviews" class="text-2xl font-serif text-gray-800" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Reviews</a>
+        <a href="#contact" class="text-2xl font-serif text-gray-800" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Contact</a>
+        <button class="absolute top-8 right-8 text-2xl text-gray-400" onclick="document.getElementById('mobile-menu').classList.add('hidden')">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <!-- Main Container -->
+    <main class="max-w-[1440px] mx-auto px-4 md:px-6 pt-28 pb-12 space-y-4 md:space-y-6">
+
+        <!-- HERO SECTION: The Bento Hero -->
+        <section class="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 min-h-[600px]">
+
+            <!-- Hero Text Block -->
+            <div class="md:col-span-7 lg:col-span-8 bento-card !p-8 md:!p-12 justify-center bg-white" data-aos="fade-up">
+                <div class="flex items-center gap-2 mb-6">
+                    <span class="px-3 py-1 rounded-full bg-brand-gold/10 text-brand-goldDark text-[10px] font-bold uppercase tracking-widest">
+                        <i class="fas fa-map-pin mr-1"></i> Lorton, VA
+                    </span>
+                    <span class="px-3 py-1 rounded-full bg-green-50 text-green-700 text-[10px] font-bold uppercase tracking-widest animate-pulse">
+                        <i class="fas fa-circle text-[8px] mr-1"></i> Accepting New Patients
+                    </span>
+                </div>
+
+                <h1 class="font-serif text-5xl md:text-7xl text-brand-black leading-[1.1] mb-6">
+                    Your Best Family <br>
+                    <span class="text-brand-gold italic">Dentist</span> in Virginia.
+                </h1>
+
+                <p class="text-gray-500 text-lg md:text-xl max-w-xl leading-relaxed mb-10">
+                    Dr. Vladimir Soyfer provides comprehensive care – dental implants, Invisalign, and emergency dentistry tailored to your financial capabilities.
+                </p>
+
+                <div class="flex flex-wrap gap-4">
+                    <button onclick="openBookingModal()" class="px-8 py-4 bg-brand-black text-white rounded-xl font-bold uppercase tracking-widest hover:bg-brand-gold transition-colors flex items-center gap-3">
+                        Make Appointment <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <a href="#services" class="px-8 py-4 border border-gray-200 text-gray-600 rounded-xl font-bold uppercase tracking-widest hover:border-brand-black hover:text-brand-black transition-colors">
+                        View Services
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero Video/Image Block -->
+            <div class="md:col-span-5 lg:col-span-4 bento-card !p-0 overflow-hidden relative group h-[400px] md:h-auto" data-aos="fade-up" data-aos-delay="100">
+                <video autoplay muted loop playsinline poster="https://videocdn.cdnpk.net/videos/855708a0-a777-43b4-a19f-f77792476d72/horizontal/thumbnails/large.jpg?ga=GA1.1.200189668.1768237498&item_id=2818631&w=740&q=80" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <source src="https://videocdn.cdnpk.net/videos/855708a0-a777-43b4-a19f-f77792476d72/horizontal/previews/clear/large.mp4?token=exp=1768239435~hmac=6be107b2e6f665b0e1187ead63f21cce462aa32ecb710a9f75bb7dde982a4d2d" type="video/mp4">
+                </video>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div class="absolute bottom-6 left-6 right-6 text-white">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-xs uppercase tracking-widest opacity-80 mb-1">Emergency Care</p>
+                            <p class="font-serif text-2xl">Available Daily</p>
+                        </div>
+                        <div class="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center">
+                            <i class="fas fa-play text-xs pl-1"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Block -->
+            <div class="md:col-span-4 bento-card bg-brand-black text-white !p-8" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex flex-col h-full justify-between">
+                    <i class="fas fa-star text-brand-gold text-3xl"></i>
+                    <div>
+                        <div class="text-4xl font-bold mb-1">4.9/5</div>
+                        <div class="text-white/60 text-sm uppercase tracking-widest">Based on 150+ Reviews</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phone Block -->
+            <div class="md:col-span-4 bento-card bg-[#E8E8ED] !p-8 group cursor-pointer hover:bg-brand-gold hover:text-white transition-colors" data-aos="fade-up" data-aos-delay="300">
+                <a href="tel:5715417977" class="flex flex-col h-full justify-between h-full">
+                    <i class="fas fa-phone-alt text-3xl text-gray-400 group-hover:text-white transition-colors"></i>
+                    <div>
+                        <div class="text-3xl font-serif font-bold mb-1">571-541-7977</div>
+                        <div class="text-gray-500 group-hover:text-white/80 text-sm uppercase tracking-widest">Call Us Now</div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Address Block -->
+            <div class="md:col-span-4 bento-card bg-white !p-8" data-aos="fade-up" data-aos-delay="400">
+                <div class="flex flex-col h-full justify-between">
+                    <div class="flex -space-x-3">
+                        <div class="w-10 h-10 rounded-full border-2 border-white bg-gray-200"></div>
+                        <div class="w-10 h-10 rounded-full border-2 border-white bg-gray-300"></div>
+                        <div class="w-10 h-10 rounded-full border-2 border-white bg-gray-400 flex items-center justify-center text-[10px] font-bold">+2k</div>
+                    </div>
+                    <div>
+                        <div class="text-lg font-bold mb-1">7772 Grandwind Dr</div>
+                        <div class="text-gray-400 text-sm uppercase tracking-widest">Lorton, VA 22079</div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- INSURANCE MARQUEE -->
+        <section class="w-full bg-brand-black text-white/50 py-4 rounded-xl overflow-hidden flex items-center">
+            <div class="whitespace-nowrap flex animate-marquee">
+                <div class="flex gap-12 px-6 text-sm font-bold uppercase tracking-widest">
+                    <span><i class="fas fa-check text-brand-gold mr-2"></i> Delta Dental</span>
+                    <span><i class="fas fa-check text-brand-gold mr-2"></i> Aetna</span>
+                    <span><i class="fas fa-check text-brand-gold mr-2"></i> Cigna</span>
+                    <span><i class="fas fa-check text-brand-gold mr-2"></i> MetLife</span>
+                    <span><i class="fas fa-check text-brand-gold mr-2"></i> BlueCross</span>
+                    <span><i class="fas fa-check text-brand-gold mr-2"></i> CareCredit</span>
+                    <span><i class="fas fa-check text-brand-gold mr-2"></i> United Healthcare</span>
+                </div>
+                <!-- Duplicate for seamless loop -->
+                <div class="flex gap-12 px-6 text-sm font-bold uppercase tracking-widest">
+                    <span><i class="fas fa-check text-brand-gold mr-2"></i> Delta Dental</span>
+                    <span><i class="fas fa-check text-brand-gold mr-2"></i> Aetna</span>
+                    <span><i class="fas fa-check text-brand-gold mr-2"></i> Cigna</span>
+                    <span><i class="fas fa-check text-brand-gold mr-2"></i> MetLife</span>
+                    <span><i class="fas fa-check text-brand-gold mr-2"></i> BlueCross</span>
+                    <span><i class="fas fa-check text-brand-gold mr-2"></i> CareCredit</span>
+                    <span><i class="fas fa-check text-brand-gold mr-2"></i> United Healthcare</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES GRID -->
+        <section id="services" class="py-10">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-8 px-2">
+                <div>
+                    <span class="text-brand-gold font-bold uppercase tracking-widest text-xs mb-2 block">Our Expertise</span>
+                    <h2 class="text-4xl font-serif text-brand-black">Comprehensive Services</h2>
+                </div>
+                <a href="#contact" class="hidden md:inline-block text-sm font-bold uppercase tracking-widest border-b border-gray-300 pb-1 hover:border-brand-gold transition-colors">View Full List</a>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+
+                <!-- Large Service Card -->
+                <a href="dental-implants.html" class="col-span-2 row-span-2 bento-card bg-brand-black text-white group !p-0 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-brand-gold/20 to-transparent z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=600&q=80" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700">
+                    <div class="relative z-20 p-8 flex flex-col justify-between h-full">
+                        <div class="w-12 h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center">
+                            <i class="fas fa-tooth text-brand-gold"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-3xl font-serif mb-2">Dental Implants</h3>
+                            <p class="text-white/60 text-sm mb-4 line-clamp-2">Restore your smile with permanent, natural-looking implants.</p>
+                            <span class="text-xs font-bold uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all">Learn More <i class="fas fa-arrow-right text-brand-gold"></i></span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Standard Cards -->
+                <a href="invisalign.html" class="bento-card group hover:bg-blue-50">
+                    <i class="fas fa-magic text-3xl text-blue-500 mb-4"></i>
+                    <h3 class="font-bold text-lg mb-1">Invisalign</h3>
+                    <p class="text-xs text-gray-500">Clear aligners</p>
+                </a>
+
+                <a href="all-on-4-implants.html" class="bento-card group hover:bg-brand-gold/10">
+                    <i class="fas fa-layer-group text-3xl text-brand-gold mb-4"></i>
+                    <h3 class="font-bold text-lg mb-1">All-on-4</h3>
+                    <p class="text-xs text-gray-500">Full arch restoration</p>
+                </a>
+
+                <a href="dental-crowns.html" class="bento-card group hover:bg-purple-50">
+                    <i class="fas fa-crown text-3xl text-purple-500 mb-4"></i>
+                    <h3 class="font-bold text-lg mb-1">Crowns</h3>
+                    <p class="text-xs text-gray-500">Protection & style</p>
+                </a>
+
+                <a href="teeth-whitening.html" class="bento-card group hover:bg-yellow-50">
+                    <i class="fas fa-star text-3xl text-yellow-500 mb-4"></i>
+                    <h3 class="font-bold text-lg mb-1">Whitening</h3>
+                    <p class="text-xs text-gray-500">Brighten your smile</p>
+                </a>
+
+                <a href="root-canal.html" class="bento-card group hover:bg-red-50">
+                    <i class="fas fa-notes-medical text-3xl text-red-500 mb-4"></i>
+                    <h3 class="font-bold text-lg mb-1">Root Canal</h3>
+                    <p class="text-xs text-gray-500">Save your tooth</p>
+                </a>
+
+                <a href="pediatric-dentistry.html" class="bento-card group hover:bg-pink-50">
+                    <i class="fas fa-child text-3xl text-pink-500 mb-4"></i>
+                    <h3 class="font-bold text-lg mb-1">Kids</h3>
+                    <p class="text-xs text-gray-500">Pediatric care</p>
+                </a>
+
+                <a href="emergency-dentist.html" class="bento-card bg-red-500 text-white group hover:bg-red-600">
+                    <i class="fas fa-first-aid text-3xl text-white mb-4 animate-pulse"></i>
+                    <h3 class="font-bold text-lg mb-1">Emergency</h3>
+                    <p class="text-xs text-white/80">Immediate help</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- DOCTOR & ABOUT SECTION (Split Layout) -->
+        <section id="about" class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div class="bento-card !p-0 overflow-hidden min-h-[500px]" data-aos="fade-right">
+                <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dr Soyfer" class="w-full h-full object-cover">
+                <div class="absolute bottom-6 left-6 bg-white/90 backdrop-blur px-6 py-4 rounded-xl shadow-lg">
+                    <h3 class="font-serif text-xl font-bold">Dr. Vladimir Soyfer</h3>
+                    <p class="text-xs uppercase tracking-widest text-brand-gold">DMD, 15+ Years Experience</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-6">
+                <div class="bento-card bg-brand-black text-white" data-aos="fade-left">
+                    <span class="text-brand-gold font-bold uppercase tracking-widest text-xs mb-4 block">Meet The Doctor</span>
+                    <h2 class="text-3xl font-serif mb-6">Patient-centered care tailored to your needs.</h2>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        Dr. Vladimir Soyfer places the patient at the heart of every decision. With a background from Georgetown University and over 50 scientific papers published, he combines academic excellence with clinical precision.
+                    </p>
+                    <div class="mt-auto pt-6 border-t border-white/10 flex gap-4">
+                        <div class="flex flex-col">
+                            <span class="text-2xl font-bold text-brand-gold">15+</span>
+                            <span class="text-[10px] uppercase text-gray-500">Years</span>
+                        </div>
+                        <div class="flex flex-col border-l border-white/10 pl-4">
+                            <span class="text-2xl font-bold text-brand-gold">UPenn</span>
+                            <span class="text-[10px] uppercase text-gray-500">Alumni</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento-card bg-[#C5A986] text-white flex-row items-center justify-between group cursor-pointer" onclick="openBookingModal()" data-aos="fade-up">
+                    <div>
+                        <h3 class="font-bold text-xl">Free Consultation</h3>
+                        <p class="text-white/80 text-sm">Let's discuss your smile goals.</p>
+                    </div>
+                    <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- JOURNEY / STEPS -->
+        <section class="py-10">
+            <h2 class="text-3xl font-serif text-brand-black mb-8 px-2">Your Path to Confidence</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Step 1 -->
+                <div class="bento-card !bg-transparent border-none !p-0 group" data-aos="fade-up" data-aos-delay="0">
+                    <div class="bg-white rounded-[2rem] p-8 h-full border border-gray-100 hover:border-brand-gold transition-colors relative overflow-hidden">
+                        <div class="text-9xl font-bold text-gray-100 absolute -right-4 -top-4 select-none group-hover:text-brand-gold/10 transition-colors">01</div>
+                        <div class="relative z-10">
+                            <div class="w-14 h-14 bg-gray-50 rounded-2xl flex items-center justify-center mb-6 text-xl">📅</div>
+                            <h3 class="text-xl font-bold mb-3">Book Online</h3>
+                            <p class="text-gray-500 text-sm leading-relaxed">Skip the phone tag. Select your preferred time instantly through our secure 24/7 portal.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Step 2 -->
+                <div class="bento-card !bg-transparent border-none !p-0 group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-white rounded-[2rem] p-8 h-full border border-gray-100 hover:border-brand-gold transition-colors relative overflow-hidden">
+                        <div class="text-9xl font-bold text-gray-100 absolute -right-4 -top-4 select-none group-hover:text-brand-gold/10 transition-colors">02</div>
+                        <div class="relative z-10">
+                            <div class="w-14 h-14 bg-gray-50 rounded-2xl flex items-center justify-center mb-6 text-xl">🎧</div>
+                            <h3 class="text-xl font-bold mb-3">Relaxed Visit</h3>
+                            <p class="text-gray-500 text-sm leading-relaxed">Comfort menu, noise-cancelling headphones, and warm blankets await you.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Step 3 -->
+                <div class="bento-card !bg-transparent border-none !p-0 group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-white rounded-[2rem] p-8 h-full border border-gray-100 hover:border-brand-gold transition-colors relative overflow-hidden">
+                        <div class="text-9xl font-bold text-gray-100 absolute -right-4 -top-4 select-none group-hover:text-brand-gold/10 transition-colors">03</div>
+                        <div class="relative z-10">
+                            <div class="w-14 h-14 bg-gray-50 rounded-2xl flex items-center justify-center mb-6 text-xl">✨</div>
+                            <h3 class="text-xl font-bold mb-3">Radiant Smile</h3>
+                            <p class="text-gray-500 text-sm leading-relaxed">Leave with a clear health plan. We handle all insurance claims for you.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- REVIEWS (Masonry-ish) -->
+        <section id="reviews" class="bg-brand-black rounded-[3rem] p-8 md:p-16 text-white relative overflow-hidden">
+            <!-- Background Decoration -->
+            <div class="absolute top-0 right-0 w-64 h-64 bg-brand-gold opacity-10 blur-[100px]"></div>
+
+            <div class="flex flex-col md:flex-row gap-12 relative z-10">
+                <div class="md:w-1/3">
+                    <h2 class="text-4xl font-serif mb-6">Patient <br><span class="text-brand-gold">Stories</span></h2>
+                    <div class="flex items-center gap-4 mb-6">
+                        <img src="assets/images/google_logo.svg" class="h-6 brightness-0 invert opacity-70" alt="Google">
+                        <div class="flex text-brand-gold text-sm">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-8">We are proud to serve the Lorton community with a 4.9-star rating.</p>
+                    <a href="https://www.google.com/search?q=Dental+Health+Center+of+Northern+Virginia+reviews" target="_blank" class="text-sm font-bold uppercase tracking-widest border-b border-white/30 pb-1 hover:text-brand-gold hover:border-brand-gold transition-colors">Read all reviews</a>
+                </div>
+
+                <div class="md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/5 hover:bg-white/15 transition-colors">
+                        <div class="flex items-center mb-4">
+                            <div class="w-8 h-8 rounded-full bg-brand-gold flex items-center justify-center text-brand-black font-bold text-xs mr-3">R</div>
+                            <div>
+                                <p class="font-bold text-sm">Roy C.</p>
+                                <div class="text-[10px] text-brand-gold">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-300 leading-relaxed">"The doctor explained all possible options in detail and patiently helped me choose the best one. The treatment was as comfortable and painless as possible."</p>
+                    </div>
+
+                    <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/5 hover:bg-white/15 transition-colors translate-y-4 md:translate-y-8">
+                        <div class="flex items-center mb-4">
+                            <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold text-xs mr-3">L</div>
+                            <div>
+                                <p class="font-bold text-sm">Lynda M.</p>
+                                <div class="text-[10px] text-brand-gold">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-300 leading-relaxed">"Dr. Soyfer showed amazing kindness and understanding towards my son. My son was delighted with the toys in the clinic and with the doctor’s approach."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Accordion Block -->
+        <section class="py-10 max-w-4xl mx-auto">
+            <h2 class="text-center text-3xl font-serif mb-10">Common Questions</h2>
+            <div class="space-y-4">
+                <details class="group bg-white rounded-2xl p-6 shadow-sm cursor-pointer [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex items-center justify-between font-bold text-lg text-gray-800">
+                        Do you accept my insurance?
+                        <span class="transition group-open:rotate-180">
+                            <i class="fas fa-chevron-down text-brand-gold"></i>
+                        </span>
+                    </summary>
+                    <p class="text-gray-500 mt-4 leading-relaxed">
+                        We accept most major PPO insurance plans including Delta Dental, Aetna, Cigna, and many others. We also offer financing options through CareCredit.
+                    </p>
+                </details>
+                <details class="group bg-white rounded-2xl p-6 shadow-sm cursor-pointer [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex items-center justify-between font-bold text-lg text-gray-800">
+                        Are you taking new patients?
+                        <span class="transition group-open:rotate-180">
+                            <i class="fas fa-chevron-down text-brand-gold"></i>
+                        </span>
+                    </summary>
+                    <p class="text-gray-500 mt-4 leading-relaxed">
+                        Yes! We are currently welcoming new patients of all ages to our Lorton, VA office. We reserve emergency slots daily.
+                    </p>
+                </details>
+                <details class="group bg-white rounded-2xl p-6 shadow-sm cursor-pointer [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex items-center justify-between font-bold text-lg text-gray-800">
+                        What if I'm afraid of the dentist?
+                        <span class="transition group-open:rotate-180">
+                            <i class="fas fa-chevron-down text-brand-gold"></i>
+                        </span>
+                    </summary>
+                    <p class="text-gray-500 mt-4 leading-relaxed">
+                        Dental anxiety is very common. We specialize in gentle care and offer various comfort options, including sedation dentistry.
+                    </p>
+                </details>
+            </div>
+        </section>
+
+        <!-- MAP BLOCK -->
+        <section id="contact" class="h-96 w-full rounded-[2rem] overflow-hidden relative shadow-lg">
+            <iframe data-src="https://maps.google.com/maps?q=7772+Grandwind+Dr,+Lorton,+VA+22079&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" class="grayscale"></iframe>
+            <div class="absolute bottom-6 left-6 bg-white p-6 rounded-xl shadow-2xl max-w-xs">
+                <h4 class="font-bold text-lg mb-2">Visit Us</h4>
+                <p class="text-sm text-gray-500 mb-4">7772 Grandwind Dr, Lorton, VA 22079</p>
+                <a href="https://www.google.com/maps/dir//7772+Grandwind+Dr,+Lorton,+VA+22079" target="_blank" class="text-xs font-bold uppercase tracking-widest text-brand-gold hover:text-brand-black">Get Directions</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-white border-t border-gray-100 pt-16 pb-24 md:pb-12 px-6">
+        <div class="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div class="col-span-1 md:col-span-2">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-8 h-8 bg-brand-gold rounded-lg flex items-center justify-center text-white">
+                        <i class="fas fa-tooth"></i>
+                    </div>
+                    <span class="font-serif text-xl font-bold">Lorton Dentist</span>
+                </div>
+                <p class="text-gray-500 max-w-sm mb-6">
+                    Providing high-quality dental care in a comfortable, modern environment. Your smile is our priority.
+                </p>
+                <div class="flex gap-4">
+                    <a href="https://www.facebook.com/lortondentist" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-[#1877F2] hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-[#DB4437] hover:text-white transition-colors"><i class="fab fa-google"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="font-bold uppercase tracking-widest text-xs mb-6 text-gray-400">Services</h4>
+                <ul class="space-y-3 text-sm text-gray-600">
+                    <li><a href="dental-implants.html" class="hover:text-brand-gold">Implants</a></li>
+                    <li><a href="invisalign.html" class="hover:text-brand-gold">Invisalign</a></li>
+                    <li><a href="emergency-dentist.html" class="hover:text-brand-gold">Emergency</a></li>
+                    <li><a href="pediatric-dentistry.html" class="hover:text-brand-gold">Pediatric</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold uppercase tracking-widest text-xs mb-6 text-gray-400">Contact</h4>
+                <ul class="space-y-3 text-sm text-gray-600">
+                    <li><i class="fas fa-phone mr-2 text-brand-gold"></i> 571-541-7977</li>
+                    <li><i class="fas fa-envelope mr-2 text-brand-gold"></i> Soyferv@yahoo.com</li>
+                    <li><i class="fas fa-clock mr-2 text-brand-gold"></i> Mon-Fri: 8am - 5pm</li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-[1440px] mx-auto mt-16 pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400 uppercase tracking-widest">
+            <p>&copy; 2024 Lorton Dentist. All rights reserved.</p>
+            <div class="flex gap-6 mt-4 md:mt-0">
+                <span>ADA Member</span>
+                <span>NVDS</span>
+                <span>AAOSH</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MOBILE BOTTOM BAR (Sticky) -->
+    <div class="fixed bottom-0 left-0 w-full bg-white/90 backdrop-blur-lg border-t border-gray-200 p-4 md:hidden z-40 flex justify-between items-center pb-safe">
+        <a href="tel:5715417977" class="flex flex-col items-center text-gray-500 hover:text-brand-gold">
+            <i class="fas fa-phone-alt mb-1"></i>
+            <span class="text-[10px] font-bold uppercase">Call</span>
+        </a>
+        <button onclick="openBookingModal()" class="mx-4 flex-1 bg-brand-black text-white rounded-full py-3 font-bold uppercase text-xs tracking-widest shadow-lg">
+            Book Now
+        </button>
+        <a href="#contact" class="flex flex-col items-center text-gray-500 hover:text-brand-gold">
+            <i class="fas fa-map-marker-alt mb-1"></i>
+            <span class="text-[10px] font-bold uppercase">Map</span>
+        </a>
+    </div>
+
+    <!-- BOOKING MODAL -->
+    <div id="booking-modal" class="fixed inset-0 z-[100] hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="fixed inset-0 bg-black/40 backdrop-blur-sm transition-opacity" onclick="closeBookingModal()"></div>
+        <div class="fixed inset-0 z-10 overflow-y-auto">
+            <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+                <div class="relative transform overflow-hidden rounded-[2rem] bg-white text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-lg p-8">
+
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="font-serif text-2xl text-brand-black">Book Your Visit</h3>
+                        <button onclick="closeBookingModal()" class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors">
+                            <i class="fas fa-times text-gray-500"></i>
+                        </button>
+                    </div>
+
+                    <form id="modal-booking-form" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Name</label>
+                            <input type="text" required class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-gold focus:bg-white transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Phone</label>
+                            <input type="tel" required class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-gold focus:bg-white transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Service</label>
+                            <select class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-gold focus:bg-white transition-all">
+                                <option>General Checkup</option>
+                                <option>Cosmetic</option>
+                                <option>Implants</option>
+                                <option>Emergency</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="w-full bg-brand-black text-white font-bold uppercase tracking-widest py-4 rounded-xl hover:bg-brand-gold transition-colors mt-4">
+                            Confirm Request
+                        </button>
+                    </form>
+
+                    <div id="modal-success" class="hidden text-center py-8">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 text-green-600 text-2xl">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <h3 class="font-bold text-xl mb-2">Request Sent!</h3>
+                        <p class="text-gray-500 text-sm">We will contact you shortly to confirm.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Init AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 50
+        });
+
+        // Visible Load
+        document.addEventListener("DOMContentLoaded", function() {
+            document.documentElement.style.visibility = 'visible';
+            document.documentElement.style.opacity = '1';
+
+            // Lazy load iframes
+            const iframes = document.querySelectorAll('iframe[data-src]');
+            iframes.forEach(iframe => {
+                iframe.src = iframe.getAttribute('data-src');
+            });
+        });
+
+        // Modal Logic
+        function openBookingModal() {
+            const modal = document.getElementById('booking-modal');
+            modal.classList.remove('hidden');
+            // Prevent body scroll
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeBookingModal() {
+            const modal = document.getElementById('booking-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+            // Reset form if success state was shown
+            document.getElementById('modal-booking-form').style.display = 'block';
+            document.getElementById('modal-success').classList.add('hidden');
+        }
+
+        // Form Handler
+        document.getElementById('modal-booking-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            this.style.display = 'none';
+            document.getElementById('modal-success').classList.remove('hidden');
+        });
+
+        // Scroll Navbar Effect
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-xl');
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+            } else {
+                nav.classList.remove('shadow-xl');
+                nav.style.background = 'rgba(255, 255, 255, 0.9)';
+            }
+        });
+    </script>
+    <style>
+        .pb-safe { padding-bottom: env(safe-area-inset-bottom); }
+    </style>
+</body>
+</html>

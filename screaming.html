@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <style>html { visibility: hidden; opacity: 0; }</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Best Family Dentist in Lorton Virginia | Lorton Dentist</title>
+
+    <!-- Fonts: Space Grotesk (Headings) + Space Mono (Tech feel) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- SEO Meta (Preserved) -->
+    <meta name="description" content="Trusted family dentist in Lorton, VA. Dr. Vladimir Soyfer offers dental implants, Invisalign, and emergency care. Book your free consultation in Lorton today!">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Space Grotesk"', 'sans-serif'],
+                        mono: ['"Space Mono"', 'monospace'],
+                    },
+                    colors: {
+                        neo: {
+                            bg: '#FDFBF7',      /* Off-white paper */
+                            black: '#1A1A1A',   /* Soft black */
+                            mint: '#A3E635',    /* Vibrant Mint */
+                            purple: '#C084FC',  /* Electric Purple */
+                            orange: '#FB923C',  /* Bright Orange */
+                            pink: '#F472B6',    /* Hot Pink */
+                            blue: '#60A5FA'     /* Sky Blue */
+                        }
+                    },
+                    boxShadow: {
+                        'hard': '5px 5px 0px 0px #1A1A1A',
+                        'hard-hover': '2px 2px 0px 0px #1A1A1A',
+                        'hard-reverse': '-5px 5px 0px 0px #1A1A1A',
+                    },
+                    borderWidth: {
+                        '3': '3px',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #FDFBF7;
+            color: #1A1A1A;
+            overflow-x: hidden;
+        }
+
+        /* Brutalist Scrollbar */
+        ::-webkit-scrollbar { width: 15px; border-left: 3px solid #1A1A1A; background: #FDFBF7; }
+        ::-webkit-scrollbar-thumb { background: #A3E635; border: 3px solid #1A1A1A; }
+        ::-webkit-scrollbar-thumb:hover { background: #FB923C; }
+
+        /* Marquee Animation */
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            animation: marquee 20s linear infinite;
+        }
+
+        /* Custom Utilities for "Hard" Design */
+        .neo-box {
+            border: 3px solid #1A1A1A;
+            background: white;
+            box-shadow: 5px 5px 0px 0px #1A1A1A;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .neo-box:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px 0px #1A1A1A;
+        }
+
+        .neo-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Mono', monospace;
+            font-weight: 700;
+            text-transform: uppercase;
+            border: 3px solid #1A1A1A;
+            padding: 12px 24px;
+            box-shadow: 4px 4px 0px 0px #1A1A1A;
+            transition: all 0.1s;
+            cursor: pointer;
+        }
+
+        .neo-button:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px 0px #1A1A1A;
+        }
+
+        .neo-tag {
+            background: #1A1A1A;
+            color: white;
+            padding: 4px 8px;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+        }
+
+        /* Selection Color */
+        ::selection {
+            background-color: #A3E635;
+            color: #1A1A1A;
+        }
+
+        /* Sticky Nav Reveal */
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            border-bottom: 3px solid #1A1A1A;
+            background: #FDFBF7;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- TOP MARQUEE (Alert Style) -->
+    <div class="bg-neo-black text-neo-mint py-3 border-b-3 border-neo-black overflow-hidden font-mono text-sm font-bold uppercase">
+        <div class="flex animate-marquee whitespace-nowrap gap-8">
+            <span>*** LORTON DENTIST ***</span>
+            <span>Now Accepting New Patients</span>
+            <span>//</span>
+            <span>Emergency Care Available</span>
+            <span>//</span>
+            <span>571-541-7977</span>
+            <span>*** LORTON DENTIST ***</span>
+            <span>Now Accepting New Patients</span>
+            <span>//</span>
+            <span>Emergency Care Available</span>
+            <span>//</span>
+            <span>571-541-7977</span>
+             <span>*** LORTON DENTIST ***</span>
+            <span>Now Accepting New Patients</span>
+            <span>//</span>
+            <span>Emergency Care Available</span>
+            <span>//</span>
+            <span>571-541-7977</span>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="sticky-nav py-4 px-6 md:px-12 flex justify-between items-center">
+        <a href="#" class="flex items-center gap-2 group">
+            <div class="w-10 h-10 border-3 border-neo-black bg-neo-mint flex items-center justify-center shadow-hard group-hover:shadow-hard-hover group-hover:translate-x-[2px] group-hover:translate-y-[2px] transition-all">
+                <i class="fas fa-tooth text-xl"></i>
+            </div>
+            <div class="flex flex-col">
+                <span class="font-bold text-xl leading-none tracking-tight">LORTON<br>DENTIST</span>
+            </div>
+        </a>
+
+        <div class="hidden lg:flex items-center gap-8 font-mono font-bold text-sm">
+            <a href="#services" class="hover:underline decoration-4 decoration-neo-purple underline-offset-4">SERVICES</a>
+            <a href="#about" class="hover:underline decoration-4 decoration-neo-orange underline-offset-4">DOCTOR</a>
+            <a href="#reviews" class="hover:underline decoration-4 decoration-neo-mint underline-offset-4">REVIEWS</a>
+            <a href="#contact" class="hover:underline decoration-4 decoration-neo-pink underline-offset-4">CONTACT</a>
+        </div>
+
+        <div class="flex items-center gap-4">
+            <a href="tel:5715417977" class="hidden md:flex items-center justify-center w-10 h-10 border-3 border-neo-black rounded-full hover:bg-neo-black hover:text-white transition-colors">
+                <i class="fas fa-phone"></i>
+            </a>
+            <button onclick="openBookingModal()" class="neo-button bg-neo-purple text-white hover:bg-white hover:text-neo-black">
+                Book Now
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 min-h-[85vh] border-b-3 border-neo-black">
+        <!-- Text Side -->
+        <div class="lg:col-span-7 bg-white p-6 md:p-16 flex flex-col justify-center relative overflow-hidden">
+            <!-- Background Grid Decoration -->
+            <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#1A1A1A 2px, transparent 2px); background-size: 20px 20px;"></div>
+
+            <div class="relative z-10">
+                <div class="inline-block bg-neo-mint border-3 border-neo-black px-3 py-1 font-mono font-bold text-xs mb-6 shadow-hard rotate-[-2deg]">
+                    VA: 22079
+                </div>
+
+                <h1 class="text-6xl md:text-8xl font-black leading-[0.9] mb-8 uppercase tracking-tighter">
+                    Your Best<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-neo-purple to-neo-blue" style="-webkit-text-stroke: 3px #1A1A1A;">Family</span><br>
+                    Dentist.
+                </h1>
+
+                <p class="font-mono text-lg md:text-xl border-l-4 border-neo-orange pl-6 mb-10 max-w-xl">
+                    Dr. Vladimir Soyfer offers dental implants, Invisalign, and emergency care. No fluff. Just great teeth.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button onclick="openBookingModal()" class="neo-button bg-neo-black text-white text-lg px-8 py-4">
+                        Get Appointment ->
+                    </button>
+                    <a href="#services" class="neo-button bg-white hover:bg-neo-mint">
+                        View Services
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Video Side (Brutalist Frame) -->
+        <div class="lg:col-span-5 bg-neo-mint border-t-3 lg:border-t-0 lg:border-l-3 border-neo-black p-4 md:p-8 flex items-center justify-center relative">
+            <div class="absolute top-4 right-4 bg-white border-3 border-neo-black p-2 font-mono text-xs font-bold shadow-hard z-20">
+                LIVE CAM
+            </div>
+
+            <div class="w-full h-full relative border-3 border-neo-black bg-black shadow-hard overflow-hidden group">
+                 <video autoplay muted loop playsinline poster="https://videocdn.cdnpk.net/videos/855708a0-a777-43b4-a19f-f77792476d72/horizontal/thumbnails/large.jpg?ga=GA1.1.200189668.1768237498&item_id=2818631&w=740&q=80" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity grayscale hover:grayscale-0 duration-500">
+                    <source src="https://videocdn.cdnpk.net/videos/855708a0-a777-43b4-a19f-f77792476d72/horizontal/previews/clear/large.mp4?token=exp=1768239435~hmac=6be107b2e6f665b0e1187ead63f21cce462aa32ecb710a9f75bb7dde982a4d2d" type="video/mp4">
+                </video>
+                <!-- Scanlines Overlay -->
+                <div class="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_2px,3px_100%] pointer-events-none"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INSURANCE TICKER -->
+    <div class="border-b-3 border-neo-black py-8 bg-white overflow-hidden relative">
+        <div class="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent z-10"></div>
+        <div class="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent z-10"></div>
+
+        <div class="flex animate-marquee whitespace-nowrap gap-16 items-center font-bold text-xl uppercase text-neo-black">
+            <span class="flex items-center gap-2"><div class="w-4 h-4 bg-neo-mint border-2 border-neo-black"></div> Delta Dental</span>
+            <span class="flex items-center gap-2"><div class="w-4 h-4 bg-neo-purple border-2 border-neo-black"></div> Aetna</span>
+            <span class="flex items-center gap-2"><div class="w-4 h-4 bg-neo-orange border-2 border-neo-black"></div> Cigna</span>
+            <span class="flex items-center gap-2"><div class="w-4 h-4 bg-neo-pink border-2 border-neo-black"></div> MetLife</span>
+            <span class="flex items-center gap-2"><div class="w-4 h-4 bg-neo-blue border-2 border-neo-black"></div> BlueCross</span>
+            <span class="flex items-center gap-2"><div class="w-4 h-4 bg-neo-mint border-2 border-neo-black"></div> CareCredit</span>
+            <!-- Dupes -->
+             <span class="flex items-center gap-2"><div class="w-4 h-4 bg-neo-mint border-2 border-neo-black"></div> Delta Dental</span>
+            <span class="flex items-center gap-2"><div class="w-4 h-4 bg-neo-purple border-2 border-neo-black"></div> Aetna</span>
+            <span class="flex items-center gap-2"><div class="w-4 h-4 bg-neo-orange border-2 border-neo-black"></div> Cigna</span>
+            <span class="flex items-center gap-2"><div class="w-4 h-4 bg-neo-pink border-2 border-neo-black"></div> MetLife</span>
+        </div>
+    </div>
+
+    <!-- SERVICES (Masonry-ish Brutalist Grid) -->
+    <section id="services" class="py-20 px-6 md:px-12 bg-neo-bg">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 border-b-3 border-neo-black pb-4">
+            <h2 class="text-5xl md:text-7xl font-black uppercase tracking-tighter">Services<span class="text-neo-pink">.</span></h2>
+            <p class="font-mono text-sm mb-2 max-w-xs text-right">We fix teeth. We make smiles. We do it all.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Card 1 -->
+            <a href="dental-implants.html" class="neo-box p-8 bg-neo-purple text-white group relative h-80 flex flex-col justify-between">
+                <div class="absolute top-4 right-4 text-6xl opacity-20 font-black">01</div>
+                <h3 class="text-3xl font-bold uppercase leading-none mt-4">Dental<br>Implants</h3>
+                <div class="flex justify-between items-end border-t-3 border-white pt-4">
+                    <span class="font-mono text-sm">Permanent Fix</span>
+                    <i class="fas fa-arrow-right text-2xl group-hover:-rotate-45 transition-transform"></i>
+                </div>
+            </a>
+
+            <!-- Card 2 -->
+            <a href="invisalign.html" class="neo-box p-8 bg-white group h-80 flex flex-col justify-between">
+                <i class="fas fa-magic text-5xl text-neo-mint mb-4" style="text-shadow: 2px 2px 0 #000;"></i>
+                <h3 class="text-3xl font-bold uppercase leading-none">Invisalign</h3>
+                <p class="font-mono text-xs mt-2 border-l-2 border-neo-black pl-2">Clear aligners. No braces.</p>
+            </a>
+
+            <!-- Card 3 -->
+            <a href="all-on-4-implants.html" class="neo-box p-8 bg-neo-blue text-white group h-80 flex flex-col justify-between">
+                <i class="fas fa-layer-group text-5xl mb-4" style="text-shadow: 2px 2px 0 #000;"></i>
+                <h3 class="text-3xl font-bold uppercase leading-none">All-on-4</h3>
+                <p class="font-mono text-xs mt-2 border-l-2 border-white pl-2">Full arch restoration.</p>
+            </a>
+
+            <!-- Card 4 (Double Width) -->
+            <a href="emergency-dentist.html" class="md:col-span-2 neo-box p-8 bg-neo-orange text-white group flex items-center justify-between">
+                <div>
+                    <div class="bg-white text-neo-black inline-block px-2 py-1 font-mono font-bold text-xs mb-4 border-2 border-neo-black">24/7 OPEN</div>
+                    <h3 class="text-4xl font-bold uppercase">Emergency Care</h3>
+                    <p class="font-mono mt-2">Pain? Broken tooth? Come in now.</p>
+                </div>
+                <i class="fas fa-first-aid text-8xl animate-pulse" style="text-shadow: 4px 4px 0 #000;"></i>
+            </a>
+
+            <!-- Card 5 -->
+            <a href="pediatric-dentistry.html" class="neo-box p-8 bg-neo-pink text-white group h-64 flex flex-col justify-center items-center text-center">
+                <i class="fas fa-child text-5xl mb-4" style="text-shadow: 2px 2px 0 #000;"></i>
+                <h3 class="text-2xl font-bold uppercase">Kids Dentistry</h3>
+            </a>
+
+            <!-- List of others -->
+            <div class="neo-box p-8 bg-neo-black text-white flex flex-col justify-center">
+                <ul class="font-mono space-y-3">
+                    <li class="hover:text-neo-mint cursor-pointer">-> Root Canals</li>
+                    <li class="hover:text-neo-mint cursor-pointer">-> Crowns & Bridges</li>
+                    <li class="hover:text-neo-mint cursor-pointer">-> Teeth Whitening</li>
+                    <li class="hover:text-neo-mint cursor-pointer">-> Sleep Apnea</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION (Asymmetrical) -->
+    <section id="about" class="border-y-3 border-neo-black bg-white">
+        <div class="grid grid-cols-1 lg:grid-cols-2">
+
+            <div class="p-8 md:p-20 flex flex-col justify-center border-b-3 lg:border-b-0 lg:border-r-3 border-neo-black bg-neo-mint bg-[url('https://www.transparenttextures.com/patterns/diagmonds-light.png')]">
+                <div class="relative inline-block w-fit mx-auto lg:mx-0">
+                    <div class="absolute inset-0 bg-neo-black translate-x-4 translate-y-4"></div>
+                    <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dr Soyfer" class="relative w-full max-w-md border-3 border-neo-black grayscale hover:grayscale-0 transition-all duration-300">
+                </div>
+            </div>
+
+            <div class="p-8 md:p-20">
+                <div class="mb-8">
+                    <span class="bg-neo-black text-white px-3 py-1 font-mono text-sm uppercase">The Doc</span>
+                    <h2 class="text-4xl md:text-5xl font-black mt-4 uppercase leading-tight">Dr. Vladimir<br>Soyfer</h2>
+                    <p class="font-mono text-neo-purple font-bold mt-2">DMD / UPenn Alumni / 15+ Years</p>
+                </div>
+
+                <p class="text-lg font-medium leading-relaxed mb-6 border-l-4 border-neo-black pl-6">
+                    Dr. Vladimir Soyfer places the patient at the heart of every decision. Goal: improve quality of life. Not just treat teeth.
+                </p>
+
+                <p class="font-mono text-sm text-gray-600 mb-10">
+                    Degrees from Ohio University & University of Pennsylvania. 50+ scientific papers. Clinical precision meets brutal honesty about your health.
+                </p>
+
+                <div class="flex flex-wrap gap-4">
+                     <div class="neo-box px-4 py-2 bg-neo-bg text-sm font-bold">
+                        <i class="fas fa-certificate mr-2"></i>Certified
+                     </div>
+                     <div class="neo-box px-4 py-2 bg-neo-bg text-sm font-bold">
+                        <i class="fas fa-star mr-2"></i>Top Rated
+                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STEPS (Horizontal Cards) -->
+    <section class="py-20 px-6 md:px-12 bg-neo-bg overflow-x-auto">
+        <h2 class="text-4xl font-black uppercase mb-12">How It Works</h2>
+
+        <div class="flex flex-col md:flex-row gap-8">
+            <!-- Step 1 -->
+            <div class="neo-box p-8 min-w-[300px] flex-1 bg-white relative">
+                <div class="absolute -top-6 left-6 bg-neo-black text-white w-12 h-12 flex items-center justify-center font-mono font-bold text-xl border-3 border-white shadow-hard">1</div>
+                <h3 class="text-2xl font-bold mt-4 mb-2">Book Online</h3>
+                <p class="font-mono text-sm">Use our secure 24/7 portal. No phone tag.</p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="neo-box p-8 min-w-[300px] flex-1 bg-neo-purple text-white relative">
+                <div class="absolute -top-6 left-6 bg-neo-mint text-neo-black w-12 h-12 flex items-center justify-center font-mono font-bold text-xl border-3 border-neo-black shadow-hard">2</div>
+                <h3 class="text-2xl font-bold mt-4 mb-2">Relaxed Visit</h3>
+                <p class="font-mono text-sm">Headphones. Blankets. Zero stress.</p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="neo-box p-8 min-w-[300px] flex-1 bg-white relative">
+                <div class="absolute -top-6 left-6 bg-neo-black text-white w-12 h-12 flex items-center justify-center font-mono font-bold text-xl border-3 border-white shadow-hard">3</div>
+                <h3 class="text-2xl font-bold mt-4 mb-2">Radiant Smile</h3>
+                <p class="font-mono text-sm">Leave with a plan. We handle insurance.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS (Sticker Wall) -->
+    <section id="reviews" class="py-20 bg-neo-black text-white border-y-3 border-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-center text-4xl md:text-6xl font-black uppercase mb-16 text-neo-mint">
+                Real Talk <span class="text-white text-2xl align-middle font-mono normal-case">(4.9/5 Stars)</span>
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Review 1 -->
+                <div class="bg-neo-pink text-neo-black p-8 border-3 border-white shadow-[8px_8px_0_0_#fff] rotate-1 transform transition hover:rotate-0 hover:scale-105">
+                    <i class="fas fa-quote-left text-4xl mb-4 opacity-50"></i>
+                    <p class="font-bold text-lg mb-6 font-sans uppercase">"The doctor explained all possible options in detail. Painless."</p>
+                    <div class="flex justify-between items-center font-mono text-sm border-t-2 border-neo-black pt-4">
+                        <span>Roy C.</span>
+                        <div class="flex gap-1 text-white">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-neo-blue text-neo-black p-8 border-3 border-white shadow-[8px_8px_0_0_#fff] -rotate-1 transform transition hover:rotate-0 hover:scale-105 mt-8 md:mt-0">
+                    <i class="fas fa-quote-left text-4xl mb-4 opacity-50"></i>
+                    <p class="font-bold text-lg mb-6 font-sans uppercase">"My son was delighted with the toys and the doctor’s approach."</p>
+                    <div class="flex justify-between items-center font-mono text-sm border-t-2 border-neo-black pt-4">
+                        <span>Lynda M.</span>
+                        <div class="flex gap-1 text-white">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="https://www.google.com/search?q=Dental+Health+Center+of+Northern+Virginia+reviews" target="_blank" class="neo-button bg-white text-neo-black hover:bg-neo-mint">
+                    Read 150+ Google Reviews
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ (Accordion) -->
+    <section class="py-20 px-6 max-w-3xl mx-auto">
+        <h2 class="text-4xl font-black uppercase mb-8 border-l-8 border-neo-orange pl-4">FAQ</h2>
+
+        <div class="space-y-4">
+            <details class="group neo-box p-0">
+                <summary class="flex justify-between items-center font-bold text-lg cursor-pointer p-6 list-none bg-white">
+                    Do you accept insurance?
+                    <span class="text-neo-purple group-open:rotate-180 transition-transform text-2xl font-mono">+</span>
+                </summary>
+                <div class="p-6 pt-0 border-t-3 border-neo-black bg-neo-bg font-mono text-sm">
+                    Yes. Delta Dental, Aetna, Cigna, and more. Also CareCredit.
+                </div>
+            </details>
+
+            <details class="group neo-box p-0">
+                <summary class="flex justify-between items-center font-bold text-lg cursor-pointer p-6 list-none bg-white">
+                    Taking new patients?
+                    <span class="text-neo-purple group-open:rotate-180 transition-transform text-2xl font-mono">+</span>
+                </summary>
+                <div class="p-6 pt-0 border-t-3 border-neo-black bg-neo-bg font-mono text-sm">
+                     Yes. All ages welcome in Lorton, VA. Emergency slots available.
+                </div>
+            </details>
+
+            <details class="group neo-box p-0">
+                <summary class="flex justify-between items-center font-bold text-lg cursor-pointer p-6 list-none bg-white">
+                    Scared of the dentist?
+                    <span class="text-neo-purple group-open:rotate-180 transition-transform text-2xl font-mono">+</span>
+                </summary>
+                <div class="p-6 pt-0 border-t-3 border-neo-black bg-neo-bg font-mono text-sm">
+                    Don't be. We specialize in gentle care and sedation.
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <!-- MAP BLOCK -->
+    <section id="contact" class="h-96 w-full relative border-t-3 border-neo-black">
+        <iframe data-src="https://maps.google.com/maps?q=7772+Grandwind+Dr,+Lorton,+VA+22079&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            width="100%" height="100%" style="border:0; filter: grayscale(100%) contrast(1.2);" allowfullscreen="" loading="lazy"></iframe>
+
+        <div class="absolute bottom-8 left-8 bg-white border-3 border-neo-black p-6 shadow-hard max-w-xs">
+            <h4 class="font-black text-xl uppercase mb-2">Location</h4>
+            <p class="font-mono text-sm mb-4">7772 Grandwind Dr<br>Lorton, VA 22079</p>
+            <a href="https://www.google.com/maps/dir//7772+Grandwind+Dr,+Lorton,+VA+22079" target="_blank" class="block text-center bg-neo-black text-white py-2 font-mono font-bold uppercase hover:bg-neo-mint hover:text-neo-black transition-colors">
+                Get Directions
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-neo-black text-white pt-16 pb-8 px-6 border-t-3 border-white">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <div class="col-span-1 md:col-span-2">
+                <div class="w-16 h-16 bg-white border-3 border-white text-neo-black flex items-center justify-center text-2xl mb-6 shadow-[4px_4px_0_0_#A3E635]">
+                    <i class="fas fa-tooth"></i>
+                </div>
+                <p class="font-mono max-w-md">
+                    High-quality dental care tailored to your financial capabilities. Your smile is our priority. No nonsense.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-neo-mint uppercase mb-4 text-lg">Links</h4>
+                <ul class="font-mono space-y-2">
+                    <li><a href="#home" class="hover:text-neo-pink">Home</a></li>
+                    <li><a href="#services" class="hover:text-neo-pink">Services</a></li>
+                    <li><a href="#about" class="hover:text-neo-pink">Doctor</a></li>
+                    <li><a href="#contact" class="hover:text-neo-pink">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-neo-mint uppercase mb-4 text-lg">Contact</h4>
+                <ul class="font-mono space-y-2">
+                    <li>571-541-7977</li>
+                    <li>Soyferv@yahoo.com</li>
+                    <li>Mon-Fri: 8am - 5pm</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center font-mono text-xs text-gray-400">
+            <p>&copy; 2024 Lorton Dentist. All rights reserved.</p>
+            <div class="flex gap-4 mt-4 md:mt-0">
+                <span>ADA MEMBER</span>
+                <span>NVDS</span>
+                <span>AAOSH</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MOBILE STICKY BAR -->
+    <div class="md:hidden fixed bottom-0 left-0 w-full bg-white border-t-3 border-neo-black p-4 flex justify-between items-center z-50">
+        <a href="tel:5715417977" class="font-mono font-bold uppercase text-xs flex flex-col items-center">
+            <i class="fas fa-phone text-xl mb-1"></i> Call
+        </a>
+        <button onclick="openBookingModal()" class="bg-neo-black text-white font-bold uppercase px-6 py-3 border-2 border-neo-black shadow-[2px_2px_0_0_#A3E635] active:translate-y-1 active:shadow-none transition-all">
+            Book Now
+        </button>
+        <a href="#contact" class="font-mono font-bold uppercase text-xs flex flex-col items-center">
+            <i class="fas fa-map-marker-alt text-xl mb-1"></i> Map
+        </a>
+    </div>
+
+    <!-- BOOKING MODAL (Brutalist Style) -->
+    <div id="booking-modal" class="fixed inset-0 z-[2000] hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="fixed inset-0 bg-neo-black/90 backdrop-blur-sm transition-opacity" onclick="closeBookingModal()"></div>
+        <div class="fixed inset-0 z-10 overflow-y-auto">
+            <div class="flex min-h-full items-center justify-center p-4 text-center">
+                <div class="relative transform overflow-hidden bg-white text-left shadow-hard border-3 border-neo-black transition-all sm:my-8 sm:w-full sm:max-w-lg p-8">
+
+                    <div class="flex justify-between items-start mb-6">
+                        <h3 class="text-3xl font-black uppercase leading-none">Request<br>Appointment</h3>
+                        <button onclick="closeBookingModal()" class="w-10 h-10 border-3 border-neo-black hover:bg-neo-black hover:text-white transition-colors font-bold text-xl flex items-center justify-center">
+                            X
+                        </button>
+                    </div>
+
+                    <form id="modal-booking-form" class="space-y-6">
+                        <div>
+                            <label class="block font-mono font-bold text-xs uppercase mb-2">Name</label>
+                            <input type="text" required class="w-full bg-neo-bg border-3 border-neo-black p-3 font-mono focus:outline-none focus:ring-0 focus:shadow-[4px_4px_0_0_#A3E635] transition-shadow">
+                        </div>
+                        <div>
+                            <label class="block font-mono font-bold text-xs uppercase mb-2">Phone</label>
+                            <input type="tel" required class="w-full bg-neo-bg border-3 border-neo-black p-3 font-mono focus:outline-none focus:ring-0 focus:shadow-[4px_4px_0_0_#A3E635] transition-shadow">
+                        </div>
+                        <div>
+                            <label class="block font-mono font-bold text-xs uppercase mb-2">Service</label>
+                            <select class="w-full bg-neo-bg border-3 border-neo-black p-3 font-mono focus:outline-none focus:ring-0 focus:shadow-[4px_4px_0_0_#A3E635] transition-shadow">
+                                <option>Checkup</option>
+                                <option>Cosmetic</option>
+                                <option>Implants</option>
+                                <option>EMERGENCY</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="w-full bg-neo-purple text-white font-bold uppercase py-4 border-3 border-neo-black shadow-hard hover:translate-y-[2px] hover:shadow-hard-hover active:translate-y-[5px] active:shadow-none transition-all">
+                            Send Request
+                        </button>
+                    </form>
+
+                    <div id="modal-success" class="hidden text-center py-8">
+                        <div class="text-6xl mb-4">👍</div>
+                        <h3 class="font-black text-2xl uppercase mb-2">Received.</h3>
+                        <p class="font-mono text-sm">We'll call you ASAP.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Visible Load
+        document.addEventListener("DOMContentLoaded", function() {
+            document.documentElement.style.visibility = 'visible';
+            document.documentElement.style.opacity = '1';
+
+            // Lazy load iframes
+            const iframes = document.querySelectorAll('iframe[data-src]');
+            iframes.forEach(iframe => {
+                iframe.src = iframe.getAttribute('data-src');
+            });
+        });
+
+        // Close mobile menu helper
+        function closeMenu() {
+            document.getElementById('mobile-menu').classList.add('hidden');
+        }
+
+        // Modal Logic
+        function openBookingModal() {
+            const modal = document.getElementById('booking-modal');
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeBookingModal() {
+            const modal = document.getElementById('booking-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+            // Reset form
+            document.getElementById('modal-booking-form').style.display = 'block';
+            document.getElementById('modal-success').classList.add('hidden');
+        }
+
+        // Form Handler
+        document.getElementById('modal-booking-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            this.style.display = 'none';
+            document.getElementById('modal-success').classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>

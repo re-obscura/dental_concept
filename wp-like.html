@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <style>html { visibility: hidden; opacity: 0; }</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Best Family Dentist in Lorton Virginia | Lorton Dentist</title>
+
+    <!-- Fonts: Classic WP Combo (Montserrat + Lato) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icons & Libs -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- SEO Meta (Preserved) -->
+    <meta name="description" content="Trusted family dentist in Lorton, VA. Dr. Vladimir Soyfer offers dental implants, Invisalign, and emergency care. Book your free consultation in Lorton today!">
+    <meta name="geo.region" content="US-VA" />
+    <meta name="geo.placename" content="Lorton" />
+    <meta name="geo.position" content="38.7118;-77.2117" />
+    <meta name="ICBM" content="38.7118, -77.2117" />
+
+    <!-- Schema (Preserved) -->
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Dentist",
+    "name": "Lorton Dentist",
+    "description": "Comprehensive dental care in Lorton, VA tailored to your needs.",
+    "slogan": "Your Best Family Dentist in Lorton Virginia",
+    "openingHours": "Mo,Tu,We,Th,Fr 08:00-17:00, Sa 09:30-15:00",
+    "telephone": "+15715417977",
+    "email": "Soyferv@yahoo.com",
+    "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Lorton",
+    "addressRegion": "VA",
+    "postalCode": "22079",
+    "streetAddress": "7772 Grandwind Dr"
+    },
+    "paymentAccepted": "Cash, Credit Card, Insurance, CareCredit",
+    "priceRange": "$",
+    "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": 4.9,
+    "reviewCount": 150
+    },
+    "image": "https://lortondentist.com/logo.png",
+    "review": [
+    {
+    "@type": "Review",
+    "author": "Roy C.",
+    "description": "I cannot help but express my gratitude to Dr. Soyfer for his professionalism and sensitive attitude...",
+    "reviewRating": { "@type": "Rating", "ratingValue": 5 }
+    },
+    {
+    "@type": "Review",
+    "author": "Lynda M.",
+    "description": "I would also like to share a positive experience of visiting Dr. Soyfer with my son...",
+    "reviewRating": { "@type": "Rating", "ratingValue": 5 }
+    }
+    ]
+    }
+    </script>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Lato"', 'sans-serif'],
+                        heading: ['"Montserrat"', 'sans-serif'],
+                    },
+                    colors: {
+                        wp: {
+                            primary: '#0F2C59',    /* Deep Corporate Blue */
+                            accent: '#1D5D9B',     /* Lighter Blue */
+                            action: '#F4D160',     /* Action Yellow/Gold */
+                            text: '#333333',       /* Standard Dark Grey */
+                            light: '#F8F9FA',      /* Bootstrap-like Light Grey */
+                            border: '#E9ECEF'
+                        }
+                    },
+                    boxShadow: {
+                        'card': '0 2px 15px rgba(0,0,0,0.05)',
+                        'card-hover': '0 10px 30px rgba(0,0,0,0.1)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* WP Theme Base Styles */
+        body {
+            color: #444;
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            color: #0F2C59;
+            font-weight: 700;
+        }
+
+        /* Top Bar Styling */
+        .top-bar {
+            background-color: #0F2C59;
+            color: white;
+            font-size: 0.85rem;
+        }
+
+        /* Sticky Header */
+        header.sticky-header {
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        /* WP-style Button */
+        .btn-wp {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 4px; /* Classic rounded corners */
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .btn-primary {
+            background-color: #1D5D9B;
+            color: white;
+        }
+        .btn-primary:hover {
+            background-color: #0F2C59;
+            transform: translateY(-2px);
+        }
+        .btn-action {
+            background-color: #F4D160;
+            color: #0F2C59;
+        }
+        .btn-action:hover {
+            background-color: #FFEB99;
+            transform: translateY(-2px);
+        }
+
+        /* Section Heading Decoration */
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #F4D160;
+            margin: 15px auto 0;
+        }
+
+        /* Marquee Animation */
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            animation: marquee 40s linear infinite;
+        }
+
+        /* Service Card Hover */
+        .service-card {
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        .service-card:hover {
+            border-bottom: 3px solid #1D5D9B;
+            transform: translateY(-5px);
+        }
+
+        /* Custom Selection */
+        ::selection {
+            background-color: #1D5D9B;
+            color: white;
+        }
+
+        .modal-enter { opacity: 0; transform: scale(0.95); }
+        .modal-enter-active { opacity: 1; transform: scale(1); transition: all 0.3s ease-out; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Top Bar (Typical WP Feature) -->
+    <div class="top-bar py-2 hidden md:block">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <div class="flex space-x-6">
+                <span><i class="fas fa-map-marker-alt mr-2 text-wp-action"></i> 7772 Grandwind Dr, Lorton, VA 22079</span>
+                <span><i class="fas fa-envelope mr-2 text-wp-action"></i> Soyferv@yahoo.com</span>
+            </div>
+            <div class="flex space-x-4">
+                <a href="#" class="hover:text-wp-action transition"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-wp-action transition"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="hover:text-wp-action transition"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <header class="sticky-header">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 h-20 flex justify-between items-center">
+            <!-- Logo Area -->
+            <a href="#" class="flex items-center group">
+                <div class="w-10 h-10 bg-wp-primary text-white rounded flex items-center justify-center mr-3 group-hover:bg-wp-action group-hover:text-wp-primary transition-colors">
+                    <i class="fas fa-tooth text-lg"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-heading text-xl font-bold text-wp-primary leading-none">Lorton<span class="text-wp-accent">Dentist</span></span>
+                    <span class="text-[10px] uppercase tracking-widest text-gray-500 mt-1">Family Dental Care</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden lg:flex items-center space-x-8 font-heading text-sm font-semibold uppercase text-gray-600">
+                <a href="#home" class="hover:text-wp-primary transition-colors">Home</a>
+                <a href="#services" class="hover:text-wp-primary transition-colors">Services</a>
+                <a href="#about" class="hover:text-wp-primary transition-colors">About Dr.</a>
+                <a href="#reviews" class="hover:text-wp-primary transition-colors">Testimonials</a>
+                <a href="#contact" class="hover:text-wp-primary transition-colors">Contact</a>
+                <button onclick="openBookingModal()" class="btn-wp btn-primary !py-2 !px-6 !text-xs">
+                    Book Appointment
+                </button>
+            </nav>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="lg:hidden text-wp-primary text-2xl" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-white z-50 pt-20 px-6 flex flex-col space-y-6 text-center lg:hidden">
+        <button class="absolute top-6 right-6 text-2xl text-gray-400" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+            <i class="fas fa-times"></i>
+        </button>
+        <a href="#home" class="text-xl font-heading font-bold text-wp-primary" onclick="closeMenu()">Home</a>
+        <a href="#services" class="text-xl font-heading font-bold text-wp-primary" onclick="closeMenu()">Services</a>
+        <a href="#about" class="text-xl font-heading font-bold text-wp-primary" onclick="closeMenu()">About</a>
+        <a href="#reviews" class="text-xl font-heading font-bold text-wp-primary" onclick="closeMenu()">Reviews</a>
+        <a href="#contact" class="text-xl font-heading font-bold text-wp-primary" onclick="closeMenu()">Contact</a>
+        <button onclick="openBookingModal(); closeMenu()" class="btn-wp btn-action w-full">Book Now</button>
+    </div>
+
+    <!-- HERO SECTION (Classic WP Slider Look) -->
+    <section id="home" class="relative h-[600px] md:h-[700px] flex items-center text-white overflow-hidden">
+        <!-- Video Background -->
+        <video autoplay muted loop playsinline poster="https://videocdn.cdnpk.net/videos/855708a0-a777-43b4-a19f-f77792476d72/horizontal/thumbnails/large.jpg?ga=GA1.1.200189668.1768237498&item_id=2818631&w=740&q=80" class="absolute inset-0 w-full h-full object-cover">
+            <source src="https://videocdn.cdnpk.net/videos/855708a0-a777-43b4-a19f-f77792476d72/horizontal/previews/clear/large.mp4?token=exp=1768239435~hmac=6be107b2e6f665b0e1187ead63f21cce462aa32ecb710a9f75bb7dde982a4d2d" type="video/mp4">
+        </video>
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-r from-wp-primary/90 to-wp-primary/40"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 w-full pt-10">
+            <div class="max-w-2xl" data-aos="fade-up">
+                <div class="inline-block px-4 py-1 mb-4 border border-white/30 rounded text-xs font-bold uppercase tracking-widest bg-white/10 backdrop-blur-sm">
+                    Accepting New Patients
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6 text-white">
+                    Your Best Family <br> Dentist in <span class="text-wp-action">Virginia</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-200 mb-8 font-light max-w-lg">
+                    Comprehensive dental care tailored to your needs. Implants, Invisalign, and Emergency Dentistry available daily.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button onclick="openBookingModal()" class="btn-wp btn-action text-center">
+                        Make Appointment
+                    </button>
+                    <a href="#services" class="btn-wp bg-transparent border-2 border-white text-white hover:bg-white hover:text-wp-primary text-center">
+                        Our Services
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INFO STRIP -->
+    <div class="bg-wp-light border-b border-gray-200 py-4">
+        <div class="max-w-7xl mx-auto px-6 overflow-hidden">
+            <div class="flex animate-marquee whitespace-nowrap gap-16 text-sm font-bold uppercase text-gray-400">
+                <span><i class="fas fa-check-circle text-green-500 mr-2"></i>Delta Dental</span>
+                <span><i class="fas fa-check-circle text-green-500 mr-2"></i>Aetna</span>
+                <span><i class="fas fa-check-circle text-green-500 mr-2"></i>Cigna</span>
+                <span><i class="fas fa-check-circle text-green-500 mr-2"></i>MetLife</span>
+                <span><i class="fas fa-check-circle text-green-500 mr-2"></i>BlueCross BlueShield</span>
+                <span><i class="fas fa-check-circle text-green-500 mr-2"></i>CareCredit Accepted</span>
+                <span><i class="fas fa-check-circle text-green-500 mr-2"></i>United Healthcare</span>
+                <!-- Duplicate -->
+                <span><i class="fas fa-check-circle text-green-500 mr-2"></i>Delta Dental</span>
+                <span><i class="fas fa-check-circle text-green-500 mr-2"></i>Aetna</span>
+                <span><i class="fas fa-check-circle text-green-500 mr-2"></i>Cigna</span>
+                <span><i class="fas fa-check-circle text-green-500 mr-2"></i>MetLife</span>
+                <span><i class="fas fa-check-circle text-green-500 mr-2"></i>BlueCross BlueShield</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- SERVICES SECTION (Grid Layout) -->
+    <section id="services" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-wp-accent font-bold uppercase tracking-widest text-sm">What We Do</span>
+                <h2 class="text-3xl md:text-4xl mt-2 section-title">Comprehensive Dental Services</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <a href="dental-implants.html" class="service-card bg-white p-8 rounded shadow-card group text-center border border-gray-100 block" data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-16 h-16 bg-wp-light rounded-full flex items-center justify-center mx-auto mb-6 text-wp-primary text-2xl group-hover:bg-wp-primary group-hover:text-white transition-colors">
+                        <i class="fas fa-tooth"></i>
+                    </div>
+                    <h3 class="text-xl mb-3">Dental Implants</h3>
+                    <p class="text-gray-500 text-sm mb-4">Permanent solution for missing teeth. Restore your natural smile today.</p>
+                    <span class="text-wp-accent text-xs font-bold uppercase">Read More &rarr;</span>
+                </a>
+
+                <!-- Service 2 -->
+                <a href="invisalign.html" class="service-card bg-white p-8 rounded shadow-card group text-center border border-gray-100 block" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-wp-light rounded-full flex items-center justify-center mx-auto mb-6 text-wp-primary text-2xl group-hover:bg-wp-primary group-hover:text-white transition-colors">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3 class="text-xl mb-3">Invisalign</h3>
+                    <p class="text-gray-500 text-sm mb-4">Clear aligners for a straighter smile without the hassle of metal braces.</p>
+                    <span class="text-wp-accent text-xs font-bold uppercase">Read More &rarr;</span>
+                </a>
+
+                <!-- Service 3 -->
+                <a href="all-on-4-implants.html" class="service-card bg-white p-8 rounded shadow-card group text-center border border-gray-100 block" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-wp-light rounded-full flex items-center justify-center mx-auto mb-6 text-wp-primary text-2xl group-hover:bg-wp-primary group-hover:text-white transition-colors">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3 class="text-xl mb-3">All-on-4 Implants</h3>
+                    <p class="text-gray-500 text-sm mb-4">Full arch restoration providing immediate function and aesthetics.</p>
+                    <span class="text-wp-accent text-xs font-bold uppercase">Read More &rarr;</span>
+                </a>
+
+                <!-- Service 4 -->
+                <a href="dental-crowns.html" class="service-card bg-white p-8 rounded shadow-card group text-center border border-gray-100 block" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-wp-light rounded-full flex items-center justify-center mx-auto mb-6 text-wp-primary text-2xl group-hover:bg-wp-primary group-hover:text-white transition-colors">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3 class="text-xl mb-3">Dental Crowns</h3>
+                    <p class="text-gray-500 text-sm mb-4">Protect and strengthen damaged teeth with high-quality crowns.</p>
+                    <span class="text-wp-accent text-xs font-bold uppercase">Read More &rarr;</span>
+                </a>
+
+                <!-- Service 5 -->
+                <a href="root-canal.html" class="service-card bg-white p-8 rounded shadow-card group text-center border border-gray-100 block" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-16 h-16 bg-wp-light rounded-full flex items-center justify-center mx-auto mb-6 text-wp-primary text-2xl group-hover:bg-wp-primary group-hover:text-white transition-colors">
+                        <i class="fas fa-notes-medical"></i>
+                    </div>
+                    <h3 class="text-xl mb-3">Root Canal</h3>
+                    <p class="text-gray-500 text-sm mb-4">Save your natural tooth and eliminate pain with modern therapy.</p>
+                    <span class="text-wp-accent text-xs font-bold uppercase">Read More &rarr;</span>
+                </a>
+
+                <!-- Service 6 -->
+                <a href="emergency-dentist.html" class="service-card bg-white p-8 rounded shadow-card group text-center border-l-4 border-red-500 block relative overflow-hidden" data-aos="fade-up" data-aos-delay="500">
+                    <div class="absolute top-0 right-0 bg-red-500 text-white text-[10px] uppercase font-bold px-2 py-1">24/7</div>
+                    <div class="w-16 h-16 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-6 text-red-500 text-2xl group-hover:bg-red-500 group-hover:text-white transition-colors">
+                        <i class="fas fa-first-aid"></i>
+                    </div>
+                    <h3 class="text-xl mb-3">Emergency Care</h3>
+                    <p class="text-gray-500 text-sm mb-4">Immediate attention for dental emergencies and acute pain.</p>
+                    <span class="text-red-500 text-xs font-bold uppercase">Get Help Now &rarr;</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION (Split Layout) -->
+    <section id="about" class="bg-wp-light py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <!-- Image Column -->
+                <div class="w-full lg:w-1/2" data-aos="fade-right">
+                    <div class="relative">
+                        <div class="absolute -top-4 -left-4 w-24 h-24 border-t-4 border-l-4 border-wp-action"></div>
+                        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dr. Vladimir Soyfer" class="w-full rounded shadow-xl relative z-10">
+                        <div class="absolute -bottom-6 -right-6 bg-white p-6 shadow-lg rounded z-20 hidden md:block">
+                            <p class="font-heading font-bold text-4xl text-wp-primary mb-1">15+</p>
+                            <p class="text-xs uppercase tracking-widest text-gray-500">Years Experience</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Column -->
+                <div class="w-full lg:w-1/2" data-aos="fade-left">
+                    <span class="text-wp-accent font-bold uppercase tracking-widest text-sm">About The Doctor</span>
+                    <h2 class="text-3xl md:text-4xl mt-2 mb-6">Dr. Vladimir Soyfer, DMD</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Dr. Vladimir Soyfer places the patient at the heart of every decision, ensuring personalized treatment plans that prioritize comfort, functionality and aesthetics. His goal is not just to treat dental problems, but to improve the overall quality of life for his patients.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        With over 15 years of experience and degrees from Ohio University and the University of Pennsylvania, Dr. Soyfer brings academic excellence and clinical precision to Lorton, VA.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-wp-action mr-3"></i>
+                            <span class="text-sm font-bold text-gray-700">Comprehensive Care</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-wp-action mr-3"></i>
+                            <span class="text-sm font-bold text-gray-700">Modern Technology</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-wp-action mr-3"></i>
+                            <span class="text-sm font-bold text-gray-700">Comfort Priority</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-wp-action mr-3"></i>
+                            <span class="text-sm font-bold text-gray-700">Insurance Friendly</span>
+                        </div>
+                    </div>
+
+                    <a href="javascript:void(0)" onclick="openBookingModal()" class="btn-wp btn-primary">Book Consultation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS (Counter Row) -->
+    <section class="bg-wp-primary py-16 text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-white/10">
+                <div data-aos="zoom-in">
+                    <div class="text-4xl font-bold font-heading mb-2">15+</div>
+                    <div class="text-xs uppercase tracking-widest opacity-70">Years Experience</div>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="100">
+                    <div class="text-4xl font-bold font-heading mb-2">2k+</div>
+                    <div class="text-xs uppercase tracking-widest opacity-70">Happy Patients</div>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="200">
+                    <div class="text-4xl font-bold font-heading mb-2">35</div>
+                    <div class="text-xs uppercase tracking-widest opacity-70">Team Members</div>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="300">
+                    <div class="text-4xl font-bold font-heading mb-2">4.9</div>
+                    <div class="text-xs uppercase tracking-widest opacity-70">Star Rating</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS / STEPS -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-wp-accent font-bold uppercase tracking-widest text-sm">How It Works</span>
+                <h2 class="text-3xl md:text-4xl mt-2 section-title">Your Path to a Perfect Smile</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+                <!-- Connecting Line (Desktop) -->
+                <div class="hidden md:block absolute top-12 left-[16%] right-[16%] h-1 bg-gray-100 z-0"></div>
+
+                <!-- Step 1 -->
+                <div class="relative z-10 text-center group" data-aos="fade-up">
+                    <div class="w-24 h-24 bg-white border-4 border-wp-light rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm group-hover:border-wp-primary transition-colors">
+                        <i class="fas fa-calendar-alt text-3xl text-wp-primary"></i>
+                    </div>
+                    <h3 class="text-xl mb-3">1. Book Online</h3>
+                    <p class="text-gray-500 text-sm">Skip the phone tag. Select your preferred time instantly through our secure 24/7 portal.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative z-10 text-center group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-24 h-24 bg-white border-4 border-wp-light rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm group-hover:border-wp-primary transition-colors">
+                        <i class="fas fa-couch text-3xl text-wp-primary"></i>
+                    </div>
+                    <h3 class="text-xl mb-3">2. Relaxed Visit</h3>
+                    <p class="text-gray-500 text-sm">Experience our comfort menu, including noise-cancelling headphones and warm blankets.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative z-10 text-center group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-24 h-24 bg-white border-4 border-wp-light rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm group-hover:border-wp-primary transition-colors">
+                        <i class="fas fa-smile-beam text-3xl text-wp-primary"></i>
+                    </div>
+                    <h3 class="text-xl mb-3">3. Radiant Smile</h3>
+                    <p class="text-gray-500 text-sm">Leave with a personalized plan and a polished smile. We handle insurance claims for you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS & FAQ (Columns) -->
+    <section id="reviews" class="bg-wp-light py-24">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16">
+
+            <!-- Reviews Column -->
+            <div data-aos="fade-right">
+                <span class="text-wp-accent font-bold uppercase tracking-widest text-sm">Testimonials</span>
+                <h2 class="text-3xl mt-2 mb-8">What Our Patients Say</h2>
+
+                <div class="bg-white p-8 rounded-lg shadow-card mb-6 relative">
+                    <i class="fas fa-quote-right text-4xl text-gray-100 absolute top-4 right-4"></i>
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 text-sm mr-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <span class="font-bold text-sm">Roy C.</span>
+                    </div>
+                    <p class="text-gray-600 italic">"The doctor explained all possible options in detail and patiently helped me choose the best one. Thanks to him, the treatment was as comfortable and painless as possible."</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-card relative">
+                    <i class="fas fa-quote-right text-4xl text-gray-100 absolute top-4 right-4"></i>
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 text-sm mr-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <span class="font-bold text-sm">Lynda M.</span>
+                    </div>
+                    <p class="text-gray-600 italic">"Dr. Soyfer showed amazing kindness and understanding towards my son. My son was delighted with the toys in the clinic. The treatment was successful."</p>
+                </div>
+
+                <a href="https://www.google.com/search?q=Dental+Health+Center+of+Northern+Virginia+reviews" target="_blank" class="inline-block mt-6 text-wp-primary font-bold hover:underline">Read all 150+ Google Reviews &rarr;</a>
+            </div>
+
+            <!-- FAQ Column -->
+            <div data-aos="fade-left">
+                <span class="text-wp-accent font-bold uppercase tracking-widest text-sm">FAQ</span>
+                <h2 class="text-3xl mt-2 mb-8">Common Questions</h2>
+
+                <div class="space-y-4">
+                    <details class="group bg-white rounded shadow-sm p-4 cursor-pointer">
+                        <summary class="flex justify-between items-center font-bold text-wp-primary list-none">
+                            Do you accept my insurance?
+                            <span class="transition group-open:rotate-180 text-wp-action"><i class="fas fa-chevron-down"></i></span>
+                        </summary>
+                        <p class="text-gray-600 mt-4 text-sm pl-4 border-l-2 border-wp-action">
+                            We accept most major PPO insurance plans including Delta Dental, Aetna, Cigna, and many others. We also offer financing options through CareCredit.
+                        </p>
+                    </details>
+
+                    <details class="group bg-white rounded shadow-sm p-4 cursor-pointer">
+                        <summary class="flex justify-between items-center font-bold text-wp-primary list-none">
+                            Are you taking new patients?
+                            <span class="transition group-open:rotate-180 text-wp-action"><i class="fas fa-chevron-down"></i></span>
+                        </summary>
+                        <p class="text-gray-600 mt-4 text-sm pl-4 border-l-2 border-wp-action">
+                            Yes! We are currently welcoming new patients of all ages to our Lorton, VA office. We reserve emergency slots daily.
+                        </p>
+                    </details>
+
+                    <details class="group bg-white rounded shadow-sm p-4 cursor-pointer">
+                        <summary class="flex justify-between items-center font-bold text-wp-primary list-none">
+                            What if I'm afraid of the dentist?
+                            <span class="transition group-open:rotate-180 text-wp-action"><i class="fas fa-chevron-down"></i></span>
+                        </summary>
+                        <p class="text-gray-600 mt-4 text-sm pl-4 border-l-2 border-wp-action">
+                            Dental anxiety is very common. We specialize in gentle care and offer various comfort options, including sedation dentistry.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAP SECTION -->
+    <section id="contact" class="h-96 w-full relative">
+        <iframe data-src="https://maps.google.com/maps?q=7772+Grandwind+Dr,+Lorton,+VA+22079&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-8 rounded shadow-2xl text-center hidden md:block">
+            <h4 class="font-bold text-lg mb-2 text-wp-primary">Lorton Dentist</h4>
+            <p class="text-gray-500 mb-4">7772 Grandwind Dr, Lorton, VA</p>
+            <a href="https://www.google.com/maps/dir//7772+Grandwind+Dr,+Lorton,+VA+22079" target="_blank" class="btn-wp btn-primary !py-2 !px-4 !text-xs">Get Directions</a>
+        </div>
+    </section>
+
+    <!-- FOOTER (Widget Columns) -->
+    <footer class="bg-[#1a202c] text-gray-400 py-16 text-sm">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
+            <!-- Col 1 -->
+            <div>
+                <h4 class="text-white font-bold uppercase tracking-widest mb-6">About Us</h4>
+                <p class="mb-6 leading-relaxed">Providing high-quality dental care tailored to your financial capabilities. Your smile is our priority.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-8 h-8 bg-gray-700 rounded flex items-center justify-center hover:bg-wp-action hover:text-wp-primary transition"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="w-8 h-8 bg-gray-700 rounded flex items-center justify-center hover:bg-wp-action hover:text-wp-primary transition"><i class="fab fa-google"></i></a>
+                </div>
+            </div>
+
+            <!-- Col 2 -->
+            <div>
+                <h4 class="text-white font-bold uppercase tracking-widest mb-6">Quick Links</h4>
+                <ul class="space-y-3">
+                    <li><a href="#home" class="hover:text-white transition">Home</a></li>
+                    <li><a href="#about" class="hover:text-white transition">About Dr. Soyfer</a></li>
+                    <li><a href="#services" class="hover:text-white transition">Services</a></li>
+                    <li><a href="#contact" class="hover:text-white transition">Contact Us</a></li>
+                    <li><a href="#" onclick="openBookingModal()" class="hover:text-white transition">Book Now</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 3 -->
+            <div>
+                <h4 class="text-white font-bold uppercase tracking-widest mb-6">Services</h4>
+                <ul class="space-y-3">
+                    <li><a href="dental-implants.html" class="hover:text-white transition">Dental Implants</a></li>
+                    <li><a href="invisalign.html" class="hover:text-white transition">Invisalign</a></li>
+                    <li><a href="emergency-dentist.html" class="hover:text-white transition">Emergency Care</a></li>
+                    <li><a href="pediatric-dentistry.html" class="hover:text-white transition">Pediatric Dentistry</a></li>
+                    <li><a href="dental-crowns.html" class="hover:text-white transition">Crowns & Bridges</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 4 -->
+            <div>
+                <h4 class="text-white font-bold uppercase tracking-widest mb-6">Contact Info</h4>
+                <ul class="space-y-4">
+                    <li class="flex items-start"><i class="fas fa-map-marker-alt mt-1 mr-3 text-wp-action"></i> 7772 Grandwind Dr<br>Lorton, VA 22079</li>
+                    <li class="flex items-center"><i class="fas fa-phone mr-3 text-wp-action"></i> <a href="tel:5715417977" class="hover:text-white">571-541-7977</a></li>
+                    <li class="flex items-center"><i class="fas fa-envelope mr-3 text-wp-action"></i> Soyferv@yahoo.com</li>
+                    <li class="flex items-center"><i class="fas fa-clock mr-3 text-wp-action"></i> Mon-Fri: 8am - 5pm</li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 pt-8 mt-12 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-xs">
+            <p>&copy; 2024 Lorton Dentist. All rights reserved.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <span>ADA Member</span>
+                <span>NVDS</span>
+                <span>AAOSH</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MOBILE FOOTER STICKY -->
+    <div class="md:hidden fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 p-3 flex justify-around items-center z-50 shadow-[0_-5px_10px_rgba(0,0,0,0.05)]">
+        <a href="tel:5715417977" class="flex flex-col items-center text-gray-500">
+            <i class="fas fa-phone text-lg mb-1"></i>
+            <span class="text-[10px] uppercase font-bold">Call</span>
+        </a>
+        <button onclick="openBookingModal()" class="bg-wp-primary text-white rounded px-6 py-2 font-bold uppercase text-xs shadow-lg">
+            Book Now
+        </button>
+        <a href="#contact" class="flex flex-col items-center text-gray-500">
+            <i class="fas fa-map-marker-alt text-lg mb-1"></i>
+            <span class="text-[10px] uppercase font-bold">Map</span>
+        </a>
+    </div>
+
+    <!-- BOOKING MODAL -->
+    <div id="booking-modal" class="fixed inset-0 z-[2000] hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity" onclick="closeBookingModal()"></div>
+        <div class="fixed inset-0 z-10 overflow-y-auto">
+            <div class="flex min-h-full items-center justify-center p-4 text-center">
+                <div class="relative transform overflow-hidden rounded bg-white text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-lg p-8 border-t-4 border-wp-primary">
+
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="font-heading text-2xl text-wp-primary font-bold">Request Appointment</h3>
+                        <button onclick="closeBookingModal()" class="text-gray-400 hover:text-gray-600">
+                            <i class="fas fa-times text-xl"></i>
+                        </button>
+                    </div>
+
+                    <form id="modal-booking-form" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Full Name</label>
+                            <input type="text" required class="w-full bg-gray-50 border border-gray-300 rounded px-4 py-3 focus:outline-none focus:ring-1 focus:ring-wp-primary focus:border-wp-primary transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Phone Number</label>
+                            <input type="tel" required class="w-full bg-gray-50 border border-gray-300 rounded px-4 py-3 focus:outline-none focus:ring-1 focus:ring-wp-primary focus:border-wp-primary transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Service Needed</label>
+                            <select class="w-full bg-gray-50 border border-gray-300 rounded px-4 py-3 focus:outline-none focus:ring-1 focus:ring-wp-primary focus:border-wp-primary transition-all">
+                                <option>General Checkup & Clean</option>
+                                <option>Cosmetic Dentistry</option>
+                                <option>Dental Implants</option>
+                                <option>Emergency Pain</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn-wp btn-primary w-full mt-2">
+                            Submit Request
+                        </button>
+                    </form>
+
+                    <div id="modal-success" class="hidden text-center py-8">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 text-green-600 text-2xl">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <h3 class="font-bold text-xl mb-2 text-wp-primary">Request Sent Successfully!</h3>
+                        <p class="text-gray-500 text-sm">Our coordinator will call you shortly to confirm your slot.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Init AOS
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof AOS !== 'undefined') {
+                AOS.init({
+                    duration: 800,
+                    once: true,
+                    offset: 50
+                });
+            }
+        });
+
+        // Visible Load
+        document.addEventListener("DOMContentLoaded", function() {
+            document.documentElement.style.visibility = 'visible';
+            document.documentElement.style.opacity = '1';
+
+            // Lazy load iframes
+            const iframes = document.querySelectorAll('iframe[data-src]');
+            iframes.forEach(iframe => {
+                iframe.src = iframe.getAttribute('data-src');
+            });
+        });
+
+        // Close mobile menu helper
+        function closeMenu() {
+            document.getElementById('mobile-menu').classList.add('hidden');
+        }
+
+        // Modal Logic
+        function openBookingModal() {
+            const modal = document.getElementById('booking-modal');
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeBookingModal() {
+            const modal = document.getElementById('booking-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+            // Reset form
+            document.getElementById('modal-booking-form').style.display = 'block';
+            document.getElementById('modal-success').classList.add('hidden');
+        }
+
+        // Form Handler
+        document.getElementById('modal-booking-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            this.style.display = 'none';
+            document.getElementById('modal-success').classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
