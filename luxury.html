@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <style>html { visibility: hidden; opacity: 0; }</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lorton Dentist | Premium Dental Care</title>
+
+    <!-- Fonts: Cinzel (Luxury Serif) + Manrope (Clean Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Manrope:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Animation Lib -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Safe Tailwind Configuration
+        (function() {
+            const themeConfig = {
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            sans: ['"Manrope"', 'sans-serif'],
+                            serif: ['"Cinzel"', 'serif'],
+                        },
+                        colors: {
+                            lux: {
+                                black: '#0a0a0a',     /* Deepest Black */
+                                charcoal: '#121212',  /* Surface Black */
+                                gold: '#D4AF37',      /* Classic Gold */
+                                goldDim: '#8A7224',   /* Dim Gold */
+                                cream: '#F5F5F0',     /* Text White */
+                                gray: '#888888'       /* Muted Text */
+                            }
+                        },
+                        backgroundImage: {
+                            'noise': "url('https://www.transparenttextures.com/patterns/stardust.png')",
+                            'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                        },
+                        animation: {
+                            'spin-slow': 'spin 12s linear infinite',
+                        }
+                    }
+                }
+            };
+
+            if (typeof tailwind !== 'undefined') {
+                tailwind.config = themeConfig;
+            } else {
+                window.addEventListener('DOMContentLoaded', function() {
+                    if (typeof tailwind !== 'undefined') {
+                        tailwind.config = themeConfig;
+                    }
+                });
+            }
+        })();
+    </script>
+
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #F5F5F0;
+            overflow-x: hidden;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+
+        /* Typography Utilities */
+        .text-outline {
+            -webkit-text-stroke: 1px rgba(255,255,255,0.2);
+            color: transparent;
+        }
+        .text-outline-gold {
+            -webkit-text-stroke: 1px rgba(212, 175, 55, 0.5);
+            color: transparent;
+        }
+
+        /* Image Reveal Effect */
+        .reveal-img {
+            clip-path: inset(0 100% 0 0);
+            transition: clip-path 1.5s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+        .reveal-img.active {
+            clip-path: inset(0 0 0 0);
+        }
+
+        /* Magnetic Button Effect (Simple CSS version) */
+        .btn-magnetic {
+            transition: transform 0.3s ease;
+        }
+        .btn-magnetic:hover {
+            transform: scale(1.05);
+        }
+
+        /* Luxury Divider */
+        .divider-gold {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+            opacity: 0.5;
+            margin: 2rem 0;
+        }
+
+        /* Selection */
+        ::selection {
+            background-color: #D4AF37;
+            color: #000;
+        }
+
+        /* Video Filter */
+        .video-filter {
+            filter: grayscale(100%) contrast(1.2) brightness(0.6);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-lux-gold selection:text-black">
+
+    <!-- NOISE TEXTURE OVERLAY -->
+    <div class="fixed inset-0 bg-noise opacity-5 pointer-events-none z-50"></div>
+
+    <!-- NAVIGATION (Minimalist) -->
+    <nav class="fixed top-0 w-full z-40 px-6 py-6 md:px-12 flex justify-between items-center mix-blend-difference text-lux-cream transition-all duration-500" id="navbar">
+        <a href="#" class="font-serif text-2xl tracking-widest font-bold uppercase flex items-center gap-2">
+            <i class="fas fa-tooth text-xs text-lux-gold"></i> Lorton<span class="font-sans font-light text-lux-gray">Dentist</span>
+        </a>
+
+        <div class="hidden md:flex items-center gap-12 font-sans text-xs tracking-[0.2em] uppercase">
+            <a href="#services" class="hover:text-lux-gold transition-colors relative group">
+                Services
+                <span class="absolute -bottom-2 left-0 w-0 h-[1px] bg-lux-gold transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a href="#about" class="hover:text-lux-gold transition-colors relative group">
+                The Doctor
+                <span class="absolute -bottom-2 left-0 w-0 h-[1px] bg-lux-gold transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a href="#reviews" class="hover:text-lux-gold transition-colors relative group">
+                Stories
+                <span class="absolute -bottom-2 left-0 w-0 h-[1px] bg-lux-gold transition-all duration-300 group-hover:w-full"></span>
+            </a>
+        </div>
+
+        <button onclick="openBookingModal()" class="hidden md:flex items-center gap-3 group">
+            <span class="text-xs uppercase tracking-[0.2em] group-hover:text-lux-gold transition-colors">Book Visit</span>
+            <div class="w-10 h-10 border border-white/20 rounded-full flex items-center justify-center group-hover:border-lux-gold group-hover:bg-lux-gold group-hover:text-black transition-all duration-500">
+                <i class="fas fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform duration-500"></i>
+            </div>
+        </button>
+
+        <button class="md:hidden text-2xl" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="fixed inset-0 bg-lux-black z-50 flex flex-col justify-center items-center opacity-0 pointer-events-none transition-opacity duration-500">
+        <button class="absolute top-6 right-6 text-2xl text-lux-cream" onclick="toggleMenu()">
+            <i class="fas fa-times"></i>
+        </button>
+        <nav class="flex flex-col gap-8 text-center font-serif text-3xl">
+            <a href="#services" onclick="toggleMenu()" class="hover:text-lux-gold">Services</a>
+            <a href="#about" onclick="toggleMenu()" class="hover:text-lux-gold">The Doctor</a>
+            <a href="#contact" onclick="toggleMenu()" class="hover:text-lux-gold">Contact</a>
+            <button onclick="toggleMenu(); openBookingModal()" class="text-lux-gold text-lg font-sans uppercase tracking-widest border border-lux-gold px-8 py-3 mt-4">Book Now</button>
+        </nav>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Video -->
+        <div class="absolute inset-0 z-0">
+             <video autoplay muted loop playsinline class="w-full h-full object-cover video-filter scale-110">
+                <source src="https://videocdn.cdnpk.net/videos/855708a0-a777-43b4-a19f-f77792476d72/horizontal/previews/clear/large.mp4?token=exp=1768239435~hmac=6be107b2e6f665b0e1187ead63f21cce462aa32ecb710a9f75bb7dde982a4d2d" type="video/mp4">
+            </video>
+            <div class="absolute inset-0 bg-gradient-to-t from-lux-black via-lux-black/50 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto mt-20">
+            <p class="font-sans text-lux-gold text-xs md:text-sm uppercase tracking-[0.3em] mb-6" data-aos="fade-down" data-aos-duration="1000">Excellence in Lorton, Virginia</p>
+
+            <h1 class="font-serif text-5xl md:text-7xl lg:text-9xl text-lux-cream leading-tight mb-8">
+                <span class="block overflow-hidden"><span class="block translate-y-full animate-slide-up">Artistry</span></span>
+                <span class="block overflow-hidden"><span class="block translate-y-full animate-slide-up animation-delay-200 text-outline-gold italic font-light">& Science</span></span>
+            </h1>
+
+            <div class="flex flex-col md:flex-row items-center justify-center gap-8 mt-12" data-aos="fade-up" data-aos-delay="600">
+                <div class="h-[1px] w-12 bg-lux-cream/30 hidden md:block"></div>
+                <p class="max-w-md font-sans font-light text-lux-gray text-sm md:text-base leading-relaxed text-justify md:text-center">
+                    Dr. Vladimir Soyfer invites you to experience dental care redefined. Implants, Invisalign, and aesthetic transformations tailored to your unique anatomy.
+                </p>
+                <div class="h-[1px] w-12 bg-lux-cream/30 hidden md:block"></div>
+            </div>
+
+            <div class="mt-16 flex justify-center">
+                <a href="#about" class="w-24 h-24 rounded-full border border-white/20 flex items-center justify-center text-lux-cream hover:border-lux-gold hover:text-lux-gold transition-all duration-500 animate-spin-slow hover:pause">
+                    <i class="fas fa-arrow-down"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Floating Info -->
+        <div class="absolute bottom-10 left-10 hidden lg:block">
+            <p class="font-serif text-2xl text-lux-cream">571-541-7977</p>
+            <p class="text-lux-gray text-xs uppercase tracking-widest mt-1">Direct Line</p>
+        </div>
+        <div class="absolute bottom-10 right-10 hidden lg:block text-right">
+            <p class="font-serif text-2xl text-lux-cream">Lorton, VA</p>
+            <p class="text-lux-gray text-xs uppercase tracking-widest mt-1">7772 Grandwind Dr</p>
+        </div>
+    </section>
+
+    <!-- INTRODUCTORY STATEMENT -->
+    <section class="py-32 px-6 md:px-20 bg-lux-black relative">
+        <div class="max-w-4xl mx-auto text-center md:text-left">
+            <h2 class="font-serif text-3xl md:text-5xl leading-[1.4] text-lux-cream" data-aos="fade-up">
+                We believe that a smile is not just an anatomical feature, but a <span class="text-lux-gold italic">signature of your personality</span>.
+            </h2>
+            <div class="flex flex-col md:flex-row justify-between items-end mt-16 border-t border-white/10 pt-10" data-aos="fade-up" data-aos-delay="200">
+                <p class="text-lux-gray max-w-sm text-sm leading-7">
+                    Located in Lorton, Dr. Soyfer brings over 15 years of clinical mastery from UPenn to provide bespoke dental solutions.
+                </p>
+                <button onclick="openBookingModal()" class="mt-8 md:mt-0 font-sans text-xs uppercase tracking-widest text-lux-cream hover:text-lux-gold transition-colors pb-1 border-b border-lux-gold">
+                    Request Consultation
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES (Horizontal Scroll Style Layout) -->
+    <section id="services" class="py-20 bg-lux-charcoal overflow-hidden">
+        <div class="px-6 md:px-12 mb-16 flex items-end justify-between">
+            <h2 class="font-serif text-4xl text-lux-cream">Curated Services</h2>
+            <p class="text-lux-gray text-xs uppercase tracking-widest hidden md:block">Est. 2009</p>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-1 px-1">
+
+            <!-- Service Item 1 -->
+            <div class="group relative flex-1 h-[60vh] min-h-[400px] border-l border-white/10 overflow-hidden hover:flex-[1.5] transition-all duration-700 ease-in-out cursor-pointer">
+                <div class="absolute inset-0 bg-lux-black/60 group-hover:bg-lux-black/20 transition-all duration-500 z-10"></div>
+                <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110">
+
+                <div class="absolute bottom-0 left-0 p-8 z-20 w-full">
+                    <span class="text-lux-gold font-sans text-xs mb-2 block opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">RESTORATIVE</span>
+                    <h3 class="font-serif text-3xl text-lux-cream mb-4">Implants</h3>
+                    <p class="text-lux-cream/80 text-sm max-w-xs opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 translate-y-4 group-hover:translate-y-0">
+                        Precision-guided placement for permanent, natural-looking restoration of function.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Service Item 2 -->
+            <div class="group relative flex-1 h-[60vh] min-h-[400px] border-l border-white/10 overflow-hidden hover:flex-[1.5] transition-all duration-700 ease-in-out cursor-pointer">
+                <div class="absolute inset-0 bg-lux-black/60 group-hover:bg-lux-black/20 transition-all duration-500 z-10"></div>
+                <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f72?auto=format&fit=crop&w=800&q=80" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110">
+
+                <div class="absolute bottom-0 left-0 p-8 z-20 w-full">
+                    <span class="text-lux-gold font-sans text-xs mb-2 block opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">COSMETIC</span>
+                    <h3 class="font-serif text-3xl text-lux-cream mb-4">Invisalign</h3>
+                    <p class="text-lux-cream/80 text-sm max-w-xs opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 translate-y-4 group-hover:translate-y-0">
+                        Clear alignment therapy. Discreet, comfortable, and engineered for your lifestyle.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Service Item 3 -->
+            <div class="group relative flex-1 h-[60vh] min-h-[400px] border-l border-white/10 overflow-hidden hover:flex-[1.5] transition-all duration-700 ease-in-out cursor-pointer">
+                <div class="absolute inset-0 bg-lux-black/60 group-hover:bg-lux-black/20 transition-all duration-500 z-10"></div>
+                <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=800&q=80" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110">
+
+                <div class="absolute bottom-0 left-0 p-8 z-20 w-full">
+                    <span class="text-lux-gold font-sans text-xs mb-2 block opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">URGENT CARE</span>
+                    <h3 class="font-serif text-3xl text-lux-cream mb-4">Emergency</h3>
+                    <p class="text-lux-cream/80 text-sm max-w-xs opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 translate-y-4 group-hover:translate-y-0">
+                        Immediate attention for acute conditions. We prioritize your relief and recovery.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- THE DOCTOR SECTION -->
+    <section id="about" class="py-32 px-6 md:px-20 bg-lux-black relative overflow-hidden">
+        <!-- Gold Circle Decoration -->
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] rounded-full border border-lux-gold/10 -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+
+            <!-- Image Area -->
+            <div class="lg:col-span-5 relative" data-aos="fade-right" data-aos-duration="1200">
+                <div class="reveal-img active relative z-10">
+                    <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dr Soyfer" class="w-full grayscale hover:grayscale-0 transition-all duration-1000">
+                </div>
+                <!-- Decorative Frame -->
+                <div class="absolute -bottom-6 -right-6 w-full h-full border border-lux-gold/30 z-0"></div>
+            </div>
+
+            <!-- Content Area -->
+            <div class="lg:col-span-7" data-aos="fade-left">
+                <p class="text-lux-gold text-xs uppercase tracking-[0.2em] mb-4">The Practitioner</p>
+                <h2 class="font-serif text-4xl md:text-6xl text-lux-cream mb-8">Dr. Vladimir Soyfer</h2>
+
+                <div class="space-y-6 text-lux-gray font-light leading-relaxed mb-12">
+                    <p>
+                        A graduate of the prestigious University of Pennsylvania School of Dental Medicine, Dr. Soyfer combines 15 years of rigorous clinical practice with an artist’s eye for detail.
+                    </p>
+                    <p>
+                        His philosophy is simple yet profound: dentistry is not merely about repair, but about restoration of confidence. He has authored over 50 scientific papers, cementing his status as a thought leader in oral surgery and prosthodontics.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-8 mb-12 border-t border-white/10 pt-8">
+                    <div>
+                        <span class="block text-3xl font-serif text-lux-cream mb-1">15+</span>
+                        <span class="text-xs uppercase tracking-widest text-lux-gold">Years Practice</span>
+                    </div>
+                    <div>
+                        <span class="block text-3xl font-serif text-lux-cream mb-1">UPenn</span>
+                        <span class="text-xs uppercase tracking-widest text-lux-gold">Alumni</span>
+                    </div>
+                </div>
+
+                <button onclick="openBookingModal()" class="px-10 py-4 border border-lux-cream text-lux-cream uppercase text-xs tracking-[0.2em] hover:bg-lux-gold hover:border-lux-gold hover:text-black transition-all duration-300">
+                    Secure Appointment
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS SLIDER (Minimal) -->
+    <section id="reviews" class="py-32 bg-lux-charcoal relative">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <i class="fas fa-quote-left text-4xl text-lux-gold/30 mb-8"></i>
+
+            <div class="relative overflow-hidden h-64">
+                <!-- Review 1 -->
+                <div class="absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-1000 opacity-100" id="review-1">
+                    <h3 class="font-serif text-2xl md:text-4xl text-lux-cream leading-tight mb-8">
+                        "The doctor explained all options with patience and clarity. The treatment was painless and the results are <span class="text-lux-gold italic">impeccable</span>."
+                    </h3>
+                    <p class="text-xs uppercase tracking-widest text-lux-gray">— Roy C.</p>
+                </div>
+            </div>
+
+            <div class="flex justify-center gap-4 mt-8">
+                <div class="w-12 h-[1px] bg-lux-gold"></div>
+                <div class="w-12 h-[1px] bg-white/20"></div>
+            </div>
+
+            <div class="mt-12">
+                 <a href="https://www.google.com/search?q=Dental+Health+Center+of+Northern+Virginia+reviews" target="_blank" class="text-xs text-lux-gray hover:text-lux-cream transition-colors border-b border-transparent hover:border-lux-cream pb-1">
+                    Read 150+ Verified Reviews on Google
+                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT / FOOTER (Split) -->
+    <section id="contact" class="grid grid-cols-1 lg:grid-cols-2 bg-lux-black min-h-[600px] border-t border-white/10">
+        <!-- Map Side -->
+        <div class="relative min-h-[400px] lg:min-h-full grayscale hover:grayscale-0 transition-all duration-1000">
+            <iframe data-src="https://maps.google.com/maps?q=7772+Grandwind+Dr,+Lorton,+VA+22079&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" class="absolute inset-0"></iframe>
+            <div class="absolute inset-0 pointer-events-none shadow-[inset_0_0_100px_rgba(0,0,0,0.8)]"></div>
+        </div>
+
+        <!-- Info Side -->
+        <div class="p-12 md:p-24 flex flex-col justify-between">
+            <div>
+                <h2 class="font-serif text-4xl text-lux-cream mb-12">Visit Us</h2>
+
+                <div class="space-y-12">
+                    <div class="group">
+                        <span class="text-xs text-lux-gold uppercase tracking-widest block mb-2">Location</span>
+                        <p class="text-xl text-lux-cream font-light group-hover:translate-x-2 transition-transform duration-300">
+                            7772 Grandwind Dr<br>Lorton, VA 22079
+                        </p>
+                    </div>
+
+                    <div class="group">
+                        <span class="text-xs text-lux-gold uppercase tracking-widest block mb-2">Contact</span>
+                        <p class="text-xl text-lux-cream font-light group-hover:translate-x-2 transition-transform duration-300">
+                            <a href="tel:5715417977">571-541-7977</a><br>
+                            <a href="mailto:Soyferv@yahoo.com" class="text-sm text-lux-gray">Soyferv@yahoo.com</a>
+                        </p>
+                    </div>
+
+                    <div class="group">
+                        <span class="text-xs text-lux-gold uppercase tracking-widest block mb-2">Hours</span>
+                        <p class="text-xl text-lux-cream font-light group-hover:translate-x-2 transition-transform duration-300">
+                            Mon - Fri: 08:00 - 17:00<br>
+                            <span class="text-sm text-lux-gray">Saturday by appointment</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-20 pt-8 border-t border-white/10 flex justify-between items-end text-xs text-lux-gray font-sans tracking-widest">
+                <p>&copy; 2024 Lorton Dentist</p>
+                <div class="flex gap-6">
+                    <span>ADA</span>
+                    <span>NVDS</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOKING MODAL (Elegant) -->
+    <div id="booking-modal" class="fixed inset-0 z-[100] hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="fixed inset-0 bg-black/90 backdrop-blur-md transition-opacity duration-500" onclick="closeBookingModal()"></div>
+        <div class="fixed inset-0 z-10 overflow-y-auto">
+            <div class="flex min-h-full items-center justify-center p-4 text-center">
+                <div class="relative transform overflow-hidden bg-lux-charcoal border border-white/10 text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-lg p-12">
+
+                    <button onclick="closeBookingModal()" class="absolute top-6 right-6 text-lux-gray hover:text-lux-gold transition-colors">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+
+                    <h3 class="font-serif text-3xl text-lux-cream mb-2">Begin Your Journey</h3>
+                    <p class="text-lux-gray text-sm mb-10 font-light">Enter your details below to request a private consultation.</p>
+
+                    <form id="modal-booking-form" class="space-y-8">
+                        <div class="relative group">
+                            <input type="text" required class="block w-full bg-transparent border-b border-white/20 py-3 text-lux-cream focus:outline-none focus:border-lux-gold transition-colors peer placeholder-transparent" placeholder="Name">
+                            <label class="absolute left-0 -top-3.5 text-lux-gray text-xs transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-lux-gray peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-lux-gold peer-focus:text-xs">Full Name</label>
+                        </div>
+
+                        <div class="relative group">
+                            <input type="tel" required class="block w-full bg-transparent border-b border-white/20 py-3 text-lux-cream focus:outline-none focus:border-lux-gold transition-colors peer placeholder-transparent" placeholder="Phone">
+                            <label class="absolute left-0 -top-3.5 text-lux-gray text-xs transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-lux-gray peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-lux-gold peer-focus:text-xs">Phone Number</label>
+                        </div>
+
+                        <div class="relative group">
+                            <select class="block w-full bg-transparent border-b border-white/20 py-3 text-lux-cream focus:outline-none focus:border-lux-gold transition-colors appearance-none">
+                                <option class="bg-lux-charcoal">General Consultation</option>
+                                <option class="bg-lux-charcoal">Implants</option>
+                                <option class="bg-lux-charcoal">Invisalign</option>
+                                <option class="bg-lux-charcoal text-lux-gold">Emergency</option>
+                            </select>
+                            <i class="fas fa-chevron-down absolute right-0 top-4 text-xs text-lux-gray"></i>
+                        </div>
+
+                        <button type="submit" class="w-full bg-lux-gold text-black font-sans uppercase tracking-[0.2em] text-xs font-bold py-4 hover:bg-white transition-colors duration-500 mt-8">
+                            Submit Request
+                        </button>
+                    </form>
+
+                    <div id="modal-success" class="hidden text-center py-10">
+                        <i class="fas fa-check-circle text-4xl text-lux-gold mb-6"></i>
+                        <h3 class="font-serif text-2xl text-lux-cream mb-2">Request Received</h3>
+                        <p class="text-lux-gray text-sm">We will be in touch shortly.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Init AOS
+        AOS.init({
+            duration: 1000,
+            easing: 'cubic-bezier(0.77, 0, 0.175, 1)',
+            once: true
+        });
+
+        // Visible Load & Reveal Effects
+        document.addEventListener("DOMContentLoaded", function() {
+            document.documentElement.style.visibility = 'visible';
+            document.documentElement.style.opacity = '1';
+
+            // Lazy load iframes
+            const iframes = document.querySelectorAll('iframe[data-src]');
+            iframes.forEach(iframe => {
+                iframe.src = iframe.getAttribute('data-src');
+            });
+
+            // Text Animations
+            const texts = document.querySelectorAll('.animate-slide-up');
+            texts.forEach(text => {
+                text.classList.remove('translate-y-full');
+            });
+        });
+
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.style.opacity === '1') {
+                menu.style.opacity = '0';
+                menu.style.pointerEvents = 'none';
+            } else {
+                menu.style.opacity = '1';
+                menu.style.pointerEvents = 'auto';
+            }
+        }
+
+        // Modal Logic
+        function openBookingModal() {
+            const modal = document.getElementById('booking-modal');
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeBookingModal() {
+            const modal = document.getElementById('booking-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+            document.getElementById('modal-booking-form').style.display = 'block';
+            document.getElementById('modal-success').classList.add('hidden');
+        }
+
+        document.getElementById('modal-booking-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            this.style.display = 'none';
+            document.getElementById('modal-success').classList.remove('hidden');
+        });
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-lux-black/80', 'backdrop-blur-md', 'py-4');
+                nav.classList.remove('py-6');
+            } else {
+                nav.classList.remove('bg-lux-black/80', 'backdrop-blur-md', 'py-4');
+                nav.classList.add('py-6');
+            }
+        });
+    </script>
+</body>
+</html>
