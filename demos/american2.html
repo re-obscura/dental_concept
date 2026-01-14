@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Smiles - Premium Dental Care</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Шрифты как на референсе (Serif для заголовков, Sans для текста) -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Open Sans', sans-serif; }
+        h1, h2, h3, h4, .font-serif { font-family: 'Merriweather', serif; }
+
+        /* Глубокий синий цвет как на сайте-референсе */
+        .bg-brand-blue { background-color: #1e293b; }
+        .text-brand-blue { color: #1e293b; }
+        .bg-brand-gold { background-color: #c0a062; } /* Золотой акцент */
+        .text-brand-gold { color: #c0a062; }
+        .border-brand-gold { border-color: #c0a062; }
+
+        /* --- СТИЛИ ДЛЯ СЛАЙДЕРА (Full Width) --- */
+        @keyframes fadeSlider {
+            0% { opacity: 0; transform: scale(1.05); }
+            5% { opacity: 1; transform: scale(1); }
+            20% { opacity: 1; transform: scale(1); } /* Держим картинку дольше */
+            25% { opacity: 0; }
+            100% { opacity: 0; }
+        }
+
+        .slide-item {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            animation: fadeSlider 32s infinite; /* 8 слайдов * 4 сек */
+        }
+
+        /* Генерация задержек для плавного слайдшоу */
+        .slide-1 { animation-delay: 0s; background-image: url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80&w=2000'); }
+        .slide-2 { animation-delay: 4s; background-image: url('https://images.unsplash.com/photo-1588776814546-1b9785c7d47e?auto=format&fit=crop&q=80&w=2000'); }
+        .slide-3 { animation-delay: 8s; background-image: url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=2000'); }
+        .slide-4 { animation-delay: 12s; background-image: url('https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&q=80&w=2000'); }
+        .slide-5 { animation-delay: 16s; background-image: url('https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&q=80&w=2000'); }
+        .slide-6 { animation-delay: 20s; background-image: url('https://images.unsplash.com/photo-1600170311833-c2cf5280ce49?auto=format&fit=crop&q=80&w=2000'); }
+        .slide-7 { animation-delay: 24s; background-image: url('https://images.unsplash.com/photo-1579684385180-1ea55f9f8c48?auto=format&fit=crop&q=80&w=2000'); }
+        .slide-8 { animation-delay: 28s; background-image: url('https://images.unsplash.com/photo-1571772996211-2f02c9727629?auto=format&fit=crop&q=80&w=2000'); }
+
+        /* --- СТИЛИ ДЛЯ ЧАТА --- */
+        .chat-modal-overlay {
+            opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+        }
+        .chat-modal-overlay.active {
+            opacity: 1; pointer-events: auto;
+        }
+        .chat-modal-content {
+            transform: translateY(20px) scale(0.95); opacity: 0;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .chat-modal-overlay.active .chat-modal-content {
+            transform: translateY(0) scale(1); opacity: 1;
+        }
+        @keyframes popIn {
+            0% { opacity: 0; transform: translateY(10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .msg-animate { animation: popIn 0.4s ease forwards; }
+        @keyframes typingBounce {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-4px); }
+        }
+        .typing-dot { animation: typingBounce 1s infinite ease-in-out both; }
+        .typing-dot:nth-child(1) { animation-delay: 0s; }
+        .typing-dot:nth-child(2) { animation-delay: 0.1s; }
+        .typing-dot:nth-child(3) { animation-delay: 0.2s; }
+        .chat-bg-pattern {
+             background-color: #f0f2f5;
+             background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+             background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 antialiased flex flex-col min-h-screen">
+
+    <!-- TOP BAR (Инфо-строка как на референсе) -->
+    <div class="bg-brand-blue text-white text-sm py-2">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-2">
+            <div class="flex items-center space-x-6">
+                <span class="flex items-center gap-2 text-gray-300"><i class="fa-solid fa-phone text-brand-gold"></i> +7 (495) 000-00-00</span>
+                <span class="hidden md:flex items-center gap-2 text-gray-300"><i class="fa-solid fa-location-dot text-brand-gold"></i> Москва, Кутузовский пр-т, 12</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="text-xs uppercase tracking-wider text-brand-gold font-bold">Прием пациентов: Пн-Сб 9:00-21:00</span>
+                <div class="flex space-x-3">
+                    <a href="#" class="hover:text-brand-gold transition"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-brand-gold transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-brand-gold transition"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVBAR (Белый, Классический) -->
+    <header class="bg-white shadow-md relative z-50">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center gap-3">
+                <i class="fa-solid fa-tooth text-4xl text-brand-blue"></i>
+                <div class="flex flex-col">
+                    <span class="text-2xl font-serif font-bold text-brand-blue leading-none tracking-tight">Healthy<span class="text-brand-gold">Smiles</span></span>
+                    <span class="text-[10px] uppercase tracking-[0.2em] text-gray-500 font-semibold">Стоматологическая Клиника</span>
+                </div>
+            </div>
+
+            <!-- Menu -->
+            <nav class="hidden lg:flex space-x-8 font-bold text-gray-700 text-sm uppercase tracking-wide">
+                <a href="#" class="hover:text-brand-gold transition py-2">Главная</a>
+                <a href="#" class="hover:text-brand-gold transition py-2">О нас</a>
+                <a href="#" class="hover:text-brand-gold transition py-2">Услуги</a>
+                <a href="#" class="hover:text-brand-gold transition py-2">Врачи</a>
+                <a href="#" class="hover:text-brand-gold transition py-2">Отзывы</a>
+                <a href="#" class="hover:text-brand-gold transition py-2">Контакты</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <button onclick="openChat()" class="hidden md:flex bg-brand-gold hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-sm shadow-md transition uppercase text-xs tracking-widest items-center gap-2">
+                Записаться
+            </button>
+
+            <!-- Mobile Menu Btn -->
+            <button class="lg:hidden text-2xl text-brand-blue"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- HERO SECTION (Full Width Slider + Text Overlay) -->
+    <!-- Это классическая структура как на сайте-референсе -->
+    <section class="relative h-[600px] lg:h-[750px] w-full bg-gray-900 overflow-hidden">
+
+        <!-- СЛАЙДЕР НА ФОНЕ -->
+        <div class="absolute inset-0 w-full h-full">
+            <div class="slide-item slide-1"></div>
+            <div class="slide-item slide-2"></div>
+            <div class="slide-item slide-3"></div>
+            <div class="slide-item slide-4"></div>
+            <div class="slide-item slide-5"></div>
+            <div class="slide-item slide-6"></div>
+            <div class="slide-item slide-7"></div>
+            <div class="slide-item slide-8"></div>
+            <!-- Затемнение -->
+            <div class="absolute inset-0 bg-black/40"></div>
+        </div>
+
+        <!-- КОНТЕНТ (Плашка поверх слайдера) -->
+        <div class="relative z-10 h-full max-w-7xl mx-auto px-6 flex items-center">
+            <div class="w-full lg:w-[600px] bg-white/95 backdrop-blur-sm p-8 md:p-12 shadow-2xl border-t-4 border-brand-gold animate-[popIn_1s_ease-out]">
+                <h4 class="text-brand-gold font-bold uppercase text-xs tracking-[0.2em] mb-3">Премиальная стоматология</h4>
+                <h1 class="text-4xl md:text-5xl font-serif font-bold text-brand-blue leading-tight mb-6">
+                    Искусство создавать <br>
+                    <span class="italic text-brand-gold">здоровые улыбки</span>
+                </h1>
+                <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                    Мы объединили передовые технологии США и заботу о комфорте пациента. Лечение зубов без боли, страха и стресса.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button onclick="openChat()" class="bg-brand-blue hover:bg-slate-800 text-white font-bold py-4 px-8 rounded-sm shadow text-sm uppercase tracking-wider transition">
+                        Записаться на прием
+                    </button>
+                    <button class="border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white font-bold py-4 px-8 rounded-sm text-sm uppercase tracking-wider transition">
+                        Наши услуги
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ЧАТ-ВИДЖЕТ (Встроенный в слайдер справа внизу) -->
+        <!-- Тот самый "ебучий виджет", который просил клиент -->
+        <div class="absolute bottom-8 right-6 z-20 md:right-12 md:bottom-12 cursor-pointer group" onclick="openChat()">
+            <!-- Пульсирующий круг -->
+            <div class="absolute -inset-2 bg-brand-gold/30 rounded-full animate-ping group-hover:animation-none"></div>
+
+            <div class="bg-white p-4 rounded-lg shadow-2xl border-l-4 border-brand-gold flex items-center gap-4 max-w-xs transform transition group-hover:translate-y-[-5px]">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=200" class="w-14 h-14 rounded-full object-cover border-2 border-white shadow">
+                    <div class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-green-500 border-2 border-white rounded-full"></div>
+                </div>
+                <div>
+                    <div class="text-[10px] font-bold text-gray-400 uppercase tracking-wide mb-1">Сообщение от гл. врача</div>
+                    <div class="text-sm font-bold text-brand-blue leading-snug group-hover:text-brand-gold transition">
+                        "Здравствуйте! У нас освободилось окно..."
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WELCOME SECTION (Классика: Текст + Картинка) -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div class="relative">
+                <div class="absolute -top-4 -left-4 w-24 h-24 bg-brand-gold/20 z-0"></div>
+                <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=1000" alt="Clinic Interior" class="relative z-10 w-full rounded-sm shadow-xl">
+                <div class="absolute -bottom-6 -right-6 bg-brand-blue p-6 text-white z-20 hidden md:block shadow-lg">
+                    <div class="text-3xl font-serif font-bold">15+</div>
+                    <div class="text-xs uppercase tracking-widest opacity-80">Лет опыта</div>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-brand-gold font-bold uppercase text-sm tracking-widest mb-2">О нашей клинике</h4>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-blue mb-6">Добро пожаловать в Healthy Smiles</h2>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Наша миссия — предоставить стоматологическую помощь мирового уровня в комфортной и дружелюбной обстановке. Мы верим, что визит к стоматологу может быть приятным.
+                </p>
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-center gap-3 text-gray-700">
+                        <i class="fa-solid fa-check text-brand-gold"></i>
+                        <span>Современное оборудование (3D томография)</span>
+                    </li>
+                    <li class="flex items-center gap-3 text-gray-700">
+                        <i class="fa-solid fa-check text-brand-gold"></i>
+                        <span>Гарантия на все виды работ до 10 лет</span>
+                    </li>
+                    <li class="flex items-center gap-3 text-gray-700">
+                        <i class="fa-solid fa-check text-brand-gold"></i>
+                        <span>Индивидуальный подход и прозрачные цены</span>
+                    </li>
+                </ul>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Signature_sample.svg" class="h-10 opacity-60 mb-4" alt="Signature">
+                <div class="font-serif font-bold text-brand-blue">Др. Владимир Смирнов</div>
+                <div class="text-xs text-gray-500 uppercase">Главный врач, К.М.Н.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES (Icon Grid) -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6 text-center mb-16">
+            <h4 class="text-brand-gold font-bold uppercase text-sm tracking-widest mb-2">Наши направления</h4>
+            <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-blue">Комплексный подход к лечению</h2>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <!-- Service 1 -->
+            <div class="bg-white p-8 shadow-sm hover:shadow-xl transition text-center group border-b-4 border-transparent hover:border-brand-gold">
+                <div class="w-16 h-16 mx-auto bg-blue-50 text-brand-blue rounded-full flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-blue group-hover:text-white transition">
+                    <i class="fa-solid fa-tooth"></i>
+                </div>
+                <h3 class="text-lg font-serif font-bold text-brand-blue mb-3">Терапия</h3>
+                <p class="text-sm text-gray-500 mb-4">Лечение кариеса и каналов под микроскопом.</p>
+            </div>
+            <!-- Service 2 -->
+            <div class="bg-white p-8 shadow-sm hover:shadow-xl transition text-center group border-b-4 border-transparent hover:border-brand-gold">
+                <div class="w-16 h-16 mx-auto bg-blue-50 text-brand-blue rounded-full flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-blue group-hover:text-white transition">
+                    <i class="fa-regular fa-gem"></i>
+                </div>
+                <h3 class="text-lg font-serif font-bold text-brand-blue mb-3">Эстетика</h3>
+                <p class="text-sm text-gray-500 mb-4">Виниры, люминиры и отбеливание Zoom 4.</p>
+            </div>
+            <!-- Service 3 -->
+            <div class="bg-white p-8 shadow-sm hover:shadow-xl transition text-center group border-b-4 border-transparent hover:border-brand-gold">
+                <div class="w-16 h-16 mx-auto bg-blue-50 text-brand-blue rounded-full flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-blue group-hover:text-white transition">
+                    <i class="fa-solid fa-microscope"></i>
+                </div>
+                <h3 class="text-lg font-serif font-bold text-brand-blue mb-3">Имплантация</h3>
+                <p class="text-sm text-gray-500 mb-4">Восстановление зубов системами Nobel Biocare.</p>
+            </div>
+            <!-- Service 4 -->
+            <div class="bg-white p-8 shadow-sm hover:shadow-xl transition text-center group border-b-4 border-transparent hover:border-brand-gold">
+                <div class="w-16 h-16 mx-auto bg-blue-50 text-brand-blue rounded-full flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-blue group-hover:text-white transition">
+                    <i class="fa-solid fa-child"></i>
+                </div>
+                <h3 class="text-lg font-serif font-bold text-brand-blue mb-3">Детская</h3>
+                <p class="text-sm text-gray-500 mb-4">Бережное лечение молочных зубов без слез.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS (Классический синий блок) -->
+    <section class="py-20 bg-brand-blue text-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="text-brand-gold text-4xl mb-6"><i class="fa-solid fa-quote-left"></i></div>
+            <h2 class="text-2xl md:text-4xl font-serif italic font-light mb-8 leading-relaxed">
+                "Я долго искала клинику такого уровня. Владимир Смирнов — врач от бога.
+                Впервые в жизни я заснула в кресле стоматолога. Результат превзошел все ожидания!"
+            </h2>
+            <div class="flex items-center justify-center gap-2 text-brand-gold mb-4 text-sm">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <div class="font-bold text-lg uppercase tracking-widest">Елена Морозова</div>
+            <div class="text-xs text-gray-400 mt-1">Пациент, Виниры E-Max</div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-gray-400 pt-16 pb-8 border-t border-gray-800 mt-auto">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+            <div>
+                <div class="flex items-center gap-2 mb-6">
+                    <i class="fa-solid fa-tooth text-2xl text-white"></i>
+                    <span class="text-xl font-serif font-bold text-white">Healthy<span class="text-brand-gold">Smiles</span></span>
+                </div>
+                <p class="text-sm leading-relaxed mb-6">
+                    Современная стоматологическая клиника в центре Москвы. Мы заботимся о вашей улыбке каждый день.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-gold hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-gold hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-gold hover:text-white transition"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold uppercase text-sm tracking-widest mb-6">Быстрое меню</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="#" class="hover:text-brand-gold transition">О клинике</a></li>
+                    <li><a href="#" class="hover:text-brand-gold transition">Наши врачи</a></li>
+                    <li><a href="#" class="hover:text-brand-gold transition">Прайс-лист</a></li>
+                    <li><a href="#" class="hover:text-brand-gold transition">Блог</a></li>
+                    <li><a href="#" class="hover:text-brand-gold transition">Контакты</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold uppercase text-sm tracking-widest mb-6">Часы работы</h4>
+                <ul class="space-y-3 text-sm">
+                    <li class="flex justify-between border-b border-gray-800 pb-2"><span>Понедельник - Пятница</span> <span>9:00 - 21:00</span></li>
+                    <li class="flex justify-between border-b border-gray-800 pb-2"><span>Суббота</span> <span>10:00 - 18:00</span></li>
+                    <li class="flex justify-between border-b border-gray-800 pb-2"><span>Воскресенье</span> <span class="text-brand-gold">Выходной</span></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold uppercase text-sm tracking-widest mb-6">Контакты</h4>
+                <ul class="space-y-4 text-sm">
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-location-dot text-brand-gold mt-1"></i>
+                        <span>Москва,<br>Кутузовский проспект, д. 12</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fa-solid fa-phone text-brand-gold"></i>
+                        <a href="tel:+74950000000" class="hover:text-white">+7 (495) 000-00-00</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fa-solid fa-envelope text-brand-gold"></i>
+                        <a href="mailto:info@healthysmiles.ru" class="hover:text-white">info@healthysmiles.ru</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 border-t border-gray-800 pt-8 text-center text-xs text-gray-600">
+            &copy; 2026 Healthy Smiles Clinic. Все права защищены. Лицензия ЛО-77-01-000000.
+        </div>
+    </footer>
+
+    <!-- ЧАТ-БОТ МОДАЛКА (Скрытая) -->
+    <div id="chat-modal" class="fixed inset-0 z-[100] flex items-center justify-center chat-modal-overlay">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeChat()"></div>
+        <div class="chat-modal-content relative w-full max-w-md h-[80vh] bg-white rounded-lg shadow-2xl flex flex-col overflow-hidden mx-4">
+            <!-- Header Чата -->
+            <div class="bg-brand-blue border-b border-gray-700 px-4 py-3 flex items-center justify-between z-10 shadow-sm text-white">
+                <div class="flex items-center gap-3">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=200" class="w-10 h-10 rounded-full object-cover border-2 border-white">
+                        <div class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 border-2 border-white rounded-full"></div>
+                    </div>
+                    <div>
+                        <div class="font-bold text-sm">Др. Владимир</div>
+                        <div class="text-xs text-green-400 font-bold">В сети</div>
+                    </div>
+                </div>
+                <button onclick="closeChat()" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/10 transition">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            <!-- Тело Чата -->
+            <div id="chat-body" class="flex-1 chat-bg-pattern p-4 overflow-y-auto space-y-3">
+                <div class="text-center text-xs text-gray-400 font-bold uppercase my-2">Сегодня</div>
+            </div>
+            <!-- Кнопки Чата -->
+            <div id="chat-controls" class="bg-white border-t p-4 z-10">
+                <div id="choice-buttons" class="grid grid-cols-1 gap-2">
+                    <button onclick="userReply('pain')" class="w-full bg-red-50 hover:bg-red-100 border border-red-100 p-3 rounded-lg flex items-center justify-between transition group">
+                        <span class="text-sm font-bold text-gray-800 flex items-center gap-2"><i class="fa-solid fa-bolt text-red-500"></i> Острая боль</span>
+                        <i class="fa-solid fa-paper-plane text-red-300 group-hover:text-red-500"></i>
+                    </button>
+                    <button onclick="userReply('beauty')" class="w-full bg-blue-50 hover:bg-blue-100 border border-blue-100 p-3 rounded-lg flex items-center justify-between transition group">
+                         <span class="text-sm font-bold text-gray-800 flex items-center gap-2"><i class="fa-regular fa-star text-brand-blue"></i> Хочу красивую улыбку</span>
+                        <i class="fa-solid fa-paper-plane text-blue-300 group-hover:text-brand-blue"></i>
+                    </button>
+                    <button onclick="userReply('price')" class="w-full bg-gray-50 hover:bg-gray-100 border border-gray-200 p-3 rounded-lg flex items-center justify-between transition group">
+                         <span class="text-sm font-bold text-gray-800 flex items-center gap-2"><i class="fa-solid fa-ruble-sign text-gray-500"></i> Узнать цены</span>
+                        <i class="fa-solid fa-paper-plane text-gray-300 group-hover:text-gray-500"></i>
+                    </button>
+                </div>
+                <!-- Форма телефона -->
+                <div id="phone-form" class="hidden">
+                    <p class="text-xs text-gray-500 mb-2 font-bold uppercase">Введите номер для связи:</p>
+                    <div class="flex gap-2">
+                        <input type="tel" id="phone-input" class="w-full bg-gray-100 rounded-lg px-4 py-3 font-bold text-gray-800 focus:outline-none focus:ring-2 focus:ring-brand-blue" placeholder="+7 (999) 000-00-00">
+                        <button onclick="submitPhone()" class="bg-brand-blue text-white px-4 rounded-lg hover:bg-slate-800 transition"><i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS LOGIC -->
+    <script>
+        const chatModal = document.getElementById('chat-modal');
+        const chatBody = document.getElementById('chat-body');
+        const choiceButtons = document.getElementById('choice-buttons');
+        const phoneForm = document.getElementById('phone-form');
+        let hasStarted = false;
+
+        function openChat() {
+            chatModal.classList.add('active');
+            if (!hasStarted) { startChatFlow(); hasStarted = true; }
+        }
+        function closeChat() { chatModal.classList.remove('active'); }
+        function scrollToBottom() { chatBody.scrollTo({ top: chatBody.scrollHeight, behavior: 'smooth' }); }
+
+        function addBotMsg(text, delay = 500) {
+            const typingId = 'typing-' + Date.now();
+            const typingDiv = document.createElement('div');
+            typingDiv.id = typingId;
+            typingDiv.className = 'flex items-end space-x-2 mb-3';
+            typingDiv.innerHTML = `<img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=200" class="w-6 h-6 rounded-full opacity-80"><div class="bg-white p-3 rounded-2xl rounded-bl-none shadow-sm"><div class="flex space-x-1"><div class="w-1.5 h-1.5 bg-gray-400 rounded-full typing-dot"></div><div class="w-1.5 h-1.5 bg-gray-400 rounded-full typing-dot"></div><div class="w-1.5 h-1.5 bg-gray-400 rounded-full typing-dot"></div></div></div>`;
+            chatBody.appendChild(typingDiv);
+            scrollToBottom();
+
+            setTimeout(() => {
+                document.getElementById(typingId).remove();
+                const msg = document.createElement('div');
+                msg.className = 'flex items-end space-x-2 mb-3 msg-animate';
+                msg.innerHTML = `<img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=200" class="w-6 h-6 rounded-full mb-1 object-cover"><div class="bg-white p-3 rounded-2xl rounded-bl-none shadow-sm max-w-[85%]"><p class="text-sm text-gray-800 leading-relaxed">${text}</p></div>`;
+                chatBody.appendChild(msg);
+                scrollToBottom();
+            }, delay + 800);
+        }
+
+        function addUserMsg(text) {
+            const msg = document.createElement('div');
+            msg.className = 'flex justify-end mb-3 msg-animate';
+            msg.innerHTML = `<div class="bg-brand-blue text-white p-3 rounded-2xl rounded-br-none shadow-md max-w-[85%] text-sm">${text}</div>`;
+            chatBody.appendChild(msg);
+            scrollToBottom();
+        }
+
+        function startChatFlow() {
+            setTimeout(() => {
+                addBotMsg("Здравствуйте! 👋 Я Владимир, главврач.");
+                setTimeout(() => { addBotMsg("Чем могу вам помочь? Выберите вариант 👇"); }, 2000);
+            }, 300);
+        }
+
+        function userReply(type) {
+            choiceButtons.style.display = 'none';
+            if (type === 'pain') {
+                addUserMsg("Острая боль 🦷");
+                addBotMsg("Понял, это срочно. Примем сегодня.", 500);
+                setTimeout(() => showPhoneInput("Напишите номер, я перезвоню лично."), 2500);
+            } else if (type === 'beauty') {
+                addUserMsg("Хочу красивую улыбку ✨");
+                addBotMsg("Отлично. Мы эксперты в эстетике.", 500);
+                setTimeout(() => showPhoneInput("Оставьте номер для записи на 3D-моделирование."), 2500);
+            } else {
+                addUserMsg("Узнать цены 💰");
+                addBotMsg("Цены зависят от плана лечения.", 500);
+                setTimeout(() => showPhoneInput("Куда прислать прайс-лист?"), 2500);
+            }
+        }
+
+        function showPhoneInput(botText) {
+            addBotMsg(botText, 500);
+            setTimeout(() => {
+                phoneForm.classList.remove('hidden');
+                document.getElementById('phone-input').focus();
+                scrollToBottom();
+            }, 2000);
+        }
+
+        function submitPhone() {
+            const phone = document.getElementById('phone-input').value;
+            if (phone.length < 5) return;
+            phoneForm.style.display = 'none';
+            addUserMsg(phone);
+            setTimeout(() => { addBotMsg("Заявка принята! Свяжусь с вами через 5 минут. ✅"); }, 1000);
+        }
+    </script>
+
+</body>
+</html>
