@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Dentist in Alexandria | Premium Dental Care</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Dentist",
+            "name": "Alexandria Dentistry",
+            "image": "https://images.unsplash.com/photo-1629909615184-74f495363b67?w=800&q=80",
+            "@id": "https://alexandriadentistry.com",
+            "url": "https://alexandriadentistry.com",
+            "telephone": "+17035550123",
+            "currenciesAccepted": "USD",
+            "paymentAccepted": "Cash, Credit Card, Insurance",
+            "priceRange": "$$",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "123 King Street",
+                "addressLocality": "Alexandria",
+                "addressRegion": "VA",
+                "postalCode": "22314",
+                "addressCountry": "US"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 38.8048,
+                "longitude": -77.0469
+            },
+            "openingHours": "Mo-Th 08:00-17:00, Fr 07:00-15:00",
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+                    "opens": "08:00",
+                    "closes": "17:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Friday",
+                    "opens": "07:00",
+                    "closes": "15:00"
+                }
+            ],
+            "sameAs": [
+                "https://facebook.com",
+                "https://twitter.com",
+                "https://instagram.com"
+            ],
+            "medicalSpecialty": [
+                "General Dentistry",
+                "Oral Surgery",
+                "Orthodontics",
+                "Cosmetic Dentistry"
+            ]
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <!-- Zone 1: Logo -->
+            <a href="index.html" class="logo-text">
+                <span class="logo-small">DENTIST IN</span>
+                <span class="logo-main">Alexandria</span>
+                <span class="logo-sub">Dentistry</span>
+            </a>
+
+            <!-- Zone 2: Navigation -->
+            <nav class="nav-list">
+                <a href="about.html" class="nav-link">ABOUT</a>
+                <div class="nav-item dropdown">
+                    <a href="services.html" class="nav-link">SERVICES
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                            style="margin-left: 5px; vertical-align: middle;">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </a>
+                    <div class="dropdown-menu">
+                        <!-- General Dentistry -->
+                        <div class="dropdown-submenu">
+                            <a href="services.html#general" class="dropdown-item">
+                                General Dentistry
+                                <svg class="dropdown-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="3">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </a>
+                            <div class="submenu">
+                                <a href="services.html#general" class="submenu-item">Routine Checkups</a>
+                                <a href="services.html#general" class="submenu-item">Professional Cleaning</a>
+                                <a href="services.html#general" class="submenu-item">Dental Fillings</a>
+                                <a href="services.html#general" class="submenu-item">Root Canal Therapy</a>
+                            </div>
+                        </div>
+
+                        <!-- Cosmetic Dentistry -->
+                        <div class="dropdown-submenu">
+                            <a href="services.html#cosmetic" class="dropdown-item">
+                                Cosmetic Dentistry
+                                <svg class="dropdown-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="3">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </a>
+                            <div class="submenu">
+                                <a href="services.html#cosmetic" class="submenu-item">Professional Whitening</a>
+                                <a href="services.html#cosmetic" class="submenu-item">Porcelain Veneers</a>
+                                <a href="services.html#cosmetic" class="submenu-item">Dental Bonding</a>
+                                <a href="services.html#cosmetic" class="submenu-item">Smile Makeover</a>
+                            </div>
+                        </div>
+
+                        <!-- Orthodontics -->
+                        <div class="dropdown-submenu">
+                            <a href="services.html#orthodontics" class="dropdown-item">
+                                Orthodontics
+                                <svg class="dropdown-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="3">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </a>
+                            <div class="submenu">
+                                <a href="services.html#orthodontics" class="submenu-item">Invisalign</a>
+                                <a href="services.html#orthodontics" class="submenu-item">Traditional Braces</a>
+                                <a href="services.html#orthodontics" class="submenu-item">Retainers</a>
+                            </div>
+                        </div>
+
+                        <!-- Dental Implants -->
+                        <div class="dropdown-submenu">
+                            <a href="services.html#implants" class="dropdown-item">
+                                Dental Implants
+                                <svg class="dropdown-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="3">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </a>
+                            <div class="submenu">
+                                <a href="services.html#implants" class="submenu-item">Single Tooth Replacement</a>
+                                <a href="services.html#implants" class="submenu-item">All-on-4 Procedures</a>
+                                <a href="services.html#implants" class="submenu-item">Implant Bridges</a>
+                            </div>
+                        </div>
+
+                        <!-- Pediatric Care -->
+                        <div class="dropdown-submenu">
+                            <a href="services.html#pediatric" class="dropdown-item">
+                                Pediatric Care
+                                <svg class="dropdown-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="3">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </a>
+                            <div class="submenu">
+                                <a href="services.html#pediatric" class="submenu-item">First Visit</a>
+                                <a href="services.html#pediatric" class="submenu-item">Dental Sealants</a>
+                                <a href="services.html#pediatric" class="submenu-item">Fluoride Treatments</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#patients" class="nav-link">PATIENTS</a>
+                <a href="#location" class="nav-link">LOCATIONS</a>
+                <a href="#specials" class="nav-link">SPECIALS</a>
+                <a href="contacts.html" class="nav-link">CONTACT</a>
+            </nav>
+
+            <!-- Zone 3: Actions -->
+            <div class="header-actions">
+                <a href="#pay" class="btn btn-pay-online">PAY ONLINE</a>
+                <a href="tel:+17035550123" class="phone-link">
+                    <svg class="icon-svg" viewBox="0 0 24 24">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                    <span>(703) 555-0123</span>
+                </a>
+                <a href="booking.html" class="btn btn-book-now">Book Now</a>
+                <button class="mobile-menu-toggle" id="menuToggle">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <ul style="display: flex; flex-direction: column; gap: 2rem; font-size: 1.25rem; font-weight: 600;">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="gallery.html">Smile Gallery</a></li>
+            <li><a href="#testimonials">Patient Reviews</a></li>
+            <li><a href="contacts.html">Contact Us</a></li>
+            <li><a href="#specials">Special Offers</a></li>
+        </ul>
+        <div style="margin-top: 3rem;">
+            <a href="booking.html" class="btn btn-primary" style="width: 100%;">Book Appointment</a>
+        </div>
+    </div>
+
+    <main>
+        <!-- 1. Hero Section -->
+        <section class="hero-main">
+            <div class="hero-slider">
+                <div class="hero-slide active"
+                    style="background-image: url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1920&q=80');">
+                </div>
+                <div class="hero-slide"
+                    style="background-image: url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1920&q=80');">
+                </div>
+                <div class="hero-slide"
+                    style="background-image: url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=1920&q=80');">
+                </div>
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="container hero-main-content fade-up">
+                <span class="hero-tagline">YOUR SMILE, OUR PRIORITY</span>
+                <span class="hero-logo-text-main">Alexandria</span>
+                <h2 class="hero-cta-title">Premium Dental Care <br>for the Whole Family</h2>
+                <div class="hero-buttons">
+                    <a href="booking.html" class="btn btn-primary">Our Membership</a>
+                    <a href="#specials" class="btn btn-outline-light">New Patient Special</a>
+                </div>
+
+                <!-- Quick Contact Grid (1 Row, 6 Columns) -->
+                <div class="quick-contact-grid">
+                    <div class="quick-contact-item emergency">
+                        <div class="qc-icon"><svg class="icon-svg" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                            </svg></div>
+                        <span class="qc-title">EMERGENCY</span>
+                        <span class="qc-link">24/7 Care</span>
+                    </div>
+                    <div class="quick-contact-item">
+                        <div class="qc-icon"><svg class="icon-svg" viewBox="0 0 24 24">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                                <line x1="16" y1="2" x2="16" y2="6" />
+                                <line x1="8" y1="2" x2="8" y2="6" />
+                                <line x1="3" y1="10" x2="21" y2="10" />
+                            </svg></div>
+                        <span class="qc-title">Book Online</span>
+                        <span class="qc-link">Schedule 24/7</span>
+                    </div>
+                    <div class="quick-contact-item">
+                        <div class="qc-icon"><svg class="icon-svg" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+                                <line x1="9" y1="9" x2="9.01" y2="9" />
+                                <line x1="15" y1="9" x2="15.01" y2="9" />
+                            </svg></div>
+                        <span class="qc-title">Services</span>
+                        <span class="qc-link">Full Care</span>
+                    </div>
+                    <div class="quick-contact-item">
+                        <div class="qc-icon"><svg class="icon-svg" viewBox="0 0 24 24">
+                                <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
+                                <line x1="1" y1="10" x2="23" y2="10" />
+                            </svg></div>
+                        <span class="qc-title">Patients</span>
+                        <span class="qc-link">Forms & Info</span>
+                    </div>
+                    <div class="quick-contact-item">
+                        <div class="qc-icon"><svg class="icon-svg" viewBox="0 0 24 24">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg></div>
+                        <span class="qc-title">Contact</span>
+                        <span class="qc-link">Email Us</span>
+                    </div>
+                    <div class="quick-contact-item">
+                        <div class="qc-icon"><svg class="icon-svg" viewBox="0 0 24 24">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg></div>
+                        <span class="qc-title">Locations</span>
+                        <span class="qc-link">Directions</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Provider Section (Badge) -->
+        <section class="provider-section">
+            <div class="provider-container fade-up" style="align-items: center; gap: 4rem;">
+                <div style="flex: 1;">
+                    <h2 class="section-title"
+                        style="text-align: left; margin-bottom: 1.5rem; font-size: 2.5rem; line-height: 1.2;">Dentist in
+                        Alexandria - Premium Dental Care</h2>
+                    <div class="title-underline" style="margin: 0 0 2rem 0;"></div>
+                    <p style="margin-bottom: 1.5rem;">Thanks to our team's advanced training and successful treatment of
+                        countless patients, <strong>Dentist in Alexandria</strong> is proud to offer you premium dental
+                        care services. Come experience the comfort and confidence of a flawless smile.</p>
+                    <p>Schedule your initial consultation today by calling <a href="tel:+17035550123"
+                            style="color: var(--primary); font-weight: 700; text-decoration: none;">(703) 555-0123</a>.
+                    </p>
+                </div>
+                <!-- Recreated Gold Badge from User Image -->
+                <!-- Provider Badge Refined -->
+                <div class="provider-badge-container tilt-effect">
+                    <div class="badge-outer-ring"></div>
+                    <div class="badge-dashed-ring"></div>
+                    <div class="badge-hexagon">
+                        <div class="badge-content">
+                            <div class="badge-lines"></div>
+                            <span class="badge-title">GOLD</span>
+                            <span class="badge-subtitle">INVISALIGN<br>PROVIDER</span>
+                            <span class="badge-year">2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. About (Welcome + Video) -->
+        <section class="section" id="about">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="section-subtitle animated" data-animate="fade-up">WELCOME</span>
+                    <h2 class="section-title animated" data-animate="fade-up">Dentistry in Alexandria, VA</h2>
+                    <div class="title-underline centered animated" data-animate="fade-up"></div>
+                </div>
+                <div class="about-content" style="max-width: 800px; margin: 0 auto 3rem auto; text-align: center;">
+                    <p class="about-text animated" data-animate="fade-up" data-delay="200">
+                        At Dentist in Alexandria, we provide a full range of dental services for you and your loved
+                        ones.
+                        Our professional specialists strive to provide a comfortable, judgment-free experience
+                        that will leave you feeling inspired, refreshed, and supported by a caring team.
+                        We value the genuine connections we make with our patients, working with each person with a
+                        heartfelt approach.
+                    </p>
+                </div>
+                <div class="about-images stagger-children"
+                    style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 4rem;">
+                    <div class="about-image-wrapper image-reveal tilt-effect animated" data-animate="fade-right"
+                        data-delay="200" style="border-radius: 20px; overflow: hidden; height: 400px;">
+                        <img src="https://images.unsplash.com/photo-1609220136736-443140cffec6?w=800&q=80"
+                            alt="Happy Family" class="about-image"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="about-image-wrapper image-reveal tilt-effect animated" data-animate="fade-left"
+                        data-delay="400"
+                        style="border-radius: 20px; overflow: hidden; height: 400px; margin-top: 3rem;">
+                        <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=800&q=80"
+                            alt="Modern Clinic Interior" class="about-image"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+
+                <!-- Virtual Tour / Video Section -->
+                <div class="video-showcase animated"
+                    style="margin-top: 4rem; position: relative; border-radius: 1.5rem; overflow: hidden; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);"
+                    data-animate="fade-up">
+                    <div
+                        style="position: relative; padding-bottom: 56.25%; height: 0; background: linear-gradient(135deg, var(--primary), var(--accent));">
+                        <!-- Placeholder for video -->
+                        <div
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: url('https://images.unsplash.com/photo-1629909615184-74f495363b67?w=1920&q=80') center/cover;">
+                            <div
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4);">
+                            </div>
+                            <div style="position: relative; z-index: 1; text-align: center; color: white;">
+                                <div class="svg-pulse"
+                                    style="margin: 0 auto 1.5rem; width: 80px; height: 80px; background: rgba(255, 255, 255, 0.25); backdrop-filter: blur(10px); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s ease;"
+                                    onmouseover="this.style.background='rgba(255, 255, 255, 0.35)'; this.style.transform='scale(1.1)'"
+                                    onmouseout="this.style.background='rgba(255, 255, 255, 0.25)'; this.style.transform='scale(1)'">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                                        <path d="M8 5v14l11-7z"></path>
+                                    </svg>
+                                </div>
+                                <h3
+                                    style="font-size: 2rem; margin-bottom: 0.5rem; font-family: var(--font-primary); color: #C5A572;">
+                                    Take a Virtual Tour</h3>
+                                <p style="font-size: 1.1rem; opacity: 1; color: white;">Explore our state-of-the-art
+                                    dental facility
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Why Choose Alexandria Dentistry - Enhanced -->
+                <div class="about-highlights animated"
+                    style="margin-top: 4rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;"
+                    data-animate="fade-up">
+                    <div class="highlight-card"
+                        style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); text-align: center; transition: all 0.4s ease;"
+                        onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(0, 0, 0, 0.12)'"
+                        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0, 0, 0, 0.08)'">
+                        <div class="highlight-icon svg-heartbeat"
+                            style="width: 70px; height: 70px; margin: 0 auto 1.5rem; background: linear-gradient(135deg, #007ACC, #87CEEB); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                            </svg>
+                        </div>
+                        <h4
+                            style="font-size: 1.25rem; color: var(--primary); margin-bottom: 0.75rem; font-family: var(--font-primary);">
+                            Advanced Technology</h4>
+                        <p style="color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem;">Digital X-rays,
+                            3D imaging, and laser dentistry for precise diagnosis and comfortable treatment.</p>
+                    </div>
+
+                    <div class="highlight-card"
+                        style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); text-align: center; transition: all 0.4s ease;"
+                        onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(0, 0, 0, 0.12)'"
+                        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0, 0, 0, 0.08)'">
+                        <div class="highlight-icon svg-float"
+                            style="width: 70px; height: 70px; margin: 0 auto 1.5rem; background: linear-gradient(135deg, #007ACC, #87CEEB); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <h4
+                            style="font-size: 1.25rem; color: var(--primary); margin-bottom: 0.75rem; font-family: var(--font-primary);">
+                            Family-Focused Care</h4>
+                        <p style="color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem;">Comprehensive
+                            dental services for patients of all ages, from children to seniors.</p>
+                    </div>
+
+                    <div class="highlight-card"
+                        style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: rgba(0, 0, 0, 0.08) 0px 10px 30px; text-align: center; transition: 0.4s; transform: translateY(0px);"
+                        onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(0, 0, 0, 0.12)'"
+                        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0, 0, 0, 0.08)'">
+                        <div class="highlight-icon svg-glow"
+                            style="width: 70px; height: 70px; margin: 0 auto 1.5rem; background: linear-gradient(135deg, #007ACC, #87CEEB); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                            </svg>
+                        </div>
+                        <h4
+                            style="font-size: 1.25rem; color: var(--primary); margin-bottom: 0.75rem; font-family: var(--font-primary);">
+                            Patient Education</h4>
+                        <p style="color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem;">We take time to
+                            explain all procedures and answer your questions thoroughly.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Stats -->
+        <section class="stats-section section bg-gradient-animate" style="padding: 5rem 0;">
+            <div class="container">
+                <div class="stats-grid"
+                    style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: center;">
+                    <div class="stat-item animated" data-animate="bounce-in" style="position: relative;">
+                        <div class="stat-icon" style="margin-bottom: 1rem;">
+                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" stroke="white" stroke-width="2">
+                                <path
+                                    d="M25 45S5 30 5 18C5 10 12 5 19 5C23 5 25 8 25 8S27 5 31 5C38 5 45 10 45 18C45 30 25 45 25 45Z">
+                                </path>
+                            </svg>
+                        </div>
+                        <span class="stat-number" data-counter="15000"
+                            style="color: white; font-size: 2.5rem; font-weight: 700;">15000</span>
+                        <span class="stat-label"
+                            style="color: rgba(255,255,255,0.85); display: block; margin-top: 0.5rem;">Happy
+                            Patients</span>
+                    </div>
+                    <div class="stat-item animated" data-animate="bounce-in" data-delay="100"
+                        style="position: relative;">
+                        <div class="stat-icon" style="margin-bottom: 1rem;">
+                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" stroke="white" stroke-width="2">
+                                <circle cx="25" cy="25" r="20"></circle>
+                                <path d="M25 15V25L32 30"></path>
+                            </svg>
+                        </div>
+                        <span class="stat-number" data-counter="20"
+                            style="color: white; font-size: 2.5rem; font-weight: 700;">20</span>
+                        <span class="stat-label"
+                            style="color: rgba(255,255,255,0.85); display: block; margin-top: 0.5rem;">Years of
+                            Experience</span>
+                    </div>
+                    <div class="stat-item animated" data-animate="bounce-in" data-delay="200"
+                        style="position: relative;">
+                        <div class="stat-icon" style="margin-bottom: 1rem;">
+                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" stroke="white" stroke-width="2">
+                                <path d="M25 5L30 20H45L33 30L38 45L25 35L12 45L17 30L5 20H20L25 5Z"></path>
+                            </svg>
+                        </div>
+                        <span class="stat-number" style="color: white; font-size: 2.5rem; font-weight: 700;">5.0</span>
+                        <span class="stat-label"
+                            style="color: rgba(255,255,255,0.85); display: block; margin-top: 0.5rem;">Google
+                            Rating</span>
+                    </div>
+                    <div class="stat-item animated" data-animate="bounce-in" data-delay="300"
+                        style="position: relative;">
+                        <div class="stat-icon" style="margin-bottom: 1rem; color: white;">
+                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="8" y="8" width="34" height="34" rx="4"></rect>
+                                <path d="M18 25L23 30L32 20"></path>
+                            </svg>
+                        </div>
+                        <span class="stat-number" data-counter="50"
+                            style="color: white; font-size: 2.5rem; font-weight: 700;">50</span>
+                        <span class="stat-label"
+                            style="color: rgba(255,255,255,0.85); display: block; margin-top: 0.5rem;">Services
+                            Offered</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Features / Why Choose Us -->
+        <section class="section">
+            <div class="container" style="position: relative; z-index: 1;">
+                <div class="section-header centered">
+                    <span class="section-subtitle animated" data-animate="fade-up">OUR ADVANTAGES</span>
+                    <h2 class="section-title animated" data-animate="fade-up">Why Choose Us</h2>
+                    <div class="title-underline centered animated" data-animate="fade-up"></div>
+                </div>
+
+                <div class="procedures-grid" style="margin-top: 3rem;">
+                    <!-- Feature 1 -->
+                    <div class="procedure-card tilt-effect animated" data-animate="fade-up">
+                        <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=600&q=80"
+                            class="procedure-bg" alt="Equipment">
+                        <div class="procedure-content">
+                            <h4>Advanced Technology</h4>
+                            <p>Digital X-rays, 3D imaging, and laser dentistry for precise diagnosis.</p>
+                            <div class="procedure-arrow"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg></div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="procedure-card tilt-effect animated" data-animate="fade-up" data-delay="100">
+                        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=600&q=80"
+                            class="procedure-bg" alt="Doctors">
+                        <div class="procedure-content">
+                            <h4>Expert Team</h4>
+                            <p>Certified specialists with years of experience and continuous training.</p>
+                            <div class="procedure-arrow"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg></div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="procedure-card tilt-effect animated" data-animate="fade-up" data-delay="200">
+                        <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=600&q=80"
+                            class="procedure-bg" alt="Atmosphere">
+                        <div class="procedure-content">
+                            <h4>Comfort First</h4>
+                            <p>Relaxing environment, friendly staff, and personalized care approach.</p>
+                            <div class="procedure-arrow"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg></div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div class="procedure-card tilt-effect animated" data-animate="fade-up" data-delay="300">
+                        <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=600&q=80"
+                            class="procedure-bg" alt="Guarantee">
+                        <div class="procedure-content">
+                            <h4>Quality Guarantee</h4>
+                            <p>We stand behind our work with a guarantee on all treatments.</p>
+                            <div class="procedure-arrow"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional features row -->
+                <div class="features-grid-2"
+                    style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 4rem;">
+                    <div class="feature-mini animated-border animated" data-animate="fade-up"
+                        style="background: white; padding: 1.5rem; border-radius: 0.75rem; display: flex; align-items: center; gap: 1rem; box-shadow: var(--shadow-sm);">
+                        <div class="feature-mini-icon svg-pulse"
+                            style="width: 50px; height: 50px; background: linear-gradient(135deg, var(--accent), var(--accent-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 1rem; color: var(--primary); margin-bottom: 0.25rem;">Open 7 Days a
+                                Week</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary);">Convenient hours for busy
+                                people</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-mini animated-border animated" data-animate="fade-up" data-delay="100"
+                        style="background: white; padding: 1.5rem; border-radius: 0.75rem; display: flex; align-items: center; gap: 1rem; box-shadow: var(--shadow-sm);">
+                        <div class="feature-mini-icon svg-float"
+                            style="width: 50px; height: 50px; background: linear-gradient(135deg, var(--accent), var(--accent-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 1rem; color: var(--primary); margin-bottom: 0.25rem;">Flexible
+                                Financing</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary);">0% interest payment plans</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-mini animated-border animated" data-animate="fade-up" data-delay="200"
+                        style="background: white; padding: 1.5rem; border-radius: 0.75rem; display: flex; align-items: center; gap: 1rem; box-shadow: var(--shadow-sm);">
+                        <div class="feature-mini-icon svg-heartbeat"
+                            style="width: 50px; height: 50px; background: linear-gradient(135deg, var(--accent), var(--accent-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 1rem; color: var(--primary); margin-bottom: 0.25rem;">Emergency Care
+                            </h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary);">Same-day appointments</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Gallery (3 items) -->
+        <section class="section section-gray" id="gallery">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="section-subtitle">REAL RESULTS</span>
+                    <h2 class="section-title">Smile Transformations</h2>
+                    <div class="title-underline centered"></div>
+                </div>
+                <div class="gallery-grid">
+                    <!-- Item 1: Whitening -->
+                    <div class="gallery-item fade-up">
+                        <div class="before-after-slider">
+                            <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&q=80"
+                                alt="Before" class="before-image">
+                            <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=600&q=80"
+                                alt="After" class="after-image">
+                            <div class="slider-handle"></div>
+                        </div>
+                        <div style="padding: 1.5rem; background: white;">
+                            <h4>Teeth Whitening</h4>
+                            <p>Professional ZOOM Whitening</p>
+                        </div>
+                    </div>
+                    <!-- Item 2: Veneers -->
+                    <div class="gallery-item fade-up" style="transition-delay: 100ms;">
+                        <div class="before-after-slider">
+                            <img src="https://images.unsplash.com/photo-1445527815219-ecbfec67492e?w=600&q=80"
+                                alt="Before" class="before-image">
+                            <img src="https://images.unsplash.com/photo-1581585405984-eb5d99d6b3c0?w=600&q=80"
+                                alt="After" class="after-image">
+                            <div class="slider-handle"></div>
+                        </div>
+                        <div style="padding: 1.5rem; background: white;">
+                            <h4>Veneers</h4>
+                            <p>Ceramic E-max Veneers</p>
+                        </div>
+                    </div>
+                    <!-- Item 3: Aligners -->
+                    <div class="gallery-item fade-up" style="transition-delay: 200ms;">
+                        <div class="before-after-slider">
+                            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80"
+                                alt="Before" class="before-image">
+                            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80"
+                                alt="After" class="after-image">
+                            <div class="slider-handle"></div>
+                        </div>
+                        <div style="padding: 1.5rem; background: white;">
+                            <h4>Aligners</h4>
+                            <p>Correction in 8 months</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="centered" style="margin-top: 3rem;">
+                    <a href="gallery.html" class="btn btn-primary">View All Work</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Procedures Showcase (4 items) -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="section-subtitle">OUR SERVICES</span>
+                    <h2 class="section-title">Popular Procedures</h2>
+                    <div class="title-underline centered"></div>
+                </div>
+                <!-- 4 items grid -->
+                <div class="procedures-grid fade-up">
+                    <div class="procedure-card">
+                        <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=600&q=80"
+                            class="procedure-bg" alt="Implants">
+                        <div class="procedure-content">
+                            <h4>Dental Implants</h4>
+                            <p>Tooth restoration using premium modern implants.</p>
+                            <div class="procedure-arrow"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg></div>
+                        </div>
+                    </div>
+                    <div class="procedure-card">
+                        <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=600&q=80"
+                            class="procedure-bg" alt="Whitening">
+                        <div class="procedure-content">
+                            <h4>Teeth Whitening</h4>
+                            <p>Professional whitening for a brilliant smile.</p>
+                            <div class="procedure-arrow"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg></div>
+                        </div>
+                    </div>
+                    <div class="procedure-card">
+                        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&q=80"
+                            class="procedure-bg" alt="Aligners">
+                        <div class="procedure-content">
+                            <h4>Clear Aligners</h4>
+                            <p>Invisible bite correction technology.</p>
+                            <div class="procedure-arrow"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg></div>
+                        </div>
+                    </div>
+                    <div class="procedure-card">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=80"
+                            class="procedure-bg" alt="Veneers">
+                        <div class="procedure-content">
+                            <h4>Porcelain Veneers</h4>
+                            <p>Perfect smile with premium ceramic veneers.</p>
+                            <div class="procedure-arrow"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Appointment Banner -->
+        <section class="appointment-banner">
+            <div class="container">
+                <div class="appointment-banner-content">
+                    <div class="appointment-banner-text">
+                        <h3>Ready to Transform Your Smile?</h3>
+                        <p>Schedule your free consultation today</p>
+                    </div>
+                    <a href="booking.html" class="appointment-banner-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                        Book Appointment
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Detailed Services List -->
+        <section class="services-section section" id="services">
+            <div class="services-background">
+                <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=1920&q=80"
+                    alt="Dental Services" class="services-bg-image"
+                    style="transform: translate3d(0px, 62.3953px, 0px) scale(1.1);">
+                <div class="services-overlay"></div>
+            </div>
+            <div class="container">
+                <div class="services-grid">
+                    <div class="service-card"
+                        style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 64 64" fill="currentColor">
+                                <path
+                                    d="M32 4C16.536 4 4 16.536 4 32s12.536 28 28 28 28-12.536 28-28S47.464 4 32 4zm0 52c-13.234 0-24-10.766-24-24S18.766 8 32 8s24 10.766 24 24-10.766 24-24 24z">
+                                </path>
+                                <path
+                                    d="M32 18c-7.732 0-14 6.268-14 14h4c0-5.514 4.486-10 10-10s10 4.486 10 10h4c0-7.732-6.268-14-14-14z">
+                                </path>
+                                <circle cx="24" cy="28" r="2.5"></circle>
+                                <circle cx="40" cy="28" r="2.5"></circle>
+                                <path
+                                    d="M32 38c-4.418 0-8-3.582-8-8h-2c0 5.523 4.477 10 10 10s10-4.477 10-10h-2c0 4.418-3.582 8-8 8z">
+                                </path>
+                                <path d="M28 14h8v4h-8z" opacity="0.7"></path>
+                                <path d="M42 20l2.828-2.828 2.828 2.828-2.828 2.828z" opacity="0.5"></path>
+                                <path d="M19.172 17.172l2.828 2.828-2.828 2.828-2.828-2.828z" opacity="0.5"></path>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">SAME-DAY EMERGENCY DENTISTRY</h3>
+                        <div class="service-underline"></div>
+                        <p class="service-description">Dealing with persistent tooth pain or oral injury? We can help by
+                            providing same-day emergency dental care.</p>
+                        <a href="services.html#emergency" class="btn btn-outline-light">Heal Your Smile</a>
+                    </div>
+
+                    <div class="service-card featured"
+                        style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 64 64" fill="currentColor">
+                                <path
+                                    d="M32 8c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24S45.255 8 32 8zm0 44c-11.028 0-20-8.972-20-20s8.972-20 20-20 20 8.972 20 20-8.972 20-20 20z"
+                                    opacity="0.3"></path>
+                                <path
+                                    d="M40 24H24c-2.209 0-4 1.791-4 4v8c0 2.209 1.791 4 4 4h16c2.209 0 4-1.791 4-4v-8c0-2.209-1.791-4-4-4zm0 12H24v-8h16v8z">
+                                </path>
+                                <rect x="26" y="28" width="3" height="6" rx="1"></rect>
+                                <rect x="31" y="28" width="3" height="6" rx="1"></rect>
+                                <rect x="36" y="28" width="3" height="6" rx="1"></rect>
+                                <path d="M48 30h4v4h-4zM12 30h4v4h-4z" opacity="0.6"></path>
+                                <path d="M24 20c0-1.105.895-2 2-2h12c1.105 0 2 .895 2 2v2H24v-2z" opacity="0.5"></path>
+                                <path d="M24 42v2c0 1.105.895 2 2 2h12c1.105 0 2-.895 2-2v-2H24z" opacity="0.5"></path>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">CLEAR ALIGNERS</h3>
+                        <div class="service-underline"></div>
+                        <p class="service-description">Looking for a comfortable and discreet way to perfect your teeth?
+                            Clear aligners make straightening easier than ever.</p>
+                        <a href="services.html#aligners" class="btn btn-outline-light">Straighten Your Smile</a>
+                    </div>
+
+                    <div class="service-card"
+                        style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 64 64" fill="currentColor">
+                                <path
+                                    d="M32 10c-8 0-14 4-14 10v6c0 6 6 10 14 10s14-4 14-10v-6c0-6-6-10-14-10zm8 16c0 3.314-3.582 6-8 6s-8-2.686-8-6v-6c0-3.314 3.582-6 8-6s8 2.686 8 6v6z">
+                                </path>
+                                <ellipse cx="32" cy="20" rx="8" ry="4" opacity="0.3"></ellipse>
+                                <path d="M24 22c0 1.5 1 3 2 4" stroke="currentColor" stroke-width="1.5" fill="none"
+                                    opacity="0.6"></path>
+                                <path d="M40 22c0 1.5-1 3-2 4" stroke="currentColor" stroke-width="1.5" fill="none"
+                                    opacity="0.6"></path>
+                                <path
+                                    d="M20 30c-1.657 0-3 1.343-3 3v8c0 1.657 1.343 3 3 3h24c1.657 0 3-1.343 3-3v-8c0-1.657-1.343-3-3-3H20zm0 2h24c.552 0 1 .448 1 1v8c0 .552-.448 1-1 1H20c-.552 0-1-.448-1-1v-8c0-.552.448-1 1-1z">
+                                </path>
+                                <circle cx="26" cy="37" r="1.5"></circle>
+                                <circle cx="32" cy="37" r="1.5"></circle>
+                                <circle cx="38" cy="37" r="1.5"></circle>
+                                <path d="M28 46l4 8 4-8" opacity="0.4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">COSMETIC DENTISTRY</h3>
+                        <div class="service-underline"></div>
+                        <p class="service-description">From professional whitening to custom smile makeovers. We're here
+                            to help enhance your natural beauty!</p>
+                        <a href="services.html#cosmetic" class="btn btn-outline-light">Love Your Smile</a>
+                    </div>
+
+                    <div class="service-card"
+                        style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 64 64" fill="currentColor">
+                                <rect x="28" y="8" width="8" height="12" rx="1" opacity="0.6"></rect>
+                                <path d="M30 20h4v6h-4z"></path>
+                                <circle cx="32" cy="28" r="6"></circle>
+                                <path
+                                    d="M32 22c-3.314 0-6 2.686-6 6s2.686 6 6 6 6-2.686 6-6-2.686-6-6-6zm0 9c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z">
+                                </path>
+                                <path d="M26 28c0-3.314 2.686-6 6-6s6 2.686 6 6" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" opacity="0.4"></path>
+                                <path d="M28 34c-2 0-3 1-3 3v8c0 2 1 4 4 4h6c3 0 4-2 4-4v-8c0-2-1-3-3-3" opacity="0.5">
+                                </path>
+                                <rect x="27" y="34" width="10" height="14" rx="2"></rect>
+                                <path d="M29 38h6M29 42h6" stroke="white" stroke-width="1.5" opacity="0.3"></path>
+                                <circle cx="32" cy="45" r="1" fill="white" opacity="0.5"></circle>
+                                <path d="M30 8c0-1.105.895-2 2-2s2 .895 2 2" opacity="0.4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">DENTAL IMPLANTS</h3>
+                        <div class="service-underline"></div>
+                        <p class="service-description">Replace missing teeth with permanent implants that look and feel
+                            natural. Advanced osseointegration technology.</p>
+                        <a href="services.html#implants" class="btn btn-outline-light">Restore Your Smile</a>
+                    </div>
+
+                    <div class="service-card"
+                        style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 64 64" fill="currentColor">
+                                <path
+                                    d="M32 12c-8.837 0-16 7.163-16 16v8c0 8.837 7.163 16 16 16s16-7.163 16-16v-8c0-8.837-7.163-16-16-16zm12 24c0 6.627-5.373 12-12 12s-12-5.373-12-12v-8c0-6.627 5.373-12 12-12s12 5.373 12 12v8z">
+                                </path>
+                                <circle cx="26" cy="26" r="2"></circle>
+                                <circle cx="38" cy="26" r="2"></circle>
+                                <path d="M26 32c0 3.314 2.686 6 6 6s6-2.686 6-6" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round"></path>
+                                <path d="M8 28h4M52 28h4M8 36h4M52 36h4" opacity="0.4"></path>
+                                <rect x="20" y="6" width="4" height="8" rx="2" opacity="0.5"></rect>
+                                <rect x="40" y="6" width="4" height="8" rx="2" opacity="0.5"></rect>
+                                <path d="M28 48l4 8 4-8" opacity="0.3"></path>
+                                <circle cx="22" cy="32" r="1.5" opacity="0.6"></circle>
+                                <circle cx="42" cy="32" r="1.5" opacity="0.6"></circle>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">GENERAL DENTISTRY</h3>
+                        <div class="service-underline"></div>
+                        <p class="service-description">Comprehensive dental care including cleanings, fillings, root
+                            canals, and preventive treatments for the whole family.</p>
+                        <a href="services.html#general" class="btn btn-outline-light">Learn More</a>
+                    </div>
+
+                    <div class="service-card"
+                        style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 64 64" fill="currentColor">
+                                <path
+                                    d="M32 6C18.745 6 8 16.745 8 30v4c0 13.255 10.745 24 24 24s24-10.745 24-24v-4C56 16.745 45.255 6 32 6zm20 28c0 11.028-8.972 20-20 20s-20-8.972-20-20v-4c0-11.028 8.972-20 20-20s20 8.972 20 20v4z"
+                                    opacity="0.3"></path>
+                                <path
+                                    d="M32 14c-8.837 0-16 7.163-16 16 0 8.837 7.163 16 16 16s16-7.163 16-16c0-8.837-7.163-16-16-16zm0 28c-6.627 0-12-5.373-12-12s5.373-12 12-12 12 5.373 12 12-5.373 12-12 12z">
+                                </path>
+                                <path d="M24 28l4 4 8-8" fill="none" stroke="currentColor" stroke-width="3"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                                <circle cx="32" cy="30" r="16" fill="none" stroke="currentColor" stroke-width="2"
+                                    opacity="0.2"></circle>
+                                <path d="M32 6v8M32 50v8M56 30h-8M16 30H8" opacity="0.4"></path>
+                                <circle cx="46" cy="18" r="2" opacity="0.5"></circle>
+                                <circle cx="18" cy="18" r="2" opacity="0.5"></circle>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">PREVENTIVE CARE</h3>
+                        <div class="service-underline"></div>
+                        <p class="service-description">Regular check-ups, professional cleanings, and fluoride
+                            treatments to keep your smile healthy and prevent future issues.</p>
+                        <a href="services.html#preventive" class="btn btn-outline-light">Protect Your Smile</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. Testimonials -->
+        <section class="section section-gray" id="testimonials">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="section-subtitle">REVIEWS</span>
+                    <h2 class="section-title">Patient Testimonials</h2>
+                    <div class="title-underline centered"></div>
+                </div>
+                <div style="position: relative;">
+                    <button id="sliderPrev"
+                        style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); z-index: 10; background: white; width: 40px; height: 40px; border-radius: 50%; box-shadow: var(--shadow-card); display: flex; align-items: center; justify-content: center;"><svg
+                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M15 18l-6-6 6-6" />
+                        </svg></button>
+                    <div class="testimonials-track" id="testimonialsTrack">
+                        <div class="testimonial-card">
+                            <div class="stars">★★★★★</div>
+                            <p class="testimonial-text">"The doctor is truly wonderful! My kids went for the first time
+                                and they loved it! Sweet and gentle."</p>
+                            <h4 class="testimonial-author">Sarah M.</h4>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="stars">★★★★★</div>
+                            <p class="testimonial-text">"Great experience! Booking is simple. Staff are very friendly
+                                and informative. Highly recommend!"</p>
+                            <h4 class="testimonial-author">Michael K.</h4>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="stars">★★★★★</div>
+                            <p class="testimonial-text">"Amazing experience. Professional approach, modern methods, and
+                                pleasant atmosphere."</p>
+                            <h4 class="testimonial-author">James W.</h4>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="stars">★★★★★</div>
+                            <p class="testimonial-text">"Wonderful clinic with state-of-the-art equipment. Very
+                                satisfied with results."</p>
+                            <h4 class="testimonial-author">Jennifer P.</h4>
+                        </div>
+                    </div>
+                    <button id="sliderNext"
+                        style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); z-index: 10; background: white; width: 40px; height: 40px; border-radius: 50%; box-shadow: var(--shadow-card); display: flex; align-items: center; justify-content: center;"><svg
+                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M9 18l6-6-6-6" />
+                        </svg></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. Contact -->
+        <section class="section" id="location">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="section-subtitle">GET IN TOUCH</span>
+                    <h2 class="section-title">Contact Us</h2>
+                    <div class="title-underline centered"></div>
+                </div>
+                <!-- Contact Layout -->
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem; margin-bottom: 4rem;">
+                    <div>
+                        <div style="margin-bottom: 2rem;">
+                            <h4>Phone</h4>
+                            <p>(703) 555-0123</p>
+                        </div>
+                        <div style="margin-bottom: 2rem;">
+                            <h4>Address</h4>
+                            <p>123 King Street, Alexandria, VA 22314</p>
+                        </div>
+                        <div style="margin-bottom: 2rem;">
+                            <h4>Office Hours</h4>
+                            <ul style="color: #666; margin-top: 0.5rem; line-height: 1.8;">
+                                <li>Mon-Tue: 8:00 AM - 6:00 PM</li>
+                                <li>Wed-Thu: 9:00 AM - 7:00 PM</li>
+                                <li>Friday: 8:00 AM - 4:00 PM</li>
+                                <li>Saturday: By Appointment</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Form -->
+                    <form class="card" style="display: flex; flex-direction: column; gap: 1rem;">
+                        <input type="text" placeholder="Full Name"
+                            style="padding: 1rem; border: 1px solid #eee; border-radius: var(--radius-sm); width: 100%;">
+                        <input type="tel" placeholder="Phone Number"
+                            style="padding: 1rem; border: 1px solid #eee; border-radius: var(--radius-sm); width: 100%;">
+                        <input type="email" placeholder="Email Address"
+                            style="padding: 1rem; border: 1px solid #eee; border-radius: var(--radius-sm); width: 100%;">
+                        <select
+                            style="padding: 1rem; border: 1px solid #eee; border-radius: var(--radius-sm); width: 100%;">
+                            <option value="">Select Service</option>
+                            <option value="checkup">General Checkup</option>
+                            <option value="cosmetic">Cosmetic</option>
+                            <option value="implants">Implants</option>
+                        </select>
+                        <textarea rows="4" placeholder="Your Message"
+                            style="padding: 1rem; border: 1px solid #eee; border-radius: var(--radius-sm); width: 100%;"></textarea>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+
+                <!-- Map Widget -->
+                <div class="fade-up"
+                    style="width: 100%; height: 450px; border-radius: 2rem; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.1); border: 1px solid #eee;">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3109.8!2d-77.05!3d38.8!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b0!2zS2luZyBTdCwgQWxleGFuZHJpYSwgVkEsIFVTQQ!5e0!3m2!1sen!2sus!4v1234567890"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 12. Team -->
+        <section class="section section-gray" id="team">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="section-subtitle">MEET US</span>
+                    <h2 class="section-title">Our Specialists</h2>
+                </div>
+                <div class="specialists-grid fade-up">
+                    <div class="specialist-card">
+                        <div class="specialist-image-container">
+                            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&q=80"
+                                alt="Dr. Sarah Johnson" class="specialist-image">
+                        </div>
+                        <div class="specialist-info">
+                            <span class="specialist-role">Lead Dentist</span>
+                            <h3 class="specialist-name">Dr. Sarah Johnson</h3>
+                            <p class="specialist-desc">Specializes in cosmetic dentistry and full mouth reconstruction.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="specialist-card">
+                        <div class="specialist-image-container">
+                            <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=600&q=80"
+                                alt="Dr. Michael Chen" class="specialist-image">
+                        </div>
+                        <div class="specialist-info">
+                            <span class="specialist-role">Implantologist</span>
+                            <h3 class="specialist-name">Dr. Michael Chen</h3>
+                            <p class="specialist-desc">Expert in dental implants and oral surgery.</p>
+                        </div>
+                    </div>
+                    <div class="specialist-card">
+                        <div class="specialist-image-container">
+                            <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=600&q=80"
+                                alt="Dr. Emily Martinez" class="specialist-image">
+                        </div>
+                        <div class="specialist-info">
+                            <span class="specialist-role">Orthodontist</span>
+                            <h3 class="specialist-name">Dr. Emily Martinez</h3>
+                            <p class="specialist-desc">Creating beautiful smiles with braces and clear aligners.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 13. Clinic Tour -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="section-subtitle">WELCOME</span>
+                    <h2 class="section-title">Clinic Tour</h2>
+                </div>
+                <div class="tour-grid fade-up">
+                    <div class="tour-item">
+                        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1000&q=80"
+                            alt="Main Lobby">
+                        <div class="tour-play-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5,3 19,12 5,21" />
+                            </svg></div>
+                    </div>
+                    <div class="tour-item">
+                        <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=600&q=80"
+                            alt="Reception">
+                    </div>
+                    <div class="tour-item">
+                        <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=600&q=80"
+                            alt="Treatment">
+                    </div>
+                    <div class="tour-item">
+                        <img src="https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?w=600&q=80" alt="Xray">
+                    </div>
+                    <div class="tour-item">
+                        <img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=600&q=80"
+                            alt="Sterile">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 14. Insurance -->
+        <section class="insurance-section fade-up" id="patients">
+            <div class="container">
+                <div class="insurance-content">
+                    <div class="insurance-img">
+                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80"
+                            alt="Insurance" style="width:100%;">
+                    </div>
+                    <div class="insurance-text">
+                        <h2 class="section-title">Insurance Support</h2>
+                        <p>We accept most major insurance plans and offer flexible financing options. Don't let cost
+                            stand in the way of your health.</p>
+                        <a href="#contact" class="btn btn-primary" style="margin-top: 1rem;">Verify Coverage</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 15. CTA -->
+        <section class="cta-section">
+            <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1920&q=80" class="cta-bg"
+                alt="Smile">
+            <div class="container cta-content fade-up">
+                <span class="section-subtitle" style="color:white; opacity:0.8;">TRANSFORM YOUR LIFE</span>
+                <h2 class="cta-title">Life is Better When You Smile</h2>
+                <a href="booking.html" class="btn btn-outline-light">Get Started Today</a>
+            </div>
+        </section>
+
+        <!-- 16. FAQ -->
+        <section class="section" id="faq">
+            <div class="container">
+                <div class="section-header centered">
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                </div>
+                <div class="faq-container fade-up">
+                    <div class="faq-item">
+                        <button class="faq-question">How do I book an appointment? <svg width="20" height="20"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg></button>
+                        <div class="faq-answer">
+                            <p style="padding: 1rem 0;">You can book online instantly or call us at (703) 555-0123.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">Do you accept insurance? <svg width="20" height="20"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg></button>
+                        <div class="faq-answer">
+                            <p style="padding: 1rem 0;">Yes, we work with most major providers. Contact us to verify
+                                your specific plan.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">Do you treat children? <svg width="20" height="20"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg></button>
+                        <div class="faq-answer">
+                            <p style="padding: 1rem 0;">Absolutely! We love seeing pediatric patients and making their
+                                visits fun.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 17. Specials -->
+        <section class="section section-gray" id="specials">
+            <div class="container">
+                <div class="section-header centered">
+                    <h2 class="section-title">Special Offers</h2>
+                </div>
+                <div class="specials-grid fade-up">
+                    <div class="special-ticket">
+                        <div class="ticket-left">
+                            <span class="ticket-scent">LIMITED TIME</span>
+                            <div class="ticket-value">$300 OFF</div>
+                            <div class="ticket-label">Invisalign Aligners</div>
+                        </div>
+                        <div class="ticket-right">
+                            <p>Get the straight smile you've always wanted.</p>
+                            <a href="booking.html" class="ticket-btn">Claim Offer</a>
+                        </div>
+                    </div>
+
+                    <div class="special-ticket gold">
+                        <div class="ticket-left">
+                            <span class="ticket-scent">POPULAR</span>
+                            <div class="ticket-value">$50 OFF</div>
+                            <div class="ticket-label">Teeth Whitening</div>
+                        </div>
+                        <div class="ticket-right">
+                            <p>Brighten your smile for a special occasion.</p>
+                            <a href="booking.html" class="ticket-btn">Claim Offer</a>
+                        </div>
+                    </div>
+
+                    <div class="special-ticket">
+                        <div class="ticket-left">
+                            <span class="ticket-scent">NEW PATIENT</span>
+                            <div class="ticket-value">$39</div>
+                            <div class="ticket-label">Exam & Cleaning</div>
+                        </div>
+                        <div class="ticket-right">
+                            <p>Includes X-rays and comprehensive exam.</p>
+                            <a href="booking.html" class="ticket-btn">Claim Offer</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column footer-about animated" data-animate="fade-up" data-delay="0">
+                    <a href="index.html" class="footer-logo">
+                        <div class="logo-text" style="color: white;">
+                            <span class="logo-small">DENTIST IN</span>
+                            <span class="logo-main">Alexandria</span>
+                            <span class="logo-sub">Dentistry</span>
+                        </div>
+                    </a>
+                    <p class="footer-description">Modern dental clinic providing a full range of services for the whole
+                        family.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Facebook"><svg width="20" height="20"
+                                viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z">
+                                </path>
+                            </svg></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><svg width="20" height="20"
+                                viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z">
+                                </path>
+                            </svg></a>
+                        <a href="#" class="social-link" aria-label="Instagram"><svg width="20" height="20"
+                                viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z">
+                                </path>
+                            </svg></a>
+                    </div>
+                </div>
+                <div class="footer-column animated" data-animate="fade-up" data-delay="100">
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html">General Dentistry</a></li>
+                        <li><a href="services.html">Oral Surgery</a></li>
+                        <li><a href="services.html">Orthodontics</a></li>
+                        <li><a href="services.html">Dental Implants</a></li>
+                        <li><a href="services.html">Teeth Whitening</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column animated" data-animate="fade-up" data-delay="200">
+                    <h4 class="footer-title">About Us</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Clinic</a></li>
+                        <li><a href="about.html">Our Team</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="index.html#gallery">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column animated" data-animate="fade-up" data-delay="300">
+                    <h4 class="footer-title">Patients</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#patients">First Visit</a></li>
+                        <li><a href="index.html#patients">Payment Options</a></li>
+                        <li><a href="index.html#faq">FAQ</a></li>
+                        <li><a href="#specials">Special Offers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column animated" data-animate="fade-up" data-delay="400">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-contacts">
+                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z">
+                                </path>
+                            </svg><a href="tel:+17035550123">(703) 555-0123</a></li>
+                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg><a href="mailto:info@alexandriadentistry.com">info@alexandriadentistry.com</a></li>
+                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <address>123 King Street, Alexandria, VA 22314</address>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">© 2024 Dentist in Alexandria. All rights reserved.</p>
+                <ul class="footer-legal">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Widgets -->
+    <div class="chat-widget">
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <span>Support Agent</span>
+                <button id="chatCloseBtn" style="color:white;"><svg width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg></button>
+            </div>
+            <div class="chat-messages">
+                <div class="chat-message incoming">Hello! How can we help you today?</div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" class="chat-input" placeholder="Type a message...">
+                <button style="color: var(--primary);"><svg width="20" height="20" viewBox="0 0 24 24"
+                        fill="currentColor">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+                    </svg></button>
+            </div>
+        </div>
+        <button class="chat-button" id="chatButton">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z" />
+            </svg>
+        </button>
+    </div>
+
+    <!-- Countdown Modal -->
+    <div class="countdown-modal" id="countdownModal">
+        <div class="countdown-content">
+            <button id="countdownClose" style="position: absolute; right: 20px; top: 20px;"><svg width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                </svg></button>
+            <h3>Benefits Expiring!</h3>
+            <p style="margin-top: 0.5rem;">Use your insurance benefits before the year ends.</p>
+            <div class="countdown-timer">
+                <div class="timer-block"><span class="timer-val">04</span><span class="timer-label">Days</span></div>
+                <div class="timer-block"><span class="timer-val">12</span><span class="timer-label">Hours</span></div>
+                <div class="timer-block"><span class="timer-val">30</span><span class="timer-label">Mins</span></div>
+            </div>
+            <a href="booking.html" class="btn btn-primary">Book Now</a>
+        </div>
+    </div>
+
+    <!-- Sticky Action Bar -->
+    <div class="sticky-action-bar" id="stickyActionBar">
+        <a href="booking.html" class="action-btn primary">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+            </svg>
+            <span class="action-label">Book</span>
+        </a>
+        <a href="tel:+17035550123" class="action-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            <span class="action-label">Call</span>
+        </a>
+        <button class="action-btn" id="stickyChatBtn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
+            <span class="action-label">Chat</span>
+        </button>
+        <a href="#location" class="action-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span class="action-label">Map</span>
+        </a>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

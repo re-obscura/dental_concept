@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smile Dentistry - UI Toolkit</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Dentist",
+            "name": "Alexandria Dentistry",
+            "image": "https://images.unsplash.com/photo-1629909615184-74f495363b67?w=800&q=80",
+            "@id": "https://alexandriadentistry.com",
+            "url": "https://alexandriadentistry.com",
+            "telephone": "+17035550123",
+            "currenciesAccepted": "USD",
+            "paymentAccepted": "Cash, Credit Card, Insurance",
+            "priceRange": "$$",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "123 King Street",
+                "addressLocality": "Alexandria",
+                "addressRegion": "VA",
+                "postalCode": "22314",
+                "addressCountry": "US"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 38.8048,
+                "longitude": -77.0469
+            },
+            "openingHours": "Mo-Th 08:00-17:00, Fr 07:00-15:00",
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+                    "opens": "08:00",
+                    "closes": "17:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Friday",
+                    "opens": "07:00",
+                    "closes": "15:00"
+                }
+            ],
+            "sameAs": [
+                "https://facebook.com",
+                "https://twitter.com",
+                "https://instagram.com"
+            ],
+            "medicalSpecialty": [
+                "General Dentistry",
+                "Oral Surgery",
+                "Orthodontics",
+                "Cosmetic Dentistry"
+            ]
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding: 2rem;
+        }
+
+        .toolkit-header {
+            margin-bottom: 3rem;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 1rem;
+        }
+
+        .toolkit-section {
+            margin-bottom: 4rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .toolkit-section h2 {
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #eee;
+            color: #333;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.5rem;
+        }
+
+        .grid-colors {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .color-swatch {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .color-preview {
+            height: 100px;
+            width: 100%;
+        }
+
+        .color-info {
+            padding: 0.8rem;
+            font-family: monospace;
+            font-size: 0.85rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+
+        /* Overrides for presentation */
+        .page-block {
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header" id="header">
+        <div class="header-container">
+            <a href="index.html" class="logo-text">
+                <span class="logo-small">DENTIST IN</span>
+                <span class="logo-main">Alexandria</span>
+                <span class="logo-sub">Dentistry</span>
+            </a>
+            <nav class="nav-list">
+                <a href="about.html" class="nav-link">ABOUT</a>
+                <div class="nav-item dropdown">
+                    <a href="services.html" class="nav-link">SERVICES
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                            style="margin-left: 5px; vertical-align: middle;">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </a>
+                    <div class="dropdown-menu">
+                        <!-- General Dentistry -->
+                        <div class="dropdown-submenu">
+                            <a href="services.html#general" class="dropdown-item">
+                                General Dentistry
+                                <svg class="dropdown-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="3">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </a>
+                            <div class="submenu">
+                                <a href="services.html#general" class="submenu-item">Routine Checkups</a>
+                                <a href="services.html#general" class="submenu-item">Professional Cleaning</a>
+                                <a href="services.html#general" class="submenu-item">Dental Fillings</a>
+                                <a href="services.html#general" class="submenu-item">Root Canal Therapy</a>
+                            </div>
+                        </div>
+
+                        <!-- Cosmetic Dentistry -->
+                        <div class="dropdown-submenu">
+                            <a href="services.html#cosmetic" class="dropdown-item">
+                                Cosmetic Dentistry
+                                <svg class="dropdown-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="3">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </a>
+                            <div class="submenu">
+                                <a href="services.html#cosmetic" class="submenu-item">Professional Whitening</a>
+                                <a href="services.html#cosmetic" class="submenu-item">Porcelain Veneers</a>
+                                <a href="services.html#cosmetic" class="submenu-item">Dental Bonding</a>
+                                <a href="services.html#cosmetic" class="submenu-item">Smile Makeover</a>
+                            </div>
+                        </div>
+
+                        <!-- Orthodontics -->
+                        <div class="dropdown-submenu">
+                            <a href="services.html#orthodontics" class="dropdown-item">
+                                Orthodontics
+                                <svg class="dropdown-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="3">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </a>
+                            <div class="submenu">
+                                <a href="services.html#orthodontics" class="submenu-item">Invisalign</a>
+                                <a href="services.html#orthodontics" class="submenu-item">Traditional Braces</a>
+                                <a href="services.html#orthodontics" class="submenu-item">Retainers</a>
+                            </div>
+                        </div>
+
+                        <!-- Dental Implants -->
+                        <div class="dropdown-submenu">
+                            <a href="services.html#implants" class="dropdown-item">
+                                Dental Implants
+                                <svg class="dropdown-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="3">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </a>
+                            <div class="submenu">
+                                <a href="services.html#implants" class="submenu-item">Single Tooth Replacement</a>
+                                <a href="services.html#implants" class="submenu-item">All-on-4 Procedures</a>
+                                <a href="services.html#implants" class="submenu-item">Implant Bridges</a>
+                            </div>
+                        </div>
+
+                        <!-- Pediatric Care -->
+                        <div class="dropdown-submenu">
+                            <a href="services.html#pediatric" class="dropdown-item">
+                                Pediatric Care
+                                <svg class="dropdown-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="3">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </a>
+                            <div class="submenu">
+                                <a href="services.html#pediatric" class="submenu-item">First Visit</a>
+                                <a href="services.html#pediatric" class="submenu-item">Dental Sealants</a>
+                                <a href="services.html#pediatric" class="submenu-item">Fluoride Treatments</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="index.html#patients" class="nav-link">PATIENTS</a>
+                <a href="index.html#location" class="nav-link">LOCATIONS</a>
+                <a href="index.html#specials" class="nav-link">SPECIALS</a>
+                <a href="contacts.html" class="nav-link">CONTACT</a>
+            </nav>
+            <div class="header-actions">
+                <a href="tel:+17035550123" class="phone-link">
+                    <svg class="icon-svg" viewBox="0 0 24 24">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                    <span>(703) 555-0123</span>
+                </a>
+                <a href="booking.html" class="btn btn-book-now">Book Now</a>
+                <button class="mobile-menu-toggle" id="menuToggle">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <ul style="display: flex; flex-direction: column; gap: 2rem; font-size: 1.25rem; font-weight: 600;">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="index.html#patients">Patient Info</a></li>
+            <li><a href="contacts.html">Contact Us</a></li>
+            <li><a href="index.html#specials">Special Offers</a></li>
+        </ul>
+        <div style="margin-top: 3rem;">
+            <a href="booking.html" class="btn btn-primary" style="width: 100%;">Book Appointment</a>
+        </div>
+    </div>
+
+    <div class="toolkit-header" style="margin-top: 100px;">
+        <h1>UI Toolkit & Design System</h1>
+        <p>A collection of reusable components for Smile Dentistry.</p>
+    </div>
+
+    <!-- 1. Typography -->
+    <div class="toolkit-section">
+        <h2>1. Typography</h2>
+        <div class="grid-2">
+            <div>
+                <h3>Headings (Playfair Display)</h3>
+                <h1 style="margin:0">Heading 1</h1>
+                <h2 style="margin:0">Heading 2</h2>
+                <h3 style="margin:0">Heading 3</h3>
+                <h4 style="margin:0">Heading 4</h4>
+            </div>
+            <div>
+                <h3>Body (Inter)</h3>
+                <p><strong>Body Text:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p class="section-subtitle">SUBTITLE STYLE</p>
+                <div class="title-underline" style="margin: 1rem 0;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Colors -->
+    <div class="toolkit-section">
+        <h2>2. Color Palette</h2>
+        <div class="grid-colors">
+            <div class="color-swatch">
+                <div class="color-preview" style="background: #0b1c2e;"></div>
+                <div class="color-info">
+                    <strong>Primary</strong><br>#0b1c2e
+                </div>
+            </div>
+            <div class="color-swatch">
+                <div class="color-preview" style="background: #C5A572;"></div>
+                <div class="color-info">
+                    <strong>Accent</strong><br>#C5A572
+                </div>
+            </div>
+            <div class="color-swatch">
+                <div class="color-preview" style="background: #007ACC;"></div>
+                <div class="color-info">
+                    <strong>Blue</strong><br>#007ACC
+                </div>
+            </div>
+            <div class="color-swatch">
+                <div class="color-preview" style="background: #f4f4f4;"></div>
+                <div class="color-info">
+                    <strong>Gray BG</strong><br>#f4f4f4
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Buttons -->
+    <div class="toolkit-section">
+        <h2>3. Buttons</h2>
+        <div class="page-block">
+            <a href="#" class="btn btn-primary">Primary Button</a>
+            <a href="#" class="btn btn-outline-light" style="background: #333;">Outline Light (on dark)</a>
+        </div>
+        <div class="page-block">
+            <h3>Sticky Action Bar Buttons</h3>
+            <div class="sticky-action-bar"
+                style="position:static; transform:none; opacity:1; padding: 10px; background: #333; display:inline-flex;">
+                <a href="#" class="action-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.05 12.05 0 0 0 .57 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.05 12.05 0 0 0 2.81.57A2 2 0 0 1 22 16.92z">
+                        </path>
+                    </svg>
+                    <span>Call</span>
+                </a>
+                <a href="#" class="action-btn primary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    <span>Book Now</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. Special Offers (Tickets) -->
+    <div class="toolkit-section">
+        <h2>4. Special Offers (Tickets)</h2>
+        <div class="specials-grid">
+            <div class="special-ticket">
+                <div class="ticket-left">
+                    <span class="ticket-scent">LIMITED TIME</span>
+                    <div class="ticket-value">$300 OFF</div>
+                    <div class="ticket-label">Invisalign Aligners</div>
+                </div>
+                <div class="ticket-right">
+                    <p>Get the straight smile you've always wanted.</p>
+                    <a href="#" class="ticket-btn">Claim Offer</a>
+                </div>
+            </div>
+
+            <div class="special-ticket gold">
+                <div class="ticket-left">
+                    <span class="ticket-scent">POPULAR</span>
+                    <div class="ticket-value">$50 OFF</div>
+                    <div class="ticket-label">Teeth Whitening</div>
+                </div>
+                <div class="ticket-right">
+                    <p>Brighten your smile for a special occasion.</p>
+                    <a href="#" class="ticket-btn">Claim Offer</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. Procedure Cards -->
+    <div class="toolkit-section">
+        <h2>5. Procedure Cards (Image Overlay)</h2>
+        <div class="grid-3">
+            <div class="procedure-card">
+                <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=600&q=80" class="procedure-bg"
+                    alt="Implants">
+                <div class="procedure-content">
+                    <h4>Dental Implants</h4>
+                    <p>Tooth restoration using premium modern implants.</p>
+                    <div class="procedure-arrow"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg></div>
+                </div>
+            </div>
+            <!-- Reused for "Why Choose Us" -->
+            <div class="procedure-card">
+                <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=600&q=80" class="procedure-bg"
+                    alt="Equipment">
+                <div class="procedure-content">
+                    <h4>State-of-the-Art</h4>
+                    <p>We use the latest technology.</p>
+                    <div class="procedure-arrow"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. Service Cards (Premium Glass) -->
+    <div class="toolkit-section" style="background: #0b1c2e;">
+        <h2 style="color:white; border-color: rgba(255,255,255,0.1);">6. Service Cards (Premium Glass)</h2>
+        <div class="grid-2">
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 64 64" fill="currentColor">
+                        <path
+                            d="M32 4C16.536 4 4 16.536 4 32s12.536 28 28 28 28-12.536 28-28S47.464 4 32 4zm0 52c-13.234 0-24-10.766-24-24S18.766 8 32 8s24 10.766 24 24-10.766 24-24 24z">
+                        </path>
+                    </svg>
+                </div>
+                <h3 class="service-title">Emergency Dentistry</h3>
+                <div class="service-underline"></div>
+                <p class="service-description">Dealing with persistent tooth pain or oral injury? We can help.</p>
+                <a href="#" class="btn btn-outline-light">Heal Your Smile</a>
+            </div>
+
+            <div class="service-card featured">
+                <div class="service-icon">
+                    <svg viewBox="0 0 64 64" fill="currentColor">
+                        <circle cx="32" cy="32" r="30"></circle>
+                    </svg>
+                </div>
+                <h3 class="service-title">Cosmetic Dentistry</h3>
+                <div class="service-underline"></div>
+                <p class="service-description">Transform your smile with veneers, whitening, and more.</p>
+                <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 7. Provider Badge -->
+    <div class="toolkit-section">
+        <h2>7. Provider Badge (Seal)</h2>
+        <div style="background: #f4f4f4; padding: 3rem;">
+            <!-- Provider Badge Refined -->
+            <div class="provider-badge-container tilt-effect">
+                <div class="badge-outer-ring"></div>
+                <div class="badge-dashed-ring"></div>
+                <div class="badge-hexagon">
+                    <div class="badge-content">
+                        <div class="badge-lines"></div>
+                        <span class="badge-title">GOLD</span>
+                        <span class="badge-subtitle">INVISALIGN<br>PROVIDER</span>
+                        <span class="badge-year">2024</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 8. Stats & Highlights -->
+    <div class="toolkit-section">
+        <h2>8. Interactive Elements</h2>
+        <div class="grid-3">
+            <!-- Stat Item (on blue) -->
+            <div style="background: #0b1c2e; padding: 2rem; border-radius: 12px; text-align: center;">
+                <div class="stat-item">
+                    <div class="stat-icon" style="margin-bottom: 1rem;">
+                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" stroke="white" stroke-width="2">
+                            <path
+                                d="M25 45S5 30 5 18C5 10 12 5 19 5C23 5 25 8 25 8S27 5 31 5C38 5 45 10 45 18C45 30 25 45 25 45Z">
+                            </path>
+                        </svg>
+                    </div>
+                    <span class="stat-number" style="color: white; font-size: 2.5rem; font-weight: 700;">15000</span>
+                    <span class="stat-label"
+                        style="color: rgba(255,255,255,0.85); display: block; margin-top: 0.5rem;">Happy Patients</span>
+                </div>
+            </div>
+
+            <!-- Highlight Card -->
+            <div class="highlight-card"
+                style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); text-align: center; border: 1px solid #eee;">
+                <div class="highlight-icon"
+                    style="width: 70px; height: 70px; margin: 0 auto 1.5rem; background: linear-gradient(135deg, #007ACC, #87CEEB); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                    </svg>
+                </div>
+                <h4 style="font-size: 1.25rem; color: #0b1c2e; margin-bottom: 0.75rem;">Advanced Tech</h4>
+                <p style="color: #666;">Digital X-rays, 3D imaging, and laser dentistry.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Book Appointment - Dentist in Alexandria</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Dentist",
+            "name": "Alexandria Dentistry",
+            "image": "https://images.unsplash.com/photo-1629909615184-74f495363b67?w=800&q=80",
+            "@id": "https://alexandriadentistry.com",
+            "url": "https://alexandriadentistry.com",
+            "telephone": "+17035550123",
+            "currenciesAccepted": "USD",
+            "paymentAccepted": "Cash, Credit Card, Insurance",
+            "priceRange": "$$",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "123 King Street",
+                "addressLocality": "Alexandria",
+                "addressRegion": "VA",
+                "postalCode": "22314",
+                "addressCountry": "US"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 38.8048,
+                "longitude": -77.0469
+            },
+            "openingHours": "Mo-Th 08:00-17:00, Fr 07:00-15:00",
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+                    "opens": "08:00",
+                    "closes": "17:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Friday",
+                    "opens": "07:00",
+                    "closes": "15:00"
+                }
+            ],
+            "sameAs": [
+                "https://facebook.com",
+                "https://twitter.com",
+                "https://instagram.com"
+            ],
+            "medicalSpecialty": [
+                "General Dentistry",
+                "Oral Surgery",
+                "Orthodontics",
+                "Cosmetic Dentistry"
+            ]
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <a href="index.html" class="logo-text">
+                <span class="logo-small">DENTIST IN</span>
+                <span class="logo-main">Alexandria</span>
+                <span class="logo-sub">Dentistry</span>
+            </a>
+            <nav class="nav-list">
+                <a href="about.html" class="nav-link">ABOUT</a>
+                <div class="nav-item dropdown">
+                    <a href="services.html" class="nav-link">SERVICES
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                            style="margin-left: 5px; vertical-align: middle;">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </a>
+                    <div class="dropdown-menu">
+                        <!-- General Dentistry -->
+                        <div class="dropdown-submenu">
+                            <a href="services.html#general" class="dropdown-item">
+                                General Dentistry
+                                <svg class="dropdown-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="3">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </a>
+                            <div class="submenu">
+                                <a href="services.html#general" class="submenu-item">Routine Checkups</a>
+                                <a href="services.html#general" class="submenu-item">Professional Cleaning</a>
+                                <a href="services.html#general" class="submenu-item">Dental Fillings</a>
+                                <a href="services.html#general" class="submenu-item">Root Canal Therapy</a>
+                            </div>
+                        </div>
+
+                        <!-- Cosmetic Dentistry -->
+                        <div class="dropdown-submenu">
+                            <a href="services.html#cosmetic" class="dropdown-item">
+                                Cosmetic Dentistry
+                                <svg class="dropdown-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="3">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </a>
+                            <div class="submenu">
+                                <a href="services.html#cosmetic" class="submenu-item">Professional Whitening</a>
+                                <a href="services.html#cosmetic" class="submenu-item">Porcelain Veneers</a>
+                                <a href="services.html#cosmetic" class="submenu-item">Dental Bonding</a>
+                                <a href="services.html#cosmetic" class="submenu-item">Smile Makeover</a>
+                            </div>
+                        </div>
+
+                        <!-- Orthodontics -->
+                        <div class="dropdown-submenu">
+                            <a href="services.html#orthodontics" class="dropdown-item">
+                                Orthodontics
+                                <svg class="dropdown-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="3">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </a>
+                            <div class="submenu">
+                                <a href="services.html#orthodontics" class="submenu-item">Invisalign</a>
+                                <a href="services.html#orthodontics" class="submenu-item">Traditional Braces</a>
+                                <a href="services.html#orthodontics" class="submenu-item">Retainers</a>
+                            </div>
+                        </div>
+
+                        <!-- Dental Implants -->
+                        <div class="dropdown-submenu">
+                            <a href="services.html#implants" class="dropdown-item">
+                                Dental Implants
+                                <svg class="dropdown-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="3">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </a>
+                            <div class="submenu">
+                                <a href="services.html#implants" class="submenu-item">Single Tooth Replacement</a>
+                                <a href="services.html#implants" class="submenu-item">All-on-4 Procedures</a>
+                                <a href="services.html#implants" class="submenu-item">Implant Bridges</a>
+                            </div>
+                        </div>
+
+                        <!-- Pediatric Care -->
+                        <div class="dropdown-submenu">
+                            <a href="services.html#pediatric" class="dropdown-item">
+                                Pediatric Care
+                                <svg class="dropdown-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="3">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </a>
+                            <div class="submenu">
+                                <a href="services.html#pediatric" class="submenu-item">First Visit</a>
+                                <a href="services.html#pediatric" class="submenu-item">Dental Sealants</a>
+                                <a href="services.html#pediatric" class="submenu-item">Fluoride Treatments</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="index.html#patients" class="nav-link">PATIENTS</a>
+                <a href="index.html#location" class="nav-link">LOCATIONS</a>
+                <a href="index.html#specials" class="nav-link">SPECIALS</a>
+                <a href="contacts.html" class="nav-link">CONTACT</a>
+            </nav>
+            <div class="header-actions">
+                <a href="tel:+17035550123" class="phone-link">
+                    <svg class="icon-svg" viewBox="0 0 24 24">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                    <span>(703) 555-0123</span>
+                </a>
+                <a href="booking.html" class="btn btn-book-now">Book Now</a>
+                <button class="mobile-menu-toggle" id="menuToggle">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <ul style="display: flex; flex-direction: column; gap: 2rem; font-size: 1.25rem; font-weight: 600;">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="index.html#patients">Patient Info</a></li>
+            <li><a href="contacts.html">Contact Us</a></li>
+            <li><a href="index.html#specials">Special Offers</a></li>
+        </ul>
+        <div style="margin-top: 3rem;">
+            <a href="booking.html" class="btn btn-primary" style="width: 100%;">Book Appointment</a>
+        </div>
+    </div>
+
+    <main>
+        <section class="section" style="padding-top: 140px;">
+            <div class="container" style="max-width: 800px;">
+                <div class="section-header centered">
+                    <span class="section-subtitle">EASY SCHEDULING</span>
+                    <h2 class="section-title">Book Your Appointment</h2>
+                    <div class="title-underline centered"></div>
+                </div>
+
+                <div class="card fade-up">
+                    <form style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                            <div class="form-group">
+                                <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">First
+                                    Name</label>
+                                <input type="text" placeholder="John"
+                                    style="width: 100%; padding: 0.8rem; border: 1px solid #eee; border-radius: 8px;">
+                            </div>
+                            <div class="form-group">
+                                <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Last
+                                    Name</label>
+                                <input type="text" placeholder="Doe"
+                                    style="width: 100%; padding: 0.8rem; border: 1px solid #eee; border-radius: 8px;">
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                            <div class="form-group">
+                                <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Email</label>
+                                <input type="email" placeholder="john@example.com"
+                                    style="width: 100%; padding: 0.8rem; border: 1px solid #eee; border-radius: 8px;">
+                            </div>
+                            <div class="form-group">
+                                <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Phone</label>
+                                <input type="tel" placeholder="(703) 555-0123"
+                                    style="width: 100%; padding: 0.8rem; border: 1px solid #eee; border-radius: 8px;">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Desired
+                                Service</label>
+                            <select
+                                style="width: 100%; padding: 0.8rem; border: 1px solid #eee; border-radius: 8px; background: white;">
+                                <option value="">Select a service...</option>
+                                <option value="checkup">General Checkup</option>
+                                <option value="cleaning">Teeth Cleaning</option>
+                                <option value="whitening">Teeth Whitening</option>
+                                <option value="invisalign">Invisalign</option>
+                                <option value="emergency">Emergency Visit</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Preferred
+                                Date</label>
+                            <input type="date"
+                                style="width: 100%; padding: 0.8rem; border: 1px solid #eee; border-radius: 8px;">
+                        </div>
+
+                        <div class="form-group">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Additional
+                                Notes</label>
+                            <textarea rows="4" placeholder="How can we help you?"
+                                style="width: 100%; padding: 0.8rem; border: 1px solid #eee; border-radius: 8px;"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1.2rem;">Confirm
+                            Booking Request</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column footer-about animated" data-animate="fade-up" data-delay="0">
+                    <a href="index.html" class="footer-logo">
+                        <div class="logo-text" style="color: white;">
+                            <span class="logo-small">DENTIST IN</span>
+                            <span class="logo-main">Alexandria</span>
+                            <span class="logo-sub">Dentistry</span>
+                        </div>
+                    </a>
+                    <p class="footer-description">Modern dental clinic providing a full range of services for the whole
+                        family.</p>
+                </div>
+                <div class="footer-column animated" data-animate="fade-up" data-delay="100">
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html">General Dentistry</a></li>
+                        <li><a href="services.html">Oral Surgery</a></li>
+                        <li><a href="services.html">Orthodontics</a></li>
+                        <li><a href="services.html">Dental Implants</a></li>
+                        <li><a href="services.html">Teeth Whitening</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column animated" data-animate="fade-up" data-delay="200">
+                    <h4 class="footer-title">About Us</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Clinic</a></li>
+                        <li><a href="about.html">Our Team</a></li>
+                        <li><a href="index.html#testimonials">Testimonials</a></li>
+                        <li><a href="index.html#gallery">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column animated" data-animate="fade-up" data-delay="300">
+                    <h4 class="footer-title">Patients</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#patients">First Visit</a></li>
+                        <li><a href="index.html#patients">Payment Options</a></li>
+                        <li><a href="index.html#faq">FAQ</a></li>
+                        <li><a href="index.html#specials">Special Offers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column animated" data-animate="fade-up" data-delay="400">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-contacts">
+                        <li><a href="tel:+17035550123">(703) 555-0123</a></li>
+                        <li><a href="mailto:info@alexandriadentistry.com">info@alexandriadentistry.com</a></li>
+                        <li>
+                            <address>123 King Street, Alexandria, VA 22314</address>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">© 2024 Dentist in Alexandria. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Widgets -->
+    <div class="chat-widget">
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <span>Support Agent</span>
+                <button id="chatCloseBtn" style="color:white;"><svg width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg></button>
+            </div>
+            <div class="chat-messages">
+                <div class="chat-message incoming">Hello! How can we help you today?</div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" class="chat-input" placeholder="Type a message...">
+                <button style="color: var(--primary);"><svg width="20" height="20" viewBox="0 0 24 24"
+                        fill="currentColor">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+                    </svg></button>
+            </div>
+        </div>
+        <button class="chat-button" id="chatButton"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z" />
+            </svg></button>
+    </div>
+
+    <!-- Sticky Action Bar -->
+    <div class="sticky-action-bar hidden" id="stickyActionBar">
+        <a href="booking.html" class="action-btn primary">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+            </svg>
+            <span class="action-label">Book</span>
+        </a>
+        <a href="tel:+17035550123" class="action-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            <span class="action-label">Call</span>
+        </a>
+        <button class="action-btn" id="stickyChatBtn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
+            <span class="action-label">Chat</span>
+        </button>
+        <a href="index.html#location" class="action-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span class="action-label">Map</span>
+        </a>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
