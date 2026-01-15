@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dentist in Fairfax, VA | Healthy Smiles Dentistry</title>
+    <meta name="description" content="In need of a quality dentist in Fairfax, VA? Healthy Smiles Dentistry provides trusted, compassionate dentistry.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lato:wght@300;400;700;900&family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            /* Colors */
+            --primary-blue: #071D42;
+            --secondary-gold: #D4AF37;
+            --bg-gold: #f9f4ea;
+            --bg-grey: #f8fafc;
+            --text-dark: #2c3e50;
+            --text-light: #ffffff;
+            --shadow-soft: 0 10px 30px rgba(0,0,0,0.08);
+            --shadow-hover: 0 15px 40px rgba(7, 29, 66, 0.15);
+
+            /* Fonts */
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Lato', sans-serif;
+            --font-script: 'Great Vibes', cursive;
+        }
+
+        /* Accessibility Modes Variables */
+        body.a11y-large-text { font-size: 115%; }
+        body.a11y-contrast { filter: contrast(1.5); }
+        body.a11y-grayscale { filter: grayscale(100%); }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+            line-height: 1.3;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-transform: capitalize;
+            letter-spacing: -0.5px;
+        }
+
+        h3 {
+            font-family: var(--font-script);
+            color: var(--secondary-gold);
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            color: #5a6b7c;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* Utilities */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .text-center { text-align: center; }
+        .text-white { color: var(--text-light) !important; }
+        .bg-blue { background-color: var(--primary-blue); color: var(--text-light); }
+        .bg-grey { background-color: var(--bg-grey); }
+        .bg-gold { background-color: var(--bg-gold); }
+
+        .divider {
+            height: 3px;
+            width: 60px;
+            background-color: var(--secondary-gold);
+            margin: 0 auto 2rem auto;
+            border-radius: 2px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 34px;
+            background-color: var(--secondary-gold);
+            color: var(--text-light);
+            font-family: var(--font-heading);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            border: 2px solid var(--secondary-gold);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-radius: 4px;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--secondary-gold);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-dark {
+            background-color: var(--primary-blue);
+            border-color: var(--primary-blue);
+            box-shadow: 0 4px 15px rgba(7, 29, 66, 0.3);
+        }
+        .btn-dark:hover {
+            color: var(--primary-blue);
+            background: transparent;
+            box-shadow: 0 8px 20px rgba(7, 29, 66, 0.4);
+        }
+
+        .btn.btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--text-light);
+            box-shadow: none;
+        }
+
+        .btn.btn-outline:hover {
+            background-color: var(--text-light);
+            color: var(--primary-blue);
+            box-shadow: 0 5px 15px rgba(255,255,255,0.3);
+        }
+
+        /* New Pulse Animation for primary CTA */
+        .btn-pulse {
+            animation: pulse-gold 2s infinite;
+        }
+
+        @keyframes pulse-gold {
+            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        }
+
+        /* Animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Header Styles --- */
+
+        .top-bar {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.85rem;
+            display: none;
+        }
+
+        @media(min-width: 992px) {
+            .top-bar { display: block; }
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        /* GOOGLE TRANSLATE CUSTOM STYLES */
+        .goog-te-gadget {
+            color: rgba(255, 255, 255, 0.7) !important;
+            font-family: var(--font-body) !important;
+            font-size: 13px !important;
+        }
+        .goog-te-gadget span { display: inline-block; }
+        .goog-te-gadget a { color: white !important; font-weight: bold; }
+        .goog-te-gadget-simple {
+            background-color: rgba(255, 255, 255, 0.1) !important;
+            border: 1px solid rgba(255, 255, 255, 0.3) !important;
+            padding: 8px 15px !important;
+            border-radius: 4px !important;
+            font-family: var(--font-body) !important;
+            font-size: 0.9rem !important;
+            line-height: 1.2 !important;
+            display: inline-block;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .goog-te-gadget-simple:hover {
+            background-color: rgba(255, 255, 255, 0.2) !important;
+            border-color: var(--secondary-gold) !important;
+        }
+        .goog-te-gadget-simple img { display: none; }
+        .goog-te-menu-value { color: white !important; margin: 0 !important; }
+        .goog-te-menu-value span { color: white !important; border-left: none !important; font-weight: 500; }
+        .goog-te-gadget-simple .goog-te-menu-value span[style*="border-left"] { display: none !important; }
+
+
+        /* Main Nav */
+        nav {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            transition: all 0.3s;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 65px;
+            transition: transform 0.3s;
+        }
+        .logo:hover img { transform: scale(1.02); }
+
+        .nav-links {
+            display: none;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-links a, .nav-item {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            color: var(--primary-blue);
+            position: relative;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+            padding: 5px 0;
+        }
+
+        .nav-links a::after, .nav-item::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--secondary-gold);
+            transition: width 0.3s;
+        }
+        .nav-links a:hover::after, .nav-item:hover::after { width: 100%; }
+
+        /* Highlighted Nav Button */
+        .nav-btn-highlight {
+            background: var(--primary-blue);
+            color: white !important;
+            padding: 10px 20px !important;
+            border-radius: 4px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(7, 29, 66, 0.2);
+        }
+        .nav-btn-highlight:hover {
+            background: var(--secondary-gold);
+            transform: translateY(-2px);
+        }
+        .nav-btn-highlight::after { display: none !important; }
+
+
+        .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: -10px;
+            background: white;
+            min-width: 220px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            display: none;
+            padding: 10px 0;
+            border-radius: 8px;
+            border-top: 3px solid var(--secondary-gold);
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 12px 20px;
+            font-size: 0.8rem;
+            color: #555;
+            border-bottom: 1px solid #f9f9f9;
+        }
+        .dropdown-menu a:hover {
+            background: #f8fafc;
+            color: var(--primary-blue);
+            padding-left: 25px;
+        }
+
+        .nav-right-icons {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .icon-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid rgba(7, 29, 66, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-blue);
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+        .icon-circle:hover {
+            background: var(--primary-blue);
+            color: white;
+            border-color: var(--primary-blue);
+            transform: rotate(360deg);
+        }
+
+        .mobile-toggle {
+            display: block;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            cursor: pointer;
+        }
+
+        @media(min-width: 1100px) {
+            .nav-links { display: flex; }
+            .mobile-toggle { display: none; }
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 80px;
+            left: 0;
+            width: 100%;
+            background: white;
+            padding: 20px;
+            display: none;
+            flex-direction: column;
+            gap: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            z-index: 999;
+        }
+        .mobile-menu.active { display: flex; animation: slideDown 0.3s ease-out; }
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* --- Hero Section --- */
+        .hero {
+            position: relative;
+            height: 85vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .hero video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            z-index: -2;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(2px);
+            z-index: -1;
+        }
+
+        .hero-content {
+            z-index: 1;
+            position: relative;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero h4 {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 2.5rem;
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+
+        .hero-logo {
+            width: 320px;
+            max-width: 80%;
+            margin-bottom: 30px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Split Section Refined */
+        .split-section {
+            padding: 100px 0;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        @media(min-width: 992px) {
+            .split-section {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .split-text h2 {
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .split-text a:not(.btn) {
+            color: var(--secondary-gold);
+            font-weight: 700;
+            border-bottom: 1px dotted var(--secondary-gold);
+        }
+
+        .split-text a:not(.btn):hover {
+            color: var(--primary-blue);
+            border-bottom-style: solid;
+        }
+
+        .split-img {
+            position: relative;
+        }
+        .split-img::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--secondary-gold);
+            border-radius: 12px;
+            z-index: -1;
+            opacity: 0.3;
+            transition: transform 0.5s;
+        }
+        .split-section:hover .split-img::before {
+            transform: translate(10px, 10px);
+        }
+
+        .split-img img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: var(--shadow-soft);
+            transition: transform 0.5s;
+        }
+        .split-section:hover .split-img img {
+            transform: translateY(-5px);
+        }
+
+        /* Specials Cards Refined */
+        .specials-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            padding: 80px 0;
+        }
+
+        @media(min-width: 992px) {
+            .specials-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        .special-card {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 50px 30px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.15);
+            transition: all 0.4s ease;
+            border-radius: 12px;
+            backdrop-filter: blur(5px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .special-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .special-card img {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 25px auto;
+            filter: brightness(0) invert(1);
+            opacity: 0.9;
+        }
+
+        .special-card h4 {
+            color: white;
+            margin-bottom: 1.2rem;
+            font-size: 1.3rem;
+            letter-spacing: 0.5px;
+        }
+        .special-card p { color: rgba(255,255,255,0.8); font-size: 1rem; margin-bottom: 2.5rem; }
+        .special-card .divider { background-color: rgba(255,255,255,0.3); width: 40px; }
+
+        /* Photo Grid Refined */
+        .photo-grid-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 60px;
+        }
+
+        .photo-item {
+            height: 280px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            transition: transform 0.5s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .photo-item::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(7, 29, 66, 0.2);
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+        .photo-item:hover::after { opacity: 1; }
+
+        .photo-item.tall { grid-row: span 2; height: 575px; }
+
+        /* Parallax Services Refined */
+        .parallax-section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .parallax-bg-1 {
+            background: linear-gradient(rgba(7, 29, 66, 0.92), rgba(7, 29, 66, 0.92)), url('https://cdn.prod.website-files.com/61c2118aca9b0310afb2086f/61c221c59baeae62db7c0b2f_HSRS%20Branding%20FINAL_primary%20dark.svg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 50px;
+        }
+
+        @media(min-width: 992px) {
+            .services-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        .service-item {
+            text-align: center;
+            color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .service-item img { width: 90px; margin-bottom: 25px; transition: transform 0.3s; }
+        .service-item:hover img { transform: scale(1.1); }
+        .service-item h4 { color: white; font-size: 1.4rem; margin-bottom: 15px; }
+        .service-item p { color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 20px;}
+        .service-item .divider { width: 40px; margin-bottom: 1.5rem; }
+
+        /* Testimonials Slider Refined */
+        .testimonial-slider {
+            position: relative;
+            max-width: 850px;
+            margin: 50px auto;
+            overflow: hidden;
+            background: white;
+            padding: 40px 20px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .slides-container {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .slide {
+            min-width: 100%;
+            padding: 10px 40px;
+            text-align: center;
+        }
+
+        .slide p {
+            font-style: italic;
+            font-size: 1.25rem;
+            color: #444;
+            margin-bottom: 1.5rem;
+            font-family: 'Georgia', serif;
+            line-height: 1.8;
+        }
+        .slide h5 {
+            margin-top: 20px;
+            color: var(--primary-blue);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+        .stars {
+            color: var(--secondary-gold);
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+        }
+
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .dot {
+            width: 10px; height: 10px;
+            background: #e0e0e0;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .dot.active {
+            background: var(--secondary-gold);
+            transform: scale(1.2);
+        }
+
+        /* Footer Refined */
+        .footer-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .tab-btn {
+            padding: 15px 40px;
+            background: none;
+            border: none;
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            font-weight: 600;
+            color: #888;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .tab-btn:hover { color: var(--primary-blue); }
+
+        .tab-btn.active {
+            color: var(--primary-blue);
+            border-bottom: 3px solid var(--primary-blue);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 50px;
+            padding-bottom: 50px;
+        }
+
+        @media(min-width: 768px) {
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        .footer-column h5 {
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            margin-bottom: 25px;
+            color: var(--secondary-gold);
+        }
+
+        .footer-column p, .footer-column li {
+            color: #555;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-column a {
+            border-bottom: 1px dotted transparent;
+        }
+        .footer-column a:hover {
+            color: var(--secondary-gold);
+            border-bottom-color: var(--secondary-gold);
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            width: 36px;
+            height: 36px;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            border-radius: 50%;
+            margin-right: 10px;
+            color: var(--primary-blue);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+        .social-icons a:hover {
+            background: var(--primary-blue);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .map-frame {
+            width: 100%;
+            height: 450px;
+            border: 0;
+            margin-top: 30px;
+            filter: grayscale(20%);
+            border-radius: 4px;
+        }
+
+        .copyright {
+            background: var(--primary-blue);
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+            padding: 25px;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .copyright a { color: white; border-bottom: 1px solid rgba(255,255,255,0.3); }
+        .copyright a:hover { border-bottom-color: white; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- FLOATING WIDGETS --- */
+
+        /* 1. Chat Widget (Bottom Right) */
+        .chat-widget-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 2000;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .chat-btn {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-blue);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 20px rgba(7, 29, 66, 0.4);
+            cursor: pointer;
+            transition: all 0.3s;
+            animation: pulse-blue 2s infinite;
+        }
+
+        .chat-btn:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes pulse-blue {
+            0% { box-shadow: 0 0 0 0 rgba(7, 29, 66, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(7, 29, 66, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(7, 29, 66, 0); }
+        }
+
+        .chat-menu {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+            margin-bottom: 15px;
+            overflow: hidden;
+            width: 250px;
+            opacity: 0;
+            transform: translateY(20px) scale(0.9);
+            transform-origin: bottom right;
+            pointer-events: none;
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .chat-menu.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: all;
+        }
+
+        .chat-header {
+            background: var(--primary-blue);
+            color: white;
+            padding: 15px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .chat-options a {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #f0f0f0;
+            color: #555;
+            transition: 0.2s;
+            font-size: 0.9rem;
+        }
+
+        .chat-options a:hover {
+            background: #f8fafc;
+            color: var(--primary-blue);
+            padding-left: 20px;
+        }
+
+        .chat-options i {
+            width: 25px;
+            color: var(--secondary-gold);
+            margin-right: 10px;
+        }
+
+        /* 2. Accessibility Widget (Bottom Left) */
+        .a11y-widget-container {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 2000;
+        }
+
+        .a11y-btn {
+            width: 50px;
+            height: 50px;
+            background: var(--secondary-gold);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .a11y-btn:hover { transform: rotate(15deg); }
+
+        .a11y-menu {
+            position: absolute;
+            bottom: 60px;
+            left: 0;
+            background: white;
+            width: 220px;
+            border-radius: 8px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+            padding: 15px;
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+            transition: 0.3s;
+        }
+
+        .a11y-menu.active {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: all;
+        }
+
+        .a11y-menu h5 {
+            color: #444;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+
+        .a11y-option {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            color: #555;
+            cursor: pointer;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 40px;
+            height: 20px;
+        }
+
+        .switch input { opacity: 0; width: 0; height: 0; }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 20px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 2px;
+            bottom: 2px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider { background-color: var(--primary-blue); }
+        input:checked + .slider:before { transform: translateX(20px); }
+
+        /* Responsive Mobile tweaks for widgets */
+        @media(max-width: 768px) {
+            .chat-widget-container { bottom: 20px; right: 20px; }
+            .a11y-widget-container { bottom: 20px; left: 20px; }
+            .chat-btn { width: 50px; height: 50px; font-size: 1.2rem; }
+            .a11y-btn { width: 40px; height: 40px; font-size: 1.2rem; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <!-- Top Bar with Google Translate -->
+        <div class="top-bar">
+            <div class="container">
+                <!-- Google Translate Container -->
+                <div id="google_translate_element"></div>
+            </div>
+        </div>
+
+        <!-- Main Navigation -->
+        <nav>
+            <div class="container nav-container">
+                <a href="#" class="logo">
+                    <img src="https://cdn.prod.website-files.com/61c2118aca9b0310afb2086f/61c221c59baeae62db7c0b2f_HSRS%20Branding%20FINAL_primary%20dark.svg" alt="Healthy Smiles Dentistry">
+                </a>
+
+                <div class="nav-links">
+                    <a href="#">About</a>
+
+                    <!-- Dropdown: Services -->
+                    <div class="nav-item dropdown">
+                        Services <i class="fas fa-caret-down" style="font-size:0.8em; margin-left:2px;"></i>
+                        <div class="dropdown-menu">
+                            <a href="#">General Dentistry</a>
+                            <a href="#">Cosmetic Dentistry</a>
+                            <a href="#">Invisalign</a>
+                            <a href="#">Implants</a>
+                        </div>
+                    </div>
+
+                    <!-- Dropdown: For Patients -->
+                    <div class="nav-item dropdown">
+                        For Patients <i class="fas fa-caret-down" style="font-size:0.8em; margin-left:2px;"></i>
+                        <div class="dropdown-menu">
+                            <a href="#">Membership Plan</a>
+                            <a href="#">Forms</a>
+                            <a href="#">Blog</a>
+                        </div>
+                    </div>
+
+                    <!-- Dropdown: Locations -->
+                    <div class="nav-item dropdown">
+                        Locations <i class="fas fa-caret-down" style="font-size:0.8em; margin-left:2px;"></i>
+                        <div class="dropdown-menu">
+                            <a href="#">Fairfax Station</a>
+                        </div>
+                    </div>
+
+                    <a href="#">Special Offer</a>
+                    <a href="#">Contact Us</a>
+                    <!-- Highlighted CTA in Nav -->
+                    <a href="#" class="nav-btn-highlight">Book Online</a>
+                </div>
+
+                <!-- Right Side Buttons -->
+                <div class="nav-right-icons">
+                    <a href="tel:+17039157330" class="icon-circle">
+                        <i class="fas fa-phone-alt"></i>
+                    </a>
+                    <a href="#" class="icon-circle">
+                        <i class="far fa-calendar-alt"></i>
+                    </a>
+
+                    <div class="mobile-toggle" onclick="toggleMenu()">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">For Patients</a>
+                <a href="#">Locations</a>
+                <a href="#">Special Offer</a>
+                <a href="#">Contact</a>
+                <a href="#" style="color: var(--secondary-gold); font-weight: 700;">Book Online</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <video autoplay muted loop playsinline poster="https://cdn.prod.website-files.com/61c2118aca9b0310afb2086f/64494a28b26d89611999babb_HSRS-5-poster-00001.jpg">
+            <source src="https://cdn.prod.website-files.com/61c2118aca9b0310afb2086f/64494a28b26d89611999babb_HSRS-5-transcode.mp4" type="video/mp4">
+        </video>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content fade-in-up">
+            <img src="https://cdn.prod.website-files.com/61c2118aca9b0310afb2086f/61c221c65ecc74aed59808f0_HSRS%20Branding%20FINAL_primary%20tag%20dark.svg" alt="Logo" class="hero-logo">
+
+            <h4>Accepting New Patients</h4>
+
+            <div class="hero-btns">
+                <a href="#" class="btn btn-pulse">Schedule Visit</a>
+                <a href="#" class="btn btn-dark btn-outline" style="border-color: var(--primary-blue); color: var(--primary-blue);">New Patient Special</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="container split-section fade-in-up">
+        <div class="split-text">
+            <h2>Healthy Smiles Dentistry is a Proud Gold Invisalign® Provider</h2>
+            <div class="divider" style="margin-left:0;"></div>
+            <p>Due to our team's advanced training and successfully treating numerous patients with Invisalign, Healthy Smiles Dentistry is honored to be an Invisalign® Gold Provider. Come experience the convenience and confidence of a perfect smile you deserve.</p>
+            <p style="margin-top: 25px;">Book your initial consultation today with Dr. Doshi at <br><a href="tel:+17039157330" style="font-size: 1.2rem;">(703) 915-7330</a>.</p>
+            <!-- Added CTA -->
+            <a href="#" class="btn" style="margin-top: 20px;">Schedule Consultation</a>
+        </div>
+        <div class="split-img">
+            <img src="https://cdn.prod.website-files.com/61c2118aca9b0310afb2086f/66e98686f34135020a0b95b3_03d6cd02-b0ec-4762-a678-7d5e120b647b.png" alt="Invisalign Provider" onerror="this.src='https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=600&q=80'">
+        </div>
+    </section>
+
+    <!-- Specials Section -->
+    <section class="bg-blue">
+        <div class="container">
+            <div class="text-center" style="padding-top: 80px;">
+                <h2 class="text-white">Save on our Specials</h2>
+                <div class="divider bg-white" style="opacity: 0.8;"></div>
+            </div>
+            <div class="specials-grid">
+                <!-- Card 1 -->
+                <div class="special-card fade-in-up">
+                    <div>
+                        <img src="https://cdn.prod.website-files.com/61c2118aca9b0310afb2086f/61c2118aca9b03f7cdb20a34_invisalign.svg" alt="Icon">
+                        <h4>$1,000 Off Invisalign</h4>
+                        <div class="divider"></div>
+                        <p>Get the straight smile you've been dreaming of! Invisalign is a comfortable, discreet treatment that gently pushes your teeth into alignment.</p>
+                    </div>
+                    <a href="tel:+17039157330" class="btn">Claim Offer</a>
+                </div>
+                <!-- Card 2 -->
+                <div class="special-card fade-in-up" style="transition-delay: 100ms;">
+                    <div>
+                        <img src="https://cdn.prod.website-files.com/61c2118aca9b0310afb2086f/61c2118aca9b03db81b20a3d_glowing-tooth.svg" alt="Icon">
+                        <h4>$100 Off Whitening</h4>
+                        <div class="divider"></div>
+                        <p>We provide custom-fit whitening trays for only $275! Whiten your teeth up to several shades for professional results.</p>
+                    </div>
+                    <a href="tel:+17039157330" class="btn">Claim Offer</a>
+                </div>
+                <!-- Card 3 -->
+                <div class="special-card fade-in-up" style="transition-delay: 200ms;">
+                    <div>
+                        <img src="https://cdn.prod.website-files.com/61c2118aca9b0310afb2086f/61c2118aca9b032e86b20a3f_tooth-with-clipboard.svg" alt="Icon">
+                        <h4>$119 New Patient Special</h4>
+                        <div class="divider"></div>
+                        <p>Receive a teeth cleaning, comprehensive exam, and digital X-Rays for a low cost of $119. Welcome to our family!</p>
+                    </div>
+                    <a href="tel:+17039157330" class="btn">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Welcome Section -->
+    <section class="bg-gold" style="padding: 100px 0;">
+        <div class="container text-center fade-in-up">
+            <h3>All Smiles Welcome</h3>
+            <h1 style="font-size: 3rem;">Dentist in Fairfax, VA</h1>
+            <div class="divider"></div>
+            <p style="max-width: 800px; margin: 0 auto 40px auto; font-size: 1.2rem;">
+                At Healthy Smiles Dentistry, we deliver an all-encompassing suite of dental care made for you and the people you love. Dr. Doshi and our warm dental professionals in Fairfax are passionate about providing a judgment-free experience.
+            </p>
+            <a href="#" class="btn btn-dark" style="margin-bottom: 50px;">Meet The Team</a>
+
+            <!-- Decorative Photo Grid -->
+            <div class="photo-grid-wrapper">
+                <div class="photo-item tall" style="background-image: url('https://cdn.prod.website-files.com/61c2118aca9b0310afb2086f/63977eca5baf3457859c330a_Fairfax-Patient-Dental%20(1).webp');"></div>
+                <div class="photo-item" style="background-image: url('https://cdn.prod.website-files.com/61c2118aca9b0310afb2086f/637d5df1873ca699acb1396d_shutterstock_143460328%20(2).webp');"></div>
+                <div class="photo-item" style="background-image: url('https://cdn.prod.website-files.com/61c2118aca9b0310afb2086f/63977e907d6af14ad0c63526_Healthy%20Smiles%20Fairfax%20(1).webp');"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Parallax -->
+    <section class="parallax-section parallax-bg-1">
+        <div class="container services-grid">
+            <div class="service-item fade-in-up">
+                <img src="https://cdn.prod.website-files.com/61c2118aca9b0310afb2086f/61c23db9efc78a69283cef5c_noun-prescription-2986854-FFFFFF.svg" alt="Emergency">
+                <h4>Same-day Emergency</h4>
+                <div class="divider" style="background-color: white; opacity: 0.6;"></div>
+                <p>Struggling with a toothache? We provide same-day emergency care to get you out of pain.</p>
+                <!-- Changed to solid button for better clickability -->
+                <a href="#" class="btn" style="margin-top:auto;">Book Emergency</a>
+            </div>
+            <div class="service-item fade-in-up" style="transition-delay: 100ms;">
+                <img src="https://cdn.prod.website-files.com/61c2118aca9b0310afb2086f/61c23db75e3e550de4917ee9_noun-extraction-tooth-3327693-FFFFFF.svg" alt="Invisalign">
+                <h4>Invisalign</h4>
+                <div class="divider" style="background-color: white; opacity: 0.6;"></div>
+                <p>Comfortable, convenient, and completely clear way to perfect your pearly whites.</p>
+                <a href="#" class="btn" style="margin-top:auto;">Learn More</a>
+            </div>
+            <div class="service-item fade-in-up" style="transition-delay: 200ms;">
+                <img src="https://cdn.prod.website-files.com/61c2118aca9b0310afb2086f/61c23db8f5e193e358f8dfa4_noun-implant-tooth-3327696-FFFFFF.svg" alt="Cosmetic">
+                <h4>Cosmetic Dentistry</h4>
+                <div class="divider" style="background-color: white; opacity: 0.6;"></div>
+                <p>From professional teeth whitening to a customized smile makeover, we've got you covered.</p>
+                <a href="#" class="btn" style="margin-top:auto;">Get a Makeover</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dr Doshi Section -->
+    <section class="bg-grey">
+        <div class="container split-section fade-in-up">
+            <div class="split-text">
+                <h3>Your Friendly Fairfax Dentist</h3>
+                <h2>Meet Dr. Ridhi Doshi-Shah</h2>
+                <div class="divider" style="margin-left:0;"></div>
+                <p>Dr. Doshi loves all phases of dentistry, but her favorite part is developing real relationships with her patients. With her rich expertise and approachable personality, she cultivates an atmosphere where patients of all ages can smile with confidence.</p>
+                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                    <a href="#" class="btn" style="margin-top: 20px;">Read Her Story</a>
+                    <a href="#" class="btn btn-dark btn-outline" style="margin-top: 20px; color: var(--primary-blue); border-color: var(--primary-blue);">Book Dr. Doshi</a>
+                </div>
+            </div>
+            <div class="split-img">
+                <img src="https://cdn.prod.website-files.com/61c2118aca9b0310afb2086f/64415bebc4039f42515a38d3_Headshot-3%20(1)%20(1).webp" alt="Dr Doshi" onerror="this.src='https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80'">
+            </div>
+        </div>
+    </section>
+
+    <!-- First Visit Section -->
+    <section class="bg-grey" style="border-top: 1px solid #eee;">
+        <div class="container split-section fade-in-up">
+            <div class="split-img">
+                <img src="https://cdn.prod.website-files.com/61c2118aca9b0310afb2086f/63977eca5baf3457859c330a_Fairfax-Patient-Dental%20(1).webp" alt="First Visit" onerror="this.src='https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80'">
+            </div>
+            <div class="split-text">
+                <h2>What To Expect At Your First Visit</h2>
+                <div class="divider" style="margin-left:0;"></div>
+                <p>Our office is a judgment-free zone. Here's what to expect:</p>
+                <ul style="list-style: none; line-height: 2;">
+                    <li style="margin-bottom: 10px;"><i class="fas fa-clipboard-check" style="color:var(--secondary-gold); width: 25px;"></i> <strong>Reviewing Records:</strong> We check past history to provide informed treatment.</li>
+                    <li style="margin-bottom: 10px;"><i class="fas fa-x-ray" style="color:var(--secondary-gold); width: 25px;"></i> <strong>X-rays:</strong> Digital x-rays to look below the surface.</li>
+                    <li style="margin-bottom: 10px;"><i class="fas fa-tooth" style="color:var(--secondary-gold); width: 25px;"></i> <strong>Teeth Cleaning:</strong> Removal of plaque and tartar buildup.</li>
+                    <li style="margin-bottom: 10px;"><i class="fas fa-user-md" style="color:var(--secondary-gold); width: 25px;"></i> <strong>Oral Exam:</strong> Dr. Doshi will check the health of your teeth and gums.</li>
+                    <li style="margin-bottom: 10px;"><i class="fas fa-comments" style="color:var(--secondary-gold); width: 25px;"></i> <strong>Treatment Planning:</strong> Discuss findings and next steps.</li>
+                </ul>
+                <a href="#" class="btn" style="margin-top: 30px;">New Patient Forms</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership Section -->
+    <section class="bg-grey" style="border-top: 1px solid #eee;">
+        <div class="container split-section fade-in-up">
+            <div class="split-img">
+                <img src="https://cdn.prod.website-files.com/61c2118aca9b0310afb2086f/637d5df1873ca699acb1396d_shutterstock_143460328%20(2).webp" alt="Smiling Patient" onerror="this.src='https://images.unsplash.com/photo-1606811971618-4486d14f3f72?auto=format&fit=crop&w=600&q=80'">
+            </div>
+            <div class="split-text">
+                <h3>Our Membership Plan</h3>
+                <h2>No Insurance Needed!</h2>
+                <div class="divider" style="margin-left:0;"></div>
+                <p>We’re dedicated to making healthy mouths affordable. Our Membership Plan is just $275 per year and includes:</p>
+                <div style="background: white; padding: 25px; border-radius: 8px; box-shadow: var(--shadow-soft); margin-top: 20px;">
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color:var(--secondary-gold); margin-right:10px;"></i> Two teeth cleanings per year</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color:var(--secondary-gold); margin-right:10px;"></i> Two oral exams per year</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color:var(--secondary-gold); margin-right:10px;"></i> One set of yearly x-rays</li>
+                        <li><i class="fas fa-check-circle" style="color:var(--secondary-gold); margin-right:10px;"></i> One oral cancer screening</li>
+                    </ul>
+                </div>
+                <div style="display: flex; gap: 15px; margin-top: 30px;">
+                    <a href="#" class="btn">Sign Up Now</a>
+                    <a href="#" class="btn btn-dark btn-outline" style="color: var(--primary-blue); border-color: var(--primary-blue);">View Pricing</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Parallax -->
+    <section class="parallax-section parallax-bg-1" style="text-align: center;">
+        <div class="container fade-in-up">
+            <h3 style="color: white !important;">Life’s Better When You Smile</h3>
+            <h2 class="text-white">Schedule Your Visit Today</h2>
+            <a href="#" class="btn btn-outline" style="margin-top: 20px; padding: 15px 40px; background: white; color: var(--primary-blue);">Let's Get Started</a>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="container fade-in-up" style="padding: 100px 0;">
+        <div class="text-center">
+            <h3>You're in Good Hands</h3>
+            <h2>See What Our Patients Have to Say</h2>
+            <div class="divider"></div>
+        </div>
+
+        <div class="testimonial-slider">
+            <div class="slides-container" id="sliderTrack">
+                <div class="slide">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p>"Dr. Riddhi Doshi is really really awesome! My kids had their first dental appointment with her and they loved the experience! She is really sweet and very gentle."</p>
+                    <h5>- Mansi N.</h5>
+                </div>
+                <div class="slide">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p>"Great experience! The entire office is super clean and well organized. Can’t recommend enough!"</p>
+                    <h5>- Nicholas C.</h5>
+                </div>
+                <div class="slide">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p>"Almost no waiting time on your appointment, its clean and new facility. Dr. Doshi is so professional."</p>
+                    <h5>- Manish S.</h5>
+                </div>
+            </div>
+            <div class="slider-controls" id="sliderDots">
+                <!-- Dots generated by JS -->
+            </div>
+        </div>
+        <div class="text-center" style="margin-top: 40px;">
+            <a href="#" class="btn">Leave a Review</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <section class="bg-grey" style="padding: 60px 0 0 0; background: #f0f3f5;">
+        <div class="container">
+            <div class="text-center fade-in-up">
+                <h3>Come Say Hello</h3>
+                <h2>Stay Connected</h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="footer-grid fade-in-up" style="padding-top: 30px;">
+                <div class="footer-column">
+                    <h5>Phone</h5>
+                    <p><a href="tel:+17039157330" style="font-size: 1.1rem; font-weight: 700; color: var(--primary-blue);">(703) 915-7330</a></p>
+
+                    <h5 style="margin-top: 30px;">Address</h5>
+                    <p>11401 Government Center Pkwy<br>Fairfax, VA 22030</p>
+                    <p style="opacity: 0.7; font-size: 0.85rem; margin-top: -10px;"><i class="fas fa-parking"></i> Parking is available in the parking garage around back!</p>
+
+                    <h5 style="margin-top: 30px;">Email</h5>
+                    <p><a href="mailto:info@healthysmilesdentistryva.com">info@healthysmilesdentistryva.com</a></p>
+
+                    <a href="#" class="btn" style="margin-top: 20px; font-size: 0.8rem; padding: 10px 25px;">Contact Us</a>
+                </div>
+                <div class="footer-column text-center">
+                    <h5>Hours</h5>
+                    <ul style="line-height: 2;">
+                        <li><strong>Mon:</strong> By Appointment Only</li>
+                        <li><strong>Tue:</strong> 8:00am - 4:30pm</li>
+                        <li><strong>Wed:</strong> 9:00am - 5:30pm</li>
+                        <li><strong>Thu:</strong> 9:00am - 5:00pm</li>
+                        <li><strong>Fri:</strong> 7:00am - 3:00pm</li>
+                        <li><strong>Sat:</strong> By Appointment Only</li>
+                        <li><strong>Sun:</strong> Closed</li>
+                    </ul>
+                    <div class="social-icons" style="margin-top: 30px;">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-google"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3107.1042393370935!2d-77.34323768463736!3d38.85297085716666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b64f0b9729d96d%3A0x7e324ae459bd1f92!2sHealthy%20Smiles%20Dentistry!5e0!3m2!1sen!2smx!4v1653011098217!5m2!1sen!2smx" class="map-frame" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <div class="copyright">
+        <p style="margin-bottom: 5px;">&copy; Healthy Smiles Dentistry <span id="year"></span> | All Rights Reserved</p>
+    </div>
+
+    <!-- Floating Widgets -->
+
+    <!-- Accessibility Widget (Left) -->
+    <div class="a11y-widget-container">
+        <div class="a11y-menu" id="a11yMenu">
+            <h5>Accessibility</h5>
+            <div class="a11y-option">
+                <span>Large Text</span>
+                <label class="switch">
+                    <input type="checkbox" id="toggleLargeText" onchange="toggleA11y('large-text')">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="a11y-option">
+                <span>High Contrast</span>
+                <label class="switch">
+                    <input type="checkbox" id="toggleContrast" onchange="toggleA11y('contrast')">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="a11y-option">
+                <span>Grayscale</span>
+                <label class="switch">
+                    <input type="checkbox" id="toggleGrayscale" onchange="toggleA11y('grayscale')">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+        <div class="a11y-btn" onclick="toggleA11yMenu()">
+            <i class="fas fa-universal-access"></i>
+        </div>
+    </div>
+
+    <!-- Chat Widget (Right) -->
+    <div class="chat-widget-container">
+        <div class="chat-menu" id="chatMenu">
+            <div class="chat-header">
+                <i class="fas fa-headset"></i> We're Online!
+            </div>
+            <div class="chat-options">
+                <a href="tel:+17039157330"><i class="fas fa-phone-alt"></i> Call Now</a>
+                <a href="#"><i class="fas fa-comment-dots"></i> Text Us</a>
+                <a href="#"><i class="fas fa-calendar-check"></i> Book Appointment</a>
+                <a href="mailto:info@healthysmiles.com"><i class="fas fa-envelope"></i> Email Us</a>
+            </div>
+        </div>
+        <div class="chat-btn" onclick="toggleChat()">
+            <i class="fas fa-comment-dots"></i>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // 1. Mobile Menu Toggle
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('active');
+        }
+
+        // 2. Google Translate Init
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+
+        // 3. Testimonial Slider
+        const sliderTrack = document.getElementById('sliderTrack');
+        const slides = document.querySelectorAll('.slide');
+        const dotsContainer = document.getElementById('sliderDots');
+        let currentSlide = 0;
+
+        // Create Dots
+        slides.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(index));
+            dotsContainer.appendChild(dot);
+        });
+
+        const dots = document.querySelectorAll('.dot');
+
+        function goToSlide(index) {
+            currentSlide = index;
+            sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[currentSlide].classList.add('active');
+        }
+
+        // Auto slide
+        setInterval(() => {
+            let next = currentSlide + 1;
+            if (next >= slides.length) next = 0;
+            goToSlide(next);
+        }, 6000);
+
+        // 4. Scroll Animations (Fade In Up)
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            observer.observe(el);
+        });
+
+        // 5. Copyright Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // 6. Widget Toggles
+        function toggleChat() {
+            document.getElementById('chatMenu').classList.toggle('active');
+            // Close other menu if open
+            document.getElementById('a11yMenu').classList.remove('active');
+        }
+
+        function toggleA11yMenu() {
+            document.getElementById('a11yMenu').classList.toggle('active');
+            // Close other menu if open
+            document.getElementById('chatMenu').classList.remove('active');
+        }
+
+        function toggleA11y(mode) {
+            document.body.classList.toggle('a11y-' + mode);
+        }
+
+    </script>
+
+    <!-- Google Translate Script -->
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>
